@@ -1,0 +1,124 @@
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
+%\VignetteDepends{knitr, photobiology, photobiologyWavebands, ggplot2}
+%\VignetteKeyword{misc}
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{abbrev}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{breakurl}
+
+\newcommand{\PB}{\textsf{photobiology}\xspace}
+\newcommand{\PBUV}{\textsf{photobiologyUV}\xspace}
+\newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}
+\newcommand{\PBWB}{\textsf{photobiologyWavebands}\xspace}
+
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE>>=
+library(ggplot2)
+library(photobiologyWavebands)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyWavebands")
+@
+
+\title{\PBWB Version \Sexpr{my_version}\\  Catalogue of UV BSWFs}
+
+\author{Pedro J. Aphalo}
+
+\maketitle
+
+\section{Introduction}
+
+<<example-0-hidden, eval=FALSE, include=TRUE>>=
+library(ggplot2)
+library(photobiologyWavebands)
+@
+
+<<setup-function>>=
+my.plotter <- function(bwfs.fun, w.low=280, w.high=400, ylab="Action"){
+  spectrum.data <- data.frame(w.length=seq(280, 400, length.out=300))
+spectrum.data$action <- bwfs.fun(spectrum.data$w.length)
+fig_linear <- ggplot(aes(x=w.length, y=action), data=spectrum.data) +
+  labs(x="Wavelength (nm)", y=ylab) +
+  geom_line()
+fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
+print(fig_linear)
+print(fig_log)
+}
+@
+
+\newpage
+\section{CIE 1998, erythemal}
+<<plot-CIE>>=
+my.plotter(CIE.e.fun, ylab="CIE98 erythemal action (energy)")
+@
+
+%\newpage
+\section{DNA `Plant', Quaite}
+<<plot-DNA-P>>=
+my.plotter(DNA.P.q.fun, ylab="DNA 'plant or Quaite' action (quantum)")
+@
+
+\newpage
+\section{DNA `naked', Setlow}
+<<plot-DNA-N>>=
+my.plotter(DNA.N.q.fun, ylab="DNA 'naked or Setlow' action (quantum)")
+@
+
+%\newpage
+\section{DNA `Green \& Miller', $\approx$Setlow}
+<<plot-DNA-GM>>=
+my.plotter(DNA.GM.q.fun, ylab="DNA 'Green and Miller' action (quantum)")
+@
+
+\newpage
+\section{GPAS `Green', Caldwell}
+<<plot-GEN-G>>=
+my.plotter(GEN.G.q.fun, ylab="GPAS 'Green' action (quantum)")
+@
+
+%\newpage
+\section{GPAS `Thimijan', Caldwell}
+<<plot-GEN-T>>=
+my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
+@
+
+\newpage
+\section{PG `Plant Growth', Flint \& Caldwell}
+<<plot-PG>>=
+my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
+@
+
+%\newpage
+\section{Flavonoid, Ibdah}
+<<plot-FLAV>>=
+my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
+@
+
+\newpage
+\section{UVR8 Absorbance}
+<<plot-UVR8-Abs>>=
+my.plotter(UVR8.Abs.fun, ylab="UVR8 absorptance expectrum (quantum)")
+@
+
+\section{Methane, McLeod}
+<<plot-CH4>>=
+my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
+@
+
+\end{document}

@@ -1,0 +1,318 @@
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{Waveband definitions for radiation quantification: User Guide}
+%\VignetteDepends{knitr, photobiology, photobiologyWavebands}
+%\VignetteKeyword{misc}
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{abbrev}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{breakurl}
+
+\newcommand{\PB}{\textsf{photobiology}\xspace}
+\newcommand{\PBWB}{\textsf{photobiologyWavebands}\xspace}
+
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+options(replace.assign=TRUE,width=55)
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE>>=
+library(photobiologyWavebands)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyWavebands")
+@
+
+\title{\PBWB Version \Sexpr{my_version}\\ User Guide}
+
+\author{Pedro J. Aphalo}
+
+\maketitle
+
+\section{Introduction}
+
+\sloppy
+We have developed a set of packages to
+facilitate the calculation of many different quantities that can be derived from spectral irradiance data. The basic package is called \PB, and the package described here is an extension of the basic facilities for quantification of ultraviolet radiation. It will be submitted to CRAN (Comprehensive R archive network), it is meanwhile available from \url{https://bitbucket.org/aphalo/photobiology/downloads} and \url{https://bitbucket.org/aphalo/photobiologyuv/downloads}. There are also a public Git repositories at \url{https://bitbucket.org/aphalo/photobiology} and \url{https://bitbucket.org/aphalo/photobiologyuv}. Functions are included for calculating weighted and unweighted \UV doses, irradiances and related quantities.
+
+\section{Calculating irradiances}
+
+Functions for several colour bands, in some cases according to different
+optional definitions, are listed in Table \ref{tab:unweighted}.
+
+A new waveband definition can be created
+with \texttt{new\_waveband()}\footnote{See package \texttt{photobiology} and its documentation.}. When using data stored in vectors integrated irradiance or dose is calculated
+with functions \texttt{energy\_irradiance()} and \texttt{photon\_irradiance}, which
+take as one argument the waveband descriptor list as an argument. When working with data stored in \texttt{source.spct} objects functions and \texttt{e\_irrad\_spct} and \texttt{q\_irrad\_spct} are used instead.
+
+The functions used for calculating the irradiances from vectors have additional arguments,
+that permit to indicate the type of scale used for the input spectrum ("photon"
+od "energy"). In the case of \texttt{irradiance()} and \texttt{irrad\_spct()},
+output units ("photon" or "energy") can also be supplied.
+
+\begin{table*}
+    \caption[Unweighted wavebands]{Functions in R package \PBWB used for cronstructing
+    descriptors of wavebands used for calculation of irradiances or exposures. The boundaries of
+    the band given as wavelengths in nm ($\lambda$). Definiton according to ISO-21348 "ISO" is
+    the default for all functions exept \texttt{PAR()} for which there is only one definition
+    in common use "Plant" which is the default.}\label{tab:unweighted}\vspace{1ex}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       Waveband & Source & Dose or irrad. & Waveband (nm) \\
+       \midrule
+       \UV & ISO-21348 & \texttt{UVB()} & $100\leq\lambda<400$ \\
+       \UVC & ISO-21348 & \texttt{UVC()} & $100\leq\lambda<280$ \\
+       \UVB & ISO-21348 & \texttt{UVB()} & $280\leq\lambda<315$ \\
+       \UVB & n.a. & \texttt{UVB(std="none")} & $280\leq\lambda<320$ \\
+       \UVA & ISO-21348 & \texttt{UVA()} & $315\leq\lambda<400$ \\
+       \UVA & n.a. & \texttt{UVA(std="none")} & $320\leq\lambda<400$ \\
+       \midrule
+       Visible & ISO-21348 & \texttt{VIS("ISO")} & $380\leq\lambda<760$ \\
+       Photosynthesis  & n.a. & \texttt{PAR("Plant")} & $400\leq\lambda<700$ \\
+       Purple & ISO-21348 & \texttt{Purple("ISO")} & $360\leq\lambda<450$ \\
+       Blue & Sellaro & \texttt{Blue("Sellaro")} & $420\leq\lambda<490$ \\
+       Blue & ISO-21348 & \texttt{Blue("ISO")} & $450\leq\lambda<500$ \\
+       Green & Sellaro & \texttt{Green("Sellaro")} & $500\leq\lambda<570$ \\
+       Green & ISO-21348 & \texttt{Green("ISO")} & $500\leq\lambda<570$ \\
+       Yellow & ISO-21348 & \texttt{Yellow("ISO")} & $570\leq\lambda<591$ \\
+       Orange & ISO-21348 & \texttt{Orange("ISO")} & $591\leq\lambda<610$ \\
+       Red & Smith & \texttt{Red("Smith")} & $650\leq\lambda<670$ \\
+       Red & Sellaro & \texttt{Red("Sellaro")} & $650\leq\lambda<670$ \\
+       Red & ISO-21348 & \texttt{Red("ISO")} & $610\leq\lambda<760$ \\
+       Far-red & Smith & \texttt{Far\_red("Smith")} & $720\leq\lambda<740$ \\
+       Far-red & Sellaro & \texttt{Far\_red("Sellaro")} & $700\leq\lambda<750$ \\
+       Far-red & BTV & \texttt{Far\_red("BTV")} & $700\leq\lambda<760$ \\
+       Far-red & ISO & \texttt{Far\_red("ISO")} & not defined \\
+       \midrule
+       \textit{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+An example using \texttt{sun.spct} included in package \texttt{photobiology}.
+
+<<example-1, eval=TRUE>>=
+with(sun.spct,
+     energy_irradiance(w.length, s.e.irrad, PAR()) # W m-2
+     )
+with(sun.spct,
+     photon_irradiance(w.length, s.e.irrad, PAR()) * 1e-6 # umol s-1 m-2
+    )
+@
+
+As the input spectral irradiance is units of \wattnm the output is in \mol or \watt.
+
+It is even possible to simply integrate the whole spectrum in the input, without selecting a waveband
+or applying any weighting function:
+<<example-4, eval=TRUE>>=
+with(sun.spct,
+     photon_irradiance(w.length, s.e.irrad)
+    )
+@
+
+It is also very easy to define your own waveband as described in the \PB manual. Here we give a very simple example:
+<<PB-example>>=
+with(sun.spct,
+    photon_irradiance(w.length, s.e.irrad, new_waveband(400,700)) # Same as PAR()
+    )
+@
+
+Using \texttt{source.spct} functions, then the same example become much simpler.
+
+<<>>=
+e_irrad_spct(sun.spct, PAR())
+q_irrad_spct(sun.spct, PAR()) * 1e6
+q_irrad_spct(sun.spct)
+q_irrad_spct(sun.spct, new_waveband(400,700))
+@
+
+Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones.
+
+<<>>=
+e_irrad_spct(sun.spct, list(UV(), PAR()))
+e_irrad_spct(sun.spct, list(ultraviolet=UV(), photosynthetic=PAR()))
+@
+
+A few functions for generating coherent lists of wavebands are also defined (Table \ref{tab:uw:lists}).
+
+<<>>=
+e_irrad_spct(sun.spct, VIS_bands())
+@
+
+\begin{table*}
+    \caption[Lists of wavebands]{Functions in R package \PBWB used for cronstructing
+    lists descriptors of wavebands used for calculation of irradiances or exposures.}
+    \label{tab:uw:lists}
+    \vspace{1ex}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+       Waveband & Source & Function & Wavelength range (nm) \\
+       \midrule
+       VIS defs. & ISO-21348 & \texttt{VIS\_bands("ISO")} & $380\leq\lambda<760$ \\
+       UV defs. & ISO-21348 & \texttt{UV\_bands("ISO")} & $100\leq\lambda<400$ \\
+       UV defs. & n.a. & \texttt{UV\_bands("none")} & $100\leq\lambda<400$ \\
+       Plant sens. & n.a. & \texttt{Plant\_bands()} & $380\leq\lambda<750$ \\
+%       Geophys. defs & n.a. & \texttt{Geophys\_bands()} & $100\leq\lambda<10000$ \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+\section{Calculating photon ratios}
+\label{sec:ratios:photon}
+
+Functions are also provided for calculating photon ratios between different pairs of wavebands. These functions
+are listed in Table \ref{tab:photon:ratios}. We follow the most frequently used wavelength ranges for
+the different colours, but also provide a generic functions that can be used when other limits are needed.
+Continuing with the example above in which my.data was read and attached
+we calculate Blue : PAR photon ratio
+
+<<uvcalc-example-4, eval=TRUE>>=
+with(sun.spct,
+     B_PAR_ratio(w.length, s.e.irrad)
+     )
+@
+
+Please, be aware that following common practice in the literature, the wavelength range used for red light
+is different for the different photon ratios.
+
+\begin{table*}
+    \caption[Photon ratios]{Functions in R package \PBWB for calculation of photon ratios from
+    spectra in spectral energy units. \texttt{w} = vector of wavelengths (nm); \texttt{i} = vector of spectral energy irradiances.}
+    \label{tab:photon:ratios}\vspace{1ex}
+    \centering
+\textsf{    \begin{small}
+    \begin{tabular}{@{}llc@{}}
+       \toprule
+       Ratio & R function & wavelength ranges (nm)\\
+       \midrule
+       UV:PAR & \texttt{UV\_PAR\_ratio(w,i)} & $100\leq\lambda<400$, $400\leq\lambda<700$\\
+       UV-C:PAR & \texttt{UVC\_PAR\_ratio(w,i)} & $100\leq\lambda<280$, $400\leq\lambda<700$\\
+       UV-B:PAR & \texttt{UVB\_PAR\_ratio(w,i)} & $280\leq\lambda<315$, $400\leq\lambda<700$\\
+       UV-A:PAR & \texttt{UVA\_PAR\_ratio(w,i)} & $315\leq\lambda<400$, $400\leq\lambda<700$\\
+       Blue:PAR & \texttt{B\_PAR\_ratio(w,i)} & $420\leq\lambda<490$, $400\leq\lambda<700$\\
+       Green:PAR & \texttt{G\_PAR\_ratio(w,i)} & $500\leq\lambda<570$, $400\leq\lambda<700$\\
+       Red:Far-red & \texttt{R\_FR\_ratio(w,i)} & $650\leq\lambda<670$, $720\leq\lambda<740$\\
+       Blue:Green & \texttt{B\_G\_ratio(w,i)} & $420\leq\lambda<490$, $500\leq\lambda<570$\\
+%       Blue:Red & \texttt{B\_R\_ratio(w,i)} & $420\leq\lambda<490$, $620\leq\lambda<680$\\
+       \bottomrule
+    \end{tabular}
+    \end{small}
+}\end{table*}
+
+Photon ratios can be also calculated from any pair, or pairs of lists, of waveband definitions. As can be seen in the example recycling applies.
+
+<<>>=
+q_ratio_spct(sun.spct, list(UVA=UVA(), UVB=UVB()), PAR())
+@
+
+
+\section{Calculating effective irradiances and exposures}
+
+The waveband definitions and SWFs are described as a list, that can be created
+with \texttt{new\_waveband()}. The same functions described above for unweighted
+irradiances are used to calculate effective irradiances and doses.
+
+Currently functions for \texttt{wavebands} for several BSWFs are implemented and
+are listed in Table \ref{tab:effective}. Similar functions for unweighted doses
+are listed in Table \ref{tab:unweighted}. These BSWF functions take variable
+numbers of arguments, by means of which one can obtain variations of the BSWFs.
+
+\begin{table*}
+    \caption[Weighted wavebands]{Functions in R package \PBWB used for cronstructing
+    descriptors of BSWFs used for calculation of effective irradiances or doses. The functions
+    for BSWFs available in this package, are by default as in the original source. Optionally
+    they can be normalized to any wavelength within their non-zero range by providing the
+    \texttt{norm}
+    argument with a wavelength in nm.}\label{tab:effective}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+       Action spectrum & Formulation & Constructor function & Norm. $\lambda$ (nm) \\
+       \midrule
+       Gen. plant action & Green & \texttt{GEN.G(norm)} & 300 \\
+       Gen. plant action & Thimijan & \texttt{GEN.T(norm)} & 300 \\
+       Plant growth & Flint \& Caldwell & \texttt{PG(norm)} & 300 \\
+       Erythemal & CIE98 & \texttt{CIE(norm)} & 298 \\
+       `Naked' DNA & TUV, from Setlow & \texttt{DNA.N(norm)} & n.a. \\
+       `Naked' DNA & Green \& Miller & \texttt{DNA.GM(norm)} & n.a. \\
+       `Plant' DNA & Musil, from Quaite & \texttt{DNA.P(norm)} & 290 \\
+       Flavonoid & Ibdah & \texttt{FLAV(norm)} & 300 \\
+       UVR8 absorbance & & \texttt{UVR8.Abs(norm)} & n.a \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+
+\section{Calculating an action spectrum at given wavelengths}
+
+\begin{table*}
+    \caption[Weighting functions]{Biological spectral weighting functions predefined in R package \PBWB. The functions for BSWFs available in this package, implement the functions as defined in the original publications. When the original `definition' is available as tabulated data, or we have tabulated it by digitizing a figure, the values returned are calculated by spline interpolation.}\label{tab:BSWFs}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+       Action spectrum & Formulation & Function & Norm. $\lambda$ (nm) \\
+       \midrule
+       Gen. plant action & Green & \texttt{GEN.G.q.fun(w)} & 300 \\
+       Gen. plant action & Thimijan & \texttt{GEN.T.q.fun(w)} & 300 \\
+       Plant growth & Flint \& Caldwell & \texttt{PG.q.fun(w)} & 300 \\
+       Erythemal & CIE98 & \texttt{CIE.e.fun(w)} & 298 \\
+       `Naked' DNA & TUV, from Setlow & \texttt{DNA.N.q.fun(w)} & n.a. \\
+       `Naked' DNA & Green \& Miller & \texttt{DNA.GM.q.fun(w)} & n.a. \\
+       `Plant' DNA & Musil, from Quaite & \texttt{DNA.P.q.fun(w)} & 290 \\
+       Flavonoid & Ibdah & \texttt{FLAV.q.fun(w)} & 300 \\
+       UVR8 absorbance & & \texttt{UVR8.Abs.fun(w)} & n.a \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector
+of effectiveness (either quantum=photon or energy based)
+depending on how the original source describes them.
+These functions are listed in Table \ref{tab:BSWFs},
+and an example of their use follows. In these examples we
+generate the wavelengths vectors in R, but they can be also
+read from a file.
+
+<<example-6, eval=TRUE>>=
+# at 1 nm intervals
+wavelengths1 <- 285:400
+action.spectrum1 <- CIE.e.fun(wavelengths1)
+plot(wavelengths1,action.spectrum1,type="l")
+@
+<<example-7, eval=TRUE>>=
+# at 10 nm intervals
+wavelengths10 <- seq(from=285, to=400, by=10)
+action.spectrum01 <- CIE.e.fun(wavelengths10)
+@
+
+All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.
+
+\end{document}

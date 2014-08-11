@@ -1,0 +1,97 @@
+photobiologyWavebands 0.1.0
+===========================
+
+Merge of photobiologyUV and photobiologyVIS packages.
+Merged and updated the vignettes. Added functions for
+calculating UV:PAR photon ratios. Added functions for
+creating some coherent lists of wavbands (e.g. all ISO
+defined colours).
+
+********************
+*  photobiologyUV  *
+********************
+
+photobiologyUV 0.2.8
+====================
+
+Added setting of wb.label in functions defining wavebands.
+
+photobiologyUV 0.2.7
+====================
+
+Fixed a bug introduced in version 0.2.6: wrong name used for wavebands created by UVC().
+photobiologyUV 0.2.6
+====================
+
+Added "medical" definitions of UVB and UVB.
+
+photobiologyUV 0.2.5
+====================
+
+Added "methane from pectin" BSWF of McLeod et al. (2008)
+
+photobiologyUV 0.2.4
+====================
+
+Minor changes, with no effect on functionality
+
+photobiologyUV 0.2.3
+====================
+
+Revised User Guide and added Catalogue of plot of BSWFs.
+No changes to the R code.
+
+photobiologyUV 0.2.2
+====================
+
+Added calculation of UV Index.
+
+photobiologyUV 0.2.1
+====================
+
+Internally modified to work with photobiology (>= 0.2.1)
+User interface unchanged.
+
+photobiologyUV 0.2.0
+====================
+
+Internally modified to work with photobiology (>= 0.2.0)
+User interface unchanged.
+
+photobiologyUV 0.1.2
+====================
+
+Added vignettes. Still needs some cleaning of code and improved docummentation.
+
+photobiologyUV 0.1.0
+====================
+
+First version. Implements equivalent WBs and SWFs to those
+in UVcalc. The algorithms are exactly the same as most
+of the functions were just copied from UVcalc 1.3.1
+
+*********************
+*  photobiologyVIS  *
+*********************
+
+photobiologyVIS 0.1.5
+=====================
+
+Added setting of wb.label in functions defining wavebands.
+
+photobiologyVIS 0.1.4
+=====================
+
+Added missing import directive. Rebuilt vignette under photobiology 0.2.16 as the output of the examples is cosmetically different.
+
+photobiologyVIS 0.1.3
+=====================
+
+Changed waveband definitions to allow cacheing. A change in package photobiology adds hinges.
+
+photobiologyVIS 0.1.2
+=====================
+
+Corrected error in green light wavelength range, and added new optional definitiions of wave length ranges.
+
+Added a vignette: a manual.

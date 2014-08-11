@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+*.Rd
+photobiology.Rproj
+*.tex
+*.pdf
+*.bbl
+*.synctex.gz
+*.log
+*.so
