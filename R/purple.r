@@ -1,8 +1,8 @@
 #' Definition of purple waveband
-#' 
+#'
 #' Purple radiation (360...450 nm), no weighting
 #' applied.
-#' 
+#'
 #' @usage Purple(std="ISO")
 #' @param std a character string "ISO"
 #' @export
