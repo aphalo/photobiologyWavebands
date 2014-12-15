@@ -1,9 +1,9 @@
 #' Quantification of ultraviolet, visible and infrared radiation for photobiology
-#' 
-#' Calculation of quantities relevant to the effects of radiation on different 
-#' organisms and biological processes from spectral data. The package is designed 
+#'
+#' Calculation of quantities relevant to the effects of radiation on different
+#' organisms and biological processes from spectral data. The package is designed
 #' to complement package \code{photobiology}.
-#' 
+#'
 #' @docType package
 #' @keywords misc
 #' @name photobiologyWavebands-package
@@ -12,36 +12,36 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyWavebands\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.0\cr
-#' Date: \tab 2014-08-11\cr
+#' Version: \tab 0.2.0\cr
+#' Date: \tab 2014-12-16\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references
-#' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., 
-#' Rosenqvist, E. (Eds.). (2012). Beyond the Visible: A handbook of best 
-#' practice in plant UV photobiology (1st ed., p. xxx + 174). 
-#' Helsinki: University of Helsinki, Department of Biosciences, 
-#' Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF), 
-#' 978-952-10-8362-4 (paperback). Open access PDF download available at 
+#' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M.,
+#' Rosenqvist, E. (Eds.). (2012). Beyond the Visible: A handbook of best
+#' practice in plant UV photobiology (1st ed., p. xxx + 174).
+#' Helsinki: University of Helsinki, Department of Biosciences,
+#' Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
+#' 978-952-10-8362-4 (paperback). Open access PDF download available at
 #' http://hdl.handle.net/10138/37558
-#' 
-#' Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S., 
-#' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the 
-#' blue/green ratio of natural radiation in Arabidopsis. Plant physiology, 
+#'
+#' Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
+#' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the
+#' blue/green ratio of natural radiation in Arabidopsis. Plant physiology,
 #' 154(1), 401-409. doi:10.1104/pp.110.160820
-#' 
+#'
 #' Smith, H (19xx)
-#' 
-#' ISO (2007) Space environment (natural and artificial) - Process for determining 
+#'
+#' ISO (2007) Space environment (natural and artificial) - Process for determining
 #' solar irradiances. ISO Standard 21348. ISO, Geneva.
-#' 
+#'
 #' @note This package replaces the packages photobiologyUV and photobiologyVIS.
 #' @import photobiology
 #' @examples
 #' with(sun.data, photon_irradiance(w.length, s.e.irrad, PAR())) # effective PAR photon irradiance
 #' with(sun.data, photon_irradiance(w.length, s.e.irrad, Blue("ISO"))) # blue photon irradiance, ISO definition
 #' with(sun.data, photon_irradiance(w.length, s.e.irrad, Blue("Sellaro"))) # blue photon irradiance, Sellaro et al.'s definition
-#' 
+#'
 #' with(sun.data, energy_irradiance(w.length, s.e.irrad, VIS())) # VIS irradiance, ISO definition
 #' with(sun.data, photon_irradiance(w.length, s.e.irrad, VIS())) # VIS photon irradiance, ISO definition
 NULL

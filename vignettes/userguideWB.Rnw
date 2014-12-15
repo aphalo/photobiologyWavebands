@@ -135,23 +135,23 @@ with(sun.spct,
 Using \texttt{source.spct} functions, then the same example become much simpler.
 
 <<>>=
-e_irrad_spct(sun.spct, PAR())
-q_irrad_spct(sun.spct, PAR()) * 1e6
-q_irrad_spct(sun.spct)
-q_irrad_spct(sun.spct, new_waveband(400,700))
+e_irrad(sun.spct, PAR())
+q_irrad(sun.spct, PAR()) * 1e6
+q_irrad(sun.spct)
+q_irrad(sun.spct, new_waveband(400,700))
 @
 
 Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones.
 
 <<>>=
-e_irrad_spct(sun.spct, list(UV(), PAR()))
-e_irrad_spct(sun.spct, list(ultraviolet=UV(), photosynthetic=PAR()))
+e_irrad(sun.spct, list(UV(), PAR()))
+e_irrad(sun.spct, list(ultraviolet=UV(), photosynthetic=PAR()))
 @
 
 A few functions for generating coherent lists of wavebands are also defined (Table \ref{tab:uw:lists}).
 
 <<>>=
-e_irrad_spct(sun.spct, VIS_bands())
+e_irrad(sun.spct, VIS_bands())
 @
 
 \begin{table*}
