@@ -1,22 +1,25 @@
 #' Definition of UV-C waveband
-#' 
+#'
 #' UV-C according to CIE and ISO standrads: 100--280 nm.
 #' UV-c according to common non-standard practice: 200--280 nm.
 #' UV-C according to medical or dermatological non-standard practice, e.g. Diffey (1991): 200--290 nm.
-#' 
-#' @return a list defining the wavelength range
+#'
 #' @usage UVC(std="ISO")
 #' @param std a character string "CIE", "ISO", "none", or "medical".
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @references
 #' ISO and CIE standards
-#' 
+#'
 #' @export
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
-#' 
+#'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
 #' @references
-#' Diffey, B. L. 1991. Solar ultraviolet radiation effects on biological systems. 
+#' Diffey, B. L. 1991. Solar ultraviolet radiation effects on biological systems.
 #' Review in Physics in Medicine and Biology 36 (3): 299-328.
-#' 
+#'
 #' @examples
 #' UVC()
 #' UVC("CIE")

@@ -5,10 +5,15 @@
 #'
 #' @usage Purple(std="ISO")
 #' @param std a character string "ISO"
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @export
 #' @references
 #' ISO-21348
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
+#'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
 #' @examples
 #' Purple()
 #' Purple("ISO")

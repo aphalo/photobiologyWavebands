@@ -8,7 +8,12 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source (300 nm)
-#' 
+#'
+#' @note We follow the original defition here for the equation, with no
+#' limtation to the wavelength range. However, be aware that in practice
+#' it is not used for long wavelengths (different limits between 366 nm and
+#' 400 nm have been used by different authors).
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
@@ -16,10 +21,8 @@
 #' PG.q.fun(293:400)
 
 PG.q.fun <-
-function(w.length){
-    spectral_weigths <- 
+  function(w.length){
       exp(4.688272*exp(-exp(0.1703411*(w.length-307.867)/1.15)) +
-      ((390-w.length)/121.7557-4.183832))
-    return(spectral_weigths) 
-}
+            ((390-w.length)/121.7557-4.183832))
+  }
 

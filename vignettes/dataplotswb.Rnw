@@ -24,7 +24,7 @@
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', warning=FALSE)
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
@@ -50,8 +50,8 @@ library(photobiologyWavebands)
 @
 
 <<setup-function>>=
-my.plotter <- function(bwfs.fun, w.low=280, w.high=400, ylab="Action"){
-  spectrum.data <- data.frame(w.length=seq(280, 400, length.out=300))
+my.plotter <- function(bwfs.fun, w.low=250, w.high=400, ylab="Action"){
+  spectrum.data <- data.frame(w.length=seq(250, 400, length.out=300))
 spectrum.data$action <- bwfs.fun(spectrum.data$w.length)
 fig_linear <- ggplot(aes(x=w.length, y=action), data=spectrum.data) +
   labs(x="Wavelength (nm)", y=ylab) +
@@ -99,21 +99,21 @@ my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
 @
 
 \newpage
+\section{GPAS `Micheletti', Caldwell}
+<<plot-GEN-M>>=
+my.plotter(GEN.M.q.fun, ylab="GPAS 'Micheletti' action (quantum)")
+@
+
+%\newpage
 \section{PG `Plant Growth', Flint \& Caldwell}
 <<plot-PG>>=
 my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
 @
 
-%\newpage
+\newpage
 \section{Flavonoid, Ibdah}
 <<plot-FLAV>>=
 my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
-@
-
-\newpage
-\section{UVR8 Absorbance}
-<<plot-UVR8-Abs>>=
-my.plotter(UVR8.Abs.fun, ylab="UVR8 absorptance expectrum (quantum)")
 @
 
 \section{Methane, McLeod}

@@ -1,16 +1,20 @@
 #' Definition of UV-A waveband
-#' 
-#' UV-A according to CIE and ISO standrads: 315--400 nm. 
+#'
+#' UV-A according to CIE and ISO standrads: 315--400 nm.
 #' UV-A according to common non-standard practice: 320--400 nm.
-#' 
+#'
 #' @usage UVA(std="ISO")
 #' @param std a character string "CIE", "ISO" or "none"
-#' @return a list defining the wavelength range
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @references
 #' ISO and CIE standards
-#' 
+#'
 #' @export
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
+#'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
 #' @examples
 #' UVA()
 #' UVA("none")

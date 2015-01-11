@@ -19,8 +19,8 @@
 #' ISO (2007) Space environment (natural and artificial) - Process for determining
 #' solar irradiances. ISO Standard 21348. ISO, Geneva.
 #'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
 #' @examples
 #' Plant_bands()
 #' Plant_bands("sensory")

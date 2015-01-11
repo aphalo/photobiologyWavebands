@@ -4,7 +4,9 @@
 #'
 #' @usage Blue(std="ISO")
 #' @param std a character string "ISO", or "Sellaro"
-#' @return a list defining the wavelength range
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @export
 #'
 #' @references
@@ -19,8 +21,8 @@
 #' ISO (2007) Space environment (natural and artificial) - Process for determining
 #' solar irradiances. ISO Standard 21348. ISO, Geneva.
 #'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
 #' @examples
 #' Blue()
 #' Blue("ISO")

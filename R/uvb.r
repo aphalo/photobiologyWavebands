@@ -1,17 +1,21 @@
 #' Definition of UV-B waveband
-#' 
-#' UV-B according to CIE and ISO standrads: 280--315 nm. 
+#'
+#' UV-B according to CIE and ISO standrads: 280--315 nm.
 #' UV-B according to common non-standard practice: 280--320 nm.
 #' UV-B according to medical or dermatological non-standard practice: 280--320 nm.
-#' 
-#' @return a list defining the wavelength range
+#'
 #' @usage UVB(std="ISO")
 #' @param std a character string "CIE", "ISO", "medical" or "none"
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @references
 #' ISO and CIE standards
-#' 
+#'
 #' @export
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
+#'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
 #' @examples
 #' UVB()
 #' UVB("ISO")

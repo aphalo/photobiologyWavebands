@@ -12,8 +12,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyWavebands\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.2.0\cr
-#' Date: \tab 2014-12-16\cr
+#' Version: \tab 0.2.3\cr
+#' Date: \tab 2015-01-11\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references
@@ -38,10 +38,10 @@
 #' @note This package replaces the packages photobiologyUV and photobiologyVIS.
 #' @import photobiology
 #' @examples
-#' with(sun.data, photon_irradiance(w.length, s.e.irrad, PAR())) # effective PAR photon irradiance
-#' with(sun.data, photon_irradiance(w.length, s.e.irrad, Blue("ISO"))) # blue photon irradiance, ISO definition
-#' with(sun.data, photon_irradiance(w.length, s.e.irrad, Blue("Sellaro"))) # blue photon irradiance, Sellaro et al.'s definition
 #'
-#' with(sun.data, energy_irradiance(w.length, s.e.irrad, VIS())) # VIS irradiance, ISO definition
-#' with(sun.data, photon_irradiance(w.length, s.e.irrad, VIS())) # VIS photon irradiance, ISO definition
+#' q_irrad(sun.spct, PAR())  # PAR photon irradiance
+#' q_irrad(sun.spct, Blue("ISO")) # blue photon irradiance, ISO definition
+#' q_irrad(sun.spct, Blue("Sellaro")) # blue photon irradiance, Sellaro et al.'s definition
+#' e_irrad(sun.spct, VIS()) # VIS irradiance, ISO definition
+#' q_irrad(sun.spct, VIS()) # VIS photon, ISO definition
 NULL

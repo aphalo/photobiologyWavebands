@@ -1,10 +1,13 @@
 #' Definition of yellow waveband
-#' 
+#'
 #' Yellow radiation (570...591 nm), no weighting
 #' applied.
-#' 
+#'
 #' @usage Yellow(std="ISO")
 #' @param std a character string "ISO"
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @export
 #' @references
 #' ISO-21348

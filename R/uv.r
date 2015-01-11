@@ -1,15 +1,19 @@
 #' Definition of UV waveband
-#' 
+#'
 #' UV: 100--400 nm.
-#' 
-#' @return a list defining the wavelength range
+#'
 #' @usage UV(std="ISO")
 #' @param std "ISO" or "CIE"
+#'
+#' @return a waveband object wavelength defining a wavelength range.
+#'
 #' @references
 #' ISO and CIE standards
-#' 
+#'
 #' @export
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
+#'
+#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
 #' @examples
 #' UV()
 #' UV("ISO")

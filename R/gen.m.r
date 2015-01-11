@@ -2,7 +2,7 @@
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'
-#' @usage GEN.G(norm=300, w.high=313.3)
+#' @usage GEN.M(norm=300, w.high=313.3)
 #'
 #' @param norm normalization wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
@@ -30,15 +30,14 @@
 #' has been analysed by Micheletti et al. [3].
 #'
 #' @export
-#'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
-#'
+#' @seealso \code{\link{GEN.G}} \code{\link{GEN.T}} \code{\link{PG}}  \code{\link{new_waveband}}
+#'  \code{\link{waveband}}
 #' @examples
-#' GEN.G()
-#' GEN.G(300)
+#' GEN.M()
+#' GEN.M(300)
 
-GEN.G <- function(norm=300, w.high=313.3) {
-  new_waveband(w.low=275, w.high=w.high, weight="SWF", SWF.q.fun=GEN.G.q.fun, SWF.norm=280,
-               norm=norm, wb.name=paste("GEN.G", as.character(norm), sep="."), wb.label="GEN(G)")
+GEN.M <- function(norm=300, w.high=313.3) {
+  new_waveband(w.low=275, w.high=w.high, weight="SWF", SWF.q.fun=GEN.M.q.fun, SWF.norm=300,
+               norm=norm, wb.name=paste("GEN.M", as.character(norm), sep="."), wb.label="GEN(M)")
 }
 

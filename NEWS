@@ -1,3 +1,31 @@
+photobiologyWavebands 0.2.3
+===========================
+
+User Guide edited to match current versions of packages photobiology
+and photobiologygg, as well as changes to the current of this package.
+
+photobiologyWavebands 0.2.2
+===========================
+
+Changed the definition of SWFs functions not to have any
+intrinsic wavelength limitts, and made this limit
+a new formal argument on the waveband constructor functions,
+keeping the same defaults. Returned values
+should remain unchanged. This bit of flexibility is needed
+as different authors have used different limits
+for the same BSWFs.
+
+A new formulation for GPAS has been added. The formulation
+by Micheletti and Piacentini (2002) is used for
+example in the TUV model (version 5.0). The new waveband
+contructor is GEN.M().
+
+photobiologyWavebands 0.2.1
+===========================
+
+Changed the definition of SWFs to not include wavelengths
+shorter than 280 nm, except for the case of UVR8 absorbance.
+
 photobiologyWavebands 0.2.0
 ===========================
 
