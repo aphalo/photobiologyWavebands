@@ -1,8 +1,11 @@
 photobiologyWavebands 0.2.3
 ===========================
 
+Now all contructors of waveband objects for BSWFs, have formal arguments
+w.low and w.high, with values earlier in use, now set as defaults.
+
 User Guide edited to match current versions of packages photobiology
-and photobiologygg, as well as changes to the current of this package.
+and photobiologygg, as well as to update to to the current version.
 
 photobiologyWavebands 0.2.2
 ===========================

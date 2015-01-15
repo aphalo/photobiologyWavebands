@@ -3,12 +3,13 @@
 #' Plant growth BSWF
 #'
 #' @param norm normalization wavelength (nm)
+#' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
 #'
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
 #'
-#' @usage PG(norm=300, w.high=390)
+#' @usage PG(norm=300, w.low=275, w.high=390)
 #'
 #' @references
 #' [1] Flint, S. and Caldwell M. M. (2003) A biological spectral weighting function for
@@ -38,7 +39,7 @@
 #' PG()
 #' PG(300)
 
-PG <- function(norm=300, w.high=390) {
-  new_waveband(w.low=275, w.high=w.high, weight="SWF", SWF.q.fun=PG.q.fun, SWF.norm=299.925658,
+PG <- function(norm=300, w.low=275, w.high=390) {
+  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=PG.q.fun, SWF.norm=299.925658,
                norm=norm, wb.name=paste("PG", as.character(norm), sep="."), wb.label="PG")
 }

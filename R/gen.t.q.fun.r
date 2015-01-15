@@ -7,7 +7,11 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source.  The returned values are based on quantum effectiveness units.
-#' 
+#'
+#' @note For wavelengths shorter than 256 nm the value returned by the equation starts decreasing, but we instead
+#' extrapolate this maximum value, obtained at 256 nm, to shorter wavelengths. For wavelengths longer than 345 nm
+#' we return zero, as is usual parctice.
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
@@ -16,10 +20,14 @@
 
 GEN.T.q.fun <-
 function(w.length){
-    GEN_T.quantum <- numeric(length(w.length))
-    GEN_T.quantum[w.length <= 345] <- 
-      exp(-(((265-w.length[w.length <= 345])/21)^2))/0.06217653
-    GEN_T.quantum[w.length > 345] <- 0.0
-    return(GEN_T.quantum)
+    wl.within <- w.length >= 265 & w.length <= 345
+    spectral_weights <- numeric(length(w.length))
+    spectral_weights[w.length < 265] <- 16.08324
+    if (any(wl.within)) {
+      spectral_weights[wl.within] <-
+      exp(-(((265-w.length[wl.within])/21)^2))/0.06217653
+    }
+    spectral_weights[w.length > 345] <- 0.0
+    return(spectral_weights)
 }
 

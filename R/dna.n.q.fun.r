@@ -7,7 +7,11 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source.  The returned values are based on quantum effectiveness units.
-#' 
+#'
+#' @note The digitized data as used in the TUV model covers the wavelength range from 256 nm to 364 nm.
+#' For longer wavelengths we set the value to zero, and for shorter wavelengths we extrapolate the value
+#' for 256 nm.
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
@@ -15,12 +19,16 @@
 #' DNA.N.q.fun(293:400)
 
 DNA.N.q.fun <-
-function(w.length){
-    SETLOW_TUV.quantum <- numeric(length(w.length))
-    SETLOW_TUV.quantum[w.length <= 364] <- 
-      spline(SETLOW.raw.data$Wavelength,SETLOW.raw.data$SETLOW74,
-      xout=w.length[w.length <= 364])$y
-    SETLOW_TUV.quantum[w.length > 364] <- 0.0
-    return(SETLOW_TUV.quantum)
-}
+  function(w.length){
+    wl.within <- w.length >= 256 & w.length <= 364
+    spectral_weights <- numeric(length(w.length))
+    spectral_weights[w.length < 256] <- 32 # the value at 256 nm
+    if (any(wl.within)) { # avoids error in spline when xout is empty
+      spectral_weights[wl.within] <- spline(SETLOW.raw.data$Wavelength,
+                                            SETLOW.raw.data$SETLOW74,
+                                            xout=w.length[wl.within])$y
+    }
+    spectral_weights[w.length > 364] <- 0.0
+    return(spectral_weights)
+  }
 

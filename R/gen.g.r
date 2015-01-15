@@ -2,15 +2,14 @@
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'
-#' @usage GEN.G(norm=300, w.high=313.3)
+#' @usage GEN.G(norm=300, w.low=275, w.high=313.3)
 #'
 #' @param norm normalization wavelength (nm)
+#' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
 #'
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
-#'
-#' @usage GEN.G(norm=300)
 #'
 #' @references
 #' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and development of higher plants.
@@ -37,8 +36,8 @@
 #' GEN.G()
 #' GEN.G(300)
 
-GEN.G <- function(norm=300, w.high=313.3) {
-  new_waveband(w.low=275, w.high=w.high, weight="SWF", SWF.q.fun=GEN.G.q.fun, SWF.norm=280,
+GEN.G <- function(norm=300, w.low=275, w.high=313.3) {
+  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN.G.q.fun, SWF.norm=280,
                norm=norm, wb.name=paste("GEN.G", as.character(norm), sep="."), wb.label="GEN(G)")
 }
 

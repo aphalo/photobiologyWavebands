@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Waveband definitions for radiation quantification: User Guide}
-%\VignetteDepends{knitr, photobiology, photobiologyWavebands}
+%\VignetteDepends{knitr, photobiology, photobiologygg, photobiologyWavebands}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -272,7 +272,7 @@ e_irrad(sun.spct, CIE())
                        &             & function    & $\lambda$ (nm) & $\lambda$ (nm) & $\lambda$ (nm)\\
        \midrule
        Gen. plant action & Green & \texttt{GEN.G(norm, w.low, w.high)} & 300 & 275 & 313.3\\
-       Gen. plant action & Thimijan & \texttt{GEN.T(norm, w.low, w.high)} & 300 & 275 & 313.3\\
+       Gen. plant action & Thimijan & \texttt{GEN.T(norm, w.low, w.high)} & 300 & 275 & 345.0\\
        Gen. plant action & Micheletti & \texttt{GEN.M(norm, w.low, w.high)} & 300 & 275 & 313.3\\
        Plant growth & Flint \& Caldwell & \texttt{PG(norm, w.low, w.high)} & 300 & 275 & 390.0\\
        Erythemal & CIE98 & \texttt{CIE(norm, w.low, w.high)} & 298 & 250 & 400.0\\
@@ -335,11 +335,11 @@ In practice these functions are mainly used internally by the package, and very 
 same output can by obtained by multiplication of \texttt{source.spct} objects by \texttt{waveband} objects.
 
 <<>>=
-plot(sun.spct * CIE(), annotations = NULL)
+plot(sun.spct * CIE())
 @
 
 <<>>=
-plot(source.spct(285:400, 1) * CIE(), annotations = NULL)
+plot(source.spct(285:400, 1) * CIE())
 @
 
 <<>>=

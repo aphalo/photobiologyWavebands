@@ -15,7 +15,8 @@ Depends:
     photobiology (>= 0.5.1)
 Suggests:
     knitr,
-    ggplot2
+    ggplot2,
+    photobiologygg
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

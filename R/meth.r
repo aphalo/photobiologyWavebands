@@ -2,8 +2,10 @@
 #'
 #' Methane production from pectin BSWF
 #'
-#' @usage CH4(norm=300)
+#' @usage CH4(norm=300, w.low=275, w.high=400)
 #' @param norm normalization wavelength (nm)
+#' @param w.low short-end boundary wavelength (nm)
+#' @param w.high long-end boundary wavelength (nm)
 #'
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
@@ -24,8 +26,8 @@
 #' CIE()
 #' CIE(300)
 
-CH4 <- function(norm=300) {
-  new_waveband(w.low=275, w.high=400,
+CH4 <- function(norm=300, w.low=275, w.high=400) {
+  new_waveband(w.low=w.low, w.high=w.high,
                weight="SWF", SWF.e.fun=CH4.e.fun, SWF.norm=300,
                norm=norm,
                wb.name=paste("CH4pect", as.character(norm), sep="."), wb.label="CH4 pectin")
