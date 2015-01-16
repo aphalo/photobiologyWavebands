@@ -12,7 +12,7 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyWavebands\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.2.3\cr
+#' Version: \tab 0.2.4\cr
 #' Date: \tab 2015-01-11\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
