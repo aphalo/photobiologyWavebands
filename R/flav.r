@@ -11,7 +11,9 @@
 #'
 #' @usage FLAV(norm=300, w.low=275, w.high=346)
 #' @references
-#' Ibdah et al. (20XX)
+#' Ibdah, M.; Krins, A.; Seidlitz, H. K.; Heller, W.; Strack, D. & Vogt, T. Spectral
+#' dependence of flavonol and betacyanin accumulation in Mesembryanthemum crystallinum
+#' under enhanced ultraviolet radiation. Plant, Cell & Environment, 2002, 25, 1145-1154
 #'
 #' @export
 #'

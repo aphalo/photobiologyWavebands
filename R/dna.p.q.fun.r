@@ -8,17 +8,16 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source.  The returned values are based on quantum effectiveness units.
-#' 
-#' @references \url{http://uv4growth.dyndns.org/}
+#'
 #' @keywords misc
 #' @export
 #' @examples
 #' DNA.P.q.fun(293:400)
-#' 
+#'
 DNA.P.q.fun <-
 function(w.length){
     QUAITE_MUSIL.quantum290 <- numeric(length(w.length))
-    QUAITE_MUSIL.quantum290[w.length<400] <- 
+    QUAITE_MUSIL.quantum290[w.length<400] <-
       22.657e-3*7.98e-16*exp(1.118e4/w.length[w.length<400])
     QUAITE_MUSIL.quantum290[w.length >= 400] <- 0
     return(QUAITE_MUSIL.quantum290)

@@ -11,7 +11,10 @@
 #'
 #' @usage DNA.P(norm=300, w.low=275, w.high=400)
 #' @references
-#' Quaite (19XX), Musil (200x)
+#' Quaite, F. E.; Sutherland, B. M. & Sutherland, J. C. Action spectrum for DNA damage
+#' in alfalfa lowers predicted impact of ozone depletion. Nature, 1992, 358, 576–578
+#'
+#' Musil, C. F. ... (200x) ...
 #'
 #' @export
 #'

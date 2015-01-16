@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
-%\VignetteDepends{knitr, photobiology, photobiologyWavebands, ggplot2}
+%\VignetteDepends{knitr, photobiology, photobiologygg, photobiologyWavebands, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -28,7 +28,7 @@ opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
-library(ggplot2)
+library(photobiologygg)
 library(photobiologyWavebands)
 @
 
@@ -63,60 +63,103 @@ print(fig_log)
 @
 
 \newpage
-\section{CIE 1998, erythemal}
+
+\section{Plotting wavebands}
+
+Wavebands can be directly plotted with function plot. Here we guive just a couple of examples,
+as with the many options plotting all wavebands using different options would be tedious.
+
+<<>>=
+plot(Red())
+@
+
+We can limit the plotted wavelengths to a range, even using another waveband object.
+
+<<>>=
+plot(Red(), range = VIS())
+@
+
+\newpage
+Or plot using a different defintions.
+
+<<>>=
+plot(Red(std = "ISO"), range = VIS())
+@
+
+<<>>=
+plot(Red(std = "Smith"), range = VIS())
+@
+
+\newpage
+
+Waveband objetcs defining BSWFs can be similarly plotted.
+
+<<>>=
+plot(CIE(), range=UV())
+@
+
+<<>>=
+plot(CIE(norm = 300), range = UV())
+@
+
+\newpage
+
+\section{The BSwF functions}
+
+\subsection{CIE 1998, erythemal}
 <<plot-CIE>>=
 my.plotter(CIE.e.fun, ylab="CIE98 erythemal action (energy)")
 @
 
 %\newpage
-\section{DNA `Plant', Quaite}
+\subsection{DNA `Plant', Quaite}
 <<plot-DNA-P>>=
 my.plotter(DNA.P.q.fun, ylab="DNA 'plant or Quaite' action (quantum)")
 @
 
 \newpage
-\section{DNA `naked', Setlow}
+\subsection{DNA `naked', Setlow}
 <<plot-DNA-N>>=
 my.plotter(DNA.N.q.fun, ylab="DNA 'naked or Setlow' action (quantum)")
 @
 
 %\newpage
-\section{DNA `Green \& Miller', $\approx$Setlow}
+\subsection{DNA `Green \& Miller', $\approx$Setlow}
 <<plot-DNA-GM>>=
 my.plotter(DNA.GM.q.fun, ylab="DNA 'Green and Miller' action (quantum)")
 @
 
 \newpage
-\section{GPAS `Green', Caldwell}
+\subsection{GPAS `Green', Caldwell}
 <<plot-GEN-G>>=
 my.plotter(GEN.G.q.fun, ylab="GPAS 'Green' action (quantum)")
 @
 
 %\newpage
-\section{GPAS `Thimijan', Caldwell}
+\subsection{GPAS `Thimijan', Caldwell}
 <<plot-GEN-T>>=
 my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
 @
 
 \newpage
-\section{GPAS `Micheletti', Caldwell}
+\subsection{GPAS `Micheletti', Caldwell}
 <<plot-GEN-M>>=
 my.plotter(GEN.M.q.fun, ylab="GPAS 'Micheletti' action (quantum)")
 @
 
 %\newpage
-\section{PG `Plant Growth', Flint \& Caldwell}
+\subsection{PG `Plant Growth', Flint \& Caldwell}
 <<plot-PG>>=
 my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
 @
 
 \newpage
-\section{Flavonoid, Ibdah}
+\subsection{Flavonoid, Ibdah}
 <<plot-FLAV>>=
 my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
 @
 
-\section{Methane, McLeod}
+\subsection{Methane, McLeod}
 <<plot-CH4>>=
 my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
 @

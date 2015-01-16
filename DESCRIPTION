@@ -2,7 +2,7 @@ Package: photobiologyWavebands
 Type: Package
 Title: Waveband definifitions for UV, VIS, and IR radiation
 Version: 0.2.3
-Date: 2015-01-11
+Date: 2015-01-16
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides pre-defined functions for different
@@ -12,7 +12,7 @@ License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.0.0),
-    photobiology (>= 0.5.1)
+    photobiology (>= 0.5.6)
 Suggests:
     knitr,
     ggplot2,

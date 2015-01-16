@@ -11,8 +11,12 @@
 #'
 #' @usage GEN.T(norm=300, w.low=275, w.high=345)
 #' @references
-#' Caldwell, M. M. (1971)
-#' Timijan et al. (198X)
+#' [1] Caldwell, M. M. (1971) Solar UV irradiation and the growth and development of higher plants.
+#' In Giese, A. C. (Ed.) Photophysiology, Academic Press, 1971, 6, 131-177
+#'
+#' [2] Thimijan RW, Cams HR, Campbell L. (1978) Radiation sources and related environmental control for
+#' biological and climatic eflFects of UV research. Final report EPA-IAG-D6-0168. Washington:
+#' Environmental Protection Agency.
 #'
 #' @export
 #' @seealso \code{\link{GEN.G}} \code{\link{GEN.M}} \code{\link{PG}} \code{\link{new_waveband}}

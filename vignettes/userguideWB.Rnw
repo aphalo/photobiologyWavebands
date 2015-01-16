@@ -23,7 +23,7 @@
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=8, fig.height=6, out.width='.95\\textwidth')
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=8, fig.height=5.5, out.width='.95\\textwidth')
 options(replace.assign=TRUE,width=55)
 @
 
@@ -130,7 +130,7 @@ Irradiances for different wavebands can be grouped into a list of any length. If
 
 <<>>=
 e_irrad(sun.spct, list(Blue(), VIS()))
-e_irrad(sun.spct, list(B=Blue(), VIS()))
+e_irrad(sun.spct, list(B = Blue(), VIS()))
 @
 
 A few functions for generating coherent lists of wavebands are also defined (Table \ref{tab:uw:lists}).
@@ -326,7 +326,7 @@ read from a file.
 # at 1 nm intervals
 wavelengths1 <- 285:400
 action.spectrum1 <- CIE.e.fun(wavelengths1)
-# plot(wavelengths1, action.spectrum1, type="p")
+# plot(wavelengths1, action.spectrum1, type = "p")
 @
 
 All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.
@@ -334,16 +334,31 @@ All functions accept a wavelengths vector with variable and arbitrary step sizes
 In practice these functions are mainly used internally by the package, and very rarely in user code, as the
 same output can by obtained by multiplication of \texttt{source.spct} objects by \texttt{waveband} objects.
 
+Compare the following two plots,
+
+<<>>=
+plot(sun.spct)
+@
+
 <<>>=
 plot(sun.spct * CIE())
 @
+
+One can use operators and by multiplying spectral irardiance equal to one by a waveband obtain a plot,
 
 <<>>=
 plot(source.spct(285:400, 1) * CIE())
 @
 
+However, it is simpler and clearer to directly plot the wavband.
+
 <<>>=
-plot(sun.spct)
+plot(CIE(), range = c(285,400))
 @
+
+<<>>=
+plot(CIE(), range = c(285,400), norm = 300)
+@
+
 
 \end{document}

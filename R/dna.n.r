@@ -10,12 +10,14 @@
 #' and normalization wavelength.
 #'
 #' @usage DNA.N(norm=300, w.low=275, w.high=400)
-#' @references
-#' Webb, A. (20XX)
 #'
 #' @export
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#'
+#' @references
+#' Setlow, RB. The Wavelengths in Sunlight Effective in Producing Skin Cancer: A Theoretical
+#' Analysis. Proceedings of the National Academy of Sciences, 1974, 71, 3363-3366
 #'
 #' @examples
 #' DNA.N()

@@ -10,7 +10,8 @@
 #'
 #' @export
 #' @references
-#' ISO-21348
+#' ISO-21348:2007 Space environment (natural and artificial) -- Process for determining
+#' solar irradiances. ISO, Geneva.
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
