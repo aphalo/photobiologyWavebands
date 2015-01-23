@@ -1,7 +1,13 @@
+photobiologyWavebands 0.2.5
+===========================
+
+Updated vignettes.
+
 photobiologyWavebands 0.2.4
 ===========================
 
 Update to documentation and vignettes.
+UVR8-related data and functions moved to package photobiologyPlants.
 
 photobiologyWavebands 0.2.3
 ===========================

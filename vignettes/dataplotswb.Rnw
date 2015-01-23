@@ -1,5 +1,5 @@
 %\VignetteEngine{knitr}
-%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
+%\VignetteIndexEntry{Wavebands and BSWFs: Catalogue of definitions}
 %\VignetteDepends{knitr, photobiology, photobiologygg, photobiologyWavebands, ggplot2}
 %\VignetteKeyword{misc}
 
@@ -24,7 +24,7 @@
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', warning=FALSE)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=8, fig.height=5, out.width='.95\\textwidth', warning=FALSE)
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
@@ -36,7 +36,7 @@ library(photobiologyWavebands)
 my_version <- packageVersion("photobiologyWavebands")
 @
 
-\title{\PBWB Version \Sexpr{my_version}\\  Catalogue of UV BSWFs}
+\title{\PBWB Version \Sexpr{my_version}\\  Catalogue of waveband definitions\\ and BSWF functions}
 
 \author{Pedro J. Aphalo}
 
@@ -49,34 +49,29 @@ library(ggplot2)
 library(photobiologyWavebands)
 @
 
-<<setup-function>>=
-my.plotter <- function(bwfs.fun, w.low=250, w.high=400, ylab="Action"){
-  spectrum.data <- data.frame(w.length=seq(250, 400, length.out=300))
-spectrum.data$action <- bwfs.fun(spectrum.data$w.length)
-fig_linear <- ggplot(aes(x=w.length, y=action), data=spectrum.data) +
-  labs(x="Wavelength (nm)", y=ylab) +
-  geom_line()
-fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
-print(fig_linear)
-print(fig_log)
-}
-@
+In this vignette we plot some examples of \texttt{waveband} constructors defining wavelength ranges,
+and all constructors for BSWFs, plus the BSWFs function definitions. Many of these constructors have
+formal arguments that can be used to obtain different `flavours' of the defintiions as used in the
+scientific literature. We show only a few of such examples.
+
+The references to the defintions in the literature and further explanations are given in the documentation
+accesible through R's \texttt{help} for each waveband and function definition.
 
 \newpage
 
-\section{Plotting wavebands}
+\section{Wavebands}
 
 Wavebands can be directly plotted with function plot. Here we guive just a couple of examples,
 as with the many options plotting all wavebands using different options would be tedious.
 
 <<>>=
-plot(Red())
+plot(PAR())
 @
 
 We can limit the plotted wavelengths to a range, even using another waveband object.
 
 <<>>=
-plot(Red(), range = VIS())
+plot(PAR(), range = VIS())
 @
 
 \newpage
@@ -92,26 +87,93 @@ plot(Red(std = "Smith"), range = VIS())
 
 \newpage
 
-Waveband objetcs defining BSWFs can be similarly plotted.
+Waveband objetcs defining BSWFs can be similarly plotted. The `boxes' containing the names of the wavebands show the range of wavelengths used for integration when calculating effective irradiances.
 
 <<>>=
-plot(CIE(), range=UV())
+plot(CIE(), range=c(250,450))
 @
 
 <<>>=
-plot(CIE(norm = 300), range = UV())
+plot(CIE(norm = 300), range=c(250,450))
 @
 
 \newpage
 
-\section{The BSwF functions}
+<<>>=
+plot(GEN.G(), range=c(250,450))
+@
 
+<<>>=
+plot(GEN.T(), range=c(250,450))
+@
+
+\newpage
+
+<<>>=
+plot(GEN.M(), range=c(250,450))
+@
+
+<<>>=
+plot(PG(), range=c(250,450))
+@
+
+\newpage
+
+As used in the TUV model.
+
+<<>>=
+plot(PG(w.high = 366), range=c(250,450))
+@
+
+<<>>=
+plot(FLAV(), range=c(250,450))
+@
+
+\newpage
+
+<<>>=
+plot(DNA.N(), range=c(250,450))
+@
+
+<<>>=
+plot(DNA.P(), range=c(250,450))
+@
+\newpage
+
+<<>>=
+plot(DNA.GM(), range=c(250,450))
+@
+
+<<>>=
+plot(CH4(), range=c(250,450))
+@
+
+\newpage
+
+\section{The BSWF functions}
+
+We define a function that takes as argument the function to be plotted, so as to simplify later code.
+
+<<setup-function>>=
+my.plotter <- function(bwfs.fun, w.low=250, w.high=450, ylab="Action"){
+  spectrum.data <- data.frame(w.length=seq(w.low, w.high, length.out=200))
+spectrum.data$action <- bwfs.fun(spectrum.data$w.length)
+fig_linear <- ggplot(aes(x=w.length, y=action), data=spectrum.data) +
+  labs(x="Wavelength (nm)", y=ylab) +
+  geom_line()
+fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
+print(fig_linear)
+print(fig_log)
+}
+@
+
+\newpage
 \subsection{CIE 1998, erythemal}
 <<plot-CIE>>=
 my.plotter(CIE.e.fun, ylab="CIE98 erythemal action (energy)")
 @
 
-%\newpage
+\newpage
 \subsection{DNA `Plant', Quaite}
 <<plot-DNA-P>>=
 my.plotter(DNA.P.q.fun, ylab="DNA 'plant or Quaite' action (quantum)")
@@ -123,7 +185,7 @@ my.plotter(DNA.P.q.fun, ylab="DNA 'plant or Quaite' action (quantum)")
 my.plotter(DNA.N.q.fun, ylab="DNA 'naked or Setlow' action (quantum)")
 @
 
-%\newpage
+\newpage
 \subsection{DNA `Green \& Miller', $\approx$Setlow}
 <<plot-DNA-GM>>=
 my.plotter(DNA.GM.q.fun, ylab="DNA 'Green and Miller' action (quantum)")
@@ -135,7 +197,7 @@ my.plotter(DNA.GM.q.fun, ylab="DNA 'Green and Miller' action (quantum)")
 my.plotter(GEN.G.q.fun, ylab="GPAS 'Green' action (quantum)")
 @
 
-%\newpage
+\newpage
 \subsection{GPAS `Thimijan', Caldwell}
 <<plot-GEN-T>>=
 my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
@@ -147,7 +209,7 @@ my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
 my.plotter(GEN.M.q.fun, ylab="GPAS 'Micheletti' action (quantum)")
 @
 
-%\newpage
+\newpage
 \subsection{PG `Plant Growth', Flint \& Caldwell}
 <<plot-PG>>=
 my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
@@ -159,6 +221,7 @@ my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
 my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
 @
 
+\newpage
 \subsection{Methane, McLeod}
 <<plot-CH4>>=
 my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
