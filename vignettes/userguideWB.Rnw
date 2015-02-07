@@ -93,7 +93,7 @@ output units ("photon" or "energy") can also be supplied.
        Yellow & ISO-21348 & \texttt{Yellow("ISO")} & $570\leq\lambda<591$ \\
        Orange & ISO-21348 & \texttt{Orange("ISO")} & $591\leq\lambda<610$ \\
        Red & Smith & \texttt{Red("Smith")} & $650\leq\lambda<670$ \\
-       Red & Sellaro & \texttt{Red("Sellaro")} & $650\leq\lambda<670$ \\
+       Red & Sellaro & \texttt{Red("Sellaro")} & $620\leq\lambda<680$ \\
        Red & ISO-21348 & \texttt{Red("ISO")} & $610\leq\lambda<760$ \\
        Far-red & Smith & \texttt{Far\_red("Smith")} & $720\leq\lambda<740$ \\
        Far-red & Sellaro & \texttt{Far\_red("Sellaro")} & $700\leq\lambda<750$ \\
