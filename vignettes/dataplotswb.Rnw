@@ -131,18 +131,26 @@ plot(FLAV(), range=c(250,450))
 
 \newpage
 
+
 <<>>=
 plot(DNA.N(), range=c(250,450))
 @
 
 <<>>=
+plot(DNA.N(w.low = 256, w.high = 360), range=c(250,450))
+@
+
+\newpage
+
+<<>>=
 plot(DNA.P(), range=c(250,450))
 @
-\newpage
 
 <<>>=
 plot(DNA.GM(), range=c(250,450))
 @
+
+\newpage
 
 <<>>=
 plot(CH4(), range=c(250,450))
@@ -226,5 +234,20 @@ my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
 <<plot-CH4>>=
 my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
 @
+
+\section{Luminous efficiency curves}
+
+<<>>=
+plot(CIE1924_lef.spct, annotations = c("colour.guide", "peaks"))
+@
+
+<<>>=
+plot(CIE2008_lef2deg.spct, annotations = c("colour.guide", "peaks"))
+@
+
+<<>>=
+plot(CIE1951_scotopic_lef.spct, annotations = c("colour.guide", "peaks"))
+@
+
 
 \end{document}

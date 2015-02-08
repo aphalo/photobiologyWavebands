@@ -360,5 +360,31 @@ plot(CIE(), range = c(285,400))
 plot(CIE(), range = c(285,400), norm = 300)
 @
 
+\section{Luminous flux}
+
+The luminuous flux per unit are in lux can be calculated as follows using the original luminous efficency function for the human eye using for defining the lumen. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux.
+
+<<>>=
+e_response(sun.spct * CIE1924_lef.spct) * photopic_sensitivity
+@
+
+The luminuous flux per unit are in lux can be calculated as follows using the latest luminous efficency function for the human eye.
+
+<<>>=
+e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
+@
+
+As the luminous effciency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, as small correction is need for exact results.
+
+<<>>=
+e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
+                       interpolate_spct(CIE2008_lef2deg.spct, 555)$s.e.response
+@
+
+An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.
+
+<<>>=
+e_response(sun.spct / 1000 * CIE1951_scotopic_lef.spct) * scotopic_sensitivity
+@
 
 \end{document}
