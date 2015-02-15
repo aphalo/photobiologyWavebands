@@ -2,11 +2,12 @@ photobiologyWavebands 0.2.6
 ===========================
 
 Added luminous efficiency functions for human vision, and the constants
-in the definition of Lumen.
+used in the definition of Lumen.
 Setlow's BSWF is now stored as a response.spct object using the same
 variable names as in the rest of the suite.
 The Setlow data from TUV has already been converted to energy units,
-but this was not updated when this data was added to the package.
+but this was not noticed when this data was added to the package. This
+bug is now corrected.
 Updated User Guide with some examples of the calculation of luminous
 flux in lux from spectral irradiance data.
 Added plots of the luminous efficiency curves to the Data Plots vignette.

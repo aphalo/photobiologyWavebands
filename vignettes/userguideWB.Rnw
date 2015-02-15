@@ -368,13 +368,13 @@ The luminuous flux per unit are in lux can be calculated as follows using the or
 e_response(sun.spct * CIE1924_lef.spct) * photopic_sensitivity
 @
 
-The luminuous flux per unit are in lux can be calculated as follows using the latest luminous efficency function for the human eye.
+The luminuous flux per unit area in lux can be calculated as follows using the latest luminous efficency function for the human eye.
 
 <<>>=
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
 @
 
-As the luminous effciency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, as small correction is need for exact results.
+As the luminous effciency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.
 
 <<>>=
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
@@ -384,7 +384,8 @@ e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
 An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.
 
 <<>>=
-e_response(sun.spct / 1000 * CIE1951_scotopic_lef.spct) * scotopic_sensitivity
+moon.spct <- sun.spct / 1000 # a placeholder for now!
+e_response(moon.spct * CIE1951_scotopic_lef.spct) * scotopic_sensitivity
 @
 
 \end{document}
