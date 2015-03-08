@@ -49,6 +49,11 @@ library(ggplot2)
 library(photobiologyWavebands)
 @
 
+<<>>=
+options(photobiology.plot.annotations =
+          c("boxes", "labels", "colour.guide", "title"))
+@
+
 In this vignette we plot some examples of \texttt{waveband} constructors defining wavelength ranges,
 and all constructors for BSWFs, plus the BSWFs function definitions. Many of these constructors have
 formal arguments that can be used to obtain different `flavours' of the defintiions as used in the
@@ -164,11 +169,9 @@ We define a function that takes as argument the function to be plotted, so as to
 
 <<setup-function>>=
 my.plotter <- function(bwfs.fun, w.low=250, w.high=450, ylab="Action"){
-  spectrum.data <- data.frame(w.length=seq(w.low, w.high, length.out=200))
-spectrum.data$action <- bwfs.fun(spectrum.data$w.length)
-fig_linear <- ggplot(aes(x=w.length, y=action), data=spectrum.data) +
-  labs(x="Wavelength (nm)", y=ylab) +
-  geom_line()
+  fig_linear <- ggplot(data.frame(x = c(w.low, w.high)), aes(x)) +
+  stat_function(fun = bwfs.fun) +
+  labs(x="Wavelength (nm)", y=ylab, title= deparse(substitute(bwfs.fun)))
 fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
 print(fig_linear)
 print(fig_log)
@@ -238,15 +241,21 @@ my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
 \section{Luminous efficiency curves}
 
 <<>>=
-plot(CIE1924_lef.spct, annotations = c("colour.guide", "peaks"))
+options(photobiology.plot.annotations =
+          c("peaks", "colour.guide", "title"))
+options(photobiology.radiation.unit = "photon")
 @
 
 <<>>=
-plot(CIE2008_lef2deg.spct, annotations = c("colour.guide", "peaks"))
+plot(CIE1924_lef.spct)
 @
 
 <<>>=
-plot(CIE1951_scotopic_lef.spct, annotations = c("colour.guide", "peaks"))
+plot(CIE2008_lef2deg.spct)
+@
+
+<<>>=
+plot(CIE1951_scotopic_lef.spct)
 @
 
 
