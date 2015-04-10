@@ -1,3 +1,11 @@
+photobiologyWavebands 0.2.8
+===========================
+
+Edited the definitions of Red() and Far_red() to include additional
+wavelength limits as used by other authors.
+
+Updated User Guide.
+
 photobiologyWavebands 0.2.7
 ===========================
 

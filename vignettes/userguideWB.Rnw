@@ -76,12 +76,14 @@ output units ("photon" or "energy") can also be supplied.
        \toprule
        Waveband & Source & Dose or irrad. & Waveband (nm) \\
        \midrule
-       \UV & ISO-21348 & \texttt{UVB()} & $100\leq\lambda<400$ \\
-       \UVC & ISO-21348 & \texttt{UVC()} & $100\leq\lambda<280$ \\
-       \UVB & ISO-21348 & \texttt{UVB()} & $280\leq\lambda<315$ \\
-       \UVB & n.a. & \texttt{UVB(std="none")} & $280\leq\lambda<320$ \\
-       \UVA & ISO-21348 & \texttt{UVA()} & $315\leq\lambda<400$ \\
-       \UVA & n.a. & \texttt{UVA(std="none")} & $320\leq\lambda<400$ \\
+       \UV & ISO-21348 & \texttt{UV("ISO")} & $100\leq\lambda<400$ \\
+       \UVC & ISO-21348 & \texttt{UVC("ISO")} & $100\leq\lambda<280$ \\
+       \UVC & n.a. & \texttt{UVC("medical")} & $220\leq\lambda<290$ \\
+       \UVC & n.a. & \texttt{UVC("none")} & $200\leq\lambda<280$ \\
+       \UVB & ISO-21348 & \texttt{UVB("ISO")} & $280\leq\lambda<315$ \\
+       \UVB & n.a. & \texttt{UVB("none")} & $280\leq\lambda<320$ \\
+       \UVA & ISO-21348 & \texttt{UVA("ISO")} & $315\leq\lambda<400$ \\
+       \UVA & n.a. & \texttt{UVA("none")} & $320\leq\lambda<400$ \\
        \midrule
        Visible & ISO-21348 & \texttt{VIS("ISO")} & $380\leq\lambda<760$ \\
        Photosynthesis  & n.a. & \texttt{PAR("Plant")} & $400\leq\lambda<700$ \\
@@ -92,13 +94,19 @@ output units ("photon" or "energy") can also be supplied.
        Green & ISO-21348 & \texttt{Green("ISO")} & $500\leq\lambda<570$ \\
        Yellow & ISO-21348 & \texttt{Yellow("ISO")} & $570\leq\lambda<591$ \\
        Orange & ISO-21348 & \texttt{Orange("ISO")} & $591\leq\lambda<610$ \\
-       Red & Smith & \texttt{Red("Smith")} & $650\leq\lambda<670$ \\
-       Red & Sellaro & \texttt{Red("Sellaro")} & $620\leq\lambda<680$ \\
        Red & ISO-21348 & \texttt{Red("ISO")} & $610\leq\lambda<760$ \\
-       Far-red & Smith & \texttt{Far\_red("Smith")} & $720\leq\lambda<740$ \\
+       Red & Smith & \texttt{Red("Smith10")} & $655\leq\lambda<665$ \\
+       Red & Smith ? & \texttt{Red("Smith20")} & $650\leq\lambda<670$ \\
+       Red & Inada   & \texttt{Red("Inada")} & $600\leq\lambda<700$ \\
+       Red & Warrington  & \texttt{Red("Warrington")} & $625\leq\lambda<675$ \\
+       Red & Sellaro & \texttt{Red("Sellaro")} & $620\leq\lambda<680$ \\
+       Far-red & ISO & \texttt{Far\_red("ISO")} & not defined \\
+       Far-red & Smith10 & \texttt{Far\_red("Smith")} & $725\leq\lambda<735$ \\
+       Far-red & Smith20 & \texttt{Far\_red("Smith")} & $720\leq\lambda<740$ \\
+       Far-Red & Inada   & \texttt{Red("Inada")} & $700\leq\lambda<800$ \\
+       Far-Red & Warrington  & \texttt{Red("Warrington")} & $700\leq\lambda<850$ \\
        Far-red & Sellaro & \texttt{Far\_red("Sellaro")} & $700\leq\lambda<750$ \\
        Far-red & BTV & \texttt{Far\_red("BTV")} & $700\leq\lambda<760$ \\
-       Far-red & ISO & \texttt{Far\_red("ISO")} & not defined \\
        \midrule
        \textit{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
        \bottomrule
@@ -164,15 +172,18 @@ with(sun.spct,
     \centering
 \textsf{%
        \begin{small}
-       \begin{tabular}{@{}lllc@{}}
+       \begin{tabular}{@{}llll@{}}
        \toprule
        % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-       Waveband & Source & Function & Wavelength range (nm) \\
+       Waveband & Source & Function & std values used \\
        \midrule
-       VIS defs. & ISO-21348 & \texttt{VIS\_bands("ISO")} & $380\leq\lambda<760$ \\
-       UV defs. & ISO-21348 & \texttt{UV\_bands("ISO")} & $100\leq\lambda<400$ \\
-       UV defs. & n.a. & \texttt{UV\_bands("none")} & $100\leq\lambda<400$ \\
-       Plant sens. & n.a. & \texttt{Plant\_bands()} & $380\leq\lambda<750$ \\
+       VIS defs. & ISO-21348 & \texttt{VIS\_bands("ISO")} & "ISO" \\
+       UV defs. & ISO-21348 & \texttt{UV\_bands("ISO")} & "ISO" \\
+       UV defs. & n.a. & \texttt{UV\_bands("none")} & "none" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory20")} & "ISO", "Sellaro" and "Smith20" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory")} & "ISO", "Sellaro" and "Smith20" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory10")} & "ISO", "Sellaro" and "Smith10" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("energy")} & "ISO" and "McCree" \\
 %       Geophys. defs & n.a. & \texttt{Geophys\_bands()} & $100\leq\lambda<10000$ \\
        \bottomrule
      \end{tabular}
@@ -262,6 +273,7 @@ e_irrad(sun.spct, CIE())
     for BSWFs available in this package, are by default as in the original source. Optionally
     they can be normalized to any wavelength within their non-zero range by providing the
     \texttt{norm} argument with a wavelength in nm. The range of wavelengths included when calculating integrals is given by \texttt{w.low} and \texttt{w.high}. The values in the table below are the defaults.}\label{tab:effective}
+    \vspace{1.5ex}
     \centering
 \textsf{%
        \begin{small}

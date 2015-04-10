@@ -5,6 +5,7 @@
 #' UV-B according to medical or dermatological non-standard practice: 280--320 nm.
 #'
 #' @usage UVB(std="ISO")
+#'
 #' @param std a character string "CIE", "ISO", "medical" or "none"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

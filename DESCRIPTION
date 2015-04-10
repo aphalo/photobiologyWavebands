@@ -1,8 +1,8 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband definifitions for UV, VIS, and IR radiation
-Version: 0.2.7
-Date: 2015-03-07
+Version: 0.2.8
+Date: 2015-05-10
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides pre-defined functions for different

@@ -1,11 +1,11 @@
 #' Definition of red waveband
 #'
 #' Red radiation according to "ISO" (610-760 nm) or as commonly defined in plant photobiology,
-#' "Smith" (650-670 nm, as used for R:FR photon ratio), and "Sellaro" (620-680 nm,
-#' as used by Sellaro et al. (2010) to quantify red light). No weighting applied.
+#' "Smith10" (655-665 nm), "Smith20" (650-670 nm), "Inada" (600-700 nm), "Warrington"
+#' (625-675 nm), and "Sellaro" (620-680 nm). No weighting applied.
 #'
 #' @usage Red(std="ISO")
-#' @param std a character string "ISO", "Smith", "Sellaro"
+#' @param std a character string, defaults to "ISO".
 #'
 #' @return a waveband object wavelength defining a wavelength range.
 #'
@@ -23,12 +23,20 @@
 #' ISO (2007) Space environment (natural and artificial) - Process for determining
 #' solar irradiances. ISO Standard 21348. ISO, Geneva.
 #'
+#' Murakami, K., Aiga I. (1994) Red/Far-red photon flux ratio used as
+#' an index number for morphological control of plant growth under
+#' artificial lighting conditions. Proc. Int. Symp. Artificial Lighting,
+#' Acta Horticulturae, 418, ISHS 1997.
+#'
 #' Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
 #' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the
 #' blue/green ratio of natural radiation in Arabidopsis. Plant physiology,
 #' 154(1), 401-409. doi:10.1104/pp.110.160820
 #'
 #' Smith, H. (19xx)
+#'
+#' Smith, H. (1982) Light quality, photoperception and plant strategy.
+#' Annual Review of Plant Physiology, 33:481-518.
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
@@ -39,10 +47,20 @@
 #' Red("Sellaro")
 Red <- function(std="ISO"){
   label="Red"
+  if (std=="Smith") {
+    warning("The definition of 'Smith' defaults to 'Smith10', to restore old behaviour use 'Smith20'.")
+    std <- "Smith10"
+  }
   if (std=="ISO") {
     return(new_waveband(610, 760, wb.name=paste("Red", std, sep="."), wb.label=label))
-  } else if (std=="Smith"){
+  } else if (std=="Smith20"){
     return(new_waveband(650, 670, wb.name=paste("Red", std, sep="."), wb.label="R"))
+  }else if (std=="Smith10"){
+    return(new_waveband(655, 665, wb.name=paste("Red", std, sep="."), wb.label="R"))
+  }else if (std=="Inada"){
+    return(new_waveband(600, 700, wb.name=paste("Red", std, sep="."), wb.label="R"))
+  }else if (std=="Warrington"){
+    return(new_waveband(625, 675, wb.name=paste("Red", std, sep="."), wb.label="R"))
   } else if (std=="Sellaro"){
     return(new_waveband(620, 680, wb.name=paste("Red", std, sep="."), wb.label=label))
   } else {
