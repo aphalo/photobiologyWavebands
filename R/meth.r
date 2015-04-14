@@ -25,10 +25,12 @@
 #' @examples
 #' CIE()
 #' CIE(300)
-
+#'
+#' @family BSWF weighted wavebands
+#'
 CH4 <- function(norm=300, w.low=275, w.high=400) {
   new_waveband(w.low=w.low, w.high=w.high,
-               weight="SWF", SWF.e.fun=CH4.e.fun, SWF.norm=300,
+               weight="SWF", SWF.e.fun=CH4_e_fun, SWF.norm=300,
                norm=norm,
                wb.name=paste("CH4pect", as.character(norm), sep="."), wb.label="CH4 pectin")
 }

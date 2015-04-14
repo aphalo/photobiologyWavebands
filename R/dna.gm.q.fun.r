@@ -8,14 +8,16 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source.  The returned values are based on quantum effectiveness units.
-#' 
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
 #' @examples
-#' DNA.GM.q.fun(293:400)
-
-DNA.GM.q.fun <-
+#' DNA_GM_q_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+DNA_GM_q_fun <-
 function(w.length){
     SETLOW_GM.quantum300 <- numeric(length(w.length))
     SETLOW_GM.quantum300 <- exp(13.82*(1/(1+exp((w.length-310)/9))-1))*30.675

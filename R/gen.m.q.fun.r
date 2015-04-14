@@ -30,9 +30,11 @@
 #' @keywords misc
 #' @export
 #' @examples
-#' GEN.M.q.fun(293:400)
-
-GEN.M.q.fun <-
+#' GEN_M_q_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+GEN_M_q_fun <-
   function(w.length){
     spectral_weights <-
       570.25 - 4.70144 * w.length + 0.01274 * w.length^2 - 1.13118E-5 * w.length^3

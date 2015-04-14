@@ -8,18 +8,20 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source (300 nm) and based on energy effectiveness.
-#' 
-#' @references 
-#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.; Reay, D. S. & McLeod, A. R. 
-#' Global methane emission estimates from ultraviolet irradiation of terrestrial plant foliage. 
+#'
+#' @references
+#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.; Reay, D. S. & McLeod, A. R.
+#' Global methane emission estimates from ultraviolet irradiation of terrestrial plant foliage.
 #' New Phytologist, Blackwell Publishing Ltd, 2010, 187, 417--425 .
 #' @note \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
 #' @examples
-#' CH4.e.fun(293:400)
-#' 
-CH4.e.fun <-
+#' CH4_e_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+CH4_e_fun <-
 function(w.length){
   10^((300 - w.length) / 80)
 }

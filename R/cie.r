@@ -20,10 +20,12 @@
 #' @examples
 #' CIE()
 #' CIE(300)
-
+#'
+#' @family BSWF weighted wavebands
+#'
 CIE <- function(norm=298, w.low=250, w.high=400) {
   new_waveband(w.low=w.low, w.high=w.high,
-               weight="SWF", SWF.e.fun=CIE.e.fun, SWF.norm=298,
+               weight="SWF", SWF.e.fun=CIE_e_fun, SWF.norm=298,
                norm=norm, hinges=c(249.99, 250, 298, 328, 399.99, 400),
                wb.name=paste("CIE98", as.character(norm), sep="."), wb.label="CIE98")
 }

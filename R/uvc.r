@@ -26,7 +26,9 @@
 #' UVC("ISO")
 #' UVC("none")
 #' UVC("medical")
-
+#'
+#' @family unweighted wavebands
+#'
 UVC <- function(std="ISO") {
   label <- "UVC"
   if (std=="ISO" || std=="CIE"){

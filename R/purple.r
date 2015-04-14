@@ -17,6 +17,9 @@
 #' @examples
 #' Purple()
 #' Purple("ISO")
+#'
+#' @family unweighted wavebands
+#'
 Purple <- function(std="ISO"){
   if (std=="ISO") {
     return(new_waveband(360,450, wb.name="Purple.ISO", wb.label="Purple"))

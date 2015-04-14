@@ -23,7 +23,9 @@
 #' UVB("CIE")
 #' UVB("none")
 #' UVB("medical")
-
+#'
+#' @family unweighted wavebands
+#'
 UVB <- function(std="ISO") {
   label <- "UVB"
   if (std=="ISO" || std=="CIE"){

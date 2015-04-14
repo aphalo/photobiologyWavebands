@@ -12,9 +12,12 @@
 #' @keywords misc
 #' @export
 #' @examples
-#' DNA.P.q.fun(293:400)
+#' DNA_P_q_fun(293:400)
 #'
-DNA.P.q.fun <-
+#'
+#' @family BSWF functions
+#'
+DNA_P_q_fun <-
 function(w.length){
     QUAITE_MUSIL.quantum290 <- numeric(length(w.length))
     QUAITE_MUSIL.quantum290[w.length<400] <-

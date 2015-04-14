@@ -44,6 +44,9 @@
 #' Far_red("ISO")
 #' Far_red("Smith")
 #' Far_red("BTV")
+#'
+#' @family unweighted wavebands
+#'
 Far_red <- function(std="ISO"){
   label="FR"
   if (std=="Smith") {

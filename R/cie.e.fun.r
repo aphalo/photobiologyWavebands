@@ -8,18 +8,20 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source (298 nm) and based on energy effectiveness.
-#' 
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
 #' @examples
-#' CIE.e.fun(293:400)
-#' 
-CIE.e.fun <-
+#' CIE_e_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+CIE_e_fun <-
 function(w.length){
     CIE.energy <- numeric(length(w.length))
     CIE.energy[w.length <= 298] <- 1
-    CIE.energy[(w.length > 298) & (w.length <= 328)] <- 
+    CIE.energy[(w.length > 298) & (w.length <= 328)] <-
       10^(0.094*(298-w.length[(w.length > 298) & (w.length <= 328)]))
     CIE.energy[(w.length > 328) & (w.length <= 400)] <-
       10^(0.015*(139-w.length[(w.length > 328) & (w.length <= 400)]))

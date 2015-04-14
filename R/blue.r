@@ -27,6 +27,9 @@
 #' Blue()
 #' Blue("ISO")
 #' Blue("Sellaro")
+#'
+#' @family unweighted wavebands
+#'
 Blue <- function(std="ISO"){
   label="Blue"
   if (std=="ISO") {

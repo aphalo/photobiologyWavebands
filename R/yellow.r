@@ -17,6 +17,9 @@
 #' @examples
 #' Yellow()
 #' Yellow("ISO")
+#'
+#' @family unweighted wavebands
+#'
 Yellow <- function(std="ISO"){
   if (std=="ISO") {
     return(new_waveband(570, 591, wb.name="Yellow.ISO", wb.label="Yellow"))

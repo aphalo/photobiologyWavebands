@@ -25,6 +25,8 @@
 #' UV_bands()
 #' UV_bands("ISO")
 #'
+#' @family lists of unweighted wavebands
+#'
 UV_bands <- function(std="ISO"){
   if (std=="none") {
     stdc <- "ISO"

@@ -8,17 +8,19 @@
 #'
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source.  The returned values are based on quantum effectiveness units.
-#' 
+#'
 #' @references \url{http://uv4growth.dyndns.org/}
 #' @keywords misc
 #' @export
 #' @examples
-#' FLAV.q.fun(293:400)
-
-FLAV.q.fun <-
+#' FLAV_q_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+FLAV_q_fun <-
 function(w.length){
     FLAV.quantum <- numeric(length(w.length))
-    FLAV.quantum[w.length >= 280 & w.length <= 346] <- 
+    FLAV.quantum[w.length >= 280 & w.length <= 346] <-
       exp(45.0 - 0.15 * w.length[w.length >= 280 & w.length <= 346])
     FLAV.quantum[w.length > 346] <- 0.0
     FLAV.quantum[w.length < 280] <- exp(45.0 - 0.15 * 280)

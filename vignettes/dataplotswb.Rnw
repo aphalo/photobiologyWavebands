@@ -105,17 +105,17 @@ plot(CIE(norm = 300), range=c(250,450))
 \newpage
 
 <<>>=
-plot(GEN.G(), range=c(250,450))
+plot(GEN_G(), range=c(250,450))
 @
 
 <<>>=
-plot(GEN.T(), range=c(250,450))
+plot(GEN_T(), range=c(250,450))
 @
 
 \newpage
 
 <<>>=
-plot(GEN.M(), range=c(250,450))
+plot(GEN_M(), range=c(250,450))
 @
 
 <<>>=
@@ -138,21 +138,21 @@ plot(FLAV(), range=c(250,450))
 
 
 <<>>=
-plot(DNA.N(), range=c(250,450))
+plot(DNA_N(), range=c(250,450))
 @
 
 <<>>=
-plot(DNA.N(w.low = 256, w.high = 360), range=c(250,450))
+plot(DNA_N(w.low = 256, w.high = 360), range=c(250,450))
 @
 
 \newpage
 
 <<>>=
-plot(DNA.P(), range=c(250,450))
+plot(DNA_P(), range=c(250,450))
 @
 
 <<>>=
-plot(DNA.GM(), range=c(250,450))
+plot(DNA_GM(), range=c(250,450))
 @
 
 \newpage
@@ -181,61 +181,61 @@ print(fig_log)
 \newpage
 \subsection{CIE 1998, erythemal}
 <<plot-CIE>>=
-my.plotter(CIE.e.fun, ylab="CIE98 erythemal action (energy)")
+my.plotter(CIE_e_fun, ylab="CIE98 erythemal action (energy)")
 @
 
 \newpage
 \subsection{DNA `Plant', Quaite}
 <<plot-DNA-P>>=
-my.plotter(DNA.P.q.fun, ylab="DNA 'plant or Quaite' action (quantum)")
+my.plotter(DNA_P_q_fun, ylab="DNA 'plant or Quaite' action (quantum)")
 @
 
 \newpage
 \subsection{DNA `naked', Setlow}
 <<plot-DNA-N>>=
-my.plotter(DNA.N.q.fun, ylab="DNA 'naked or Setlow' action (quantum)")
+my.plotter(DNA_N_q_fun, ylab="DNA 'naked or Setlow' action (quantum)")
 @
 
 \newpage
 \subsection{DNA `Green \& Miller', $\approx$Setlow}
 <<plot-DNA-GM>>=
-my.plotter(DNA.GM.q.fun, ylab="DNA 'Green and Miller' action (quantum)")
+my.plotter(DNA_GM_q_fun, ylab="DNA 'Green and Miller' action (quantum)")
 @
 
 \newpage
 \subsection{GPAS `Green', Caldwell}
 <<plot-GEN-G>>=
-my.plotter(GEN.G.q.fun, ylab="GPAS 'Green' action (quantum)")
+my.plotter(GEN_G_q_fun, ylab="GPAS 'Green' action (quantum)")
 @
 
 \newpage
 \subsection{GPAS `Thimijan', Caldwell}
 <<plot-GEN-T>>=
-my.plotter(GEN.T.q.fun, ylab="GPAS 'Thimijan' action (quantum)")
+my.plotter(GEN_T_q_fun, ylab="GPAS 'Thimijan' action (quantum)")
 @
 
 \newpage
 \subsection{GPAS `Micheletti', Caldwell}
 <<plot-GEN-M>>=
-my.plotter(GEN.M.q.fun, ylab="GPAS 'Micheletti' action (quantum)")
+my.plotter(GEN_M_q_fun, ylab="GPAS 'Micheletti' action (quantum)")
 @
 
 \newpage
 \subsection{PG `Plant Growth', Flint \& Caldwell}
 <<plot-PG>>=
-my.plotter(PG.q.fun, ylab="Plant growth action (quantum)")
+my.plotter(PG_q_fun, ylab="Plant growth action (quantum)")
 @
 
 \newpage
 \subsection{Flavonoid, Ibdah}
 <<plot-FLAV>>=
-my.plotter(FLAV.q.fun, ylab="Flavonoid action (quantum)")
+my.plotter(FLAV_q_fun, ylab="Flavonoid action (quantum)")
 @
 
 \newpage
 \subsection{Methane, McLeod}
 <<plot-CH4>>=
-my.plotter(CH4.q.fun, ylab="Methane from pectin action (quantum)")
+my.plotter(CH4_q_fun, ylab="Methane from pectin action (quantum)")
 @
 
 \section{Luminous efficiency curves}

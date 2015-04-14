@@ -22,10 +22,12 @@
 #' @examples
 #' FLAV()
 #' FLAV(300)
-
+#'
+#' @family BSWF weighted wavebands
+#'
 FLAV <- function(norm=300, w.low=275, w.high=346) {
   new_waveband(w.low=w.low, w.high=w.high,
-               weight="SWF", SWF.q.fun=FLAV.q.fun, SWF.norm=300,
+               weight="SWF", SWF.q.fun=FLAV_q_fun, SWF.norm=300,
                norm=norm, hinges=c(279.99,280,345.99,346),
                wb.name=paste("FLAV", as.character(norm), sep="."), wb.label="FLAV")
 }

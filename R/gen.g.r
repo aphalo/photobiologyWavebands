@@ -2,7 +2,7 @@
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'
-#' @usage GEN.G(norm=300, w.low=275, w.high=313.3)
+#' @usage GEN_G(norm=300, w.low=275, w.high=313.3)
 #'
 #' @param norm normalization wavelength (nm)
 #' @param w.low short-end boundary wavelength (nm)
@@ -33,11 +33,24 @@
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
 #' @examples
-#' GEN.G()
-#' GEN.G(300)
-
-GEN.G <- function(norm=300, w.low=275, w.high=313.3) {
-  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN.G.q.fun, SWF.norm=280,
+#' GEN_G()
+#' GEN_G(300)
+#'
+#' @family BSWF weighted wavebands
+#'
+GEN_G <- function(norm=300, w.low=275, w.high=313.3) {
+  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN_G_q_fun, SWF.norm=280,
                norm=norm, wb.name=paste("GEN.G", as.character(norm), sep="."), wb.label="GEN(G)")
 }
 
+#' Definition of GPAS (Green) weighted waveband
+#'
+#' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
+#'
+#' @export
+#'
+#' @seealso \code{\link{GEN_G}}
+#'
+#' @keywords internal
+#'
+GEN.G <- GEN_G

@@ -283,14 +283,14 @@ e_irrad(sun.spct, CIE())
        Action spectrum & Formulation & Constructor & norm  & w.low & w.high \\
                        &             & function    & $\lambda$ (nm) & $\lambda$ (nm) & $\lambda$ (nm)\\
        \midrule
-       Gen. plant action & Green & \texttt{GEN.G(norm, w.low, w.high)} & 300 & 275 & 313.3\\
-       Gen. plant action & Thimijan & \texttt{GEN.T(norm, w.low, w.high)} & 300 & 275 & 345.0\\
-       Gen. plant action & Micheletti & \texttt{GEN.M(norm, w.low, w.high)} & 300 & 275 & 313.3\\
+       Gen. plant action & Green & \texttt{GEN\_G(norm, w.low, w.high)} & 300 & 275 & 313.3\\
+       Gen. plant action & Thimijan & \texttt{GEN\_T(norm, w.low, w.high)} & 300 & 275 & 345.0\\
+       Gen. plant action & Micheletti & \texttt{GEN\_M(norm, w.low, w.high)} & 300 & 275 & 313.3\\
        Plant growth & Flint \& Caldwell & \texttt{PG(norm, w.low, w.high)} & 300 & 275 & 390.0\\
        Erythemal & CIE98 & \texttt{CIE(norm, w.low, w.high)} & 298 & 250 & 400.0\\
-       `Naked' DNA & TUV, from Setlow & \texttt{DNA.N(norm, w.low, w.high)} & 300 & 250 & 400.0 \\
-       `Naked' DNA & Green \& Miller & \texttt{DNA.GM(norm, w.low, w.high)} & 300 & 250 & 400.0\\
-       `Plant' DNA & Musil, from Quaite & \texttt{DNA.P(norm, w.low, w.high)} & 300 & 250 & 400.0\\
+       `Naked' DNA & TUV, from Setlow & \texttt{DNA\_N(norm, w.low, w.high)} & 300 & 250 & 400.0 \\
+       `Naked' DNA & Green \& Miller & \texttt{DNA\_GM(norm, w.low, w.high)} & 300 & 250 & 400.0\\
+       `Plant' DNA & Musil, from Quaite & \texttt{DNA\_P(norm, w.low, w.high)} & 300 & 250 & 400.0\\
        Flavonoid & Ibdah & \texttt{FLAV(norm, w.low, w.high)} & 300 & 275 & 346.0\\
 %       UVR8 absorbance & & \texttt{UVR8.Abs(norm)} & n.a & n.a. & n.a.\\
        \bottomrule
@@ -311,15 +311,15 @@ e_irrad(sun.spct, CIE())
        % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
        Action spectrum & Formulation & Function & Norm. $\lambda$ (nm) \\
        \midrule
-       Gen. plant action & Green & \texttt{GEN.G.q.fun(w.length)} & 280 \\
-       Gen. plant action & Thimijan & \texttt{GEN.T.q.fun(w.length)} & 300 \\
-       Gen. plant action & Micheletti & \texttt{GEN.M.q.fun(w.length)} & 300 \\
-        Plant growth & Flint \& Caldwell & \texttt{PG.q.fun(w.length)} & 300 \\
-       Erythemal & CIE98 & \texttt{CIE.e.fun(w.length)} & 298 \\
-       `Naked' DNA & TUV, from Setlow & \texttt{DNA.N.q.fun(w.length)} & n.a. \\
-       `Naked' DNA & Green \& Miller & \texttt{DNA.GM.q.fun(w.length)} & n.a. \\
-       `Plant' DNA & Musil, from Quaite & \texttt{DNA.P.q.fun(w.length)} & 290 \\
-       Flavonoid & Ibdah & \texttt{FLAV.q.fun(w.length)} & 300 \\
+       Gen. plant action & Green & \texttt{GEN\_G\_q\_fun(w.length)} & 280 \\
+       Gen. plant action & Thimijan & \texttt{GEN\_T\_q\_fun(w.length)} & 300 \\
+       Gen. plant action & Micheletti & \texttt{GEN\_M\_q\_fun(w.length)} & 300 \\
+        Plant growth & Flint \& Caldwell & \texttt{PG\_q\_fun(w.length)} & 300 \\
+       Erythemal & CIE98 & \texttt{CIE\_e\_fun(w.length)} & 298 \\
+       `Naked' DNA & TUV, from Setlow & \texttt{DNA\_N\_q\_fun(w.length)} & n.a. \\
+       `Naked' DNA & Green \& Miller & \texttt{DNA\_GM\_q\_fun(w.length)} & n.a. \\
+       `Plant' DNA & Musil, from Quaite & \texttt{DNA\_P\_q\_fun(w.length)} & 290 \\
+       Flavonoid & Ibdah & \texttt{FLAV\_q\_fun(w.length)} & 300 \\
 %       UVR8 absorbance & & \texttt{UVR8.Abs.fun(w)} & n.a \\
        \bottomrule
      \end{tabular}
@@ -337,7 +337,7 @@ read from a file.
 <<eval=TRUE>>=
 # at 1 nm intervals
 wavelengths1 <- 285:400
-action.spectrum1 <- CIE.e.fun(wavelengths1)
+action.spectrum1 <- CIE_e_fun(wavelengths1)
 # plot(wavelengths1, action.spectrum1, type = "p")
 @
 

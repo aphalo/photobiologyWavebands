@@ -16,9 +16,9 @@
 #' @keywords misc
 #' @export
 #' @examples
-#' DNA.N.q.fun(293:400)
+#' DNA_N_q_fun(293:400)
 
-DNA.N.q.fun <-
+DNA_N_q_fun <-
   function(w.length){
     wl.within <- w.length >= 256 & w.length <= 364
     spectral_weights <- numeric(length(w.length))

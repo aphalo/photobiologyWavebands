@@ -21,7 +21,9 @@
 #' UVA("none")
 #' UVA("ISO")
 #' UVA("CIE")
-
+#'
+#' @family unweighted wavebands
+#'
 UVA <- function(std="ISO") {
   label <- "UVA"
   if (std=="ISO" | std=="CIE"){

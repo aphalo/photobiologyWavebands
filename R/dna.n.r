@@ -9,7 +9,7 @@
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
 #'
-#' @usage DNA.N(norm=300, w.low=275, w.high=400)
+#' @usage DNA_N(norm=300, w.low=275, w.high=400)
 #'
 #' @export
 #'
@@ -20,11 +20,25 @@
 #' Analysis. Proceedings of the National Academy of Sciences, 1974, 71, 3363-3366
 #'
 #' @examples
-#' DNA.N()
-#' DNA.N(300)
-
-DNA.N <- function(norm=300, w.low=275, w.high=400) {
+#' DNA_N()
+#' DNA_N(300)
+#'
+#' @family BSWF weighted wavebands
+#'
+DNA_N <- function(norm=300, w.low=275, w.high=400) {
   new_waveband(w.low=w.low, w.high=w.high, SWF.norm=300,
-               weight="SWF", SWF.q.fun=DNA.N.q.fun,
+               weight="SWF", SWF.q.fun=DNA_N_q_fun,
                norm=norm, wb.name=paste("DNA.N", as.character(norm), sep="."), wb.label="DNA Naked")
 }
+
+#' Definition of DNA damage (SETLOW) weighted waveband
+#'
+#' Naked DNA damage BSWF
+#'
+#' @export
+#'
+#' @seealso \code{\link{DNA_N}}
+#'
+#' @keywords internal
+#'
+DNA.N <- DNA_N

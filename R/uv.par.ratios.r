@@ -16,6 +16,9 @@
 #' @examples
 #' data(sun.data)
 #' with(sun.data, UV_PAR_ratio(w.length, s.e.irrad))
+#'
+#' @family photon ratio functions
+#'
 UV_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
   photon_ratio(w.length, s.irrad, UV(std="ISO"), PAR(std="Plant"), unit.in=unit.in)
 }
@@ -38,6 +41,9 @@ UV_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
 #' @examples
 #' data(sun.data)
 #' with(sun.data, UVA_PAR_ratio(w.length, s.e.irrad))
+#'
+#' @family photon ratio functions
+#'
 UVA_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
   photon_ratio(w.length, s.irrad, UVA(std="ISO"), PAR(std="Plant"), unit.in=unit.in)
 }
@@ -60,6 +66,9 @@ UVA_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
 #' @examples
 #' data(sun.data)
 #' with(sun.data, UVB_PAR_ratio(w.length, s.e.irrad))
+#'
+#' @family photon ratio functions
+#'
 UVB_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
   photon_ratio(w.length, s.irrad, UVB(std="ISO"), PAR(std="Plant"), unit.in=unit.in)
 }
@@ -82,6 +91,9 @@ UVB_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
 #' @examples
 #' data(sun.data)
 #' with(sun.data, UVC_PAR_ratio(w.length, s.e.irrad))
+#'
+#' @family photon ratio functions
+#'
 UVC_PAR_ratio <- function(w.length, s.irrad, unit.in="energy"){
   photon_ratio(w.length, s.irrad, UVC(std="ISO"), PAR(std="Plant"), unit.in=unit.in)
 }

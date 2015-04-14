@@ -45,6 +45,9 @@
 #' Red("ISO")
 #' Red("Smith")
 #' Red("Sellaro")
+#'
+#' @family unweighted wavebands
+#'
 Red <- function(std="ISO"){
   label="Red"
   if (std=="Smith") {

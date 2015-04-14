@@ -41,8 +41,10 @@
 #' @examples
 #' PG()
 #' PG(300)
-
+#'
+#' @family BSWF weighted wavebands
+#'
 PG <- function(norm=300, w.low=275, w.high=390) {
-  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=PG.q.fun, SWF.norm=299.925658,
+  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=PG_q_fun, SWF.norm=299.925658,
                norm=norm, wb.name=paste("PG", as.character(norm), sep="."), wb.label="PG")
 }

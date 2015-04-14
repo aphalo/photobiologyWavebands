@@ -16,9 +16,11 @@
 #' @keywords misc
 #' @export
 #' @examples
-#' GEN.T.q.fun(293:400)
-
-GEN.T.q.fun <-
+#' GEN_T_q_fun(293:400)
+#'
+#' @family BSWF functions
+#'
+GEN_T_q_fun <-
 function(w.length){
     wl.within <- w.length >= 265 & w.length <= 345
     spectral_weights <- numeric(length(w.length))

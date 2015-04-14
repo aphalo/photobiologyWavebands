@@ -18,6 +18,9 @@
 #' @examples
 #' VIS()
 #' VIS("ISO")
+#'
+#' @family unweighted wavebands
+#'
 VIS <- function(std="ISO"){
   if (std=="ISO") {
     return(new_waveband(380, 760, wb.name="VIS.ISO", wb.label="VIS"))

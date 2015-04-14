@@ -8,7 +8,7 @@
 #' the CIE98 BSWF but with the wavelength limits adjusted to those used for UVI.
 #'
 #' @description This is just a convenience function that returns the same weights as \code{CIE}
-#' as defined by \code{CIE.e.fun} but with no option to change normalization wavelength, and with
+#' as defined by \code{CIE_e_fun} but with no option to change normalization wavelength, and with
 #' the wavelength limits adjusted to those used for UVI.
 #' Using std="NOAA" follows the definition in
 #' \url{http://www.esrl.noaa.gov/gmd/grad/neubrew/docs/UVindex.pdf} but using CIE98 as SWF.
@@ -39,7 +39,7 @@ UVI_wb <- function(std="NOAA") {
     warning("Unrecognized value for UVI std, using 'WMO'.")
   }
   new_waveband(w.low=w.low, w.high=400,
-               weight="SWF", SWF.e.fun=CIE.e.fun, SWF.norm=298.0,
+               weight="SWF", SWF.e.fun=CIE_e_fun, SWF.norm=298.0,
                norm=298.0, hinges=c(249.99, 250, 298, 328, 399.99, 400),
                wb.name=paste(label, std, sep="."), wb.label=label)
 }

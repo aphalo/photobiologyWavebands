@@ -34,6 +34,9 @@
 #' Green()
 #' Green("ISO") # 500 to 570
 #' Green("Sellaro") # 500 to 570 nm
+#'
+#' @family unweighted wavebands
+#'
 Green <- function(std="ISO"){
   label="Green"
   if (std=="ISO") {
