@@ -87,7 +87,7 @@ plot(Red(std = "ISO"), range = VIS())
 @
 
 <<>>=
-plot(Red(std = "Smith"), range = VIS())
+plot(Red(std = "Smith20"), range = VIS())
 @
 
 \newpage

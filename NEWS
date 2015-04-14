@@ -1,3 +1,9 @@
+photobiologyWavebands 0.3.0
+===========================
+
+Rebuilt data and package with photobiology 0.6.0.
+This required some minor edits to the vignettes.
+
 photobiologyWavebands 0.2.8
 ===========================
 

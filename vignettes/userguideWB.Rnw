@@ -56,7 +56,7 @@ optional definitions, are listed in Table \ref{tab:unweighted}.
 A new waveband definition can be created
 with \texttt{new\_waveband()}\footnote{See package \texttt{photobiology} and its documentation.}. When using data stored in vectors integrated irradiance or dose is calculated
 with functions \texttt{energy\_irradiance()} and \texttt{photon\_irradiance}, which
-take as one argument the waveband descriptor list as an argument. When working with data stored in \texttt{source.spct} objects functions and \texttt{e\_irrad} and \texttt{q\_irrad} are used instead.
+take as one argument the waveband descriptor list as an argument. When working with data stored in \texttt{source\_spct} objects functions and \texttt{e\_irrad} and \texttt{q\_irrad} are used instead.
 
 The functions used for calculating the irradiances from vectors have additional arguments,
 that permit to indicate the type of scale used for the input spectrum ("photon"
@@ -114,7 +114,7 @@ output units ("photon" or "energy") can also be supplied.
      \end{small}
 }\end{table*}
 
-An example using \texttt{sun.spct} included in package \texttt{photobiology}. As the input spectral irradiance is units of \wattnm the output is in \mol or \watt. We multiply by $10^6$ to obtain photon irradiance expressed in \umol.
+An example using \texttt{sun\_spct} included in package \texttt{photobiology}. As the input spectral irradiance is units of \wattnm the output is in \mol or \watt. We multiply by $10^6$ to obtain photon irradiance expressed in \umol.
 
 <<example-1>>=
 e_irrad(sun.spct, PAR()) # W m-2
@@ -344,7 +344,7 @@ action.spectrum1 <- CIE.e.fun(wavelengths1)
 All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.
 
 In practice these functions are mainly used internally by the package, and very rarely in user code, as the
-same output can by obtained by multiplication of \texttt{source.spct} objects by \texttt{waveband} objects.
+same output can by obtained by multiplication of \texttt{source\_spct} objects by \texttt{waveband} objects.
 
 Compare the following two plots,
 
@@ -359,7 +359,7 @@ plot(sun.spct * CIE())
 One can use operators and by multiplying spectral irardiance equal to one by a waveband obtain a plot,
 
 <<>>=
-plot(source.spct(285:400, 1) * CIE())
+plot(source_spct(285:400, 1) * CIE())
 @
 
 However, it is simpler and clearer to directly plot the wavband.
