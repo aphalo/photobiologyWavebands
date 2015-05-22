@@ -1,3 +1,8 @@
+photobiologyWavebands 0.3.1
+===========================
+
+R_FR_ratio() now uses "Smith10" giving 10 nm bands.
+
 photobiologyWavebands 0.3.0
 ===========================
 
