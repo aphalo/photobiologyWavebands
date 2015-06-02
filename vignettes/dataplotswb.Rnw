@@ -105,6 +105,16 @@ plot(CIE(norm = 300), range=c(250,450))
 \newpage
 
 <<>>=
+plot(ICNIRP(), range=c(190,450))
+@
+
+<<>>=
+plot(ICNIRP(), range=c(130,450))
+@
+
+\newpage
+
+<<>>=
 plot(GEN_G(), range=c(250,450))
 @
 
@@ -182,6 +192,12 @@ print(fig_log)
 \subsection{CIE 1998, erythemal}
 <<plot-CIE>>=
 my.plotter(CIE_e_fun, ylab="CIE98 erythemal action (energy)")
+@
+
+\newpage
+\subsection{ICNIRP 2004}
+<<plot-ICNIRP>>=
+my.plotter(ICNIRP_e_fun, ylab="ICNIRP 2004 UVR human response (energy)")
 @
 
 \newpage
