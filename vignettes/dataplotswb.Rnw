@@ -44,9 +44,7 @@ my_version <- packageVersion("photobiologyWavebands")
 
 \section{Introduction}
 
-<<example-0-hidden, eval=FALSE, include=TRUE>>=
-library(ggplot2)
-library(photobiologyWavebands)
+<<example-0-hiden, eval=FALSE, include=TRUE>>=
 @
 
 <<>>=
