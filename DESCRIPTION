@@ -1,27 +1,27 @@
 Package: photobiologyWavebands
 Type: Package
-Title: Waveband definifitions for UV, VIS, and IR radiation
-Version: 0.3.1.9000
-Date: 2015-06-02
+Title: Waveband Definitions for UV, VIS, and IR Radiation
+Version: 0.3.2
+Date: 2015-07-30
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
-Description: This package provides pre-defined functions for different
-    wavebands used for quantifying ultraviolet (UV), visible (VIS) and infrared
-    (IR) radiation.
+Description: This package provides pre-defined constructors for different
+    wavebands and spectral weighting functions used for quantifying
+    ultraviolet (UV), visible (VIS) and infrared (IR) radiation.
 License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.1.0),
-    photobiology (>= 0.6.0)
+    R (>= 3.2.0),
+    photobiology (>= 0.8.0)
 Suggests:
-    knitr (>= 1.9),
+    knitr (>= 0.1.10),
     ggplot2 (>= 1.0.1),
-    photobiologygg (>= 0.3.0)
+    photobiologygg (>= 0.4.0)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 Encoding: UTF-8
-URL: http://uv4growth.dyndns.org, http://openinstruments.dyndns.org,
-    https://bitbucket.org/aphalo/photobiology
-BugReports: https://bitbucket.org/aphalo/photobiology
+URL: http://www.r4photobiology.info/,
+    https://bitbucket.org/aphalo/photobiologywavebands
+BugReports: https://bitbucket.org/aphalo/photobiologywavebands
 Roxygen: list(wrap = FALSE)
