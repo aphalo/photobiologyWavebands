@@ -288,6 +288,7 @@ e_irrad(sun.spct, CIE())
        Gen. plant action & Micheletti & \texttt{GEN\_M(norm, w.low, w.high)} & 300 & 275 & 313.3\\
        Plant growth & Flint \& Caldwell & \texttt{PG(norm, w.low, w.high)} & 300 & 275 & 390.0\\
        Erythemal & CIE98 & \texttt{CIE(norm, w.low, w.high)} & 298 & 250 & 400.0\\
+       ICNIRP    & ICNIRP2004 & \texttt{ICNIRP(norm, w.low, w.high)} & 270 & 210 & 400.0\\
        `Naked' DNA & TUV, from Setlow & \texttt{DNA\_N(norm, w.low, w.high)} & 300 & 250 & 400.0 \\
        `Naked' DNA & Green \& Miller & \texttt{DNA\_GM(norm, w.low, w.high)} & 300 & 250 & 400.0\\
        `Plant' DNA & Musil, from Quaite & \texttt{DNA\_P(norm, w.low, w.high)} & 300 & 250 & 400.0\\
@@ -314,8 +315,9 @@ e_irrad(sun.spct, CIE())
        Gen. plant action & Green & \texttt{GEN\_G\_q\_fun(w.length)} & 280 \\
        Gen. plant action & Thimijan & \texttt{GEN\_T\_q\_fun(w.length)} & 300 \\
        Gen. plant action & Micheletti & \texttt{GEN\_M\_q\_fun(w.length)} & 300 \\
-        Plant growth & Flint \& Caldwell & \texttt{PG\_q\_fun(w.length)} & 300 \\
+       Plant growth & Flint \& Caldwell & \texttt{PG\_q\_fun(w.length)} & 300 \\
        Erythemal & CIE98 & \texttt{CIE\_e\_fun(w.length)} & 298 \\
+       ICNIRP    & ICNIRP2004 & \texttt{ICNIRP\_e\_fun(w.length)} & 270 \\
        `Naked' DNA & TUV, from Setlow & \texttt{DNA\_N\_q\_fun(w.length)} & n.a. \\
        `Naked' DNA & Green \& Miller & \texttt{DNA\_GM\_q\_fun(w.length)} & n.a. \\
        `Plant' DNA & Musil, from Quaite & \texttt{DNA\_P\_q\_fun(w.length)} & 290 \\
