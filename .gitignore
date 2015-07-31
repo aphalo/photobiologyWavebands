@@ -4,7 +4,8 @@
 *.Rd
 photobiology.Rproj
 *.tex
-*.pdf
+vignettes/*.pdf
+vignettes/figure/*.pdf
 *.bbl
 *.synctex.gz
 *.log
