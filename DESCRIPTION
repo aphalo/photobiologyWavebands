@@ -1,8 +1,8 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband definifitions for UV, VIS, and IR radiation
-Version: 0.3.1.9000
-Date: 2015-06-02
+Version: 0.3.2
+Date: 2015-07-30
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides pre-defined functions for different
@@ -11,12 +11,12 @@ Description: This package provides pre-defined functions for different
 License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.1.0),
-    photobiology (>= 0.6.0)
+    R (>= 3.2.0),
+    photobiology (>= 0.8.0)
 Suggests:
-    knitr (>= 1.9),
+    knitr (>= 0.1.10),
     ggplot2 (>= 1.0.1),
-    photobiologygg (>= 0.3.0)
+    photobiologygg (>= 0.4.0)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

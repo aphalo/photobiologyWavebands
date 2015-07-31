@@ -2,6 +2,7 @@ photobiologyWavebands 0.3.2
 ===========================
 
 Added function and waveband constructor for ICNIRP BSWF.
+Rebuilt data and package with photobiology 0.8.0.
 
 photobiologyWavebands 0.3.1
 ===========================
