@@ -32,6 +32,6 @@
 ICNIRP <- function(norm = 270, w.low = 210, w.high = 400) {
   new_waveband(w.low = w.low, w.high = w.high,
                weight = "SWF", SWF.e.fun = ICNIRP_e_fun, SWF.norm = 270,
-               norm = norm, hinges = c(209.999, 210, 270, 270.001, 300, 300.001, 400, 400.001),
+               norm = norm, hinges = c(210 - 1e-12, 210, 270, 270 + 1e-12, 300, 300 + 1e-12, 400, 400 + 1e-12),
                wb.name = paste("ICNIRP", as.character(norm), sep = "."), wb.label = "ICNIRP")
 }

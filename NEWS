@@ -1,3 +1,8 @@
+photobiologyWavebands 0.3.3
+===========================
+
+Minor correction of hinges in definitions to avoid errors at boundaries.
+
 photobiologyWavebands 0.3.2
 ===========================
 

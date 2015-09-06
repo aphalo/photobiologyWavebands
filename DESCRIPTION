@@ -1,18 +1,20 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband Definitions for UV, VIS, and IR Radiation
-Version: 0.3.2
-Date: 2015-07-30
+Version: 0.3.3
+Date: 2015-08-09
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
-Description: This package provides pre-defined constructors for different
-    wavebands and spectral weighting functions used for quantifying
+Description: This package provides pre-defined spectral weighting
+    functions (BSWFs) and constructors for different
+    wavebands describing named ranges of wavelengths together
+    with spectral weighting functions used for quantifying
     ultraviolet (UV), visible (VIS) and infrared (IR) radiation.
 License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.2.0),
-    photobiology (>= 0.8.0)
+    photobiology (>= 0.8.2)
 Suggests:
     knitr (>= 0.1.10),
     ggplot2 (>= 1.0.1),
