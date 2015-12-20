@@ -1,8 +1,8 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband Definitions for UV, VIS, and IR Radiation
-Version: 0.3.3
-Date: 2015-08-09
+Version: 0.3.4
+Date: 2015-12-21
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides pre-defined spectral weighting
@@ -14,11 +14,11 @@ License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.2.0),
-    photobiology (>= 0.8.2)
+    photobiology (>= 0.9.1)
 Suggests:
     knitr (>= 0.1.10),
     ggplot2 (>= 1.0.1),
-    photobiologygg (>= 0.4.0)
+    ggspectra (>= 0.1.0)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
@@ -27,3 +27,4 @@ URL: http://www.r4photobiology.info/,
     https://bitbucket.org/aphalo/photobiologywavebands
 BugReports: https://bitbucket.org/aphalo/photobiologywavebands
 Roxygen: list(wrap = FALSE)
+RoxygenNote: 5.0.1

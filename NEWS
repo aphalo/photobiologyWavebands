@@ -1,3 +1,9 @@
+photobiologyWavebands 0.3.4
+===========================
+
+Use package ggspectra instead of photobiologygg in vignette for compatibility
+with with ggplot2 version 2
+
 photobiologyWavebands 0.3.3
 ===========================
 

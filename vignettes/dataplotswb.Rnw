@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Wavebands and BSWFs: Catalogue of definitions}
-%\VignetteDepends{knitr, photobiology, photobiologygg, photobiologyWavebands, ggplot2}
+%\VignetteDepends{knitr, photobiology, ggspectra, photobiologyWavebands, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -25,10 +25,14 @@
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=8, fig.height=5, out.width='.95\\textwidth')
+options(warnPartialMatchAttr = FALSE,
+        warnPartialMatchDollar = FALSE,
+        warnPartialMatchArgs = FALSE)
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
-library(photobiologygg)
+library(ggplot2)
+library(ggspectra)
 library(photobiologyWavebands)
 @
 
