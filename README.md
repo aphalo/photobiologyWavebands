@@ -4,4 +4,4 @@ Package `photobiologyWavebands` is a set of functions and data to be used togeth
 
 The definitions cover most unweighted wavebands in common use, and in addition some weighting functions used in the calculation of effective irradiances and exposures. The current version of the package puts emphasis on plant responses, but in the future it will be expanded to included responses relevant to other groups of organisms.
 
-Please, see the web site [R4Photobiology](http://www.r4photobiology.info) for details on other packages available as part of the suite, and on how to install them.
+Please, see the web site [r4photobiology](http://www.r4photobiology.info) for details on other packages available as part of the suite, and on how to install them.
