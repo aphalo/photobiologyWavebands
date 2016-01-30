@@ -31,7 +31,6 @@ options(replace.assign = TRUE, width = 55,
 @
 
 <<example-0-hiden, include=FALSE>>=
-library(ggplot2)
 library(photobiology)
 library(photobiologyWbands)
 @

@@ -10,7 +10,6 @@
 #' @return a waveband object wavelength defining wavelength range, weighting
 #'   function and normalization wavelength.
 #'
-#' @usage GEN_T(norm=300, w.low=275, w.high=345)
 #' @references [1] Caldwell, M. M. (1971) Solar UV irradiation and the growth
 #' and development of higher plants. In Giese, A. C. (Ed.) Photophysiology,
 #' Academic Press, 1971, 6, 131-177

@@ -3,7 +3,6 @@
 #' Green radiation according to ISO or as commonly defined in plant
 #' photobiology, no weighting applied.
 #'
-#' @usage Green(std="ISO")
 #' @param std a character string "ISO", "Sellaro" or "Plant"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

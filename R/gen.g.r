@@ -2,8 +2,6 @@
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'
-#' @usage GEN_G(norm=300, w.low=275, w.high=313.3)
-#'
 #' @param norm normalization wavelength (nm)
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)

@@ -2,7 +2,6 @@
 #'
 #' Methane production from pectin BSWF
 #'
-#' @usage CH4(norm=300, w.low=275, w.high=400)
 #' @param norm normalization wavelength (nm)
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)

@@ -2,8 +2,6 @@
 #'
 #' Defined according to different authors.
 #'
-#' @usage Plant_bands(std = "sensory20")
-#'
 #' @param std a character string "sensory", "sensory10", "sensory20" or ""
 #'
 #' @return a list of wavebands

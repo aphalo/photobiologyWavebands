@@ -5,7 +5,6 @@
 #' (700-800 nm), "Warrington" (700-850 nm), and "Sellaro" (700-750 nm), and
 #' "BTV" (700-770 nm), as defined in a recent handbook. No weighting applied.
 #'
-#' @usage Far_red(std="ISO")
 #' @param std a character string, defaults to "ISO", as for other colour
 #'   definitions, which in this case returns \code{NA}.
 #'

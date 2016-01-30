@@ -2,7 +2,6 @@
 #'
 #' Erythema BSWF
 #'
-#' @usage CIE(norm=298, w.low=250, w.high=400)
 #' @param norm normalization wavelength (nm)
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)

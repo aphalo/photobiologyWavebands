@@ -3,7 +3,6 @@
 #' Orange radiation (591...610 nm), no weighting
 #' applied.
 #'
-#' @usage Orange(std="ISO")
 #' @param std a character string "ISO"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

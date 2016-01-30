@@ -9,8 +9,6 @@
 #' @return a waveband object wavelength defining wavelength range, weighting
 #'   function and normalization wavelength.
 #'
-#' @usage DNA_P(norm=300, w.low=275, w.high=400)
-#'
 #' @export
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}

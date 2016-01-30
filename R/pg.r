@@ -9,8 +9,6 @@
 #' @return a waveband object wavelength defining wavelength range, weighting
 #'   function and normalization wavelength.
 #'
-#' @usage PG(norm=300, w.low=275, w.high=390)
-#'
 #' @references [1] Flint, S. and Caldwell M. M. (2003) A biological spectral
 #' weighting function for ozone depletion research with higher plants
 #' Physiologia Plantarum, 2003, 117, 137-144

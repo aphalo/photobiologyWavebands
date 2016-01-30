@@ -3,7 +3,6 @@
 #' Photosythetically active radiation (400-700 nm), no weighting
 #' applied.
 #'
-#' @usage PAR(std="Plant")
 #' @param std a character string "Plant" or "McCree"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

@@ -3,8 +3,6 @@
 #' UV-A according to CIE and ISO standrads: 315--400 nm.
 #' UV-A according to common non-standard practice: 320--400 nm.
 #'
-#' @usage UVA(std="ISO")
-#'
 #' @param std a character string "CIE", "ISO" or "none"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

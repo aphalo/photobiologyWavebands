@@ -9,8 +9,6 @@
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
 #'
-#' @usage FLAV(norm=300, w.low=275, w.high=346)
-#'
 #' @export
 #'
 #' @seealso \code{\link[photobiology]{waveband}}

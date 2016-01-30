@@ -2,7 +2,6 @@
 #'
 #' Defined according to "ISO".
 #'
-#' @usage Blue(std="ISO")
 #' @param std a character string "ISO", or "Sellaro"
 #'
 #' @return a waveband object wavelength defining a wavelength range.
