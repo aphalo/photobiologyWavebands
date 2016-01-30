@@ -10,11 +10,11 @@
 #' as in the original source (300 nm) and based on energy effectiveness.
 #'
 #' @references
-#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.; Reay, D. S. & McLeod, A. R.
-#' Global methane emission estimates from ultraviolet irradiation of terrestrial plant foliage.
-#' New Phytologist, Blackwell Publishing Ltd, 2010, 187, 417--425 .
-#' @note \url{http://uv4growth.dyndns.org/}
-#' @keywords misc
+#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.;
+#' Reay, D. S. & McLeod, A. R. (2010) Global methane emission estimates from
+#' ultraviolet irradiation of terrestrial plant foliage. New Phytologist,
+#' Blackwell Publishing Ltd, 187, 417--425 .
+#'
 #' @export
 #' @examples
 #' CH4_e_fun(293:400)

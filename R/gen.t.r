@@ -1,26 +1,27 @@
 #' Definition of GPAS (Timijan) weighted waveband
 #'
-#' Generalized Plant Action BSWF of Caldwell [1] as formulated by Timijan et al. [2]
+#' Generalized Plant Action BSWF of Caldwell [1] as formulated by Timijan et al.
+#' [2]
 #'
 #' @param norm normalization wavelength (nm)
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
 #'
-#' @return a waveband object wavelength defining wavelength range, weighting function
-#' and normalization wavelength.
+#' @return a waveband object wavelength defining wavelength range, weighting
+#'   function and normalization wavelength.
 #'
 #' @usage GEN_T(norm=300, w.low=275, w.high=345)
-#' @references
-#' [1] Caldwell, M. M. (1971) Solar UV irradiation and the growth and development of higher plants.
-#' In Giese, A. C. (Ed.) Photophysiology, Academic Press, 1971, 6, 131-177
+#' @references [1] Caldwell, M. M. (1971) Solar UV irradiation and the growth
+#' and development of higher plants. In Giese, A. C. (Ed.) Photophysiology,
+#' Academic Press, 1971, 6, 131-177
 #'
-#' [2] Thimijan RW, Cams HR, Campbell L. (1978) Radiation sources and related environmental control for
-#' biological and climatic eflFects of UV research. Final report EPA-IAG-D6-0168. Washington:
-#' Environmental Protection Agency.
+#' [2] Thimijan RW, Cams HR, Campbell L. (1978) Radiation sources and related
+#' environmental control for biological and climatic eflFects of UV research.
+#' Final report EPA-IAG-D6-0168. Washington: Environmental Protection Agency.
 #'
 #' @export
-#' @seealso \code{\link{GEN.G}} \code{\link{GEN.M}} \code{\link{PG}} \code{\link{new_waveband}}
-#'  \code{\link{waveband}}
+#' @seealso \code{\link{GEN.G}} \code{\link{GEN.M}} \code{\link{PG}}
+#'   and \code{\link[photobiology]{waveband}}
 #' @examples
 #' GEN_T()
 #' GEN_T(300)

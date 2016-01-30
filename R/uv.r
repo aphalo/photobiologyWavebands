@@ -2,7 +2,6 @@
 #'
 #' UV: 100--400 nm.
 #'
-#' @usage UV(std="ISO")
 #' @param std "ISO" or "CIE"
 #'
 #' @return a waveband object wavelength defining a wavelength range.

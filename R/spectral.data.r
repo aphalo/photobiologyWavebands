@@ -1,7 +1,7 @@
 #' Setlow's action spectrum for DNA damage
 #'
-#' A dataset containing the wavelengths at a 0.1 nm interval.
-#' Tabulated values for Setlow's naked DNA damage action spectrum as used in the TUV model.
+#' A dataset containing the wavelengths at a 0.1 nm interval. Tabulated values
+#' for Setlow's naked DNA damage action spectrum as used in the TUV model.
 #'
 #' The variables are as follows:
 #'
@@ -54,14 +54,15 @@ NULL
 #' @format A response.spct object with 471 rows and 2 variables
 #' @name CIE1924_lef.spct
 #'
-#' @note This luminous efficiency function understimates the renponse to short wavelengths.
+#' @note This luminous efficiency function understimates the renponse to short
+#'   wavelengths.
 #' @references
 #'  \url{http://www.cvrl.org/} downloaded on 2015-01-24
 NULL
 #' Luminous efficiency function (scotopic human vision)
 #'
-#' A dataset containing the wavelengths at a 1 nm interval.
-#' Tabulated values for quantum luminous efficiency at low light levels according to CIE1951.
+#' A dataset containing the wavelengths at a 1 nm interval. Tabulated values for
+#' quantum luminous efficiency at low light levels according to CIE1951.
 #'
 #' The variables are as follows:
 #'

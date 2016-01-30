@@ -15,10 +15,6 @@
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'
-#' @references
-#' Setlow, RB. The Wavelengths in Sunlight Effective in Producing Skin Cancer: A Theoretical
-#' Analysis. Proceedings of the National Academy of Sciences, 1974, 71, 3363-3366
-#'
 #' @examples
 #' DNA_N()
 #' DNA_N(300)

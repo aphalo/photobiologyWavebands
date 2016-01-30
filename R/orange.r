@@ -9,9 +9,6 @@
 #' @return a waveband object wavelength defining a wavelength range.
 #'
 #' @export
-#' @references
-#' ISO-21348
-#' @seealso \code{\link{photon_irradiance}} and \code{\link{energy_irradiance}}
 #' @examples
 #' Orange()
 #' Orange("ISO")

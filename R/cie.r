@@ -7,15 +7,15 @@
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
 #'
-#' @return a waveband object wavelength defining wavelength range, weighting function
-#' and normalization wavelength.
+#' @return a waveband object wavelength defining wavelength range, weighting
+#'   function and normalization wavelength.
 #'
 #' @references
 #' Webb, A. (20XX)
 #'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' CIE()

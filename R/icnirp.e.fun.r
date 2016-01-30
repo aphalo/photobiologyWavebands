@@ -11,14 +11,6 @@
 #'   the BSWF normalized as in the original source (270 nm) and based on energy
 #'   effectiveness.
 #'
-#' @references
-#'   INTERNATIONAL COMMISSION ON NON-IONIZING RADIATION PROTECTION (2004) ICNIRP
-#'   GUIDELINES ON LIMITS OF EXPOSURE TO ULTRAVIOLET RADIATION OF WAVELENGTHS
-#'   BETWEEN 180 nm AND 400 nm (INCOHERENT OPTICAL RADIATION). HEALTH PHYSICS
-#'   87(2):171-186.
-#'   \url{http://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
-#'
-#' @keywords misc
 #' @export
 #' @examples
 #' ICNIRP_e_fun(210:400)

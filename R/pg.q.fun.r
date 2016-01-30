@@ -6,16 +6,14 @@
 #'
 #' @param w.length numeric array of wavelengths (nm)
 #'
-#' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
-#' as in the original source (300 nm)
+#' @return a numeric array of the same length as \code{w.length} with values for
+#'   the BSWF normalized as in the original source (300 nm)
 #'
 #' @note We follow the original defition here for the equation, with no
 #' limtation to the wavelength range. However, be aware that in practice
 #' it is not used for long wavelengths (different limits between 366 nm and
 #' 400 nm have been used by different authors).
 #'
-#' @references \url{http://uv4growth.dyndns.org/}
-#' @keywords misc
 #' @export
 #' @examples
 #' PG_q_fun(293:400)

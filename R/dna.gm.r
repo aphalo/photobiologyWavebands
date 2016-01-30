@@ -11,9 +11,6 @@
 #'
 #' @usage DNA_GM(norm=300, w.low=275, w.high=400)
 #'
-#' @references
-#' Green and Miller (19XX)
-#'
 #' @export
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}

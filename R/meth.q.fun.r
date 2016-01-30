@@ -9,12 +9,6 @@
 #' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
 #' as in the original source (300 nm) but based on quantum effectiveness.
 #'
-#' @references
-#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.; Reay, D. S. & McLeod, A. R.
-#' Global methane emission estimates from ultraviolet irradiation of terrestrial plant foliage.
-#' New Phytologist, Blackwell Publishing Ltd, 2010, 187, 417--425 .
-#' @note \url{http://uv4growth.dyndns.org/}
-#' @keywords misc
 #' @export
 #' @examples
 #' CH4_q_fun(293:400)

@@ -1,6 +1,7 @@
 #' Definition of GPAS (Micheletti) weighted waveband
 #'
-#' Generalized Plant Action BSWF of Caldwell [1] as formulated by Micheletti et al. [2]
+#' Generalized Plant Action BSWF of Caldwell [1] as formulated by Micheletti et
+#' al. [2]
 #'
 #' @usage GEN_M(norm=300, w.low=275, w.high=313.3)
 #'
@@ -12,18 +13,20 @@
 #' and normalization wavelength.
 #'
 #' @references
-#' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and development of higher plants.
-#' In Giese, A. C. (Ed.) Photophysiology, Academic Press, 1971, 6, 131-177
+#' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and development
+#' of higher plants. In Giese, A. C. (Ed.) Photophysiology, Academic Press,
+#' 1971, 6, 131-177
 #'
-#' [2] Micheletti, M. I.; Piacentini, R. D. & Madronich, S. (2003) Sensitivity of Biologically
-#' Active UV Radiation to Stratospheric Ozone Changes: Effects of Action Spectrum Shape
-#' and Wavelength Range Photochemistry and Photobiology, 78, 456-461
+#' [2] Micheletti, M. I.; Piacentini, R. D. & Madronich, S. (2003) Sensitivity
+#' of Biologically Active UV Radiation to Stratospheric Ozone Changes: Effects
+#' of Action Spectrum Shape and Wavelength Range Photochemistry and
+#' Photobiology, 78, 456-461
 #'
-#' @note In the original publication [2] describing the formulation, the long-end
-#' wavelength boundary is specified as 313.3 nm. This is the default used here.
-#' However, in some cases it is of interest to vary this limit in sensitivity analyses.
-#' The effect on the RAF and doses of changing this boundary is substantial, and
-#' has been analysed by Micheletti et al. [3].
+#' @note In the original publication [2] describing the formulation, the
+#'   long-end wavelength boundary is specified as 313.3 nm. This is the default
+#'   used here. However, in some cases it is of interest to vary this limit in
+#'   sensitivity analyses. The effect on the RAF and doses of changing this
+#'   boundary is substantial, and has been analysed by Micheletti et al. [3].
 #'
 #' @export
 #' @seealso \code{\link{new_waveband}} and \code{\link{waveband}}

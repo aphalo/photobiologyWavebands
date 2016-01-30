@@ -10,14 +10,10 @@
 #' and normalization wavelength.
 #'
 #' @usage FLAV(norm=300, w.low=275, w.high=346)
-#' @references
-#' Ibdah, M.; Krins, A.; Seidlitz, H. K.; Heller, W.; Strack, D. & Vogt, T. Spectral
-#' dependence of flavonol and betacyanin accumulation in Mesembryanthemum crystallinum
-#' under enhanced ultraviolet radiation. Plant, Cell & Environment, 2002, 25, 1145-1154
 #'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' FLAV()

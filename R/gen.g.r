@@ -12,15 +12,18 @@
 #' and normalization wavelength.
 #'
 #' @references
-#' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and development of higher plants.
-#' In Giese, A. C. (Ed.) Photophysiology, Academic Press, 1971, 6, 131-177
+#' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and development
+#' of higher plants. In Giese, A. C. (Ed.) Photophysiology, Academic Press,
+#' 1971, 6, 131-177
 #'
-#' [2] Green, A. E. S.; Sawada, T. & Shettle, E. P. (1974) The middle ultraviolet
-#' reaching the ground Photochemistry and Photobiology, 1974, 19, 251-259
+#' [2] Green, A. E. S.; Sawada, T. & Shettle, E. P. (1974) The middle
+#' ultraviolet reaching the ground Photochemistry and Photobiology, 1974, 19,
+#' 251-259
 #'
-#' [3] Micheletti, M. I.; Piacentini, R. D. & Madronich, S. (2003) Sensitivity of Biologically
-#' Active UV Radiation to Stratospheric Ozone Changes: Effects of Action Spectrum Shape
-#' and Wavelength Range Photochemistry and Photobiology, 78, 456-461
+#' [3] Micheletti, M. I.; Piacentini, R. D. & Madronich, S. (2003) Sensitivity
+#' of Biologically Active UV Radiation to Stratospheric Ozone Changes: Effects
+#' of Action Spectrum Shape and Wavelength Range Photochemistry and
+#' Photobiology, 78, 456-461
 #'
 #' @note In the original publication [2] describing the formulation, the long-end
 #' wavelength boundary is specified as 313.3 nm. This is the default used here.
@@ -30,7 +33,7 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' GEN_G()

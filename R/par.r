@@ -10,11 +10,11 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
-#' @references
-#' McCree, K. J. The action spectrum, absorptance and quantum yield of photosynthesis in
-#' crop plants. Agricultural Meteorology, 1972, 9, 191-216
+#' @references McCree, K. J. (1972) The action spectrum, absorptance and quantum
+#'   yield of photosynthesis in crop plants. Agricultural Meteorology, 9,
+#'   191-216
 #'
 #' @examples
 #' PAR()

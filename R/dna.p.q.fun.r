@@ -6,10 +6,11 @@
 #'
 #' @param w.length numeric array of w.length (nm)
 #'
-#' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
-#' as in the original source.  The returned values are based on quantum effectiveness units.
+#' @return a numeric array of the same length as \code{w.length} with values for
+#'   the BSWF normalized as in the original source.  The returned values are
+#'   based on quantum effectiveness units.
 #'
-#' @keywords misc
+#'
 #' @export
 #' @examples
 #' DNA_P_q_fun(293:400)

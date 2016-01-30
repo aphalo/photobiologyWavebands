@@ -5,15 +5,15 @@
 #'
 #' @param w.length numeric array of w.length (nm)
 #'
-#' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
-#' as in the original source.  The returned values are based on quantum effectiveness units.
+#' @return a numeric array of the same length as \code{w.length} with values for
+#'   the BSWF normalized as in the original source.  The returned values are
+#'   based on quantum effectiveness units.
 #'
-#' @note The digitized data as used in the TUV model covers the wavelength range from 256 nm to 364 nm.
-#' For longer wavelengths we set the value to zero, and for shorter wavelengths we extrapolate the value
-#' for 256 nm.
+#' @note The digitized data as used in the TUV model covers the wavelength range
+#'   from 256 nm to 364 nm. For longer wavelengths we set the value to zero, and
+#'   for shorter wavelengths we extrapolate the value for 256 nm.
 #'
-#' @references \url{http://uv4growth.dyndns.org/}
-#' @keywords misc
+#'
 #' @export
 #' @examples
 #' DNA_N_q_fun(293:400)

@@ -1,19 +1,15 @@
 #' Definition of VIS waveband
 #'
-#' Photosythetically active radiation (380...760 nm), no weighting
+#' Visible (to humnas) radiation (380...760 nm), no weighting
 #' applied.
 #'
-#' @usage VIS(std="ISO")
 #' @param std a character string "ISO"
 #'
-#' @return a waveband object wavelength defining a wavelength range.
+#' @return A waveband object wavelength defining a wavelength range.
 #'
 #' @export
-#' @references
-#' ISO-21348:2007 Space environment (natural and artificial) -- Process for determining
-#' solar irradiances. ISO, Geneva.
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' VIS()

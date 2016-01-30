@@ -9,12 +9,9 @@
 #'
 #' @return a waveband object wavelength defining a wavelength range.
 #'
-#' @references
-#' ISO and CIE standards
-#'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' UVA()

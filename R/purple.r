@@ -3,14 +3,11 @@
 #' Purple radiation (360...450 nm), no weighting
 #' applied.
 #'
-#' @usage Purple(std="ISO")
 #' @param std a character string "ISO"
 #'
-#' @return a waveband object wavelength defining a wavelength range.
+#' @return A waveband object wavelength defining a wavelength range.
 #'
 #' @export
-#' @references
-#' ISO-21348
 #'
 #' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
 #'

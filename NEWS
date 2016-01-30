@@ -1,3 +1,11 @@
+photobiologyWbands 0.4.0
+========================
+
+Rename package.
+Remove all definitions of ratios.
+Remove vignette with plots of the wavebands.
+Remove dependency of vignettes on package ggspectra.
+
 photobiologyWavebands 0.3.4
 ===========================
 

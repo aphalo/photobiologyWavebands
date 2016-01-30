@@ -6,11 +6,11 @@
 #'
 #' @param w.length numeric array of wavelengths (nm)
 #'
-#' @return a numeric array of the same length as \code{w.length} with values for the BSWF normalized
-#' as in the original source (298 nm) and based on energy effectiveness.
+#' @return a numeric array of the same length as \code{w.length} with values for
+#'   the BSWF normalized as in the original source (298 nm) and based on energy
+#'   effectiveness.
 #'
-#' @references \url{http://uv4growth.dyndns.org/}
-#' @keywords misc
+#'
 #' @export
 #' @examples
 #' CIE_e_fun(293:400)
