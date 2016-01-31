@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{User Guide}
-%\VignetteDepends{knitr, photobiology, photobiologyWbands}
+%\VignetteDepends{knitr, photobiology, photobiologyWavebands}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -17,7 +17,7 @@
 \usepackage{breakurl}
 
 \newcommand{\PB}{\textsf{photobiology}\xspace}
-\newcommand{\PBWB}{\textsf{photobiologyWbands}\xspace}
+\newcommand{\PBWB}{\textsf{photobiologyWavebands}\xspace}
 
 \begin{document}
 
@@ -32,11 +32,11 @@ options(replace.assign = TRUE, width = 55,
 
 <<example-0-hiden, include=FALSE>>=
 library(photobiology)
-library(photobiologyWbands)
+library(photobiologyWavebands)
 @
 
 <<own-set-up, echo=FALSE, include=FALSE>>=
-my_version <- packageVersion("photobiologyWbands")
+my_version <- packageVersion("photobiologyWavebands")
 @
 
 \title{\PBWB Version \Sexpr{my_version}\\ User Guide}
