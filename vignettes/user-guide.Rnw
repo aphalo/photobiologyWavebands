@@ -6,7 +6,6 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{abbrev}
 \usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
@@ -14,10 +13,18 @@
 \usepackage{listings}
 \usepackage{rotating}
 \usepackage{booktabs}
-\usepackage{breakurl}
+\usepackage{xspace}
 
 \newcommand{\PB}{\textsf{photobiology}\xspace}
 \newcommand{\PBWB}{\textsf{photobiologyWavebands}\xspace}
+\newcommand{\Unit}[1]{\ensuremath{\mathrm{\:#1}}\xspace}
+\newcommand{\wattnm}{\Unit{W\,m^{-2}\,nm^{-1}}}
+\newcommand{\mol}{\Unit{mol\,m^{-2}\,s^{-1}}}
+\newcommand{\watt}{\Unit{W\,m^{-2}}}
+\newcommand{\UV}[1][]{\ensuremath{\mathrm{UV}_\mathrm{#1}}\xspace}
+\newcommand{\UVC}[1][]{\ensuremath{\mathrm{UV\textrm{-}C}_\mathrm{#1}}\xspace}
+\newcommand{\UVB}[1][]{\ensuremath{\mathrm{UV\textrm{-}B}_\mathrm{#1}}\xspace}
+\newcommand{\UVA}[1][]{\ensuremath{\mathrm{UV\textrm{-}A}_\mathrm{#1}}\xspace}
 
 \begin{document}
 
@@ -103,7 +110,7 @@ optional definitions, are listed in Table \ref{tab:unweighted}.
        Far-red & Sellaro & \texttt{Far\_red("Sellaro")} & $700\leq\lambda<750$ \\
        Far-red & BTV & \texttt{Far\_red("BTV")} & $700\leq\lambda<760$ \\
        \midrule
-       \textit{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
+       \textsl{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
        \bottomrule
      \end{tabular}
      \end{small}
@@ -155,7 +162,7 @@ e_irrad(sun.spct, VIS_bands())
      \end{footnotesize}
 }\end{table*}
 
-\section{Calculating photon ratios}
+\section{Photon ratios}
 \label{sec:ratios:photon}
 
 Photon ratios can be calculated from any pair of waveband objects. This a convenient and very flexible way of doing this type of calculations.
@@ -165,7 +172,7 @@ q_ratio(sun.spct, Blue(), VIS())
 @
 
 
-\section{Calculating effective irradiances and exposures}
+\section{Effective irradiances and exposures}
 
 The waveband definitions and SWFs are stored in \texttt{waveband} objetcs, that can be created
 with function \texttt{waveband}. The same functions described above
@@ -217,7 +224,7 @@ e_irrad(sun.spct, CIE())
 }\end{sidewaystable*}
 
 
-\section{Calculating an action spectrum at given wavelengths}
+\section{Action spectra at given wavelengths}
 
 \begin{table*}
     \caption[Weighting functions]{Biological spectral weighting functions predefined in R package \PBWB. The functions for BSWFs available in this package, implement the functions as defined in the original publications. When the original `definition' is available as tabulated data, or we have tabulated it by digitizing a figure, the values returned are calculated by spline interpolation.}\label{tab:BSWFs}
