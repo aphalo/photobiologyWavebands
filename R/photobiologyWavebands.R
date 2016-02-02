@@ -55,7 +55,10 @@
 #' of Action Spectrum Shape
 #' and Wavelength Range Photochemistry and Photobiology, 78, 456-461
 #'
-#' Musil, C. F. ... (200x) ...
+#' Musil, C. F. (1995) Differential effects of elevated ultraviolet-B radiation on the
+#' photochemical and reproductive performances of dicotyledonous and
+#' monocotyledonous arid-environment ephemerals Plant, Cell and Environment,
+#' 18, 844-854
 #'
 #' Murakami, K., Aiga I. (1994) Red/Far-red photon flux ratio used as
 #' an index number for morphological control of plant growth under

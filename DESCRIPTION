@@ -2,10 +2,10 @@ Package: photobiologyWavebands
 Type: Package
 Title: Waveband Definitions for UV, VIS, and IR Radiation
 Version: 0.4.0
-Date: 2016-01-30
-Author: Pedro J. Aphalo
+Date: 2016-02-01
+Author: Pedro J. Aphalo [aut, cre]
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
-Description: This package provides constructors for commonly used spectral
+Description: Constructors of waveband objects for commonly used spectral
     weighting functions (BSWFs) and for different wavebands describing named
     ranges of wavelengths in the ultraviolet (UV), visible (VIS) and infrared
     (IR) regions of the electomagnetic spectrum.
