@@ -2,8 +2,8 @@
 #'
 #' Far-red radiation according to "ISO" (not defined) or as commonly defined in
 #' plant photobiology, "Smith10" (725-735 nm), "Smith20" (720-740 nm), "Inada"
-#' (700-800 nm), "Warrington" (700-850 nm), and "Sellaro" (700-750 nm), and
-#' "BTV" (700-770 nm), as defined in a recent handbook. No weighting applied.
+#' (700-800 nm), "Warrington" (700-850 nm), and "Sellaro" (700-750 nm). No
+#' weighting applied.
 #'
 #' @param std a character string, defaults to "ISO", as for other colour
 #'   definitions, which in this case returns \code{NA}.
@@ -16,7 +16,6 @@
 #' Far_red()
 #' Far_red("ISO")
 #' Far_red("Smith")
-#' Far_red("BTV")
 #'
 #' @family unweighted wavebands
 #'
