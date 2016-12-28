@@ -1,3 +1,19 @@
+photobiologyWavebands 0.4.2
+===========================
+
+Add constructors for frequently used infrared bands, and for lists of infrared
+bands.
+Add as additional values recognized as argument for parameter std "RS" for
+wavelength ranges commonly used in remote sensing to the different existing
+and new waveband constructors.
+Add constructors for wavelength-range based waveband definitions for the imagers used in Landsat missions 1 to 8 : "LandsatRBV", "LandsatMSS", "LandsatTM",
+"LandsatETM", "LandsatOLI", and "LandsatTIRS".
+Add constructor Landsat_bands() returning lists of waveband objects for the
+different Landsat missions.
+Update warning messages and error handling in existing constructors.
+Update Plant_bands() constructor to support CIE's UVA1 and UVA2 definitions.
+Update vignette.
+
 photobiologyWavebands 0.4.1
 ===========================
 
@@ -79,7 +95,7 @@ UVR8-related data and functions moved to package photobiologyPlants.
 photobiologyWavebands 0.2.3
 ===========================
 
-Now all contructors of waveband objects for BSWFs, have formal arguments
+Now all constructors of waveband objects for BSWFs, have formal arguments
 w.low and w.high, with values earlier in use, now set as defaults.
 
 Added some references to the documentation.
@@ -91,7 +107,7 @@ photobiologyWavebands 0.2.2
 ===========================
 
 Changed the definition of SWFs functions not to have any
-intrinsic wavelength limitts, and made this limit
+intrinsic wavelength limits, and made this limit
 a new formal argument on the waveband constructor functions,
 keeping the same defaults. Returned values
 should remain unchanged. This bit of flexibility is needed
@@ -101,7 +117,7 @@ for the same BSWFs.
 A new formulation for GPAS has been added. The formulation
 by Micheletti and Piacentini (2002) is used for
 example in the TUV model (version 5.0). The new waveband
-contructor is GEN.M().
+constructor is GEN.M().
 
 photobiologyWavebands 0.2.1
 ===========================
@@ -120,7 +136,7 @@ photobiologyWavebands 0.1.0
 Merge of photobiologyUV and photobiologyVIS packages.
 Merged and updated the vignettes. Added functions for
 calculating UV:PAR photon ratios. Added functions for
-creating some coherent lists of wavbands (e.g. all ISO
+creating some coherent lists of wavebands (e.g. all ISO
 defined colours).
 
 ********************
@@ -177,7 +193,7 @@ User interface unchanged.
 photobiologyUV 0.1.2
 ====================
 
-Added vignettes. Still needs some cleaning of code and improved docummentation.
+Added vignettes. Still needs some cleaning of code and improved documentation.
 
 photobiologyUV 0.1.0
 ====================
@@ -203,11 +219,11 @@ Added missing import directive. Rebuilt vignette under photobiology 0.2.16 as th
 photobiologyVIS 0.1.3
 =====================
 
-Changed waveband definitions to allow cacheing. A change in package photobiology adds hinges.
+Changed waveband definitions to allow caching. A change in package photobiology adds hinges.
 
 photobiologyVIS 0.1.2
 =====================
 
-Corrected error in green light wavelength range, and added new optional definitiions of wave length ranges.
+Corrected error in green light wavelength range, and added new optional definitions of wave length ranges.
 
 Added a vignette: a manual.

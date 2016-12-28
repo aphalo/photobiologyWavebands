@@ -1,4 +1,4 @@
-#' Definition of GPAS (Timijan) weighted waveband
+#' Constructor of GPAS (Timijan) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell [1] as formulated by Timijan et al.
 #' [2]
@@ -32,7 +32,7 @@ GEN_T <- function(norm=300, w.low=275, w.high=345) {
                norm=norm, wb.name=paste("GEN.T", as.character(norm), sep="."), wb.label="GEN(T)")
 }
 
-#' Definition of GPAS (Timijan) weighted waveband
+#' Constructor of GPAS (Timijan) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Timijan et al.
 #'

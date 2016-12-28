@@ -1,4 +1,4 @@
-#' Definition of CIE weighted waveband
+#' Constructor of CIE weighted waveband
 #'
 #' Erythema BSWF
 #'

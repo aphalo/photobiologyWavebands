@@ -1,4 +1,4 @@
-#' Definition of PAR waveband
+#' Constructor of PAR waveband
 #'
 #' Photosythetically active radiation (400-700 nm), no weighting
 #' applied.
@@ -18,11 +18,11 @@
 #' @examples
 #' PAR()
 #' PAR("Plant")
-PAR <- function(std = "Plant"){
+PAR <- function(std = "Plant") {
   if (std %in% c("Plant", "McCree")) {
-    return(new_waveband(400, 700, wb.name="PAR"))
+    new_waveband(400, 700, wb.name="PAR")
   } else {
-    warning("'std' argument value not implemented.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }

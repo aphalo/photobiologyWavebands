@@ -10,16 +10,14 @@
 #'   the BSWF normalized as in the original source (298 nm) and based on quantum
 #'   effectiveness.
 #'
-#'
 #' @export
 #' @examples
 #' CIE_q_fun(293:400)
 #'
-#'
 #' @family BSWF functions
 #'
 CIE_q_fun <-
-function(w.length){
+function(w.length) {
     CIE_e_fun(w.length) * 298.0 / w.length
 }
 

@@ -1,8 +1,8 @@
-#' Definition of list of VIS wavebands
+#' Contructor of lists of VIS wavebands
 #'
 #' Defined according to "ISO".
 #'
-#' @param std a character string "ISO" (ignored)
+#' @param std a character string "ISO".
 #' @return a list of wavebands
 #' @export
 #'
@@ -12,6 +12,11 @@
 #'
 #' @family lists of unweighted wavebands
 #'
-VIS_bands <- function(std="ISO"){
-  return(list(Purple(std), Blue(std), Green(std), Yellow(std), Orange(std), Red(std)))
+VIS_bands <- function(std="ISO") {
+  if (std=="ISO") {
+    list(Purple(std), Blue(std), Green(std), Yellow(std), Orange(std), Red(std))
+  } else {
+    warning("'std' argument value not implemented.")
+    list()
+  }
 }

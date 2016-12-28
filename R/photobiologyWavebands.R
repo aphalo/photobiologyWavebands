@@ -3,7 +3,17 @@
 #' from package 'photobiology'. These contructors are based on standard
 #' definitions and frequently used non-standardized definitions. When
 #' different definitions are in common use for a given named waveband the
-#' contructors accept an argument to chose among them.
+#' constructors accept an argument to chose among them. Whenever an ISO
+#' standard provides a definition, this is used by default. In the infrared (IR)
+#' there are many different definitions and waveband names in use. We have
+#' tried to include most of the commonly used names and definitions.
+#'
+#' Definitions "matching" the different bands of Landsat imagers are included.
+#' These are simple wavelength ranges for wavelengths at half-maximun response
+#' as given in the NASA literature, which in some cases presents small
+#' inconsistencies. These definitions cannot exactly reproduce instrument
+#' responses as they do not describe the real spectral responisveness of the
+#' satellite imagers.
 #'
 #' By necesity we cover only a subset of all definitions in use. These should
 #' be thought as convenience functions, as waveband objects according to any
@@ -38,10 +48,13 @@
 #' Mesembryanthemum crystallinum under enhanced ultraviolet radiation. Plant,
 #' Cell & Environment, 25, 1145-1154
 #'
-#' INTERNATIONAL COMMISSION ON NON-IONIZING RADIATION PROTECTION (2004) ICNIRP
-#' GUIDELINES ON LIMITS OF EXPOSURE TO ULTRAVIOLET RADIATION OF WAVELENGTHS
-#' BETWEEN 180 nm AND 400 nm (INCOHERENT OPTICAL RADIATION). HEALTH PHYSICS
+#' International Commission on Non-Ionizing Radiation Protection (2004) ICNIRP
+#' Guidelines on Limits of Exposure to Ultraviolet Radiation of Wavelengths
+#' Between 180 nm And 400 nm (Incoherent Optical Radiation). Health Physics
 #' 87(2):171-186. \url{http://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
+#'
+#' ISO (2007) Optics and photonics - Spectral bands. ISO Standard 20473:2007.
+#' ISO, Geneva.
 #'
 #' ISO (2007) Space environment (natural and artificial) - Process for
 #' determining solar irradiances. ISO Standard 21348. ISO, Geneva.
@@ -50,20 +63,28 @@
 #' damage in alfalfa lowers predicted impact of ozone depletion. Nature, 1992,
 #' 358, 576–578
 #'
+#' Leutner, B. and Horning, N. (2016). RStoolbox: Tools for Remote Sensing Data
+#' Analysis. R package version 0.1.6.
+#' \url{https://CRAN.R-project.org/package=RStoolbox}
+#'
 #' Micheletti, M. I.; Piacentini, R. D. & Madronich, S. (2003) Sensitivity
 #' of Biologically Active UV Radiation to Stratospheric Ozone Changes: Effects
 #' of Action Spectrum Shape
 #' and Wavelength Range Photochemistry and Photobiology, 78, 456-461
 #'
-#' Musil, C. F. (1995) Differential effects of elevated ultraviolet-B radiation on the
-#' photochemical and reproductive performances of dicotyledonous and
-#' monocotyledonous arid-environment ephemerals Plant, Cell and Environment,
-#' 18, 844-854
+#' Musil, C. F. (1995) Differential effects of elevated ultraviolet-B radiation
+#' on the photochemical and reproductive performances of dicotyledonous and
+#' monocotyledonous arid-environment ephemerals Plant, Cell and Environment, 18,
+#' 844-854
 #'
 #' Murakami, K., Aiga I. (1994) Red/Far-red photon flux ratio used as
 #' an index number for morphological control of plant growth under
 #' artificial lighting conditions. Proc. Int. Symp. Artificial Lighting,
 #' Acta Horticulturae, 418, ISHS 1997.
+#'
+#' NASA (nd) Landsat 7 Science Data Users Handbook.
+#' \url{landsat.gsfc.nasa.gov/wp-content/uploads/2016/08/Landsat7_Handbook.pdf}
+#' Visited on 2016-12-26.
 #'
 #' Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
 #' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the blue/green
@@ -76,6 +97,10 @@
 #'
 #' Smith, H. (1982) Light quality, photoperception and plant strategy. Annual
 #' Review of Plant Physiology, 33:481-518.
+#'
+#' USGS (nd) Landsat 8 Science Data Users Handbook.
+#' \url{https://landsat.usgs.gov/sites/default/files/documents/Landsat8DataUsersHandbook.pdf}.
+#' Visited on 2016-12-26.
 #'
 #' Webb, A. R.; Slaper, H.; Koepke, P. & Schmalwieser, A. W. Know your standard:
 #' clarifying the CIE erythema action spectrum. Photochemistry and photobiology,

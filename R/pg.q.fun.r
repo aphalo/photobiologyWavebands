@@ -21,7 +21,7 @@
 #' @family BSWF functions
 #'
 PG_q_fun <-
-  function(w.length){
+  function(w.length) {
       exp(4.688272*exp(-exp(0.1703411*(w.length-307.867)/1.15)) +
             ((390-w.length)/121.7557-4.183832))
   }

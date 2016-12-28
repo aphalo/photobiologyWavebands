@@ -1,4 +1,4 @@
-#' Definition of CIE weighted waveband
+#' Constructor of CIE weighted waveband
 #'
 #' UVI (UV Index) based on Erythema BSWF
 #'

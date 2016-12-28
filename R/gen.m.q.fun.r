@@ -11,7 +11,8 @@
 #'   the BSWF normalized as in the original source.  The returned values are
 #'   based on quantum effectiveness units.
 #'
-#' @references [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and
+#' @references
+#' [1]Caldwell, M. M. (1971) Solar UV irradiation and the growth and
 #' development of higher plants. In Giese, A. C. (Ed.) Photophysiology, Academic
 #' Press, 1971, 6, 131-177
 #'
@@ -39,7 +40,7 @@
 #' @family BSWF functions
 #'
 GEN_M_q_fun <-
-  function(w.length){
+  function(w.length) {
     spectral_weights <-
       570.25 - 4.70144 * w.length + 0.01274 * w.length^2 - 1.13118E-5 * w.length^3
 

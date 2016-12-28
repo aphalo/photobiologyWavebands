@@ -1,4 +1,4 @@
-#' Definition of DNA damage (SETLOW) weighted waveband
+#' Constructor of DNA damage (SETLOW) weighted waveband
 #'
 #' Naked DNA damage BSWF, Green and Miller's formulation.
 #'
@@ -25,7 +25,7 @@ DNA_GM <- function(norm=300, w.low=275, w.high=400) {
                wb.name=paste("DNA.GM", as.character(norm), sep="."), wb.label="DNA G&M")
 }
 
-#' Definition of DNA damage (SETLOW) weighted waveband
+#' Constructor of DNA damage (SETLOW) weighted waveband
 #'
 #' Naked DNA damage BSWF, Green and Miller's formulation.
 #'

@@ -1,4 +1,4 @@
-#' Definition of GPAS (Green) weighted waveband
+#' Constructor of GPAS (Green) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'
@@ -44,7 +44,7 @@ GEN_G <- function(norm=300, w.low=275, w.high=313.3) {
                norm=norm, wb.name=paste("GEN.G", as.character(norm), sep="."), wb.label="GEN(G)")
 }
 
-#' Definition of GPAS (Green) weighted waveband
+#' Constructor of GPAS (Green) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'

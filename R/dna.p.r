@@ -1,4 +1,4 @@
-#' Definition of DNA damage (Quaite) weighted waveband
+#' Constructor of DNA damage (Quaite) weighted waveband
 #'
 #' Plant DNA damage BSWF as formulated by Musil.
 #'
@@ -25,7 +25,7 @@ DNA_P <- function(norm=300, w.low=275, w.high=400) {
                wb.name=paste("DNA.P", as.character(norm), sep="."), wb.label="DNA plant")
 }
 
-#' Definition of DNA damage (Quaite) weighted waveband
+#' Constructor of DNA damage (Quaite) weighted waveband
 #'
 #' Plant DNA damage BSWF as formulated by Musil.
 #'

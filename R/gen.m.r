@@ -1,4 +1,4 @@
-#' Definition of GPAS (Micheletti) weighted waveband
+#' Constructor of GPAS (Micheletti) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell [1] as formulated by Micheletti et
 #' al. [2]
@@ -39,7 +39,7 @@ GEN_M <- function(norm=300, w.low=275, w.high=313.3) {
                norm=norm, wb.name=paste("GEN.M", as.character(norm), sep="."), wb.label="GEN(M)")
 }
 
-#' Definition of GPAS (Micheletti) weighted waveband
+#' Constructor of GPAS (Micheletti) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Micheletti et al.
 #'

@@ -10,7 +10,6 @@
 #'   the BSWF normalized as in the original source (298 nm) and based on energy
 #'   effectiveness.
 #'
-#'
 #' @export
 #' @examples
 #' CIE_e_fun(293:400)
@@ -18,7 +17,7 @@
 #' @family BSWF functions
 #'
 CIE_e_fun <-
-function(w.length){
+function(w.length) {
     CIE.energy <- numeric(length(w.length))
     CIE.energy[w.length <= 298] <- 1
     CIE.energy[(w.length > 298) & (w.length <= 328)] <-

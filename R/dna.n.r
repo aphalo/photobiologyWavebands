@@ -1,4 +1,4 @@
-#' Definition of DNA damage (SETLOW) weighted waveband
+#' Constructor of DNA damage (SETLOW) weighted waveband
 #'
 #' Naked DNA damage BSWF
 #'
@@ -25,7 +25,7 @@ DNA_N <- function(norm=300, w.low=275, w.high=400) {
                norm=norm, wb.name=paste("DNA.N", as.character(norm), sep="."), wb.label="DNA Naked")
 }
 
-#' Definition of DNA damage (SETLOW) weighted waveband
+#' Constructor of DNA damage (SETLOW) weighted waveband
 #'
 #' Naked DNA damage BSWF
 #'

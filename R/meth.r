@@ -1,4 +1,4 @@
-#' Definition of CH4 production from pectin weighted waveband
+#' Constructor of CH4 production from pectin weighted waveband
 #'
 #' Methane production from pectin BSWF
 #'

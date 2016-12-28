@@ -1,8 +1,8 @@
-#' Definition of list of UV wavebands
+#' Constructor of lists of UV wavebands
 #'
 #' Defined according to "ISO".
 #'
-#' @param std a character string "ISO" or "none"
+#' @param std a character string "ISO", "CIE", "medical" or "none".
 #' @return a list of wavebands
 #' @export
 #'
@@ -11,14 +11,19 @@
 #' @examples
 #' UV_bands()
 #' UV_bands("ISO")
+#' UV_bands("CIE")
+#' UV_bands("medical")
+#' UV_bands("none")
 #'
 #' @family lists of unweighted wavebands
 #'
-UV_bands <- function(std="ISO"){
-  if (std=="none") {
-    stdc <- "ISO"
+UV_bands <- function(std="ISO") {
+  if (std %in% c("ISO", "none", "medical")) {
+    list(UVC(std), UVB(std), UVA(std))
+  } else if (std=="CIE") {
+    list(UVC(std), UVB(std), UVA1(std), UVA2(std))
   } else {
-    stdc <- std
+    warning("'std' = '", std, "' not implemented.")
+    list()
   }
-  return(list(UVC(stdc), UVB(std), UVA(std)))
 }

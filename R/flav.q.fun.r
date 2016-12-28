@@ -10,7 +10,6 @@
 #'   the BSWF normalized as in the original source.  The returned values are
 #'   based on quantum effectiveness units.
 #'
-#'
 #' @export
 #' @examples
 #' FLAV_q_fun(293:400)
@@ -18,7 +17,7 @@
 #' @family BSWF functions
 #'
 FLAV_q_fun <-
-function(w.length){
+function(w.length) {
     FLAV.quantum <- numeric(length(w.length))
     FLAV.quantum[w.length >= 280 & w.length <= 346] <-
       exp(45.0 - 0.15 * w.length[w.length >= 280 & w.length <= 346])

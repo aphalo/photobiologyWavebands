@@ -18,7 +18,7 @@
 #' @examples
 #' DNA_N_q_fun(293:400)
 DNA_N_q_fun <-
-  function(w.length){
+  function(w.length) {
     wl.within <- w.length >= 256 & w.length <= 364
     spectral_weights <- numeric(length(w.length))
     spectral_weights[w.length < 256] <- NA # the value at 256 nm

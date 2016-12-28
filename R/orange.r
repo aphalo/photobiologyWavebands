@@ -1,4 +1,4 @@
-#' Definition of orange waveband
+#' Constructor of orange waveband
 #'
 #' Orange radiation (591...610 nm), no weighting
 #' applied.
@@ -14,11 +14,11 @@
 #'
 #' @family unweighted wavebands
 #'
-Orange <- function(std="ISO"){
+Orange <- function(std="ISO") {
   if (std=="ISO") {
-    return(new_waveband(591, 610, wb.name="Orange.ISO", wb.label="Orange"))
+    new_waveband(w.low=591, w.high=610, wb.name="Orange.ISO", wb.label="Orange")
   } else {
-    warning("'std' argument value not implemented.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }

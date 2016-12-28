@@ -1,9 +1,10 @@
-#' Definition of VIS waveband
+#' Constructor of VIS waveband
 #'
-#' Visible (to humnas) radiation (380...760 nm), no weighting
-#' applied.
+#' Visible (to humnas) radiation (380...760 nm) according to ISO standard
+#' definition, no weighting applied. For \code{std = "RS"} the returned range is
+#' the same as for \code{PAR()}.
 #'
-#' @param std a character string "ISO"
+#' @param std a character string "ISO" or "RS" (remote sensing).
 #'
 #' @return A waveband object wavelength defining a wavelength range.
 #'
@@ -17,11 +18,19 @@
 #'
 #' @family unweighted wavebands
 #'
-VIS <- function(std="ISO"){
+VIS <- function(std="ISO") {
   if (std=="ISO") {
-    return(new_waveband(380, 760, wb.name="VIS.ISO", wb.label="VIS"))
+    new_waveband(380, 760, wb.name="VIS.ISO", wb.label="VIS")
+  } else if (std=="RS") {
+    new_waveband(400, 700, wb.name="VIS.RS", wb.label="VIS")
+  } else if (std=="LandsatOLI") {
+    new_waveband(500, 680, wb.name="Pan.LandsatOLI", wb.label="Pan")
+  } else if (std=="Landsat7") {
+    new_waveband(500, 900, wb.name="Pan.Landsat7", wb.label="Pan")
+  } else if (std=="LandsatRBV") {
+    new_waveband(505, 750, wb.name="Pan.RBV.Landsat3", wb.label="Pan")
   } else {
-    warning("'std' argument value not implemented.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }

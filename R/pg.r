@@ -1,4 +1,4 @@
-#' Definition of PG weighted waveband
+#' Constructor of PG weighted waveband
 #'
 #' Plant growth BSWF
 #'

@@ -39,7 +39,7 @@
 #' @family BSWF functions
 #'
 GEN_G_q_fun <-
-  function(w.length){
+  function(w.length) {
     spectral_weights <-
       2.618 * (1.0 - (w.length / 313.3)^2) * exp((300 - w.length) / 31.08)
 

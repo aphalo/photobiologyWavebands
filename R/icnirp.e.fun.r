@@ -18,7 +18,7 @@
 #' @family BSWF functions
 #'
 ICNIRP_e_fun <-
-  function(w.length){
+  function(w.length) {
     ICNIRP.energy <- numeric(length(w.length))
     ICNIRP.energy[w.length < 210] <- NA
     ICNIRP.energy[(w.length >= 210) & (w.length <= 270)] <-

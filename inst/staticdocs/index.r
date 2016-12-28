@@ -13,7 +13,6 @@ sd_section("Wavelength ranges",
     "UVB",
     "UVA",
     "VIS",
-    "UV_bands",
     "Purple",
     "Blue",
     "Green",
@@ -21,10 +20,20 @@ sd_section("Wavelength ranges",
     "Orange",
     "Red",
     "Far_red",
-    "VIS_bands",
-    "PAR",
-    "Plant_bands"
+    "IR",
+    "PAR"
   )
+)
+
+sd_section("Lists of wavebands",
+           "Constructors for lists related waveband objects.",
+           c(
+             "UV_bands",
+             "VIS_bands",
+             "IR_bands",
+             "Plant_bands",
+             "Landsat_bands"
+           )
 )
 
 sd_section("Spectral weighting functions (SWFs)",

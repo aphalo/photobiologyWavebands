@@ -1,4 +1,4 @@
-#' Definition of yellow waveband
+#' Constructor of yellow waveband
 #'
 #' Yellow radiation (570...591 nm), no weighting applied.
 #'
@@ -16,11 +16,11 @@
 #'
 #' @family unweighted wavebands
 #'
-Yellow <- function(std="ISO"){
+Yellow <- function(std="ISO") {
   if (std=="ISO") {
-    return(new_waveband(570, 591, wb.name="Yellow.ISO", wb.label="Yellow"))
+    new_waveband(570, 591, wb.name="Yellow.ISO", wb.label="Yellow")
   } else {
-    warning("'std' argument value not implemented.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }

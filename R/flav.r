@@ -1,4 +1,4 @@
-#' Definition of FLAV BSWF flavonoids
+#' Constructor of FLAV BSWF flavonoids
 #'
 #' Mesembryanthin accumulation BSWF, data and formulation from Ibdah et al.
 #'

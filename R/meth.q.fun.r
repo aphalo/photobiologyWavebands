@@ -16,7 +16,7 @@
 #' @family BSWF functions
 #'
 CH4_q_fun <-
-function(w.length){
+function(w.length) {
     CH4_e_fun(w.length) * 300 / w.length
 }
 

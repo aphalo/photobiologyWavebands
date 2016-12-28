@@ -1,4 +1,4 @@
-#' Definition of UV waveband
+#' Constructor of UV waveband
 #'
 #' UV: 100--400 nm.
 #'
@@ -20,5 +20,10 @@
 #' @family unweighted wavebands
 #'
 UV <- function(std="ISO") {
-  new_waveband(w.low=100, w.high=400, wb.name=paste("UV", std, sep="."), wb.label="UV")
+  if (std %in% c("ISO", "CIE")) {
+    new_waveband(w.low=100, w.high=400, wb.name=paste("UV", std, sep="."), wb.label="UV")
+  } else {
+    warning("'std' = '", std, "' not implemented.")
+    NA
+  }
 }

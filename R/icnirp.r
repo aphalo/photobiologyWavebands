@@ -1,4 +1,4 @@
-#' Definition of ICNIRP 2004 weighted waveband
+#' Constructor of ICNIRP 2004 weighted waveband
 #'
 #' ICNIRP 2004 BSWF waveband constructor. This BSWF is used for the
 #' determination of exposure limits (EL) for workers, and includes a safety margin
@@ -18,7 +18,6 @@
 #'   BETWEEN 180 nm AND 400 nm (INCOHERENT OPTICAL RADIATION). HEALTH PHYSICS
 #'   87(2):171-186.
 #'   \url{http://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
-#'
 #'
 #' @export
 #'

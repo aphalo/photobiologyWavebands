@@ -15,7 +15,6 @@
 #'   at 256 nm, to shorter wavelengths. For wavelengths longer than 345 nm we
 #'   return zero, as is usual parctice.
 #'
-#'
 #' @export
 #' @examples
 #' GEN_T_q_fun(293:400)
@@ -23,7 +22,7 @@
 #' @family BSWF functions
 #'
 GEN_T_q_fun <-
-function(w.length){
+function(w.length) {
     wl.within <- w.length >= 265 & w.length <= 345
     spectral_weights <- numeric(length(w.length))
     spectral_weights[w.length < 265] <- 16.08324

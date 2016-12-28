@@ -56,21 +56,28 @@ my_version <- packageVersion("photobiologyWavebands")
 
 This package provides constructors for \texttt{waveband} objects, a class defined
 in package \PB. These are convenience functions that allow definition of
-range of wavelengths and biological spectral weighting functions (BSWFs)
-following definitions in common use and ISO standards.
+ranges of wavelengths and biological spectral weighting functions (BSWFs)
+following definitions in common use, CIE recommendations and ISO standards.
 
-\section{Calculating irradiances}
+\section{Waveband constructors for ranges}
 
 Functions for several colour bands, in some cases according to different
-optional definitions, are listed in Table \ref{tab:unweighted}.
+optional definitions, are listed in Tables \ref{tab:uv:unweighted},
+\ref{tab:vis:unweighted}, \ref{tab:ir:unweighted}, and \ref{tab:landsat:unweighted}.
+
+<<>>=
+Red()
+PAR()
+UV()
+IR()
+@
 
 
 \begin{table*}
-    \caption[Unweighted wavebands]{Functions in R package \PBWB used for cronstructing
-    descriptors of wavebands used for calculation of irradiances or exposures. The boundaries of
-    the band given as wavelengths in nm ($\lambda$). Definiton according to ISO-21348 "ISO" is
-    the default for all functions exept \texttt{PAR()} for which there is only one definition
-    in common use "Plant" which is the default.}\label{tab:unweighted}\vspace{2ex}
+    \caption[Unweighted UV wavebands]{Functions in R package \PBWB used for constructing
+    descriptors of ultraviolet wavebands used for calculation of irradiances or exposures. The boundaries of
+    the band given as wavelengths in nm ($\lambda$). Definition according to ISO-21348 "ISO" is
+    the default for all functions except \texttt{UVA1()} and \texttt{UVA2()} for which there is only one definition in common use "CIE" which is the default.}\label{tab:uv:unweighted}\vspace{2ex}
     \centering
 \textsf{%
        \begin{small}
@@ -78,31 +85,69 @@ optional definitions, are listed in Table \ref{tab:unweighted}.
        \toprule
        Waveband & Source & Dose or irrad. & Waveband (nm) \\
        \midrule
+       Ultraviolet & & & \\
+       \midrule
        \UV & ISO-21348 & \texttt{UV("ISO")} & $100\leq\lambda<400$ \\
+       \midrule
        \UVC & ISO-21348 & \texttt{UVC("ISO")} & $100\leq\lambda<280$ \\
        \UVC & n.a. & \texttt{UVC("medical")} & $220\leq\lambda<290$ \\
        \UVC & n.a. & \texttt{UVC("none")} & $200\leq\lambda<280$ \\
-       \UVB & ISO-21348 & \texttt{UVB("ISO")} & $280\leq\lambda<315$ \\
+        \midrule
+      \UVB & ISO-21348 & \texttt{UVB("ISO")} & $280\leq\lambda<315$ \\
        \UVB & n.a. & \texttt{UVB("none")} & $280\leq\lambda<320$ \\
+       \midrule
        \UVA & ISO-21348 & \texttt{UVA("ISO")} & $315\leq\lambda<400$ \\
+       \UVA & CIE & \texttt{UVA("CIE")} & $315\leq\lambda<400$ \\
        \UVA & n.a. & \texttt{UVA("none")} & $320\leq\lambda<400$ \\
        \midrule
+       \UVA{}1 & CIE & \texttt{UVA1("CIE")} & $315\leq\lambda<340$ \\
+       \midrule
+       \UVA{}2 & CIE & \texttt{UVA2("CIE")} & $340\leq\lambda<400$ \\
+       \midrule
+      \textsl{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+\begin{table*}
+    \caption[Unweighted VIS wavebands]{Functions in R package \PBWB used for constructing
+    descriptors of visible wavebands used for calculation of irradiances or exposures. The boundaries of
+    the band given as wavelengths in nm ($\lambda$). Definition according to ISO-21348 "ISO" is
+    the default for all functions except \texttt{PAR()} for which there is only one definition
+    in common use "Plant" which is the default.}\label{tab:vis:unweighted}\vspace{2ex}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       Waveband & Source & Dose or irrad. & Waveband (nm) \\
+       \midrule
+       Visible & & & \\
+       \midrule
        Visible & ISO-21348 & \texttt{VIS("ISO")} & $380\leq\lambda<760$ \\
-       Photosynthesis  & n.a. & \texttt{PAR("Plant")} & $400\leq\lambda<700$ \\
-       Purple & ISO-21348 & \texttt{Purple("ISO")} & $360\leq\lambda<450$ \\
+        \midrule
+      Photosynthesis  & n.a. & \texttt{PAR("Plant")} & $400\leq\lambda<700$ \\
+        \midrule
+      Purple & ISO-21348 & \texttt{Purple("ISO")} & $360\leq\lambda<450$ \\
+       \midrule
        Blue & Sellaro & \texttt{Blue("Sellaro")} & $420\leq\lambda<490$ \\
        Blue & ISO-21348 & \texttt{Blue("ISO")} & $450\leq\lambda<500$ \\
+       \midrule
        Green & Sellaro & \texttt{Green("Sellaro")} & $500\leq\lambda<570$ \\
        Green & ISO-21348 & \texttt{Green("ISO")} & $500\leq\lambda<570$ \\
+       \midrule
        Yellow & ISO-21348 & \texttt{Yellow("ISO")} & $570\leq\lambda<591$ \\
+       \midrule
        Orange & ISO-21348 & \texttt{Orange("ISO")} & $591\leq\lambda<610$ \\
+       \midrule
        Red & ISO-21348 & \texttt{Red("ISO")} & $610\leq\lambda<760$ \\
        Red & Smith & \texttt{Red("Smith10")} & $655\leq\lambda<665$ \\
        Red & Smith ? & \texttt{Red("Smith20")} & $650\leq\lambda<670$ \\
        Red & Inada   & \texttt{Red("Inada")} & $600\leq\lambda<700$ \\
        Red & Warrington  & \texttt{Red("Warrington")} & $625\leq\lambda<675$ \\
        Red & Sellaro & \texttt{Red("Sellaro")} & $620\leq\lambda<680$ \\
-       Far-red & ISO & \texttt{Far\_red("ISO")} & not defined \\
+       \midrule
        Far-red & Smith10 & \texttt{Far\_red("Smith")} & $725\leq\lambda<735$ \\
        Far-red & Smith20 & \texttt{Far\_red("Smith")} & $720\leq\lambda<740$ \\
        Far-Red & Inada   & \texttt{Red("Inada")} & $700\leq\lambda<800$ \\
@@ -110,11 +155,154 @@ optional definitions, are listed in Table \ref{tab:unweighted}.
        Far-red & Sellaro & \texttt{Far\_red("Sellaro")} & $700\leq\lambda<750$ \\
        Far-red & BTV & \texttt{Far\_red("BTV")} & $700\leq\lambda<760$ \\
        \midrule
-       \textsl{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
+      \textsl{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
        \bottomrule
      \end{tabular}
      \end{small}
 }\end{table*}
+
+\begin{table*}
+    \caption[Unweighted IR wavebands]{Functions in R package \PBWB used for constructing
+    descriptors of infrared wavebands used for calculation of irradiances or exposures. The boundaries of
+    the band are given as wavelengths in nm ($\lambda$). Definition according to ISO-20473, "ISO" is
+    the default for all functions except \texttt{IRA()}, \texttt{IRB()}, \texttt{IRC()} are defined
+    based on CIE recommendations.}\label{tab:ir:unweighted}\vspace{2ex}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       Waveband & Source & Dose or irrad. & Waveband (nm) \\
+       \midrule
+       Infrared & & & \\
+       \midrule
+       IR & ISO-20473 & \texttt{IR("ISO")} & $780\leq\lambda<1 \times 10^6$ \\
+       NIR & ISO-20473 & \texttt{NIR("ISO")} & $780\leq\lambda<3000$ \\
+       MIR & ISO-20473 & \texttt{IR("ISO")} & $3000\leq\lambda<50000$ \\
+       FIR & ISO-20473 & \texttt{IR("ISO")} & $5000\leq\lambda<1 \times 10^6$ \\
+       IR & CIE & \texttt{IR("CIE")} & $700\leq\lambda<1 \times 10^6$ \\
+       IR-A & CIE & \texttt{IRA("CIE")} & $780\leq\lambda<1400$ \\
+       IR-B & CIE & \texttt{IRB("CIE")} & $1400\leq\lambda<3000$ \\
+       IR-C & CIE & \texttt{IRC("CIE")} & $3000\leq\lambda<1 \times 10^6$ \\
+       SWIR &  n.a. & \texttt{SWIR()} & $1400\leq\lambda<3000$ \\
+       \midrule
+      \textsl{Arbitrary} & n.a. & \texttt{new\_waveband(lo,hi)} & $lo\leq\lambda<hi$ \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+\begin{table*}
+    \caption[Landsat wavebands]{Functions in R package \PBWB used for constructing
+    descriptors of Landsat-imager wavebands. The boundaries of
+    the band are given as wavelengths in nm ($\lambda$). Definitions follow NASA and USGS documentation for boundaries at half maximum (HM).}\label{tab:landsat:unweighted}\vspace{2ex}
+    \centering
+\textsf{%
+       \begin{small}
+       \begin{tabular}{@{}lllc@{}}
+       \toprule
+       Waveband & imager & constructor & Wavelengths (nm) \\
+       \midrule
+       Landsat & & & \\
+       \midrule
+       Purple/Coastal & OLI & \texttt{Purple("LandsatOLI")} & $433\leq\lambda<453$ \\
+       \midrule
+      Blue & TM & \texttt{Blue("LandsatTM")} & $450\leq\lambda<520$ \\
+      Blue & ETM & \texttt{Blue("LandsatETM")} & $450\leq\lambda<520$ \\
+      Blue & OLI & \texttt{Blue("LandsatOLI")} & $450\leq\lambda<515$ \\
+       \midrule
+      Green & RBV & \texttt{Green("LandsatRBV")} & $480\leq\lambda<580$ \\
+      Green & MSS & \texttt{Green("LandsatMSS")} & $500\leq\lambda<600$ \\
+      Green & TM & \texttt{Green("LandsatTM")} & $520\leq\lambda<600$ \\
+      Green & ETM & \texttt{Green("LandsatETM")} & $520\leq\lambda<600$ \\
+      Green & OLI & \texttt{Green("LandsatOLI")} & $525\leq\lambda<600$ \\
+       \midrule
+      Red & RBV & \texttt{Red("LandsatRBV")} & $580\leq\lambda<680$ \\
+      Red & MSS & \texttt{Red("LandsatMSS")} & $600\leq\lambda<700$ \\
+      Red & TM & \texttt{Red("LandsatTM")} & $630\leq\lambda<690$ \\
+      Red & ETM & \texttt{Red("LandsatETM")} & $630\leq\lambda<690$ \\
+      Red & OLI & \texttt{Red("LandsatOLI")} & $630\leq\lambda<680$ \\
+       \midrule
+      NIR & RBV & \texttt{NIR("LandsatRBV")} & $700\leq\lambda<830$ \\
+      NIR & MSS & \texttt{NIR("LandsatMSS")} & $800\leq\lambda<1100$ \\
+      NIR & TM & \texttt{NIR("LandsatTM")} & $760\leq\lambda<900$ \\
+      NIR & ETM & \texttt{NIR("LandsatETM")} & $760\leq\lambda<900$ \\
+      NIR & OLI & \texttt{NIR("LandsatOLI")} & $845\leq\lambda<885$ \\
+       \midrule
+      SWIR1 & TM & \texttt{SWIR("LandsatTM")} & $1550\leq\lambda<1750$ \\
+      SWIR1 & ETM & \texttt{SWIR("LandsatETM")} & $1550\leq\lambda<1750$ \\
+      SWIR1 & OLI & \texttt{SWIR("LandsatOLI")} & $1560\leq\lambda<1660$ \\
+       \midrule
+      SWIR2 & TM & \texttt{SWIR("LandsatTM")} & $2080\leq\lambda<2350$ \\
+      SWIR2 & ETM & \texttt{SWIR("LandsatETM")} & $2080\leq\lambda<2350$ \\
+      SWIR2 & OLI & \texttt{SWIR("LandsatOLI")} & $2100\leq\lambda<2300$ \\
+       \midrule
+      TIR1 & TIRS & \texttt{TIR1("LandsatTIRS")} & $10600\leq\lambda<11200$ \\
+       \midrule
+      TIR2 & TM & \texttt{TIR2("LandsatTM")} & $10400\leq\lambda<12500$ \\
+      TIR2 & ETM & \texttt{TIR2("LandsatETM")} & $10400\leq\lambda<12500$ \\
+      TIR2 & TIRS & \texttt{TIR2("LandsatTIRS")} & $11500\leq\lambda<12500$ \\
+       \bottomrule
+     \end{tabular}
+     \end{small}
+}\end{table*}
+
+Constructors of lists of waveband definitions frequently used together are also defined in the package (Table \ref{tab:uw:lists}).
+
+<<>>=
+UV_bands()
+@
+
+<<>>=
+VIS_bands()
+@
+
+<<>>=
+IR_bands()
+@
+
+Additional constructors are provided for Landsat missions, for example the
+list of wavebands used in mission Landsat 1 can be created directly.
+
+<<>>=
+Landsat_bands("L1")
+@
+
+\begin{table*}
+    \caption[Lists of wavebands]{Functions in R package \PBWB used for constructing
+    lists descriptors of wavebands used for calculation of irradiances or exposures.}
+    \label{tab:uw:lists}
+    \vspace{2ex}
+    \centering
+\textsf{%
+       \begin{footnotesize}
+       \begin{tabular}{@{}llll@{}}
+       \toprule
+       Waveband & Source & Function & std values used \\
+       \midrule
+       UV defs. & ISO-21348 & \texttt{UV\_bands("ISO")} & "ISO" \\
+       UV defs. & CIE & \texttt{UV\_bands("CIE")} & "CIE" \\
+       UV defs. & n.a. & \texttt{UV\_bands("medical")} & "medical" \\
+       UV defs. & n.a. & \texttt{UV\_bands("none")} & "none" \\
+       VIS defs. & ISO-21348 & \texttt{VIS\_bands("ISO")} & "ISO" \\
+       IR defs. & ISO-20473 & \texttt{IR\_bands("ISO")} & "ISO" \\
+       IR defs. & CIE & \texttt{IR\_bands("CIE")} & "CIE" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory20")} & "ISO", "Sellaro" and "Smith20" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory")} & "ISO", "Sellaro" and "Smith20" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("sensory10")} & "ISO", "Sellaro" and "Smith10" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("")} & "ISO" and "McCree" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("energy")} & "ISO" and "McCree" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("photon")} & "ISO" and "McCree" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("ISO")} & "ISO" and "McCree" \\
+       Plant sens. & n.a. & \texttt{Plant\_bands("CIE")} & "CIE" and "McCree" \\
+       Landsat & NASA/USGS & \texttt{Landsat\_bands("L8")} & Landsat 8 mission \\
+       Landsat & NASA/USGS & \texttt{Landsat\_bands("L$x$")} & Landsat $ x = 1\ldots 8 $ missions \\
+       \bottomrule
+     \end{tabular}
+     \end{footnotesize}
+}\end{table*}
+
+\section{Calculating irradiances}
 
 An example using \texttt{sun\_spct} included in package \texttt{photobiology}. As the input spectral irradiance is units of \wattnm the output is in \mol or \watt.
 
@@ -136,32 +324,6 @@ A few functions for generating coherent lists of wavebands are also defined (Tab
 e_irrad(sun.spct, VIS_bands())
 @
 
-
-\begin{table*}
-    \caption[Lists of wavebands]{Functions in R package \PBWB used for constructing
-    lists descriptors of wavebands used for calculation of irradiances or exposures.}
-    \label{tab:uw:lists}
-    \vspace{2ex}
-    \centering
-\textsf{%
-       \begin{footnotesize}
-       \begin{tabular}{@{}llll@{}}
-       \toprule
-       % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
-       Waveband & Source & Function & std values used \\
-       \midrule
-       VIS defs. & ISO-21348 & \texttt{VIS\_bands("ISO")} & "ISO" \\
-       UV defs. & ISO-21348 & \texttt{UV\_bands("ISO")} & "ISO" \\
-       UV defs. & n.a. & \texttt{UV\_bands("none")} & "none" \\
-       Plant sens. & n.a. & \texttt{Plant\_bands("sensory20")} & "ISO", "Sellaro" and "Smith20" \\
-       Plant sens. & n.a. & \texttt{Plant\_bands("sensory")} & "ISO", "Sellaro" and "Smith20" \\
-       Plant sens. & n.a. & \texttt{Plant\_bands("sensory10")} & "ISO", "Sellaro" and "Smith10" \\
-       Plant sens. & n.a. & \texttt{Plant\_bands("energy")} & "ISO" and "McCree" \\
-       \bottomrule
-     \end{tabular}
-     \end{footnotesize}
-}\end{table*}
-
 \section{Photon ratios}
 \label{sec:ratios:photon}
 
@@ -174,7 +336,7 @@ q_ratio(sun.spct, Blue(), VIS())
 
 \section{Effective irradiances and exposures}
 
-The waveband definitions and SWFs are stored in \texttt{waveband} objetcs, that can be created
+The waveband definitions and SWFs are stored in \texttt{waveband} objects, that can be created
 with function \texttt{waveband}. The same functions described above
 for unweighted irradiances are used to calculate effective irradiances and doses.
 
@@ -183,7 +345,7 @@ and continue to be used inconsistently in the scientific literature.
 By supplying these arguments different variations of the BSWFs can be obtained. The defaults
 used are those values which we consider best, usually the most frequently used ones, except
 in cases when we consider the use of those values problematic for the reliability of the
-calcualtions.
+calculations.
 
 <<>>=
 e_irrad(sun.spct, CIE())
@@ -254,7 +416,7 @@ e_irrad(sun.spct, CIE())
 }\end{table*}
 
 The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector
-of effectiveness (either quatum/photon or energy based)
+of effectiveness (either quantum/photon or energy based)
 depending on how the original source describes them.
 These functions are listed in Table \ref{tab:BSWFs},
 and an example of their use follows.
@@ -277,19 +439,19 @@ sun.spct * CIE()
 
 \section{Luminous flux}
 
-The luminuous flux per unit are in lux can be calculated as follows using the original luminous efficency function for the human eye using for defining the lumen. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux.
+The luminous flux per unit are in lux can be calculated as follows using the original luminous efficiency function for the human eye using for defining the lumen. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux.
 
 <<>>=
 e_response(sun.spct * CIE1924_lef.spct) * photopic_sensitivity
 @
 
-The luminuous flux per unit area in lux can be calculated as follows using the latest luminous efficency function for the human eye.
+The luminous flux per unit area in lux can be calculated as follows using the latest luminous efficiency function for the human eye.
 
 <<>>=
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
 @
 
-As the luminous effciency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.
+As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.
 
 <<>>=
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *

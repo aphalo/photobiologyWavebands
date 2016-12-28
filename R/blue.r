@@ -1,8 +1,10 @@
-#' Definition of list of VIS wavebands
+#' Constructor of blue waveband
 #'
-#' Defined according to "ISO".
+#' Default defined according to "ISO".
 #'
-#' @param std a character string "ISO", or "Sellaro"
+#' @param std a character string "ISO", "Sellaro" (plant biology), or "RS"
+#'   (remote sensing), or Landsat imagers, "LandsatTM", "LandsatETM", or
+#'   "LandsatOLI".
 #'
 #' @return a waveband object wavelength defining a wavelength range.
 #'
@@ -17,14 +19,18 @@
 #'
 #' @family unweighted wavebands
 #'
-Blue <- function(std="ISO"){
+Blue <- function(std="ISO") {
   label="Blue"
   if (std=="ISO") {
-    return(new_waveband(450,500, wb.name=paste("Blue", std, sep="."), wb.label=label))
-  } else if (std=="Sellaro"){
-    return(new_waveband(420,490, wb.name=paste("Blue", std, sep="."), wb.label=label))
+    new_waveband(450, 500, wb.name=paste("Blue", std, sep="."), wb.label=label)
+  } else if (std=="Sellaro") {
+    new_waveband(420, 490, wb.name=paste("Blue", std, sep="."), wb.label=label)
+  } else if (std=="LandsatOLI" || std=="RS") {
+    new_waveband(450, 515, wb.name=paste("Blue", std, sep="."), wb.label=label)
+  } else if (std=="LandsatETM" || std=="LandsatTM") {
+    new_waveband(450, 520, wb.name=paste("Blue", std, sep="."), wb.label=label)
   } else {
-    warning("'std' argument value not implemented.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }

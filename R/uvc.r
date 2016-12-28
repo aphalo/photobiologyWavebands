@@ -1,4 +1,4 @@
-#' Definition of UV-C waveband
+#' Constructor of UV-C waveband
 #'
 #' UV-C according to CIE and ISO standrads: 100--280 nm. UV-c according to
 #' common non-standard practice: 200--280 nm. UV-C according to medical or
@@ -23,14 +23,14 @@
 #'
 UVC <- function(std="ISO") {
   label <- "UVC"
-  if (std=="ISO" || std=="CIE"){
-    return(new_waveband(w.low=100, w.high=280, wb.name=paste(label ,std, sep="."), wb.label=label))
-  } else if (std=="medical"){
-    return(new_waveband(w.low=220, w.high=290, wb.name=paste(label,std, sep="."), wb.label=label))
-  } else if (std=="none"){
-    return(new_waveband(w.low=200, w.high=280, wb.name=paste(label,std, sep="."), wb.label=label))
+  if (std=="ISO" || std=="CIE") {
+    new_waveband(w.low=100, w.high=280, wb.name=paste(label ,std, sep="."), wb.label=label)
+  } else if (std=="medical") {
+    new_waveband(w.low=220, w.high=290, wb.name=paste(label,std, sep="."), wb.label=label)
+  } else if (std=="none") {
+    new_waveband(w.low=200, w.high=280, wb.name=paste(label,std, sep="."), wb.label=label)
   } else {
-    warning("Unsupported value '", std, "' supplied for 'std'.")
-    return(NA)
+    warning("'std' = '", std, "' not implemented.")
+    NA
   }
 }
