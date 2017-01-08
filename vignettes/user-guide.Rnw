@@ -178,8 +178,8 @@ IR()
        \midrule
        IR & ISO-20473 & \texttt{IR("ISO")} & $780\leq\lambda<1 \times 10^6$ \\
        NIR & ISO-20473 & \texttt{NIR("ISO")} & $780\leq\lambda<3000$ \\
-       MIR & ISO-20473 & \texttt{IR("ISO")} & $3000\leq\lambda<50000$ \\
-       FIR & ISO-20473 & \texttt{IR("ISO")} & $5000\leq\lambda<1 \times 10^6$ \\
+       MIR & ISO-20473 & \texttt{MIR("ISO")} & $3000\leq\lambda<50000$ \\
+       FIR & ISO-20473 & \texttt{FIR("ISO")} & $5000\leq\lambda<1 \times 10^6$ \\
        IR & CIE & \texttt{IR("CIE")} & $700\leq\lambda<1 \times 10^6$ \\
        IR-A & CIE & \texttt{IRA("CIE")} & $780\leq\lambda<1400$ \\
        IR-B & CIE & \texttt{IRB("CIE")} & $1400\leq\lambda<3000$ \\
