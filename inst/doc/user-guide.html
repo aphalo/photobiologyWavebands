@@ -589,7 +589,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="effective-irradiances-and-exposures" class="section level3">
 <h3>Effective irradiances and exposures</h3>
 <p>Both waveband definitions based on a wavelength range and SWFs are stored in <code>waveband</code> objects, that can be created with function .</p>
-<p>The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and exposures (soemtimes called “doses”).</p>
+<p>The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and exposures (sometimes called “doses”).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_irrad</span>(sun.spct, <span class="kw">CIE</span>())</code></pre></div>
 <pre><code>##  CIE98.298.tr.lo 
 ##       0.08181583 
@@ -667,7 +667,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 wavelengths1 &lt;-<span class="st"> </span><span class="dv">285</span>:<span class="dv">400</span>
 action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>(wavelengths1)</code></pre></div>
 <p>All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.</p>
-<p>These functions are used internally by the package, but are also used for the calculion of effective spectral irradiances by multiplication of a <code>source_spct</code> object by a <code>waveband</code> object.</p>
+<p>These functions are used internally by the package, but are also used for the calculation of effective spectral irradiances by multiplication of a <code>source_spct</code> object by a <code>waveband</code> object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sun.spct *<span class="st"> </span><span class="kw">CIE</span>()</code></pre></div>
 <pre><code>## Object: source_spct [122 x 2]
 ## Wavelength range 280 to 400 nm, step 0.9230769 to 1 nm 
