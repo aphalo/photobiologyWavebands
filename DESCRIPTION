@@ -1,8 +1,8 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband Definitions for UV, VIS, and IR Radiation
-Version: 0.4.1.9000
-Date: 2017-01-08
+Version: 0.4.2
+Date: 2017-03-19
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre")),
@@ -28,4 +28,4 @@ URL: http://www.r4photobiology.info/,
     https://bitbucket.org/aphalo/photobiologywavebands
 BugReports: https://bitbucket.org/aphalo/photobiologywavebands/issues
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

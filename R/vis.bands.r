@@ -12,8 +12,8 @@
 #'
 #' @family lists of unweighted wavebands
 #'
-VIS_bands <- function(std="ISO") {
-  if (std=="ISO") {
+VIS_bands <- function(std = "ISO") {
+  if (std == "ISO") {
     list(Purple(std), Blue(std), Green(std), Yellow(std), Orange(std), Red(std))
   } else {
     warning("'std' argument value not implemented.")

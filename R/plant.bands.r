@@ -18,14 +18,10 @@
 #' Plant_bands("sensory20")
 #' Plant_bands("ISO")
 #' Plant_bands("CIE")
-#' Plant_bands("")
 #'
 #' @family lists of unweighted wavebands
 #'
 Plant_bands <- function(std = "sensory20") {
-  if (std == "") {
-    std == "ISO"
-  }
   if (std %in% c("sensory", "sensory10", "sensory20")) {
     if (std == "sensory10") {
       RFRstd <- "Smith10"

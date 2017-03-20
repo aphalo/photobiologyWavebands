@@ -1,0 +1,253 @@
+---
+title: "photobiologyWavebands `r packageVersion('photobiologyWavebands')`<br>User Guide"
+author: "Pedro J. Aphalo"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+This package provides constructors for `waveband` objects, a class defined
+in package 'photobiology'. These are convenience functions that allow definition of
+ranges of wavelengths and biological spectral weighting functions (BSWFs)
+following definitions in common use, CIE recommendations and ISO standards.
+
+```{r}
+library(photobiology)
+library(photobiologyWavebands)
+```
+
+## Waveband constructors for ranges
+
+Functions for several colour bands, in some cases according to different
+optional definitions, are listed in the tables below.
+
+```{r}
+Red("ISO")
+Red("Smith10")
+PAR()
+UV()
+IR()
+```
+
+### Waveband constructors for color-based wavelength ranges
+
+| constructor | std  | 
+|---|---|
+| **ultraviolet** | |
+| UV() | ISO | 
+| UVC() | ISO, medical, none  |
+| UVB() | ISO, none  |
+| UVA() | ISO, CIE, none  |
+| UVA1() | CIE  | 
+| UVA2() | CIE  | 
+| **visible** | |
+| VIS() | ISO  |
+| PAR() | |
+| Purple()  | ISO |
+| Blue()  | ISO, Sellaro  | 
+| Green()  | ISO, Sellaro  | 
+| Yellow() | ISO |
+| Orange() | ISO |
+| Red() | ISO, Smith10, Smith20, Inada, Warrington, Sellaro |
+| Far_red() | Smith10, Smith20, Inada, Warrington, Sellaro, BTV |
+| **infrared** ||
+| IR() | ISO, CIE |
+| NIR() | ISO  |
+| MIR() | ISO  |
+| FIR() | ISO  |
+| IRA() | CIE  |
+| IRB() | CIE  |
+| IRC() | CIE  |
+| SWIR() |   |
+
+Constructors of lists of waveband definitions frequently used together are also defined in the package.
+
+```{r}
+UV_bands("ISO")
+UV_bands("CIE")
+```
+
+```{r}
+Plant_bands()
+```
+
+| constructor | std  | 
+|---|---|
+| UV_bands() | ISO, CIE, medical, none | 
+| VIS_bands() | ISO  |
+| IR_bands() | ISO, CIE |
+| Plants_bands() | sensory, sensory10, sensory20, ISO, CIE, none |
+
+### Waveband constructors for instrument-based wavelength ranges
+
+| constructor | std  | 
+|---|---|
+| **Remote sensing** | |
+| VIS() | LandsatRBV, LandsatOLI, Landsat7, RS |
+| Blue() | LandsatTM, LandsatETM, LandsatOLI | 
+| Green() | LandsatTM, LandsatETM, LandsatOLI, LandsatMSS, LandsatRBV |
+| Red() | LandsatTM, LandsatETM, LandsatOLI, LandsatMSS, LandsatRBV |
+| NIR() | LandsatTM, LandsatETM, LandsatOLI, LandsatMSS, LandsatRBV |
+| SWIR1() | LandsatTM, LandsatETM, LandsatOLI  | 
+| SWIR2() | LandsatTM, LandsatETM, LandsatOLI  | 
+| TIR1() | LandsatTIRS |
+| TIR2() | LandsatTM, LandsatETM, LandsatTIRS |
+
+Additional constructors are provided for Landsat missions, for example the
+list of wavebands used in mission Landsat 1 can be created directly.
+
+```{r}
+Landsat_bands("L1")
+```
+
+| constructor | std  | 
+|---|---|
+| Landsat_bands() | L1, L2, L3, L4, L5, L6; L7, L8 | 
+| RBV_bands() | LandsatRBV, L1, L2 |
+| MSS_bands() | LandsatMSS, L1, L2, L3, L4, L5 |
+| OLI_bands() | LandsatOLI, L8 |
+| TIRS_bands() | LandsatTIRS, L8 |
+| ETM_bands() | LandsatETM, L4, L5 |
+
+## Calculating irradiances
+
+An example using `sun.pct` included in package 'photobiology'. As the input spectral irradiance is units of Watt m-2 nm-1 the output is in mol m-2 s-1 or W m-2.
+
+```{r}
+e_irrad(sun.spct, UV()) # W m-2
+q_irrad(sun.spct, UV()) * 1e6 # umol s-1 m-2
+```
+
+Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones.
+
+```{r}
+e_irrad(sun.spct, list(Blue(), VIS()))
+e_irrad(sun.spct, list(B = Blue(), VIS()))
+```
+
+A few functions for generating coherent lists of wavebands are also defined (Table bellow).
+
+```{r}
+e_irrad(sun.spct, VIS_bands())
+```
+
+## Photon ratios
+
+Photon ratios can be calculated from any pair of waveband objects. This a convenient and very flexible way of doing this type of calculations.
+
+```{r}
+q_ratio(sun.spct, Blue(), VIS())
+```
+
+## Spectral weighting functions (SWFs)
+
+Currently functions for constructing `waveband` objects describing several BSWFs are implemented (see Table below). These functions take three arguments in most cases as they have been used
+and continue to be used inconsistently in the scientific literature.
+By supplying these arguments different variations of the BSWFs can be obtained. The defaults
+used are those values which we consider best, usually the most frequently used ones, except
+in cases when we consider the use of those values problematic for the reliability of the
+calculations.
+
+### Waveband constructors for BSWFs
+
+| constructor | parameters  | 
+|---|---|
+| **ultraviolet** | |
+| GEN_G() | norm, w.low, w.high | 
+| GEN_T() | norm, w.low, w.high  |
+| GEN_M() | norm, w.low, w.high  |
+| PG() | norm, w.low, w.high  |
+| CIE() | norm, w.low, w.high  | 
+| ICNIRP() | norm, w.low, w.high  | 
+| DNA_N() | norm, w.low, w.high |
+| DNA_GM() | norm, w.low, w.high |
+| DNA_P() | norm, w.low, w.high |
+| FLAV() | norm, w.low, w.high |
+| CH4() | norm, w.low, w.high |
+
+### Effective irradiances and exposures
+
+Both waveband definitions based on a wavelength range and SWFs are stored in `waveband` objects, that can be created with function \texttt{waveband()}. 
+
+The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and exposures (soemtimes
+called "doses").
+
+```{r}
+e_irrad(sun.spct, CIE())
+```
+
+### BSWFs function definitions
+
+| constructor | parameters  | 
+|---|---|
+| GEN_G_q_fun() | w.length | 
+| GEN_T_q_fun() | w.length  |
+| GEN_M_q_fun() | w.length  |
+| PG_q_fun() | w.length  |
+| CIE_e_fun() | w.length  | 
+| CIE_q_fun() | w.length  | 
+| ICNIRP_e_fun() | w.length  | 
+| DNA_N_q_fun() | w.length |
+| DNA_GM_q_fun() | w.length |
+| DNA_P_q_fun() | w.length |
+| FLAV_q_fun() | w.length |
+| CH4_e_fun() |  w.length |
+| CH4_q_fun() |  w.length |
+
+The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector
+of effectiveness (either quantum/photon or energy based)
+depending on how the original source describes them.
+These functions are listed in the Table above,
+and an example of their use follows.
+
+```{r}
+# at 1 nm intervals
+wavelengths1 <- 285:400
+action.spectrum1 <- CIE_e_fun(wavelengths1)
+```
+
+All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.
+
+These functions are used internally by the package, but are also used for the calculion of effective spectral irradiances by multiplication of a `source_spct` object by a `waveband` object.
+
+```{r}
+sun.spct * CIE()
+```
+
+## Luminous flux
+
+The luminous flux per unit area in lux can be calculated as follows using the original luminous efficiency function for the human eye used when the _lumen_ definition was standardized. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux. The spectra luminous efficiency function data are included in package 'photobiology'.
+
+```{r}
+e_response(sun.spct * CIE1924_lef.spct) * photopic_sensitivity
+
+```
+
+The luminous flux per unit area in lux can be calculated as follows using the latest luminous efficiency function for the human eye.
+
+```{r}
+e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
+```
+
+As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.
+
+```{r}
+e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
+                       interpolate_spct(CIE2008_lef2deg.spct, 555)$s.e.response
+```
+
+An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.
+
+```{r}
+e_response(sun.spct * 1e-6 * CIE1951_scotopic_lef.spct) * scotopic_sensitivity
+```
+
+
+
