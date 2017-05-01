@@ -7,3 +7,5 @@
 .*\.tex
 .*\.synctex\.gz
 .*\.log
+^docs$
+_pkgdown.yml

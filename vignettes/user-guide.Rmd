@@ -1,5 +1,6 @@
 ---
-title: "photobiologyWavebands `r packageVersion('photobiologyWavebands')`<br>User Guide"
+title: "User Guide"
+subtitle: "'photobiologyWavebands' `r packageVersion('photobiologyWavebands')`"
 author: "Pedro J. Aphalo"
 date: "`r Sys.Date()`"
 output: 

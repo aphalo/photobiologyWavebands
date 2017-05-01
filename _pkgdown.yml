@@ -1,0 +1,64 @@
+reference:
+  - title: Package overview
+    contents:
+    - '`photobiologyWavebands-package`'
+  - title: Wavelength ranges
+    contents:
+    - UV
+    - UVC
+    - UVB
+    - UVA
+    - VIS
+    - Purple
+    - Blue
+    - Green
+    - Yellow
+    - Orange
+    - Red
+    - Far_red
+    - IR
+    - PAR
+
+  - title: Lists of wavebands
+    contents:
+    - UV_bands
+    - VIS_bands
+    - IR_bands
+    - Plant_bands
+    - Landsat_bands
+  - title: Spectral weighting functions (SWFs)
+    desc: SWFs and their corresponding waveband constructors
+    contents:
+    - CIE_e_fun
+    - CIE_q_fun
+    - CIE
+    - UVI
+    - DNA_GM_q_fun
+    - DNA_GM
+    - DNA_P_q_fun
+    - DNA_P
+    - DNA_N_q_fun
+    - DNA_N
+    - FLAV_q_fun
+    - FLAV
+    - GEN_G_q_fun
+    - GEN_G
+    - GEN_T_q_fun
+    - GEN_T
+    - GEN_M_q_fun
+    - GEN_M
+    - PG_q_fun
+    - PG
+    - CH4_e_fun
+    - CH4_q_fun
+    - CH4
+    - ICNIRP_e_fun
+    - ICNIRP
+  - title: Spectral response data
+    contents:
+    - photopic_sensitivity
+    - scotopic_sensitivity
+    - CIE1924_lef.spct
+    - CIE1951_scotopic_lef.spct
+    - CIE2008_lef2deg.spct
+    - SetlowTUV.spct

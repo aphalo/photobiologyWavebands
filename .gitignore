@@ -10,4 +10,4 @@ vignettes/figure/*.pdf
 *.synctex.gz
 *.log
 *.so
-inst/web
+docs
