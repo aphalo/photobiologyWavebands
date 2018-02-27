@@ -12,7 +12,8 @@ Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: Constructors of waveband objects for commonly used biological
     spectral weighting functions (BSWFs) and for different wavebands describing
     named ranges of wavelengths in the ultraviolet (UV), visible (VIS)
-    and infrared (IR) regions of the electromagnetic spectrum.
+    and infrared (IR) regions of the electromagnetic spectrum.  Part of the
+    'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:

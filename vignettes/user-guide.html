@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,9 +12,9 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2017-03-20" />
+<meta name="date" content="2018-02-27" />
 
-<title>photobiologyWavebands 0.4.2 User Guide</title>
+<title>User Guide</title>
 
 
 
@@ -68,9 +68,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore">photobiologyWavebands 0.4.2<br>User Guide</h1>
+<h1 class="title toc-ignore">User Guide</h1>
+<h3 class="subtitle"><em>‘photobiologyWavebands’ 0.4.2.1.9000</em></h3>
 <h4 class="author"><em>Pedro J. Aphalo</em></h4>
-<h4 class="date"><em>2017-03-20</em></h4>
+<h4 class="date"><em>2018-02-27</em></h4>
 
 
 <div id="TOC">
@@ -482,7 +483,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy irradiance total&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">q_irrad</span>(sun.spct, <span class="kw">UV</span>()) *<span class="st"> </span><span class="fl">1e6</span> <span class="co"># umol s-1 m-2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">q_irrad</span>(sun.spct, <span class="kw">UV</span>()) <span class="op">*</span><span class="st"> </span><span class="fl">1e6</span> <span class="co"># umol s-1 m-2</span></code></pre></div>
 <pre><code>##  UV.ISO.tr.lo 
 ##      86.49506 
 ## attr(,&quot;time.unit&quot;)
@@ -664,36 +665,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </table>
 <p>The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector of effectiveness (either quantum/photon or energy based) depending on how the original source describes them. These functions are listed in the Table above, and an example of their use follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># at 1 nm intervals</span>
-wavelengths1 &lt;-<span class="st"> </span><span class="dv">285</span>:<span class="dv">400</span>
+wavelengths1 &lt;-<span class="st"> </span><span class="dv">285</span><span class="op">:</span><span class="dv">400</span>
 action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>(wavelengths1)</code></pre></div>
 <p>All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.</p>
 <p>These functions are used internally by the package, but are also used for the calculation of effective spectral irradiances by multiplication of a <code>source_spct</code> object by a <code>waveband</code> object.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sun.spct *<span class="st"> </span><span class="kw">CIE</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sun.spct <span class="op">*</span><span class="st"> </span><span class="kw">CIE</span>()</code></pre></div>
 <pre><code>## Object: source_spct [122 x 2]
 ## Wavelength range 280 to 400 nm, step 0.9230769 to 1 nm 
 ## Time unit 1s
 ## Data weighted using 'CIE98.298' BSWF
 ## 
-## # A tibble: 122 × 2
+## # A tibble: 122 x 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
-## 1  280.0000         0
-## 2  280.9231         0
-## 3  281.8462         0
-## 4  282.7692         0
-## 5  283.6923         0
-## 6  284.6154         0
-## 7  285.5385         0
-## 8  286.4615         0
-## 9  287.3846         0
-## 10 288.3077         0
+##  1     280.        0.
+##  2     281.        0.
+##  3     282.        0.
+##  4     283.        0.
+##  5     284.        0.
+##  6     285.        0.
+##  7     286.        0.
+##  8     286.        0.
+##  9     287.        0.
+## 10     288.        0.
 ## # ... with 112 more rows</code></pre>
 </div>
 </div>
 <div id="luminous-flux" class="section level2">
 <h2>Luminous flux</h2>
 <p>The luminous flux per unit area in lux can be calculated as follows using the original luminous efficiency function for the human eye used when the <em>lumen</em> definition was standardized. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux. The spectra luminous efficiency function data are included in package ‘photobiology’.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct *<span class="st"> </span>CIE1924_lef.spct) *<span class="st"> </span>photopic_sensitivity</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct <span class="op">*</span><span class="st"> </span>CIE1924_lef.spct) <span class="op">*</span><span class="st"> </span>photopic_sensitivity</code></pre></div>
 <pre><code>##    Total 
 ## 49579.93 
 ## attr(,&quot;time.unit&quot;)
@@ -701,7 +702,7 @@ action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy response total&quot;</code></pre>
 <p>The luminous flux per unit area in lux can be calculated as follows using the latest luminous efficiency function for the human eye.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct *<span class="st"> </span>CIE2008_lef2deg.spct) *<span class="st"> </span>photopic_sensitivity</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct <span class="op">*</span><span class="st"> </span>CIE2008_lef2deg.spct) <span class="op">*</span><span class="st"> </span>photopic_sensitivity</code></pre></div>
 <pre><code>##    Total 
 ## 53057.78 
 ## attr(,&quot;time.unit&quot;)
@@ -709,8 +710,8 @@ action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy response total&quot;</code></pre>
 <p>As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct *<span class="st"> </span>CIE2008_lef2deg.spct) *<span class="st"> </span>photopic_sensitivity *
-<span class="st">                       </span><span class="kw">interpolate_spct</span>(CIE2008_lef2deg.spct, <span class="dv">555</span>)$s.e.response</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct <span class="op">*</span><span class="st"> </span>CIE2008_lef2deg.spct) <span class="op">*</span><span class="st"> </span>photopic_sensitivity <span class="op">*</span>
+<span class="st">                       </span><span class="kw">interpolate_spct</span>(CIE2008_lef2deg.spct, <span class="dv">555</span>)<span class="op">$</span>s.e.response</code></pre></div>
 <pre><code>##    Total 
 ## 53910.01 
 ## attr(,&quot;time.unit&quot;)
@@ -718,7 +719,7 @@ action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;energy response total&quot;</code></pre>
 <p>An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct *<span class="st"> </span><span class="fl">1e-6</span> *<span class="st"> </span>CIE1951_scotopic_lef.spct) *<span class="st"> </span>scotopic_sensitivity</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">e_response</span>(sun.spct <span class="op">*</span><span class="st"> </span><span class="fl">1e-6</span> <span class="op">*</span><span class="st"> </span>CIE1951_scotopic_lef.spct) <span class="op">*</span><span class="st"> </span>scotopic_sensitivity</code></pre></div>
 <pre><code>##     Total 
 ## 0.1186256 
 ## attr(,&quot;time.unit&quot;)
@@ -734,7 +735,7 @@ action.spectrum1 &lt;-<span class="st"> </span><span class="kw">CIE_e_fun</span>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
