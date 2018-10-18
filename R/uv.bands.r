@@ -1,8 +1,8 @@
 #' Constructor of lists of UV wavebands
 #'
-#' Defined according to "ISO".
+#' Defined according to "ISO" by default, but other definitions also supported.
 #'
-#' @param std a character string "ISO", "CIE", "medical" or "none".
+#' @param std a character string "ISO", "CIE", "medical", "plants" or "none".
 #' @return a list of wavebands
 #' @export
 #'
@@ -13,6 +13,7 @@
 #' UV_bands("ISO")
 #' UV_bands("CIE")
 #' UV_bands("medical")
+#' UV_bands("plants")
 #' UV_bands("none")
 #'
 #' @family lists of unweighted wavebands
@@ -22,6 +23,8 @@ UV_bands <- function(std="ISO") {
     list(UVC(std), UVB(std), UVA(std))
   } else if (std=="CIE") {
     list(UVC(std), UVB(std), UVA1(std), UVA2(std))
+  } else if (std=="plants") {
+    list(UVB("ISO"), UVAsw(std), UVAlw(std))
   } else {
     warning("'std' = '", std, "' not implemented.")
     list()
