@@ -4,6 +4,8 @@
 #' UV-A according to common non-standard practice: 320--400 nm.
 #' UV-A1 according to CIE: 315--340 nm.
 #' UV-A2 according to CIE: 340--400 nm.
+#' UVsw according to non-standard use suitable for plants: 315--350 nm.
+#' UVlw according to non-standard use suitable for plants: 350--400 nm.
 #'
 #' @param std a character string "CIE", "ISO" or "none"
 #'
@@ -44,6 +46,8 @@ UVA <- function(std="ISO") {
 UVA1 <- function(std="CIE") {
   if (std=="CIE") {
     new_waveband(w.low=315, w.high=340, wb.name=paste("UVA1",std, sep="."), wb.label="UVA1")
+  } else if (std == "plants") {
+    new_waveband(w.low=315, w.high=350, wb.name=paste("UVAsw",std, sep="."), wb.label="UVAsw")
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA
@@ -57,8 +61,26 @@ UVA1 <- function(std="CIE") {
 UVA2 <- function(std="CIE") {
   if (std=="CIE") {
     new_waveband(w.low=340, w.high=400, wb.name=paste("UVA2",std, sep="."), wb.label="UVA2")
+  } else if (std == "plants") {
+    new_waveband(w.low=350, w.high=400, wb.name=paste("UVAlw",std, sep="."), wb.label="UVAlw")
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA
   }
+}
+
+#' @rdname UVA
+#'
+#' @export
+#'
+UVAsw <- function(std="plants") {
+  UVA1(std)
+}
+
+#' @rdname UVA
+#'
+#' @export
+#'
+UVAlw <- function(std="plants") {
+  UVA2(std)
 }
