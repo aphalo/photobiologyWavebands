@@ -8,4 +8,5 @@
 .*\.synctex\.gz
 .*\.log
 ^docs$
+^build-binary-from-source.sh$
 _pkgdown.yml

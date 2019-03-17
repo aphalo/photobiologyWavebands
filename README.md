@@ -1,6 +1,6 @@
-# R package 'photobiologyWavebands' #
+# R package 'photobiologyWavebands'
 
-[![](http://www.r-pkg.org/badges/version/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands) [![](http://cranlogs.r-pkg.org/badges/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands) [![](http://cranlogs.r-pkg.org/badges/grand-total/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
+[![](http://www.r-pkg.org/badges/version/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands) 
 
 Package '**photobiologyWavebands**' is a set of functions and data to be used together with package '**photobiology**' for calculating derived quantities from spectral data. Non-weighed derived quantities represent summaries of a given range of wavelengths, which can be expressed either in energy or photon based units. All constructors default to ISO standardized definitions when they are available, but other competing definitions are available. These additional definitions include the wavelengths ranges used by Landsat satellite imagers, as these may be needed to approximate remote-sensing-related index calculations on spectral data.
 

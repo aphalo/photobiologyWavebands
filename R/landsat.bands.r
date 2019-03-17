@@ -1,7 +1,12 @@
 #' Constructor of lists of wavebands matching Landsat imagers
 #'
 #' Defined according as ranges of wavelengths according to NASA and USGS
-#' manuals.
+#' manuals. The definitions are as \emph{rectangular} windows, while
+#' the true response functions deviate to some extent from these ideal
+#' definitions.
+#'
+#' See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
+#' detailed sensitivity spectra for the different bands of the imaginers.
 #'
 #' @param std a character string "L1"..."L8", for missions, "LandsarRBV",
 #'   "LandsatMSS", etc. for imagers.
