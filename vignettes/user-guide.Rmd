@@ -57,7 +57,7 @@ IR()
 | Yellow() | ISO |
 | Orange() | ISO |
 | Red() | ISO, Smith10, Smith20, Inada, Warrington, Sellaro |
-| Far_red() | Smith10, Smith20, Inada, Warrington, Sellaro, BTV |
+| Far_red() | Smith10, Smith20, Inada, Warrington, Sellaro, BTV, RedEdge20, RedEdge40 |
 | **infrared** ||
 | IR() | ISO, CIE |
 | NIR() | ISO  |
