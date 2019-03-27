@@ -16,7 +16,7 @@
 #' @name SetlowTUV.spct
 #'
 #' @references
-#' \url{https://uv.biospherical.com/Version2/description-Version2-Database3.html} downloaded 2015-02-07
+#' \url{http://uv.biospherical.com/Version2/description-Version2-Database3.html} downloaded 2015-02-07
 NULL
 #' CIE2008 luminous efficiency function (2-deg) (photopic human vision)
 #'
@@ -35,7 +35,7 @@ NULL
 #' @format A response.spct object with 441 rows and 2 variables
 #' @name CIE2008_lef2deg.spct
 #' @references
-#' \url{https://www.cvrl.org/} downloaded on 2015-01-24
+#' \url{http://www.cvrl.org/} downloaded on 2015-01-24
 NULL
 #' CIE1924 luminous efficiency function (photopic human vision)
 #'
@@ -57,7 +57,7 @@ NULL
 #' @note This luminous efficiency function understimates the renponse to short
 #'   wavelengths.
 #' @references
-#'  \url{https://www.cvrl.org/} downloaded on 2015-01-24
+#'  \url{http://www.cvrl.org/} downloaded on 2015-01-24
 NULL
 #' Luminous efficiency function (scotopic human vision)
 #'
@@ -76,7 +76,7 @@ NULL
 #' @format A response.spct object with 401 rows and 2 variables
 #' @name CIE1951_scotopic_lef.spct
 #' @references
-#' \url{https://www.cvrl.org/} downloaded on 2015-01-24
+#' \url{http://www.cvrl.org/} downloaded on 2015-01-24
 NULL
 #' Photopic sensitivity of the human eye
 #'

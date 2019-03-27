@@ -102,7 +102,7 @@
 #' Review of Plant Physiology, 33:481-518.
 #'
 #' USGS (nd) Landsat 8 Science Data Users Handbook.
-#' \url{https://landsat.usgs.gov/sites/default/files/documents/Landsat8DataUsersHandbook.pdf}.
+#' \url{https://www.usgs.gov/media/files/landsat-8-data-users-handbook}.
 #' Visited on 2016-12-26.
 #'
 #' Webb, A. R.; Slaper, H.; Koepke, P. & Schmalwieser, A. W. Know your standard:
