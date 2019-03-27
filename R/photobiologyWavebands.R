@@ -29,7 +29,7 @@
 #' practice in plant UV photobiology (1st ed., p. xxx + 174). Helsinki:
 #' University of Helsinki, Department of Biosciences, Division of Plant Biology.
 #' ISBN 978-952-10-8363-1 (PDF), 978-952-10-8362-4 (paperback). Open access PDF
-#' download available at http://hdl.handle.net/10138/37558
+#' download available at https://hdl.handle.net/10138/37558
 #'
 #' Caldwell, M. M. (1971) Solar UV irradiation and the growth and development
 #' of higher plants. In Giese, A. C. (Ed.) Photophysiology, Academic Press,
@@ -54,7 +54,7 @@
 #' International Commission on Non-Ionizing Radiation Protection (2004) ICNIRP
 #' Guidelines on Limits of Exposure to Ultraviolet Radiation of Wavelengths
 #' Between 180 nm And 400 nm (Incoherent Optical Radiation). Health Physics
-#' 87(2):171-186. \url{http://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
+#' 87(2):171-186. \url{https://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
 #'
 #' ISO (2007) Optics and photonics - Spectral bands. ISO Standard 20473:2007.
 #' ISO, Geneva.

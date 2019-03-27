@@ -1,5 +1,5 @@
-photobiologyWavebands 0.4.3
-===========================
+photobiologyWavebands 0.4.3 (2019-03-27)
+========================================
 
 * Add waveband definitions for non-standard split of the UVA band with
   constructors UVAsw() and UVAlw().
@@ -7,8 +7,8 @@ photobiologyWavebands 0.4.3
   "RedEdge40".
 * Minor updates to documentation.
 
-photobiologyWavebands 0.4.2
-===========================
+photobiologyWavebands 0.4.2 (2017-03-20)
+========================================
 
 Add constructors for frequently used infrared bands, and for lists of infrared
 bands.

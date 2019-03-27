@@ -20,7 +20,8 @@ Depends:
     R (>= 3.4.0),
     photobiology (>= 0.9.26)
 Suggests:
-    knitr (>= 1.20)
+    knitr (>= 1.22),
+    rmarkdown (>= 1.12)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
