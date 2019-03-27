@@ -64,7 +64,7 @@
 #'
 #' Quaite, F. E., Sutherland, B. M., Sutherland, J. C. Action spectrum for DNA
 #' damage in alfalfa lowers predicted impact of ozone depletion. Nature, 1992,
-#' 358, 576–578
+#' 358, 576-578
 #'
 #' Leutner, B. and Horning, N. (2016). RStoolbox: Tools for Remote Sensing Data
 #' Analysis. R package version 0.1.6.
