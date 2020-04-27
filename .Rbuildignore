@@ -7,6 +7,6 @@
 .*\.tex
 .*\.synctex\.gz
 .*\.log
-^docs$
 ^build-binary-from-source.sh$
 _pkgdown.yml
+README.Rmd
