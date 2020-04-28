@@ -26,7 +26,7 @@ LazyLoad: yes
 LazyData: yes
 ByteCompile: true
 Encoding: UTF-8
-URL: http://docs.r4photobiology.info/photobiologywavebands/,
+URL: https://docs.r4photobiology.info/photobiologywavebands/,
     https://bitbucket.org/aphalo/photobiologywavebands
 BugReports: https://bitbucket.org/aphalo/photobiologywavebands/issues
 RoxygenNote: 7.1.0
