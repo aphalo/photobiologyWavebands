@@ -2,6 +2,7 @@ photobiologyWavebands 0.4.4 (2020-04-xx)
 ========================================
 
 * Add NDVI(), normalized difference vegetation index.
+* Update docs for 'roxygen2' 7.1.0.
 
 photobiologyWavebands 0.4.3 (2019-03-27)
 ========================================
