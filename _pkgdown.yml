@@ -1,5 +1,5 @@
 destination: ../photobiologyWavebands-docs
-url: https://docs.r4photobiology.info/photobiologywavebands/
+url: https://docs.r4photobiology.info/photobiologyWavebands/
 
 home:
   strip_header: true
@@ -27,7 +27,6 @@ reference:
     - Far_red
     - IR
     - PAR
-
   - title: Lists of wavebands
     contents:
     - UV_bands
