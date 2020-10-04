@@ -1,13 +1,3 @@
 .Rproj.user
 .Rhistory
 .RData
-*.Rd
-photobiology.Rproj
-*.tex
-vignettes/*.pdf
-vignettes/figure/*.pdf
-*.bbl
-*.synctex.gz
-*.log
-*.so
-docs
