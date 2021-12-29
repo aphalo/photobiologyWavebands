@@ -10,3 +10,5 @@
 ^build-binary-from-source.sh$
 _pkgdown.yml
 README.Rmd
+^CITATION\.cff$
+^\.github$
