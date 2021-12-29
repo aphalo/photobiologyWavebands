@@ -38,6 +38,6 @@
 #' UVI(sun.spct, "WMO")
 #' round(UVI(sun.spct), 0)
 
-UVI <- function(spct, std="NOAA") {
-  e_irrad(spct, w.band=UVI_wb(std), wb.trim=TRUE) * 40.0
+UVI <- function(spct, std = "NOAA") {
+  e_irrad(spct, w.band = UVI_wb(std), wb.trim = TRUE) * 40.0
 }

@@ -38,10 +38,9 @@
 #'
 #' @family BSWF functions
 #'
-GEN_G_q_fun <-
-  function(w.length) {
-    spectral_weights <-
-      2.618 * (1.0 - (w.length / 313.3)^2) * exp((300 - w.length) / 31.08)
+GEN_G_q_fun <- function(w.length) {
+  spectral_weights <-
+    2.618 * (1.0 - (w.length / 313.3) ^ 2) * exp((300 - w.length) / 31.08)
 
-    ifelse(spectral_weights < 0, 0, spectral_weights)
-  }
+  ifelse(spectral_weights < 0, 0, spectral_weights)
+}

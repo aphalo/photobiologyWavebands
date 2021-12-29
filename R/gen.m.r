@@ -34,9 +34,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-GEN_M <- function(norm=300, w.low=275, w.high=313.3) {
-  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN_M_q_fun, SWF.norm=300,
-               norm=norm, wb.name=paste("GEN.M", as.character(norm), sep="."), wb.label="GEN(M)")
+GEN_M <- function(norm = 300,
+                  w.low = 275,
+                  w.high = 313.3) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    weight = "SWF",
+    SWF.q.fun = GEN_M_q_fun,
+    SWF.norm = 300,
+    norm = norm,
+    wb.name = paste("GEN.M", as.character(norm), sep = "."),
+    wb.label = "GEN(M)"
+  )
 }
 
 #' Constructor of GPAS (Micheletti) weighted waveband

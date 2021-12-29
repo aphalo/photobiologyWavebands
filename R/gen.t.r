@@ -27,9 +27,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-GEN_T <- function(norm=300, w.low=275, w.high=345) {
-  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN_T_q_fun, SWF.norm=300,
-               norm=norm, wb.name=paste("GEN.T", as.character(norm), sep="."), wb.label="GEN(T)")
+GEN_T <- function(norm = 300,
+                  w.low = 275,
+                  w.high = 345) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    weight = "SWF",
+    SWF.q.fun = GEN_T_q_fun,
+    SWF.norm = 300,
+    norm = norm,
+    wb.name = paste("GEN.T", as.character(norm), sep = "."),
+    wb.label = "GEN(T)"
+  )
 }
 
 #' Constructor of GPAS (Timijan) weighted waveband

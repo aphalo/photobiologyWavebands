@@ -16,16 +16,15 @@
 #'
 #' @family BSWF functions
 #'
-FLAV_q_fun <-
-function(w.length) {
-    FLAV.quantum <- numeric(length(w.length))
-    FLAV.quantum[w.length >= 280 & w.length <= 346] <-
-      exp(45.0 - 0.15 * w.length[w.length >= 280 & w.length <= 346])
-    FLAV.quantum[w.length > 346] <- 0.0
-    FLAV.quantum[w.length < 280] <- exp(45.0 - 0.15 * 280)
-    if (w.length[1] < 280) {
-      warning("FLAV BSWF is extrapolated for w.length < 280 nm\n to the value for 280 nm")
-    }
-    return(FLAV.quantum)
+FLAV_q_fun <- function(w.length) {
+  FLAV.quantum <- numeric(length(w.length))
+  FLAV.quantum[w.length >= 280 & w.length <= 346] <-
+    exp(45.0 - 0.15 * w.length[w.length >= 280 & w.length <= 346])
+  FLAV.quantum[w.length > 346] <- 0.0
+  FLAV.quantum[w.length < 280] <- exp(45.0 - 0.15 * 280)
+  if (w.length[1] < 280) {
+    warning("FLAV BSWF is set for w.length < 280 nm\n to the value at 280 nm")
+  }
+  return(FLAV.quantum)
 }
 

@@ -19,10 +19,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-DNA_P <- function(norm=300, w.low=275, w.high=400) {
-  new_waveband(w.low=w.low, w.high=w.high,
-               weight="SWF", SWF.q.fun=DNA_P_q_fun, SWF.norm=290.00011, norm=norm,
-               wb.name=paste("DNA.P", as.character(norm), sep="."), wb.label="DNA plant")
+DNA_P <- function(norm = 300,
+                  w.low = 275,
+                  w.high = 400) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    weight = "SWF",
+    SWF.q.fun = DNA_P_q_fun,
+    SWF.norm = 290.00011,
+    norm = norm,
+    wb.name = paste("DNA.P", as.character(norm), sep = "."),
+    wb.label = "DNA plant"
+  )
 }
 
 #' Constructor of DNA damage (Quaite) weighted waveband

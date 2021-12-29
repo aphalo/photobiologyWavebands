@@ -16,12 +16,12 @@
 #'
 #' @family BSWF functions
 #'
-DNA_P_q_fun <-
-function(w.length) {
-    QUAITE_MUSIL.quantum290 <- numeric(length(w.length))
-    QUAITE_MUSIL.quantum290[w.length<400] <-
-      22.657e-3*7.98e-16*exp(1.118e4/w.length[w.length<400])
-    QUAITE_MUSIL.quantum290[w.length >= 400] <- 0
-    return(QUAITE_MUSIL.quantum290)
+DNA_P_q_fun <- function(w.length) {
+  QUAITE_MUSIL.quantum290 <- numeric(length(w.length))
+  QUAITE_MUSIL.quantum290[w.length < 400] <-
+    22.657e-3 * 7.98e-16 * exp(1.118e4 / w.length[w.length < 400])
+  QUAITE_MUSIL.quantum290[w.length >= 400] <- 0
+
+  QUAITE_MUSIL.quantum290
 }
 

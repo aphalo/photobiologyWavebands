@@ -14,9 +14,14 @@
 #'
 #' @family unweighted wavebands
 #'
-Orange <- function(std="ISO") {
-  if (std=="ISO") {
-    new_waveband(w.low=591, w.high=610, wb.name="Orange.ISO", wb.label="Orange")
+Orange <- function(std = "ISO") {
+  if (std == "ISO") {
+    new_waveband(
+      w.low = 591,
+      w.high = 610,
+      wb.name = "Orange.ISO",
+      wb.label = "Orange"
+    )
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA

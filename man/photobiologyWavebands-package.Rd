@@ -6,6 +6,8 @@
 \alias{photobiologyWavebands-package}
 \title{photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Constructors of waveband objects for commonly used biological
     spectral weighting functions (BSWFs) and for different wavebands describing
     named ranges of wavelengths in the ultraviolet (UV), visible (VIS)

@@ -16,10 +16,7 @@
 #'
 #' @family BSWF functions
 #'
-DNA_GM_q_fun <-
-function(w.length) {
-    SETLOW_GM.quantum300 <- numeric(length(w.length))
-    SETLOW_GM.quantum300 <- exp(13.82*(1/(1+exp((w.length-310)/9))-1))*30.675
-    return(SETLOW_GM.quantum300)
+DNA_GM_q_fun <- function(w.length) {
+  exp(13.82 * (1 / (1 + exp((w.length - 310) / 9)) - 1)) * 30.675
 }
 

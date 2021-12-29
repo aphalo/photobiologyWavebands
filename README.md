@@ -1,10 +1,12 @@
 
-# photobiologyWavebands
+# photobiologyWavebands <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyWavebands)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
+[![R build
+status](https://github.com/aphalo/photobiologyWavebands/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions)
 
 Package ‘**photobiologyWavebands**’ is a set of functions and data to be
 used together with package ‘**photobiology**’ for calculation of derived
@@ -46,8 +48,8 @@ install.packages("photobiologyWavebands")
 Installation of the current unstable version from Bitbucket:
 
 ``` r
-# install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologyWavebands")
+# install.packages("remotes")
+remotes::install_github("aphalo/photobiologyWavebands")
 ```
 
 ## Documentation
@@ -75,12 +77,12 @@ handbook of best practice in plant UV photobiology (1st ed., p. xxx +
 174). Helsinki: University of Helsinki, Department of Biosciences,
 Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
 978-952-10-8362-4 (paperback). PDF file available from
-(<http://doi.org/10.31885/9789521083631>).
+(<https://doi.org/10.31885/9789521083631>).
 
 ## Contributing
 
 Pull requests, bug reports, and feature requests are welcome at
-(<https://bitbucket.org/aphalo/photobiologyWavebands>).
+(<https://github.com/aphalo/photobiologyWavebands>).
 
 ## Citation
 
@@ -111,6 +113,6 @@ citation("photobiologyWavebands")
 
 ## License
 
-© 2012-2020 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2021 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

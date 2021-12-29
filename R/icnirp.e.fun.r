@@ -20,15 +20,23 @@
 ICNIRP_e_fun <-
   function(w.length) {
     ICNIRP.energy <- numeric(length(w.length))
+    # leftmost
     ICNIRP.energy[w.length < 210] <- NA
-    ICNIRP.energy[(w.length >= 210) & (w.length <= 270)] <-
-      0.959^(270-w.length[(w.length >= 210) & (w.length <= 270)])
-    ICNIRP.energy[(w.length > 270) & (w.length <= 300)] <-
-      1 - 0.36 * ((w.length[(w.length > 270) & (w.length <= 300)] - 270 ) / 20)^1.64
-    ICNIRP.energy[(w.length > 300) & (w.length <= 400)] <-
-      0.3 * 0.736^(w.length[(w.length > 300) & (w.length <= 400)] - 300 ) +
-      10^(2 - 0.0163 * w.length[(w.length > 300) & (w.length <= 400)])
+    # second region
+    selector <- (w.length >= 210) & (w.length <= 270)
+    ICNIRP.energy[selector] <- 0.959 ^ (270 - w.length[selector])
+    # third region
+    selector <- (w.length > 270) & (w.length <= 300)
+    ICNIRP.energy[selector] <-
+      1 - 0.36 * ((w.length[selector] - 270) / 20) ^ 1.64
+    # fourth region
+    selector <- (w.length > 300) & (w.length <= 400)
+    ICNIRP.energy[selector] <-
+      0.3 * 0.736 ^ (w.length[selector] - 300) +
+      10 ^ (2 - 0.0163 * w.length[selector])
+    # rightmost region
     ICNIRP.energy[w.length > 400] <- 0
-    return(ICNIRP.energy)
+
+    ICNIRP.energy
   }
 

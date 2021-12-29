@@ -17,18 +17,20 @@
 #' @export
 #' @examples
 #' DNA_N_q_fun(293:400)
-DNA_N_q_fun <-
-  function(w.length) {
-    wl.within <- w.length >= 256 & w.length <= 364
-    spectral_weights <- numeric(length(w.length))
-    spectral_weights[w.length < 256] <- NA # the value at 256 nm
-    if (any(wl.within)) { # avoids error in spline when xout is empty
-      spectral_weights[wl.within] <-
-        stats::spline(photobiologyWavebands::SetlowTUV.spct$w.length,
-                      photobiologyWavebands::SetlowTUV.spct$s.q.response,
-                      xout = w.length[wl.within])$y
-    }
-    spectral_weights[w.length > 364] <- 0.0
-    return(spectral_weights)
+DNA_N_q_fun <- function(w.length) {
+  wl.within <- w.length >= 256 & w.length <= 364
+  spectral_weights <- numeric(length(w.length))
+  spectral_weights[w.length < 256] <- NA # the value at 256 nm
+  spectral_weights[w.length > 364] <- 0.0
+  if (any(wl.within)) {
+    # avoids error in spline when xout is empty
+    spectral_weights[wl.within] <-
+      stats::spline(
+        photobiologyWavebands::SetlowTUV.spct$w.length,
+        photobiologyWavebands::SetlowTUV.spct$s.q.response,
+        xout = w.length[wl.within]
+      )$y
   }
+  spectral_weights
+}
 

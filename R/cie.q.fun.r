@@ -16,8 +16,7 @@
 #'
 #' @family BSWF functions
 #'
-CIE_q_fun <-
-function(w.length) {
-    CIE_e_fun(w.length) * 298.0 / w.length
+CIE_q_fun <- function(w.length) {
+  CIE_e_fun(w.length) * 298.0 / w.length
 }
 

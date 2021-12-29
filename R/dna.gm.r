@@ -19,10 +19,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-DNA_GM <- function(norm=300, w.low=275, w.high=400) {
-  new_waveband(w.low=w.low, w.high=w.high,
-               weight="SWF", SWF.q.fun=DNA_GM_q_fun, SWF.norm=300, norm=norm,
-               wb.name=paste("DNA.GM", as.character(norm), sep="."), wb.label="DNA G&M")
+DNA_GM <- function(norm = 300,
+                   w.low = 275,
+                   w.high = 400) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    weight = "SWF",
+    SWF.q.fun = DNA_GM_q_fun,
+    SWF.norm = 300,
+    norm = norm,
+    wb.name = paste("DNA.GM", as.character(norm), sep = "."),
+    wb.label = "DNA G&M"
+  )
 }
 
 #' Constructor of DNA damage (SETLOW) weighted waveband

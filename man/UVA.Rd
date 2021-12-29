@@ -17,6 +17,8 @@ UVA2(std = "CIE")
 UVAsw(std = "plants")
 
 UVAlw(std = "plants")
+
+UVAsw(std = "plants")
 }
 \arguments{
 \item{std}{a character string "CIE", "ISO" or "none"}
@@ -27,10 +29,17 @@ a waveband object wavelength defining a wavelength range.
 \description{
 UV-A according to CIE and ISO standrads: 315--400 nm.
 UV-A according to common non-standard practice: 320--400 nm.
-UV-A1 according to CIE: 315--340 nm.
-UV-A2 according to CIE: 340--400 nm.
+UV-A2 according to CIE: 315--340 nm.
+UV-A1 according to CIE: 340--400 nm.
 UVsw according to non-standard use suitable for plants: 315--350 nm.
 UVlw according to non-standard use suitable for plants: 350--400 nm.
+}
+\note{
+The non-standard definitions of UV-A and UV-A2 using 320 nm as limit
+  should not be used in any new publications or work as they deviate from the
+  internationally accepted standard. Their continued use leads to confusion.
+  Their inclusion in this package is to allow calculations needed to compare
+  new results and methods against old publications.
 }
 \examples{
 UVA()

@@ -20,7 +20,7 @@
 #' PAR("Plant")
 PAR <- function(std = "Plant") {
   if (std %in% c("Plant", "McCree")) {
-    new_waveband(400, 700, wb.name="PAR")
+    new_waveband(400, 700, wb.name = "PAR")
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA

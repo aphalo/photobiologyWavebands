@@ -21,14 +21,29 @@
 #'
 #' @family unweighted wavebands
 #'
-UVC <- function(std="ISO") {
+UVC <- function(std = "ISO") {
   label <- "UVC"
-  if (std=="ISO" || std=="CIE") {
-    new_waveband(w.low=100, w.high=280, wb.name=paste(label ,std, sep="."), wb.label=label)
-  } else if (std=="medical") {
-    new_waveband(w.low=220, w.high=290, wb.name=paste(label,std, sep="."), wb.label=label)
-  } else if (std=="none") {
-    new_waveband(w.low=200, w.high=280, wb.name=paste(label,std, sep="."), wb.label=label)
+  if (std == "ISO" || std == "CIE") {
+    new_waveband(
+      w.low = 100,
+      w.high = 280,
+      wb.name = paste(label , std, sep = "."),
+      wb.label = label
+    )
+  } else if (std == "medical") {
+    new_waveband(
+      w.low = 220,
+      w.high = 290,
+      wb.name = paste(label, std, sep = "."),
+      wb.label = label
+    )
+  } else if (std == "none") {
+    new_waveband(
+      w.low = 200,
+      w.high = 280,
+      wb.name = paste(label, std, sep = "."),
+      wb.label = label
+    )
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA

@@ -21,8 +21,7 @@
 #'
 #' @family BSWF functions
 #'
-CH4_e_fun <-
-function(w.length) {
-  10^((300 - w.length) / 80)
+CH4_e_fun <- function(w.length) {
+  10 ^ ((300 - w.length) / 80)
 }
 

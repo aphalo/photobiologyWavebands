@@ -19,10 +19,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-DNA_N <- function(norm=300, w.low=275, w.high=400) {
-  new_waveband(w.low=w.low, w.high=w.high, SWF.norm=300,
-               weight="SWF", SWF.q.fun=DNA_N_q_fun,
-               norm=norm, wb.name=paste("DNA.N", as.character(norm), sep="."), wb.label="DNA Naked")
+DNA_N <- function(norm = 300,
+                  w.low = 275,
+                  w.high = 400) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    SWF.norm = 300,
+    weight = "SWF",
+    SWF.q.fun = DNA_N_q_fun,
+    norm = norm,
+    wb.name = paste("DNA.N", as.character(norm), sep = "."),
+    wb.label = "DNA Naked"
+  )
 }
 
 #' Constructor of DNA damage (SETLOW) weighted waveband

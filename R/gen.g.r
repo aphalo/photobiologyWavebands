@@ -39,9 +39,19 @@
 #'
 #' @family BSWF weighted wavebands
 #'
-GEN_G <- function(norm=300, w.low=275, w.high=313.3) {
-  new_waveband(w.low=w.low, w.high=w.high, weight="SWF", SWF.q.fun=GEN_G_q_fun, SWF.norm=280,
-               norm=norm, wb.name=paste("GEN.G", as.character(norm), sep="."), wb.label="GEN(G)")
+GEN_G <- function(norm = 300,
+                  w.low = 275,
+                  w.high = 313.3) {
+  new_waveband(
+    w.low = w.low,
+    w.high = w.high,
+    weight = "SWF",
+    SWF.q.fun = GEN_G_q_fun,
+    SWF.norm = 280,
+    norm = norm,
+    wb.name = paste("GEN.G", as.character(norm), sep = "."),
+    wb.label = "GEN(G)"
+  )
 }
 
 #' Constructor of GPAS (Green) weighted waveband

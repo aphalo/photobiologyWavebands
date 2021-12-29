@@ -21,16 +21,16 @@
 #'
 #' @family BSWF functions
 #'
-GEN_T_q_fun <-
-function(w.length) {
-    wl.within <- w.length >= 265 & w.length <= 345
-    spectral_weights <- numeric(length(w.length))
-    spectral_weights[w.length < 265] <- 16.08324
-    if (any(wl.within)) {
-      spectral_weights[wl.within] <-
-      exp(-(((265-w.length[wl.within])/21)^2))/0.06217653
-    }
-    spectral_weights[w.length > 345] <- 0.0
-    return(spectral_weights)
+GEN_T_q_fun <- function(w.length) {
+  wl.within <- w.length >= 265 & w.length <= 345
+  spectral_weights <- numeric(length(w.length))
+  spectral_weights[w.length < 265] <- 16.08324
+  if (any(wl.within)) {
+    spectral_weights[wl.within] <-
+      exp(-(((265 - w.length[wl.within]) / 21) ^ 2)) / 0.06217653
+  }
+  spectral_weights[w.length > 345] <- 0.0
+
+  spectral_weights
 }
 

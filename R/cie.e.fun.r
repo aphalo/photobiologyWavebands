@@ -16,15 +16,22 @@
 #'
 #' @family BSWF functions
 #'
-CIE_e_fun <-
-function(w.length) {
-    CIE.energy <- numeric(length(w.length))
-    CIE.energy[w.length <= 298] <- 1
-    CIE.energy[(w.length > 298) & (w.length <= 328)] <-
-      10^(0.094*(298-w.length[(w.length > 298) & (w.length <= 328)]))
-    CIE.energy[(w.length > 328) & (w.length <= 400)] <-
-      10^(0.015*(139-w.length[(w.length > 328) & (w.length <= 400)]))
-    CIE.energy[w.length > 400] <- 0
-    return(CIE.energy)
+CIE_e_fun <- function(w.length) {
+  # empty vector
+  CIE.energy <- numeric(length(w.length))
+  # leftmost segment
+  CIE.energy[w.length <= 298] <- 1
+  # second segment
+  selector <- (w.length > 298) & (w.length <= 328)
+  CIE.energy[selector] <-
+    10 ^ (0.094 * (298 - w.length[selector]))
+  # third segment
+  selector <- (w.length > 328) & (w.length <= 400)
+  CIE.energy[selector] <-
+    10 ^ (0.015 * (139 - w.length[selector]))
+  # rightmost segment
+  CIE.energy[w.length > 400] <- 0
+
+  CIE.energy
 }
 

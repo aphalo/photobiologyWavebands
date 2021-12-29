@@ -15,10 +15,10 @@
 #'
 #' @family lists of unweighted wavebands
 #'
-IR_bands <- function(std="ISO") {
-  if (std=="ISO") {
+IR_bands <- function(std = "ISO") {
+  if (std == "ISO") {
     list(NIR(std), MIR(std), FIR(std))
-  } else if (std=="CIE") {
+  } else if (std == "CIE") {
     list(IRA(std), IRB(std), IRC(std))
   } else {
     warning("'std' argument value not implemented.")

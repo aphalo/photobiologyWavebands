@@ -19,16 +19,28 @@
 #'
 #' @family unweighted wavebands
 #'
-Blue <- function(std="ISO") {
-  label="Blue"
-  if (std=="ISO") {
-    new_waveband(450, 500, wb.name=paste("Blue", std, sep="."), wb.label=label)
-  } else if (std=="Sellaro") {
-    new_waveband(420, 490, wb.name=paste("Blue", std, sep="."), wb.label=label)
-  } else if (std=="LandsatOLI" || std=="RS") {
-    new_waveband(450, 515, wb.name=paste("Blue", std, sep="."), wb.label=label)
-  } else if (std=="LandsatETM" || std=="LandsatTM") {
-    new_waveband(450, 520, wb.name=paste("Blue", std, sep="."), wb.label=label)
+Blue <- function(std = "ISO") {
+  label = "Blue"
+  if (std == "ISO") {
+    new_waveband(450,
+                 500,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sellaro") {
+    new_waveband(420,
+                 490,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatOLI" || std == "RS") {
+    new_waveband(450,
+                 515,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatETM" || std == "LandsatTM") {
+    new_waveband(450,
+                 520,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA

@@ -30,16 +30,25 @@
 #'
 #' @keywords internal
 
-UVI_wb <- function(std="NOAA") {
+UVI_wb <- function(std = "NOAA") {
   label <- "UVIndex"
-  if (std=="NOAA") {w.low=286.5} else
-  if (std=="WMO" | std=="WHO") {w.low=250.0} else
-  {
-    w.low=250.0
-    warning("Unrecognized value for UVI std, using 'WMO'.")
+  if (std == "NOAA") {
+    w.low = 286.5
+  } else if (std == "WMO" | std == "WHO") {
+    w.low = 250.0
+  } else {
+    w.low = 250.0
+    warning("Unrecognized value for UVI std '", std, "', using 'WMO'.")
   }
-  new_waveband(w.low=w.low, w.high=400,
-               weight="SWF", SWF.e.fun=CIE_e_fun, SWF.norm=298.0,
-               norm=298.0, hinges=c(249.99, 250, 298, 328, 399.99, 400),
-               wb.name=paste(label, std, sep="."), wb.label=label)
+  new_waveband(
+    w.low = w.low,
+    w.high = 400,
+    weight = "SWF",
+    SWF.e.fun = CIE_e_fun,
+    SWF.norm = 298.0,
+    norm = 298.0,
+    hinges = c(249.99, 250, 298, 328, 399.99, 400),
+    wb.name = paste(label, std, sep = "."),
+    wb.label = label
+  )
 }

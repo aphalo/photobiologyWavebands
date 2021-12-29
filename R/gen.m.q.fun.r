@@ -39,13 +39,13 @@
 #'
 #' @family BSWF functions
 #'
-GEN_M_q_fun <-
-  function(w.length) {
-    spectral_weights <-
-      570.25 - 4.70144 * w.length + 0.01274 * w.length^2 - 1.13118E-5 * w.length^3
+GEN_M_q_fun <- function(w.length) {
+  spectral_weights <-
+    570.25 - 4.70144 * w.length + 0.01274 * w.length^2 - 1.13118E-5 * w.length^3
 
-    ifelse(spectral_weights < 0 | w.length > 342, 0, spectral_weights)
+  ifelse(spectral_weights < 0 |
+           w.length > 342, 0, spectral_weights)
 
-  }
+}
 
 

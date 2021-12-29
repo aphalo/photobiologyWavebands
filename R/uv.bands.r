@@ -18,12 +18,12 @@
 #'
 #' @family lists of unweighted wavebands
 #'
-UV_bands <- function(std="ISO") {
+UV_bands <- function(std = "ISO") {
   if (std %in% c("ISO", "none", "medical")) {
     list(UVC(std), UVB(std), UVA(std))
-  } else if (std=="CIE") {
-    list(UVC(std), UVB(std), UVA1(std), UVA2(std))
-  } else if (std=="plants") {
+  } else if (std == "CIE") {
+    list(UVC(std), UVB(std), UVA2(std), UVA1(std))
+  } else if (std == "plants") {
     list(UVB("ISO"), UVAsw(std), UVAlw(std))
   } else {
     warning("'std' = '", std, "' not implemented.")

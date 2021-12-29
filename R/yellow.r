@@ -16,9 +16,9 @@
 #'
 #' @family unweighted wavebands
 #'
-Yellow <- function(std="ISO") {
-  if (std=="ISO") {
-    new_waveband(570, 591, wb.name="Yellow.ISO", wb.label="Yellow")
+Yellow <- function(std = "ISO") {
+  if (std == "ISO") {
+    new_waveband(570, 591, wb.name = "Yellow.ISO", wb.label = "Yellow")
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA

@@ -45,32 +45,64 @@
 #'
 #' @family unweighted wavebands
 #'
-Red <- function(std="ISO") {
-  label="Red"
-  if (std=="Smith") {
-    warning("The definition of 'Smith' defaults to 'Smith10', to restore old behaviour use 'Smith20'.")
+Red <- function(std = "ISO") {
+  label = "Red"
+  if (std == "Smith") {
+    warning(
+      "The definition of 'Smith' defaults to 'Smith10'."
+    )
     std <- "Smith10"
   }
-  if (std=="ISO") {
-    new_waveband(610, 760, wb.name=paste("Red", std, sep="."), wb.label=label)
-  } else if (std=="Smith20") {
-    new_waveband(650, 670, wb.name=paste("Red", std, sep="."), wb.label="R")
-  } else if (std=="Smith10") {
-    new_waveband(655, 665, wb.name=paste("Red", std, sep="."), wb.label="R")
-  } else if (std=="Inada") {
-    new_waveband(600, 700, wb.name=paste("Red", std, sep="."), wb.label="R")
-  } else if (std=="Warrington") {
-    new_waveband(625, 675, wb.name=paste("Red", std, sep="."), wb.label="R")
-  } else if (std=="Sellaro") {
-    new_waveband(620, 680, wb.name=paste("Red", std, sep="."), wb.label=label)
-  } else if (std=="LandsatOLI" || std=="RS") {
-    new_waveband(630, 680, wb.name=paste("Red", std, sep="."), wb.label=label)
-  } else if (std=="LandsatETM" || std=="LandsatTM") {
-    new_waveband(630, 690, wb.name=paste("Red", std, sep="."), wb.label=label)
-  } else if (std=="LandsatMSS") {
-    new_waveband(600, 700, wb.name=paste("Red", std, sep="."), wb.label=label)
-  } else if (std=="LandsatRBV") {
-    new_waveband(580, 680, wb.name=paste("Red", std, sep="."), wb.label=label)
+  if (std == "ISO") {
+    new_waveband(610,
+                 760,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Smith20") {
+    new_waveband(650,
+                 670,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = "R")
+  } else if (std == "Smith10") {
+    new_waveband(655,
+                 665,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = "R")
+  } else if (std == "Inada") {
+    new_waveband(600,
+                 700,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = "R")
+  } else if (std == "Warrington") {
+    new_waveband(625,
+                 675,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = "R")
+  } else if (std == "Sellaro") {
+    new_waveband(620,
+                 680,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatOLI" || std == "RS") {
+    new_waveband(630,
+                 680,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatETM" || std == "LandsatTM") {
+    new_waveband(630,
+                 690,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatMSS") {
+    new_waveband(600,
+                 700,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "LandsatRBV") {
+    new_waveband(580,
+                 680,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
   } else {
     warning("'std' = '", std, "' not implemented.")
     NA
