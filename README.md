@@ -1,12 +1,14 @@
 
 # photobiologyWavebands <img src="man/figures/logo.png" align="right" width="120" />
 
+<!-- badges: start -->
+
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyWavebands)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
-[![R build
-status](https://github.com/aphalo/photobiologyWavebands/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions)
+[![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions)
+<!-- badges: end -->
 
 Package ‘**photobiologyWavebands**’ supplies a set of functions and data
 to be used together with package ‘**photobiology**’ for calculation of
