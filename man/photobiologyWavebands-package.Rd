@@ -8,11 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Constructors of waveband objects for commonly used biological
-    spectral weighting functions (BSWFs) and for different wavebands describing
-    named ranges of wavelengths in the ultraviolet (UV), visible (VIS)
-    and infrared (IR) regions of the electromagnetic spectrum.  Part of the
-    'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
+Constructors of waveband objects for commonly used biological spectral weighting functions (BSWFs) and for different wavebands describing named ranges of wavelengths in the ultraviolet (UV), visible (VIS) and infrared (IR) regions of the electromagnetic spectrum. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
 }
 \details{
 This package provides constructors for objects of class \code{waveband}
