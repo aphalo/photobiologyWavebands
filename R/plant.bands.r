@@ -28,12 +28,12 @@ Plant_bands <- function(std = "sensory20") {
     } else {
       RFRstd <- "Smith20"
     }
-    list(UVB(), UVA(), Blue("Sellaro"), Green("Sellaro"),
+    list(UVB(), UVA2(), UVA1(), Blue("Sellaro"), Green("Sellaro"),
          Red(RFRstd), Far_red(RFRstd))
   } else if (std %in% c("ISO", "none")) {
     list(UVB(std), UVA(std), PAR())
   } else if (std  == "CIE") {
-    list(UVB(std), UVA1(std), UVA2(std), PAR())
+    list(UVB(std), UVA2(std), UVA1(std), PAR())
   } else {
     warning("'std' = '", std, "' not implemented.")
     list()
