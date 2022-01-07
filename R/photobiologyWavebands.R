@@ -22,7 +22,7 @@
 #'
 #' @references
 #' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
-#' 21-29. \url{https://doi.org/10.19232/uv4pb.2015.1.14}.
+#' 21-29. \doi{10.19232/uv4pb.2015.1.14}.
 #'
 #' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M.,
 #' Rosenqvist, E. (Eds.). (2012). Beyond the Visible: A handbook of best
@@ -92,7 +92,7 @@
 #' Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
 #' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the blue/green
 #' ratio of natural radiation in Arabidopsis. Plant physiology, 154(1), 401-409.
-#' doi:10.1104/pp.110.160820
+#' \doi{10.1104/pp.110.160820}
 #'
 #' Setlow, R. B. (1974) The Wavelengths in Sunlight Effective in Producing Skin
 #' Cancer: A Theoretical Analysis. Proceedings of the National Academy of
