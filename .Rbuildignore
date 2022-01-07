@@ -9,6 +9,8 @@
 .*\.log
 ^build-binary-from-source.sh$
 _pkgdown.yml
+^pkgdown
 README.Rmd
 ^CITATION\.cff$
 ^\.github$
+^revdep
