@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.1.1
+# CITATION file created with {cffr} R package, v0.2.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -25,18 +25,94 @@ preferred-citation:
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
   journal: UV4Plants Bulletin
   volume: '2015'
-  number: '1'
-  pages: 21-29
+  issue: '1'
   year: '2015'
   doi: 10.19232/uv4pb.2015.1.14
+  start: 21-29
 repository: https://CRAN.R-project.org/package=photobiologyWavebands
 repository-code: https://bitbucket.org/aphalo/photobiologywavebands
 url: https://docs.r4photobiology.info/photobiologyWavebands/
-date-released: '2022-01-03'
+date-released: '2022-01-07'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
   email: pedro.aphalo@helsinki.fi
   orcid: https://orcid.org/0000-0003-3385-972X
+references:
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
+  version: '>= 3.6.0'
+  notes: Depends
+- type: software
+  title: 'photobiology: Photobiological Calculations'
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  notes: Depends
+  url: https://CRAN.R-project.org/package=photobiology
+  version: '>= 0.10.8'
+- type: software
+  title: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2022'
+  notes: Suggests
+  url: https://CRAN.R-project.org/package=knitr
+  version: '>= 1.37'
+- type: software
+  title: 'rmarkdown: Dynamic Documents for R'
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@rstudio.com
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@rstudio.com
+  - family-names: Luraschi
+    given-names: Javier
+    email: javier@rstudio.com
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@rstudio.com
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@rstudio.com
+  - family-names: Chang
+    given-names: Winston
+    email: winston@rstudio.com
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@rstudio.com
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2022'
+  notes: Suggests
+  url: https://CRAN.R-project.org/package=rmarkdown
+  version: '>= 2.11'
