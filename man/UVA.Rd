@@ -21,25 +21,29 @@ UVAlw(std = "plants")
 UVAsw(std = "plants")
 }
 \arguments{
-\item{std}{a character string "CIE", "ISO" or "none"}
+\item{std}{a character string \code{"CIE"}, \code{"ISO"} or \code{"none"}.}
 }
 \value{
-a waveband object wavelength defining a wavelength range.
+A \code{waveband} object wavelength defining a wavelength range.
 }
 \description{
-UV-A according to CIE and ISO standrads: 315--400 nm.
-UV-A according to common non-standard practice: 320--400 nm.
-UV-A2 according to CIE: 315--340 nm.
-UV-A1 according to CIE: 340--400 nm.
-UVsw according to non-standard use suitable for plants: 315--350 nm.
-UVlw according to non-standard use suitable for plants: 350--400 nm.
+UV-A according to CIE and ISO standards: 315-400 nm. UV-A according to
+common non-standard practice: 320-400 nm. UV-A2 according to CIE report
+134/1: 315-340 nm. UV-A1 according to CIE report 134/1: 340-400 nm. UV-Asw
+according to non-standard use possibly suitable for plants: 315-350 nm.
+UV-Alw according to non-standard use possibly suitable for plants: 350-400
+nm.
 }
 \note{
 The non-standard definitions of UV-A and UV-A2 using 320 nm as limit
   should not be used in any new publications or work as they deviate from the
-  internationally accepted standard. Their continued use leads to confusion.
+  internationally recommended practice. Their continued use leads to confusion.
   Their inclusion in this package is to allow calculations needed to compare
-  new results and methods against old publications.
+  new results and methods against old publications. UV-A1 and UV-A2
+  definitions are in use in medicine, but not yet standardised. Recent
+  research on the plant photoreceptor UVR8 suggests that UV-A1 and UV-A2
+  bands are also relevant to plants (Rai et al., 2021). UV-Alw and UV-Asw
+  have been used for plants, but UV-A1 and UV-A2 seem now preferable.
 }
 \examples{
 UVA()
@@ -51,6 +55,15 @@ UVA1("CIE")
 UVA2()
 UVA2("CIE")
 
+}
+\references{
+CIE (1999) 134/1 TC 6-26 report: Standardization of the Terms
+UV-A1, UV-A2 and UV-B.
+\url{https://cie.co.at/publications/cie-collection-photobiology-photochemistry-1999}
+
+Rai N, Morales LO, Aphalo PJ (2021) Perception of solar UV radiation by
+plants: photoreceptors and mechanisms. Plant Physiology 186: 1382–1396.
+\doi{10.1093/plphys/kiab162}
 }
 \seealso{
 \code{\link[photobiology]{waveband}}

@@ -14,13 +14,15 @@ vignette: >
 
 ## Introduction
 
-This package provides constructors for `waveband` objects, a class defined
-in package 'photobiology'. These are convenience functions that allow definition of
-ranges of wavelengths and biological spectral weighting functions (BSWFs)
-following definitions in common use, CIE recommendations and ISO standards.
+Package 'photobiologyWavebands' provides constructors for `waveband` objects, a class defined in package 'photobiology'. These constructors are convenience functions that allow definition of ranges of wavelengths and biological spectral weighting functions (BSWFs) following definitions in common use, CIE recommendations and ISO standards.
+
+This User Guide is currently very brief, please, consult the help for the individual functions for the details, including references to the literature where the equations and wavelength ranges used in the calculations have been obtained.
+
+## Preliminaries
+
+Package 'photobiologyWavebands' depends on package 'photobiology'. We can load and attach both of them with the following statement.
 
 ```{r}
-library(photobiology)
 library(photobiologyWavebands)
 ```
 
@@ -50,7 +52,7 @@ IR()
 | UVA2() | CIE  | 
 | **visible** | |
 | VIS() | ISO  |
-| PAR() | |
+| PAR() | McCree |
 | Purple()  | ISO |
 | Blue()  | ISO, Sellaro  | 
 | Green()  | ISO, Sellaro  | 
@@ -119,21 +121,21 @@ Landsat_bands("L1")
 
 ## Calculating irradiances
 
-An example using `sun.pct` included in package 'photobiology'. As the input spectral irradiance is units of Watt m-2 nm-1 the output is in mol m-2 s-1 or W m-2.
+An example using `sun.pct` included in package 'photobiology'. As the input spectral irradiance is units of Watt m<sup>-2</sup> nm<sup>-1</sup> the output is in mol m<sup>-2</sup> s<sup>-1</sup> or W m<sup>-2</sup>.
 
 ```{r}
 e_irrad(sun.spct, UV()) # W m-2
 q_irrad(sun.spct, UV()) * 1e6 # umol s-1 m-2
 ```
 
-Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones.
+Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones in the output.
 
 ```{r}
 e_irrad(sun.spct, list(Blue(), VIS()))
 e_irrad(sun.spct, list(B = Blue(), VIS()))
 ```
 
-A few functions for generating coherent lists of wavebands are also defined (Table bellow).
+The constructor functions for coherent lists of wavebands described above can be used directly.
 
 ```{r}
 e_irrad(sun.spct, VIS_bands())
@@ -141,20 +143,16 @@ e_irrad(sun.spct, VIS_bands())
 
 ## Photon ratios
 
-Photon ratios can be calculated from any pair of waveband objects. This a convenient and very flexible way of doing this type of calculations.
+Photon- and energy ratios can be calculated from any pair of waveband objects. This a convenient and very flexible way of doing this type of calculations.
 
 ```{r}
 q_ratio(sun.spct, Blue(), VIS())
+e_ratio(sun.spct, Blue(), VIS())
 ```
 
 ## Spectral weighting functions (SWFs)
 
-Currently functions for constructing `waveband` objects describing several BSWFs are implemented (see Table below). These functions take three arguments in most cases as they have been used
-and continue to be used inconsistently in the scientific literature.
-By supplying these arguments different variations of the BSWFs can be obtained. The defaults
-used are those values which we consider best, usually the most frequently used ones, except
-in cases when we consider the use of those values problematic for the reliability of the
-calculations.
+Currently functions for constructing `waveband` objects describing several BSWFs are implemented (see Table below). These functions take three arguments in most cases as BSWFs have been used and continue to be used inconsistently in the scientific literature. By supplying these arguments different variations of the BSWFs can be obtained. The defaults used are those values which we consider best, usually the most frequently used ones, except in cases when we consider the use of those values problematic for the reliability of the calculations or simply unjustified.
 
 ### Waveband constructors for BSWFs
 
@@ -177,8 +175,7 @@ calculations.
 
 Both waveband definitions based on a wavelength range and SWFs are stored in `waveband` objects, that can be created with function \texttt{waveband()}. 
 
-The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and exposures (sometimes
-called "doses").
+The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and effective exposures (sometimes called "doses").
 
 ```{r}
 e_irrad(sun.spct, CIE())
@@ -202,10 +199,7 @@ e_irrad(sun.spct, CIE())
 | CH4_e_fun() |  w.length |
 | CH4_q_fun() |  w.length |
 
-The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector
-of effectiveness (either quantum/photon or energy based)
-depending on how the original source describes them.
-These functions are listed in the Table above,
+The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector of effectiveness (either quantum/photon or energy based) depending on how the original source describes them. These functions are listed in the Table above,
 and an example of their use follows.
 
 ```{r}
@@ -249,6 +243,4 @@ An equivalent quantity can be calculated for scotopic vision, using the correspo
 ```{r}
 e_response(sun.spct * 1e-6 * CIE1951_scotopic_lef.spct) * scotopic_sensitivity
 ```
-
-
 

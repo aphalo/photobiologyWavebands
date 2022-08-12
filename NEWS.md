@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyWavebands 0.4.5-1
+
+-   Minor edit to documentation and update of the manual to comply with HTML 5.
+
 # photobiologyWavebands 0.4.5
 
 -   Major bug! The definitions UVA1() and UVA2() were swapped.
@@ -173,12 +177,12 @@ Added calculation of UV Index.
 
 # photobiologyUV 0.2.1
 
-Internally modified to work with photobiology (>= 0.2.1) User interface
+Internally modified to work with photobiology (\>= 0.2.1) User interface
 unchanged.
 
 # photobiologyUV 0.2.0
 
-Internally modified to work with photobiology (>= 0.2.0) User interface
+Internally modified to work with photobiology (\>= 0.2.0) User interface
 unchanged.
 
 # photobiologyUV 0.1.2

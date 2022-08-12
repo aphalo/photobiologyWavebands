@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 Package '**photobiologyWavebands**' supplies a set of functions and data to be used together with package '**photobiology**' for calculation of derived quantities from spectral data. Non-weighed derived quantities represent summaries of a given range of wavelengths. All constructors default to ISO standardized definitions when they are available, but other competing definitions are also available though parameter `std` of the constructors of waveband objects. These constructors are specialized versions of the `photobiology::waveband()` constructor.
 
-In photobiology, derived _biologically effective_ quantities are used to quantify the effect of radiation on different organisms or processes within organisms. These effects can range from damage to perception of informational light signals. 
+In photobiology, derived _biologically effective_ quantities are used to quantify the effect of radiation on different organisms or processes within organisms. These effects can range from damage to perception of informational light signals including vision. 
 
 The definitions cover most non-weighted wavebands in common use, like those corresponding ultraviolet, visible and infrared, the light colours seen by humans, photosynthetically active radiation and some other bands of interest for plants. Several wavebands corresponding to remote sensing instruments are also provided, including all those for the LANDSAT missions.
 

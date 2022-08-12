@@ -12,11 +12,23 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-01-03" />
+<meta name="date" content="2022-08-12" />
 
 <title>User Guide</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -26,6 +38,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -127,7 +140,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -140,40 +333,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">‘photobiologyWavebands’ 0.4.5</h3>
+<h3 class="subtitle">‘photobiologyWavebands’ 0.4.5.1</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-01-03</h4>
+<h4 class="date">2022-08-12</h4>
 
 
 <div id="TOC">
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#waveband-constructors-for-ranges">Waveband constructors for ranges</a>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#preliminaries" id="toc-preliminaries">Preliminaries</a></li>
+<li><a href="#waveband-constructors-for-ranges" id="toc-waveband-constructors-for-ranges">Waveband constructors for
+ranges</a>
 <ul>
-<li><a href="#waveband-constructors-for-color-based-wavelength-ranges">Waveband constructors for color-based wavelength ranges</a></li>
-<li><a href="#waveband-constructors-for-instrument-based-wavelength-ranges">Waveband constructors for instrument-based wavelength ranges</a></li>
+<li><a href="#waveband-constructors-for-color-based-wavelength-ranges" id="toc-waveband-constructors-for-color-based-wavelength-ranges">Waveband
+constructors for color-based wavelength ranges</a></li>
+<li><a href="#waveband-constructors-for-instrument-based-wavelength-ranges" id="toc-waveband-constructors-for-instrument-based-wavelength-ranges">Waveband
+constructors for instrument-based wavelength ranges</a></li>
 </ul></li>
-<li><a href="#calculating-irradiances">Calculating irradiances</a></li>
-<li><a href="#photon-ratios">Photon ratios</a></li>
-<li><a href="#spectral-weighting-functions-swfs">Spectral weighting functions (SWFs)</a>
+<li><a href="#calculating-irradiances" id="toc-calculating-irradiances">Calculating irradiances</a></li>
+<li><a href="#photon-ratios" id="toc-photon-ratios">Photon
+ratios</a></li>
+<li><a href="#spectral-weighting-functions-swfs" id="toc-spectral-weighting-functions-swfs">Spectral weighting functions
+(SWFs)</a>
 <ul>
-<li><a href="#waveband-constructors-for-bswfs">Waveband constructors for BSWFs</a></li>
-<li><a href="#effective-irradiances-and-exposures">Effective irradiances and exposures</a></li>
-<li><a href="#bswfs-function-definitions">BSWFs function definitions</a></li>
+<li><a href="#waveband-constructors-for-bswfs" id="toc-waveband-constructors-for-bswfs">Waveband constructors for
+BSWFs</a></li>
+<li><a href="#effective-irradiances-and-exposures" id="toc-effective-irradiances-and-exposures">Effective irradiances and
+exposures</a></li>
+<li><a href="#bswfs-function-definitions" id="toc-bswfs-function-definitions">BSWFs function definitions</a></li>
 </ul></li>
-<li><a href="#luminous-flux">Luminous flux</a></li>
+<li><a href="#luminous-flux" id="toc-luminous-flux">Luminous
+flux</a></li>
 </ul>
 </div>
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This package provides constructors for <code>waveband</code> objects, a class defined in package ‘photobiology’. These are convenience functions that allow definition of ranges of wavelengths and biological spectral weighting functions (BSWFs) following definitions in common use, CIE recommendations and ISO standards.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(photobiology)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(photobiologyWavebands)</span></code></pre></div>
+<p>Package ‘photobiologyWavebands’ provides constructors for
+<code>waveband</code> objects, a class defined in package
+‘photobiology’. These constructors are convenience functions that allow
+definition of ranges of wavelengths and biological spectral weighting
+functions (BSWFs) following definitions in common use, CIE
+recommendations and ISO standards.</p>
+<p>This User Guide is currently very brief, please, consult the help for
+the individual functions for the details, including references to the
+literature where the equations and wavelength ranges used in the
+calculations have been obtained.</p>
+</div>
+<div id="preliminaries" class="section level2">
+<h2>Preliminaries</h2>
+<p>Package ‘photobiologyWavebands’ depends on package ‘photobiology’. We
+can load and attach both of them with the following statement.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(photobiologyWavebands)</span></code></pre></div>
 </div>
 <div id="waveband-constructors-for-ranges" class="section level2">
 <h2>Waveband constructors for ranges</h2>
-<p>Functions for several colour bands, in some cases according to different optional definitions, are listed in the tables below.</p>
+<p>Functions for several colour bands, in some cases according to
+different optional definitions, are listed in the tables below.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Red</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
 <pre><code>## Red.ISO 
 ## low (nm) 610 
@@ -251,7 +467,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="even">
 <td>PAR()</td>
-<td></td>
+<td>McCree</td>
 </tr>
 <tr class="odd">
 <td>Purple()</td>
@@ -279,7 +495,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr class="odd">
 <td>Far_red()</td>
-<td>Smith10, Smith20, Inada, Warrington, Sellaro, BTV, RedEdge20, RedEdge40</td>
+<td>Smith10, Smith20, Inada, Warrington, Sellaro, BTV, RedEdge20,
+RedEdge40</td>
 </tr>
 <tr class="even">
 <td><strong>infrared</strong></td>
@@ -319,7 +536,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Constructors of lists of waveband definitions frequently used together are also defined in the package.</p>
+<p>Constructors of lists of waveband definitions frequently used
+together are also defined in the package.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">UV_bands</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## UVC.ISO 
@@ -370,30 +588,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## weighted none 
 ## 
 ## [[2]]
-## UVA.ISO 
+## UVA2.CIE 
 ## low (nm) 315 
-## high (nm) 400 
+## high (nm) 340 
 ## weighted none 
 ## 
 ## [[3]]
+## UVA1.CIE 
+## low (nm) 340 
+## high (nm) 400 
+## weighted none 
+## 
+## [[4]]
 ## Blue.Sellaro 
 ## low (nm) 420 
 ## high (nm) 490 
 ## weighted none 
 ## 
-## [[4]]
+## [[5]]
 ## Green.Sellaro 
 ## low (nm) 500 
 ## high (nm) 570 
 ## weighted none 
 ## 
-## [[5]]
+## [[6]]
 ## Red.Smith20 
 ## low (nm) 650 
 ## high (nm) 670 
 ## weighted none 
 ## 
-## [[6]]
+## [[7]]
 ## FarRed.Smith20 
 ## low (nm) 720 
 ## high (nm) 740 
@@ -477,7 +701,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Additional constructors are provided for Landsat missions, for example the list of wavebands used in mission Landsat 1 can be created directly.</p>
+<p>Additional constructors are provided for Landsat missions, for
+example the list of wavebands used in mission Landsat 1 can be created
+directly.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Landsat_bands</span>(<span class="st">&quot;L1&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## Green.LandsatRBV 
@@ -552,7 +778,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="calculating-irradiances" class="section level2">
 <h2>Calculating irradiances</h2>
-<p>An example using <code>sun.pct</code> included in package ‘photobiology’. As the input spectral irradiance is units of Watt m-2 nm-1 the output is in mol m-2 s-1 or W m-2.</p>
+<p>An example using <code>sun.pct</code> included in package
+‘photobiology’. As the input spectral irradiance is units of Watt
+m<sup>-2</sup> nm<sup>-1</sup> the output is in mol m<sup>-2</sup>
+s<sup>-1</sup> or W m<sup>-2</sup>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">UV</span>()) <span class="co"># W m-2</span></span></code></pre></div>
 <pre><code>## E_]UV.ISO 
 ##  28.62872 
@@ -567,7 +796,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total photon irradiance&quot;</code></pre>
-<p>Irradiances for different wavebands can be grouped into a list of any length. If the list has named members, then these names are used instead of the default ones.</p>
+<p>Irradiances for different wavebands can be grouped into a list of any
+length. If the list has named members, then these names are used instead
+of the default ones in the output.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">list</span>(<span class="fu">Blue</span>(), <span class="fu">VIS</span>()))</span></code></pre></div>
 <pre><code>## E_Blue.ISO  E_VIS.ISO 
 ##   37.55207  231.86345 
@@ -582,7 +813,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy irradiance&quot;</code></pre>
-<p>A few functions for generating coherent lists of wavebands are also defined (Table bellow).</p>
+<p>The constructor functions for coherent lists of wavebands described
+above can be used directly.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">VIS_bands</span>())</span></code></pre></div>
 <pre><code>## E_Purple.ISO   E_Blue.ISO  E_Green.ISO E_Yellow.ISO E_Orange.ISO    E_Red.ISO 
 ##     47.75529     37.55207     49.26860     13.67971     12.00432     79.38159 
@@ -593,16 +825,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="photon-ratios" class="section level2">
 <h2>Photon ratios</h2>
-<p>Photon ratios can be calculated from any pair of waveband objects. This a convenient and very flexible way of doing this type of calculations.</p>
+<p>Photon- and energy ratios can be calculated from any pair of waveband
+objects. This a convenient and very flexible way of doing this type of
+calculations.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
 <pre><code>## Blue:VIS[q:q] 
 ##     0.1371157 
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;q:q ratio&quot;</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
+<pre><code>## Blue:VIS[e:e] 
+##     0.1619577 
+## attr(,&quot;radiation.unit&quot;)
+## [1] &quot;e:e ratio&quot;</code></pre>
 </div>
 <div id="spectral-weighting-functions-swfs" class="section level2">
 <h2>Spectral weighting functions (SWFs)</h2>
-<p>Currently functions for constructing <code>waveband</code> objects describing several BSWFs are implemented (see Table below). These functions take three arguments in most cases as they have been used and continue to be used inconsistently in the scientific literature. By supplying these arguments different variations of the BSWFs can be obtained. The defaults used are those values which we consider best, usually the most frequently used ones, except in cases when we consider the use of those values problematic for the reliability of the calculations.</p>
+<p>Currently functions for constructing <code>waveband</code> objects
+describing several BSWFs are implemented (see Table below). These
+functions take three arguments in most cases as BSWFs have been used and
+continue to be used inconsistently in the scientific literature. By
+supplying these arguments different variations of the BSWFs can be
+obtained. The defaults used are those values which we consider best,
+usually the most frequently used ones, except in cases when we consider
+the use of those values problematic for the reliability of the
+calculations or simply unjustified.</p>
 <div id="waveband-constructors-for-bswfs" class="section level3">
 <h3>Waveband constructors for BSWFs</h3>
 <table>
@@ -666,9 +913,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="effective-irradiances-and-exposures" class="section level3">
 <h3>Effective irradiances and exposures</h3>
-<p>Both waveband definitions based on a wavelength range and SWFs are stored in <code>waveband</code> objects, that can be created with function .</p>
-<p>The same functions used in the examples above for calculation of unweighted irradiances are used to calculate effective irradiances and exposures (sometimes called “doses”).</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">CIE</span>())</span></code></pre></div>
+<p>Both waveband definitions based on a wavelength range and SWFs are
+stored in <code>waveband</code> objects, that can be created with
+function .</p>
+<p>The same functions used in the examples above for calculation of
+unweighted irradiances are used to calculate effective irradiances and
+effective exposures (sometimes called “doses”).</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">CIE</span>())</span></code></pre></div>
 <pre><code>## E_]CIE98.298 
 ##   0.08181583 
 ## attr(,&quot;time.unit&quot;)
@@ -740,22 +991,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>The functions available for calculating action spectra take as argument a vector of wavelengths, and return a vector of effectiveness (either quantum/photon or energy based) depending on how the original source describes them. These functions are listed in the Table above, and an example of their use follows.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
-<p>All functions accept a wavelengths vector with variable and arbitrary step sizes, with the condition that the wavelengths are sorted in strictly increasing order.</p>
-<p>These functions are used internally by the package, but are also used for the calculation of effective spectral irradiances by multiplication of a <code>source_spct</code> object by a <code>waveband</code> object.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
+<p>The functions available for calculating action spectra take as
+argument a vector of wavelengths, and return a vector of effectiveness
+(either quantum/photon or energy based) depending on how the original
+source describes them. These functions are listed in the Table above,
+and an example of their use follows.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
+<p>All functions accept a wavelengths vector with variable and arbitrary
+step sizes, with the condition that the wavelengths are sorted in
+strictly increasing order.</p>
+<p>These functions are used internally by the package, but are also used
+for the calculation of effective spectral irradiances by multiplication
+of a <code>source_spct</code> object by a <code>waveband</code>
+object.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
 <pre><code>## Object: source_spct [122 x 2]
-## Wavelength range 280 to 400 nm, step 0.9230769 to 1 nm 
+## Wavelength range 280-400 nm, step 0.9230769-1 nm 
 ## Label: sunlight, simulated 
 ## Measured on 2010-06-22 09:51:00 UTC 
 ## Measured at 60.20911 N, 24.96474 E; Kumpula, Helsinki, FI 
 ## Time unit 1s
 ## Data weighted using &#39;CIE98.298&#39; BSWF
 ## 
-## # A tibble: 122 x 2
+## # A tibble: 122 × 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
 ##  1     280          0
@@ -768,38 +1028,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8     286.         0
 ##  9     287.         0
 ## 10     288.         0
-## # ... with 112 more rows</code></pre>
+## # … with 112 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
 </div>
 <div id="luminous-flux" class="section level2">
 <h2>Luminous flux</h2>
-<p>The luminous flux per unit area in lux can be calculated as follows using the original luminous efficiency function for the human eye used when the <em>lumen</em> definition was standardized. As we start with spectral irradiance we obtain luminous flux per unit area expressed in lux. The spectra luminous efficiency function data are included in package ‘photobiology’.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<p>The luminous flux per unit area in lux can be calculated as follows
+using the original luminous efficiency function for the human eye used
+when the <em>lumen</em> definition was standardized. As we start with
+spectral irradiance we obtain luminous flux per unit area expressed in
+lux. The spectra luminous efficiency function data are included in
+package ‘photobiology’.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    49579.93 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy response&quot;</code></pre>
-<p>The luminous flux per unit area in lux can be calculated as follows using the latest luminous efficiency function for the human eye.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<p>The luminous flux per unit area in lux can be calculated as follows
+using the latest luminous efficiency function for the human eye.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    53057.78 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy response&quot;</code></pre>
-<p>As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity <span class="sc">*</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">interpolate_spct</span>(CIE2008_lef2deg.spct, <span class="dv">555</span>)<span class="sc">$</span>s.e.response</span></code></pre></div>
+<p>As the luminous efficiency functions vary slightly in the wavelength
+at which the maximum is located, and the wavelength used for the
+sensitivity constant is fixed by the definition of the Lumen, a small
+correction is need for exact results.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity <span class="sc">*</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">interpolate_spct</span>(CIE2008_lef2deg.spct, <span class="dv">555</span>)<span class="sc">$</span>s.e.response</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    53910.01 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy response&quot;</code></pre>
-<p>An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> <span class="fl">1e-6</span> <span class="sc">*</span> CIE1951_scotopic_lef.spct) <span class="sc">*</span> scotopic_sensitivity</span></code></pre></div>
+<p>An equivalent quantity can be calculated for scotopic vision, using
+the corresponding function and constant.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> <span class="fl">1e-6</span> <span class="sc">*</span> CIE1951_scotopic_lef.spct) <span class="sc">*</span> scotopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##   0.1186256 
 ## attr(,&quot;time.unit&quot;)

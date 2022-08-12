@@ -1,11 +1,8 @@
 destination: ../photobiologyWavebands-docs
 url: https://docs.r4photobiology.info/photobiologyWavebands/
 
-home:
-  strip_header: true
-  links:
-  - text: Photobiology packages
-    href: https://www.r4photobiology.info/
+template:
+  bootstrap: 5
 
 reference:
   - title: Package overview
@@ -73,3 +70,39 @@ reference:
   - title: Spectral indexes
     contents:
     - NDVI
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
+  components:
+    intro:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: Changelog
+      href: news/index.html
+    articles:
+      text: User Guide
+      menu:
+      - text: 'The R for Photobiology Suite'
+        href: articles/r4p-introduction.html
+      - text: 'User Guide'
+        href: articles/user-guide.html
+    tutorials:
+      text: Resources
+      menu:
+      - text: Using R for Photobiology Blog
+        href: https://www.r4photobiology.info/
+      - text: R for Photobiology Suite documentation
+        href: https://www.r4photobiology.info/package-status/
+      - text: ------
+      - text: Book 'Learn R - As a Language'
+        href: https://www.learnr-book.info/
+      - text: A handbook of methods
+        href: https://doi.org/10.31885/9789521083631
+      - text: Photobiological Sciences Online
+        href: http://photobiology.info/
