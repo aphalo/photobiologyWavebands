@@ -52,6 +52,6 @@ UVB <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }

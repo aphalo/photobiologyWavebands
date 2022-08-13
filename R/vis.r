@@ -2,7 +2,8 @@
 #'
 #' Visible (to humnas) radiation (380...760 nm) according to ISO standard
 #' definition, no weighting applied. For \code{std = "RS"} the returned range is
-#' the same as for \code{PAR()}.
+#' the same as for \code{PAR()}. The panchromatic bands of Landsat missions are
+#' also supported.
 #'
 #' @param std a character string "ISO" or "RS" (remote sensing).
 #'
@@ -15,6 +16,9 @@
 #' @examples
 #' VIS()
 #' VIS("ISO")
+#' VIS("LandsatOLI")
+#' VIS("Landsat7")
+#' VIS("Pan.RBV.Landsat3")
 #'
 #' @family unweighted wavebands
 #'
@@ -31,6 +35,6 @@ VIS <- function(std = "ISO") {
     new_waveband(505, 750, wb.name = "Pan.RBV.Landsat3", wb.label = "Pan")
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }

@@ -15,11 +15,15 @@ A waveband object wavelength defining a wavelength range.
 \description{
 Visible (to humnas) radiation (380...760 nm) according to ISO standard
 definition, no weighting applied. For \code{std = "RS"} the returned range is
-the same as for \code{PAR()}.
+the same as for \code{PAR()}. The panchromatic bands of Landsat missions are
+also supported.
 }
 \examples{
 VIS()
 VIS("ISO")
+VIS("LandsatOLI")
+VIS("Landsat7")
+VIS("Pan.RBV.Landsat3")
 
 }
 \seealso{

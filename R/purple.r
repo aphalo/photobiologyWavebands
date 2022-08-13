@@ -30,6 +30,6 @@ Purple <- function(std = "ISO") {
                  wb.label = "Purple")
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }

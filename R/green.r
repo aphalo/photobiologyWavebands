@@ -54,6 +54,6 @@ Green <- function(std = "ISO") {
                  wb.label = label)
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }

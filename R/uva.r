@@ -63,7 +63,7 @@ UVA <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -88,7 +88,7 @@ UVA1 <- function(std = "CIE") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -120,7 +120,7 @@ UVA2 <- function(std = "CIE") {
     )
   }else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 

@@ -47,7 +47,7 @@ IR <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -106,7 +106,7 @@ NIR <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -132,7 +132,7 @@ SWIR <- function(std = "CIE") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -172,7 +172,7 @@ SWIR1 <- function(std = "RS") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -204,7 +204,7 @@ SWIR2 <- function(std = "RS") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -229,7 +229,7 @@ MIR <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -262,7 +262,7 @@ FIR <- function(std = "ISO") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 
@@ -287,7 +287,7 @@ TIR1 <- function(std = "RS") {
     )
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
 

@@ -22,7 +22,7 @@ TIRS_bands(std = "LandsatTIRS")
 ETM_bands(std = "LandsatETM")
 }
 \arguments{
-\item{std}{a character string "L1"..."L8", for missions, "LandsarRBV",
+\item{std}{a character string "L1"..."L9", for missions, "LandsarRBV",
 "LandsatMSS", etc. for imagers.}
 }
 \value{

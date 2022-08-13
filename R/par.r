@@ -23,6 +23,6 @@ PAR <- function(std = "Plant") {
     new_waveband(400, 700, wb.name = "PAR")
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }

@@ -8,7 +8,7 @@
 #' See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
 #' detailed sensitivity spectra for the different bands of the imaginers.
 #'
-#' @param std a character string "L1"..."L8", for missions, "LandsarRBV",
+#' @param std a character string "L1"..."L9", for missions, "LandsarRBV",
 #'   "LandsatMSS", etc. for imagers.
 #'
 #' @return a list of wavebands
@@ -25,7 +25,7 @@
 #' @family lists of unweighted wavebands
 #'
 Landsat_bands <- function(std = "L8") {
-  if (! std %in% c("L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8")) {
+  if (! std %in% c("L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9")) {
     warning("'std' = '", std, "' not implemented.")
     list()
   } else {
@@ -78,7 +78,7 @@ MSS_bands <- function(std = "LandsatMSS") {
 #' @export
 #'
 OLI_bands <- function(std = "LandsatOLI") {
-  if (std == "L8") {
+  if (std %in% c("L8", "L9")) {
     std <- "LandsatOLI"
   }
   if (std == "LandsatOLI") {
@@ -95,7 +95,7 @@ OLI_bands <- function(std = "LandsatOLI") {
 #' @export
 #'
 TIRS_bands <- function(std = "LandsatTIRS") {
-  if (std == "L8") {
+  if (std %in% c("L8", "L9")) {
     std <- "LandsatTIRS"
   }
   if (std == "LandsatTIRS") {

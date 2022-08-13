@@ -21,6 +21,6 @@ Yellow <- function(std = "ISO") {
     new_waveband(570, 591, wb.name = "Yellow.ISO", wb.label = "Yellow")
   } else {
     warning("'std' = '", std, "' not implemented.")
-    NA
+    waveband()
   }
 }
