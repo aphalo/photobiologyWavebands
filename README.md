@@ -22,7 +22,7 @@ versions of the `photobiology::waveband()` constructor.
 In photobiology, derived *biologically effective* quantities are used to
 quantify the effect of radiation on different organisms or processes
 within organisms. These effects can range from damage to perception of
-informational light signals.
+informational light signals including vision.
 
 The definitions cover most non-weighted wavebands in common use, like
 those corresponding ultraviolet, visible and infrared, the light colours

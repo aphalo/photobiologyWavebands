@@ -7,7 +7,7 @@
 Plant_bands(std = "sensory20")
 }
 \arguments{
-\item{std}{a character string "sensory", "sensory10", "sensory20", "ISO",
+\item{std}{a character string "sensory", "sensory10", "sensory20", "Sellaro", "ISO",
 "CIE", "none" or "", where "ISO", "CIE" and "none" affect only the UV
 bands.}
 }

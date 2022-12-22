@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyWavebands 0.5.1
+
+-   `Plant_bands()` now accepts `"Sellaro"` as argument for `std`.
+
 # photobiologyWavebands 0.5.0
 
 -   Minor edit to documentation and update of the manual to comply with HTML 5.

@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands) 
 [![cran checks](https://cranchecks.info/badges/worst/photobiologyWavebands)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
 [![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions)
+[![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Package '**photobiologyWavebands**' supplies a set of functions and data to be used together with package '**photobiology**' for calculation of derived quantities from spectral data. Non-weighed derived quantities represent summaries of a given range of wavelengths. All constructors default to ISO standardized definitions when they are available, but other competing definitions are also available though parameter `std` of the constructors of waveband objects. These constructors are specialized versions of the `photobiology::waveband()` constructor.
