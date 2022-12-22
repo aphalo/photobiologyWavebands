@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.2.2
+# CITATION file created with {cffr} R package, v0.4.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyWavebands" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
-version: 0.5.0
+version: 0.5.0.9000
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Constructors of waveband objects for commonly used biological spectral weighting
   functions (BSWFs) and for different wavebands describing named ranges of wavelengths
@@ -36,7 +36,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyWavebands
 repository-code: https://bitbucket.org/aphalo/photobiologywavebands
 url: https://docs.r4photobiology.info/photobiologyWavebands/
-date-released: '2022-08-13'
+date-released: '2022-12-22'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -46,12 +46,12 @@ references:
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
   notes: Depends
+  url: https://www.R-project.org/
   authors:
   - name: R Core Team
   location:
     name: Vienna, Austria
   year: '2022'
-  url: https://www.R-project.org/
   institution:
     name: R Foundation for Statistical Computing
   version: '>= 3.6.0'
@@ -59,30 +59,34 @@ references:
   title: photobiology
   abstract: 'photobiology: Photobiological Calculations'
   notes: Depends
+  url: https://docs.r4photobiology.info/photobiology/
+  repository: https://CRAN.R-project.org/package=photobiology
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
   year: '2022'
-  url: https://CRAN.R-project.org/package=photobiology
   version: '>= 0.10.8'
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Suggests
+  url: https://yihui.org/knitr/
+  repository: https://CRAN.R-project.org/package=knitr
   authors:
   - family-names: Xie
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2022'
-  url: https://CRAN.R-project.org/package=knitr
   version: '>= 1.37'
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
   notes: Suggests
+  url: https://pkgs.rstudio.com/rmarkdown/
+  repository: https://CRAN.R-project.org/package=rmarkdown
   authors:
   - family-names: Allaire
     given-names: JJ
@@ -117,5 +121,4 @@ references:
     email: rich@rstudio.com
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2022'
-  url: https://CRAN.R-project.org/package=rmarkdown
   version: '>= 2.11'
