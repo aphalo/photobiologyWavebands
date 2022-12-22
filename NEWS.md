@@ -6,7 +6,8 @@ editor_options:
 
 # photobiologyWavebands 0.5.1
 
--   `Plant_bands()` now accepts `"Sellaro"` as argument for `std`.
+-   `Plant_bands()` now accepts `"Sellaro"` and `"sensoryBroad"` as argument for `std`.
+-   `Blue()` and `Green` now accept `"broad"` as argument for `std`.
 
 # photobiologyWavebands 0.5.0
 

@@ -42,7 +42,7 @@ Green <- function(std = "ISO") {
                  600,
                  wb.name = paste("Green", std, sep = "."),
                  wb.label = label)
-  } else if (std == "LandsatMSS") {
+  } else if (std %in% c("LandsatMSS", "broad")) {
     new_waveband(500,
                  600,
                  wb.name = paste("Green", std, sep = "."),

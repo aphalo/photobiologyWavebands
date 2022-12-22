@@ -7,9 +7,9 @@
 Blue(std = "ISO")
 }
 \arguments{
-\item{std}{a character string "ISO", "Sellaro" (plant biology), or "RS"
-(remote sensing), or Landsat imagers, "LandsatTM", "LandsatETM", or
-"LandsatOLI".}
+\item{std}{a character string "ISO", "Sellaro" (plant biology), "Broad"
+(plant biology) or "RS" (remote sensing), or Landsat imagers, "LandsatTM",
+"LandsatETM", or "LandsatOLI".}
 }
 \value{
 a waveband object wavelength defining a wavelength range.

@@ -22,9 +22,18 @@
 #' @family lists of unweighted wavebands
 #'
 Plant_bands <- function(std = "sensory20") {
-  if (std %in% c("sensory", "sensory10", "sensory20", "Sellaro")) {
-      RFRstd <- std
-      list(UVB(), UVA2(), UVA1(), Blue("Sellaro"), Green("Sellaro"),
+  if (std %in% c("sensory", "sensory10", "sensory20", "sensoryBroad", "Sellaro")) {
+    RFRstd <- c("sensory" = "Smith20",
+                "sensory20" = "Smith20",
+                "sensory10" = "Smith10",
+                "sensoryBroad" = "Smith20",
+                "Sellaro" = "Sellaro")[std]
+    BGstd <- c("sensory" = "Sellaro",
+                "sensory20" = "Sellaro",
+                "sensory10" = "Sellaro",
+                "sensoryBroad" = "broad",
+                "Sellaro" = "Sellaro")[std]
+    list(UVB(), UVA2(), UVA1(), Blue(BGstd), Green(BGstd),
          Red(RFRstd), Far_red(RFRstd))
   } else if (std %in% c("ISO", "none")) {
     list(UVB(std), UVA(std), PAR())
