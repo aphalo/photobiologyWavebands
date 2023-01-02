@@ -2,23 +2,50 @@
 % Please edit documentation in R/par.r
 \name{PAR}
 \alias{PAR}
-\title{Constructor of PAR waveband}
+\alias{PhR}
+\title{Constructors of PAR and PhR wavebands}
 \usage{
-PAR(std = "Plant")
+PAR(std = "McCree")
+
+PhR(std = "range")
 }
 \arguments{
-\item{std}{a character string "Plant" or "McCree"}
+\item{std}{a character string "Plant" (or "range") or "McCree" (or "weighted").}
 }
 \value{
-a waveband object wavelength defining a wavelength range.
+For PhR, a waveband object defining a wavelength range . For PAR, a
+  waveband object implementing the response curve of PAR as defined by McCree
+  (1972) and thus including a weighting function used in computation of
+  energy-base PAR irradiances. The weights are normalized to 1 at 550 nm. The
+  waveband label is set to "PAR" or "PhR" accordingly.
 }
 \description{
-Photosythetically active radiation (400-700 nm), no weighting
-applied.
+Wavelength-range definitions for \emph{photosynthetic radiation
+(PhR)} and \emph{photosynthetically active radiation
+(PAR)}.
+}
+\details{
+Photosynthetically active radiation (400-700 nm) is defined as
+   giving equal weight to photons within its range, thus weights increase
+   with increasing wavelength when expressed as energy. Photosynthetic
+   radiation (400-700 nm) is defined as a wavelength range and does not
+   implement the spectral weighting inherent to McCree's (1972) definition
+   of PAR.
+}
+\note{
+\code{PAR()} and \code{PhR()} call the same function definiton with
+  different default arguments.
 }
 \examples{
 PAR()
+PhR()
 PAR("Plant")
+
+q_irrad(sun.spct, PhR(), scale.factor = 1e6) # umol m-2 s-2
+q_irrad(sun.spct, PAR(), scale.factor = 1e6) # umol m-2 s-2
+e_irrad(sun.spct, PhR()) # W m-2
+e_irrad(sun.spct, PAR()) # BE W m-2, normalized at 550 nm
+
 }
 \references{
 McCree, K. J. (1972) The action spectrum, absorptance and quantum
