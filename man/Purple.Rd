@@ -10,15 +10,27 @@ Purple(std = "ISO")
 \item{std}{a character string "ISO", or Landsat imager "LandsatOLI".}
 }
 \value{
-A waveband object wavelength defining a wavelength range.
+A waveband object defining a wavelength range.
 }
 \description{
-Purple radiation (360...450 nm), no weighting
-applied.
+Wavelength-range definition for \emph{purple} radiation according to ISO or
+imagers in the Landsat satellites.
+}
+\details{
+Purple (or violet) wavelengths as defined by ISO standards based on
+   human vision overlap the UVA band as defined by a separate ISO standard.
+   In other contexts like plant photobiology purple is included under blue,
+   while some overoptimistic LED sellers call LEDs emitting in the violet
+   region ultraviolet LEDs. In addition to the ISO definition of purple,
+   a purple channel from Landsat imagers is implemented.
 }
 \examples{
 Purple()
 Purple("ISO")
+
+e_irrad(sun.spct, Purple()) # W m-2
+q_irrad(sun.spct, Purple()) # mol m-2
+q_irrad(sun.spct, Purple(), scale.factor = 1e6) # umol m-2
 
 }
 \seealso{

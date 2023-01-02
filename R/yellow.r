@@ -1,6 +1,9 @@
 #' Constructor of yellow waveband
 #'
-#' Yellow radiation (570...591 nm), no weighting applied.
+#' Wavelength-range definition for \emph{yellow} radiation according to ISO.
+#'
+#' @details Yellow radiation (570...591 nm) as defined in ISO standards based
+#'   on human colour vision.
 #'
 #' @param std a character string "ISO"
 #'
@@ -13,6 +16,10 @@
 #' @examples
 #' Yellow()
 #' Yellow("ISO")
+#'
+#' e_irrad(sun.spct, Yellow()) # W m-2
+#' q_irrad(sun.spct, Yellow()) # mol m-2
+#' q_irrad(sun.spct, Yellow(), scale.factor = 1e6) # umol m-2
 #'
 #' @family unweighted wavebands
 #'

@@ -6,8 +6,12 @@ editor_options:
 
 # photobiologyWavebands 0.5.1
 
+-   `PAR()` was previously defined as a wavelength range, which is correct only for computations of photon irradiance. For computation of energy irradiance the correct approach is to use a weighting function based on the energy per photon. This now
+fixed. The previous behaviour of `PAR()` can now be obtained with the new function `PhR()`or by passing an argument to parameter `std`. This change affects only computations of energy irradiance, and although not code breaking, returned values will vary slightly.
 -   `Plant_bands()` now accepts `"Sellaro"` and `"sensoryBroad"` as argument for `std`.
--   `Blue()` and `Green` now accept `"broad"` as argument for `std`.
+-   `Blue()` and `Green` now accept `"broad"` as argument for `std`, corresponding to very broad ranges of wavelengths as frequently used in plant sciences.
+-    Update `UVI()` so that it optionally returns integer values as recommended by WWO for communication of UVI to the geenral public. Default behaviour remains unchanged.
+-    Updates to documentation.
 
 # photobiologyWavebands 0.5.0
 

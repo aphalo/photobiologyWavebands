@@ -7,46 +7,85 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyWavebands)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
-[![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions)
+[![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-Package ‘**photobiologyWavebands**’ supplies a set of functions and data
-to be used together with package ‘**photobiology**’ for calculation of
-derived quantities from spectral data. Non-weighed derived quantities
-represent summaries of a given range of wavelengths. All constructors
-default to ISO standardized definitions when they are available, but
-other competing definitions are also available though parameter `std` of
-the constructors of waveband objects. These constructors are specialized
-versions of the `photobiology::waveband()` constructor.
+Package ‘photobiologyWavebands’ supplies a set of functions and data to
+be used together with package ‘photobiology’ for calculation of derived
+quantities from spectral data. Package ‘photobiology’ defines class
+`waveband` for storing wavelength ranges or spectral weighting functions
+plus wavelength ranges and a constructor function `waveband()`. Package
+‘photobiologyWavebands’ provides specialized versions so that frequently
+used wavebands can be created by name instead of directly entering
+numeric boundaries for wavelength and user-defined functions for
+weighting as when using `waveband()`. R functions for frequently used
+spectral weights from wavelengths in nanometres are also exporeted.
 
-In photobiology, derived *biologically effective* quantities are used to
-quantify the effect of radiation on different organisms or processes
-within organisms. These effects can range from damage to perception of
-informational light signals including vision.
+Non-weighted derived quantities represent summaries of a given range of
+wavelengths, i.e., weight is 1 irrespective of wavelength or use of
+photon or energy units. In this case constructors of `waveband` objects
+default to ISO standardized definitions when they are available, with
+other competing definitions available by passing character strings as
+argument to parameter `std`.
 
-The definitions cover most non-weighted wavebands in common use, like
-those corresponding ultraviolet, visible and infrared, the light colours
-seen by humans, photosynthetically active radiation and some other bands
-of interest for plants. Several wavebands corresponding to remote
-sensing instruments are also provided, including all those for the
-LANDSAT missions.
+The non-weighted definitions cover most non-weighted wavebands in common
+use, like those corresponding ultraviolet, visible and infrared, the
+light colours seen by humans, and some other bands of interest for
+plants.
 
-Definitions also include many weighting functions used in the
-calculation of effective irradiances and exposures. Weighting functions
-included in the package are several biological spectral weighting
-functions (BSWFs) used to estimate effective UV doses. Except for the
-definition of the erythemal and vitamin-D action spectra for which
-definitions standardized by CIE exist, the default formulation is one
-commonly used. It is important to keep in mind that mathematical
+Several wavebands corresponding to remote sensing instruments are also
+provided, including all those for the LANDSAT missions, as non-weighted
+definitions. The Landsat imagers do have a specific responsivity at each
+wavelength, and would in principle have to be defined using
+response-dependent weighting functions. The calibrations and definitions
+provided by NASA are based on average response per band. For example, in
+the OLI instrument several of the bands are relatively narrow, while the
+wider ones seem to have a response that is flatter on a per photon basis
+than on an energy basis. If Landsat response bands are to be simulated
+using spectral data from other instruments these these approximations
+will need special consideration.
+
+The definition of photosyntheticaly active radiation (PAR) is
+non-weighted on a photon basis but spectrally weighted on an energy
+based. In some cases the same range of wavelength as in the definition
+of PAR is used to compute a non-weighted energy irradiance, which should
+not be called PAR because of the different weighting!
+
+Both PAR and illuminance are based on biological spectral weighting
+functions, approximating the spectral response of photosynthesis and the
+human-perceived light brightness, respectively. Several other derived
+*biologically effective* quantities are used to quantify the effect of
+radiation on different organisms or processes within organisms. These
+effects can range from damage to perception of informational light
+signals including vision. Weighting function definitions represent
+measurable or expected biological or photocheminal responses, and
+consequently they differ if used to compute effective spectral energy-
+and photon irradiances. Thus, two versions of weighting functions are
+stored in `waveband` objects.
+
+Exports form ‘photobiologyWavebands’ also include several weighting
+functions used in the calculation of effective irradiances and
+exposures. These are the same functions used by the constructors of
+`waveband` objects. These Weighting functions are mostly biological
+spectral weighting functions (BSWFs) used to estimate effective UV
+doses. Except for the definition of the erythemal (human skin reddening)
+and vitamin-D action spectra for which definitions standardized by CIE
+exist, the default formulation is one commonly used and preferred by the
+author of the package. It is important to keep in mind that mathematical
 formulations and extrapolation rules in use are not unique and that it
-is important to carefully chose the most appropriate one and report
+is important to carefully chose the most appropriate ones and report
 exactly which one was used. We hope this package will make this easier.
+The estimated summary values depend strongly on the choice of BSWF, its
+formulation and the extrapolation rules use.
 
 Colour-response and colour-matching functions for human vision and bee
-vision are included in package ‘**photobiology**’. Absorbance spectra
-for plant photoreceptors and some common plant pigments, as well as
-action spectra for photosynthesis are included in package
-‘**photobiologyPlants**’.
+vision are included in package ‘photobiology’. Absorbance spectra for
+plant photoreceptors and some common plant pigments, as well as action
+spectra for photosynthesis are included in package ‘photobiologyPlants’.
+Package ‘colorSpec’ provides tools for working with colours, including
+colour spaces for devices like cameras. Package ‘photobiologyInOut’
+facilitates translation of spectral data stored in classed defined in
+packages ‘photobiology’ and ‘colorSpec’.
 
 ## Installation
 
@@ -124,6 +163,6 @@ citation("photobiologyWavebands")
 
 ## License
 
-© 2012-2022 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

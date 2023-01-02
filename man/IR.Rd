@@ -40,36 +40,46 @@ TIR1(std = "RS")
 TIR2(std = "RS")
 }
 \arguments{
-\item{std}{character string, "ISO", "CIE", or Landsat imagers named
-"LandsatRBV", "LandsatMSS", etc., or "RS", for remote sensing wavebands
-as defined in the documentation of package 'RStoolbox'.}
+\item{std}{character string, "ISO", "CIE", "RS" or Landsat imagers
+"LandsatRBV", "LandsatMSS", "LandsatTIRS", "LandsatOLI", "LandsatTM",
+"LandsatETM", depending on the constructor.}
 }
 \value{
-a waveband object wavelength defining a wavelength range.
+A waveband object defining a wavelength range.
 }
 \description{
-The wavelength limits for \code{std = "RS"} and Landsat imagers have been
-taken from R package RStools and NASA and USGS documentation. They are
-defined simply as wavelength ranges without considering the spectral
-sensitivity of satellite intruments/cameras based on which remote sensing
-based indexes are usually calculated. The values for \code{std = "ISO"} are
-according to ISO 20473. The values for \code{std = "CIE"} are suggested
-values according to Wikipedia, and need verification.
+Wavelength-range definitions for \emph{infrared} radiation according to ISO,
+CIE or as commonly defined in remote sensing applications.
 }
 \details{
+The values for \code{std = "ISO"} are according to ISO 20473. The values for
+\code{std = "CIE"} are suggested values according to Wikipedia, and need
+verification.
+
+The wavelength limits for remote sensing \code{std = "RS"} and for
+Landsat imagers have been obtained from R package 'RStools' and NASA and USGS
+documentation.
+
 The names NIR, SWIR and TIR are abbreviations of near infra-red, short-wave
-infra-red and thermal infra-red, respectively.
+infra-red and thermal infra-red, respectively. The naming conventions are
+different for "CIE" than "ISO" standards, and the labels of the waveband
+objects reflect this with "IRA", "IRB", etc., used when appropriate.
 }
 \examples{
 SWIR1()
 SWIR1("RS")
+IR()
+NIR()
+MIR()
+IRA()
+IRB()
 
 }
 \seealso{
 \code{\link{Far_red}} for wavebands close to the boundary between red
   and infrared regions.
 
-\code{\link{new_waveband}}  \code{\link{waveband}}
+\code{\link{new_waveband}} and \code{\link{waveband}}
 
 Other unweighted wavebands: 
 \code{\link{Blue}()},

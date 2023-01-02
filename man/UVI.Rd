@@ -2,23 +2,27 @@
 % Please edit documentation in R/uvi.r
 \name{UVI}
 \alias{UVI}
-\title{Calculate UVI from spectral irradiance}
+\title{Calculate UV Index (UVI) from spectral irradiance}
 \usage{
-UVI(spct, std = "NOAA")
+UVI(spct, std = "NOAA", integer_UVI = FALSE)
 }
 \arguments{
 \item{spct}{a \code{source.spct} object}
 
-\item{std}{"WWO" (250 nm to 400 nm), "NOAA" (286.5 nm to 400 nm)}
+\item{std}{character One of "WWO", "NOAA".}
+
+\item{integer_UVI}{logical Return a positive integer value according to WWO
+recommended practice or a numeric value.}
 }
 \value{
-a numeric value for the unitless UVI (This is a value on a continuous scale,
-rather than the discrete scale normally used.)
+depending on the argument passed to \code{integer_UVI}, a numeric
+  (\code{FALSE}) or integer (\code{TRUE}) value for the unitless UVI.
 }
 \description{
-UVI (UV Index) is a unitless quantity based on erythema BSWF,
-  that gives an easy to interpret UV measure, mainly meant for informing
-  general public about sunburn risk.
+UVI (UV Index) is a unitless quantity based on erythema
+  biological spectral weighting function (BSWF), that gives an easy to
+  interpret UV measure, mainly meant for informing general public about
+  sunburn risk.
 }
 \details{
 Two different definitions of UV Index are implemented in this
@@ -33,10 +37,17 @@ Two different definitions of UV Index are implemented in this
   spectra from UV lamps, "WMO" should be used, as most UV lamps do emit some
   radiation between 250 nm and 286.5 nm.
 }
+\note{
+The default is to return a numeric value not rounded into a value in
+  the integer-number based recommended UVI scale. This is done to avoid loss
+  of precision in cases when additional operations, such as averaging, are
+  applied to the UVI values.
+}
 \examples{
 UVI(sun.spct)
 UVI(sun.spct, "WMO")
-round(UVI(sun.spct), 0)
+UVI(sun.spct, integer_UVI = TRUE)
+
 }
 \references{
 WHO (2002) Global Solar UV Index: A Practical Guide. ISBN 92 4

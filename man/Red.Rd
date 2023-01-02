@@ -7,23 +7,54 @@
 Red(std = "ISO")
 }
 \arguments{
-\item{std}{a character string, "ISO", "Smith10", "Smith20", "Inada",
-"Warrington", "Sellaro", "RS", or for Landsat imagers "LandsatRBV", etc.}
+\item{std}{a character string, one of "ISO", "Smith10", "Smith20", "Inada",
+"Warrington", "Sellaro", "RS", "LandsatOLI", "LandsatTM", "LandsatETM",
+"LandsatMSS", and "LandsatRBV".}
 }
 \value{
-a waveband object wavelength defining a wavelength range.
+a waveband object defining a wavelength range.
 }
 \description{
-Red radiation according to "ISO" (610-760 nm) or as commonly defined in plant
-photobiology, "Smith10" (655-665 nm), "Smith20" (650-670 nm), "Inada"
-(600-700 nm), "Warrington" (625-675 nm), and "Sellaro" (620-680 nm). No
-weighting applied.
+Wavelength-range definitions for \emph{red} light according to ISO or as
+commonly used in plant or remote sensing applications.
+}
+\details{
+The different arguments passed to formal parameter \code{std}
+  determine the range of wavelengths set as boundaries of the returned
+  \code{waveband} object; \code{"ISO"} is an standardized
+  definition based on human colour vision; \code{"Smith10"},
+  \code{"Smith20"}, \code{"Inada"}, \code{"Warrington"}, \code{"Sellaro"} and
+  \code{"Broad"} are non-standard but used in plant sciences; \code{"RS"} is
+  non-standard but frequently used in remote sensing; the remaining
+  definitions are for the published wavelength sensitivity range of imagers
+  (cameras) in the Landsat satellite missions.
+
+  In plant photobiology the definitions proposed by Prof. Harry Smith are the
+  most widely used, specially to compute a red to far-red photon ratio
+  relevant to phytochrome photoreceptors. However, other authors have used
+  different definitions in their publications. "Smith10" (655-665 nm),
+  "Smith20" (650-670 nm), "Inada" (600-700 nm), "Warrington" (625-675 nm),
+  and "Sellaro" (620-680 nm).
+}
+\note{
+The bands are defined as square windows, these can be applied to
+  spectral data to obtain the "true" values, but they do not simulate the
+  sensitivity of broad-band sensors or the spectral transmittance of ionic
+  filters. Some band-pass interference filters may have very sharp cut-in and
+  cut-off, and their effect can be approximated by a square window, but
+  filters based on light absorption will show gradual tails and bell-shaped
+  wavelength-windows. The Landsat instruments have very steep cut-in and
+  cut-off slopes and are well approximated.
 }
 \examples{
 Red()
 Red("ISO")
 Red("Smith")
 Red("Sellaro")
+
+e_irrad(sun.spct, Red()) # W m-2
+q_irrad(sun.spct, Red()) # mol m-2
+q_irrad(sun.spct, Red(), scale.factor = 1e6) # umol m-2
 
 }
 \references{
@@ -32,7 +63,7 @@ T. M., Rosenqvist, E. (Eds.). (2012). Beyond the Visible: A handbook of best
 practice in plant UV photobiology (1st ed., p. xxx + 174). Helsinki:
 University of Helsinki, Department of Biosciences, Division of Plant Biology.
 ISBN 978-952-10-8363-1 (PDF), 978-952-10-8362-4 (paperback). Open access PDF
-download available at https://hdl.handle.net/10138/37558
+download available at \doi{10.31885/9789521083631}.
 
 ISO (2007) Space environment (natural and artificial) - Process for
 determining solar irradiances. ISO Standard 21348. ISO, Geneva.
@@ -45,10 +76,11 @@ ISHS 1997.
 Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
 Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the blue/green
 ratio of natural radiation in Arabidopsis. Plant physiology, 154(1), 401-409.
-doi:10.1104/pp.110.160820
+\doi{10.1104/pp.110.160820}.
 
 Smith, H. (1982) Light quality, photoperception and plant strategy. Annual
 Review of Plant Physiology, 33:481-518.
+\doi{10.1146/annurev.pp.33.060182.002405}
 }
 \seealso{
 \code{\link[photobiology]{waveband}}
