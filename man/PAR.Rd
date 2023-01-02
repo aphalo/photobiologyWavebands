@@ -5,12 +5,16 @@
 \alias{PhR}
 \title{Constructors of PAR and PhR wavebands}
 \usage{
-PAR(std = "McCree")
+PAR(std = "PAR", norm = 700)
 
-PhR(std = "range")
+PhR()
 }
 \arguments{
-\item{std}{a character string "Plant" (or "range") or "McCree" (or "weighted").}
+\item{std}{a character string "Plant" (or "range"), "McCree" (or "photon",
+"PAR"), "Zhen" (or "ePAR"), "Gabrielsen" (or "Gaastra" or "energy") or
+"Nichiporovich".}
+
+\item{norm}{normalization wavelength (nm)}
 }
 \value{
 For PhR, a waveband object defining a wavelength range . For PAR, a
@@ -20,22 +24,62 @@ For PhR, a waveband object defining a wavelength range . For PAR, a
   waveband label is set to "PAR" or "PhR" accordingly.
 }
 \description{
-Wavelength-range definitions for \emph{photosynthetic radiation
-(PhR)} and \emph{photosynthetically active radiation
-(PAR)}.
+Waveband definitions for \emph{photosynthetic radiation
+(PhR)}, \emph{photosynthetically active radiation
+(PAR)} and \emph{extended photosynthetically active radiation
+(ePAR)} according to different definitions in use for land plants.
 }
 \details{
-Photosynthetically active radiation (400-700 nm) is defined as
-   giving equal weight to photons within its range, thus weights increase
-   with increasing wavelength when expressed as energy. Photosynthetic
-   radiation (400-700 nm) is defined as a wavelength range and does not
-   implement the spectral weighting inherent to McCree's (1972) definition
-   of PAR.
+Photosynthetically active radiation (400-700 nm) as proposed by
+  McCree (1972), and currently used in plant sciences, gives equal weight to
+  photons within its range, thus weights increase with increasing wavelength
+  when expressed as energy. PAR is normally expressed as photon irradiance or
+  (photosynthetic photon flux density, PPFD) using implicitly 1 as weight for
+  all wavelengths (a BSWF). It is also possible, but very unusual, to use the
+  quantity PAR photon irradiance, in which case a BSWF with weights different
+  from 1 needs to be used.
+
+  A proposal (see Zhen et al., 2021), defines extended photosynthetically
+  active radiation (400-750 nm) as an alternative to PAR. The need to
+  consider far-red photons as drivers of photosynthesis has become apparent
+  with the increased use of LEDs for plant cultivation. WARNING: the proposed
+  definition limits photon irradiance in the range 700-750 nm to a maximum of
+  30% of the total ePAR: ePAR is zero as long as PAR is zero, and never
+  larger than 1.4 times PAR even in the presence of far-red photons in
+  excess, because far-red photons have only a synergistic effect on
+  photosynthesis in PAR. Ensuring this condition is fulfilled is the
+  responsibility of the user of \code{PAR()}, \code{ePAR()} and \code{PhR()}
+  functions. Currently, ePAR can usefully complement PAR, but in my
+  opinion, it is far too early for it to replace PAR.
+
+  Some earlier definitions, described by McCree (1972a) citing Gabrielsen and
+  Gaastra, used this same wavelength range but assuming wavelength-invariant
+  response to energy within this same range, thus weights decrease with
+  increasing wavelength when expressed as photons. McCree (1972a) cites
+  Nichiporovich for a similar energy based quantity but covering a wider
+  range of wavelengths (380-710 nm). McCree's definition from 1972 is
+  currently the one preferred by most researchers and used almost universally
+  in the plant sciences, while others are only of historical interest.
+  Photosynthetic radiation (400-700 nm) is defined as a wavelength range and
+  does not implement the spectral weighting inherent to McCree's (1972)
+  definition of PAR or the earlier energy-based ones described by McCree
+  (1972a).
 }
 \note{
-\code{PAR()} and \code{PhR()} call the same function definiton with
+\code{PAR()} and \code{PhR()} call the same function definition with
   different default arguments.
 }
+\section{Limitations}{
+
+ePAR and PAR are meant to be use to quantify light sources with a broad
+spectrum, i.e., sources giving out white light or pale-coloured light. PAR
+and ePAR are technical measures of light useful for plants in the same way as
+illuminance is a measure of how bright light feels to an average human. They
+were never meant to describe the response to be expected from an individual
+in particular, be it a plant or human. They are generalizations, that allow
+us to consistently measure light in different situations.
+}
+
 \examples{
 PAR()
 PhR()
@@ -43,14 +87,19 @@ PAR("Plant")
 
 q_irrad(sun.spct, PhR(), scale.factor = 1e6) # umol m-2 s-2
 q_irrad(sun.spct, PAR(), scale.factor = 1e6) # umol m-2 s-2
+e_irrad(sun.spct, PAR("Gabrielsen")) # W m-2
 e_irrad(sun.spct, PhR()) # W m-2
-e_irrad(sun.spct, PAR()) # BE W m-2, normalized at 550 nm
+e_irrad(sun.spct, PAR()) # BE W m-2, normalized at 700 nm
 
 }
 \references{
 McCree, K. J. (1972) The action spectrum, absorptance and quantum
   yield of photosynthesis in crop plants. Agricultural Meteorology, 9,
-  191-216
+  191-216. \doi{10.1016/0002-1571(71)90022-7}
+
+McCree, K. J. (1972a) Test of current definitions of photosynthetically
+active radiation against leaf photosynthesis data. Agricultural Meteorology,
+10, 443-453. code{10.1016/0002-1571(72)90045-3}
 }
 \seealso{
 \code{\link[photobiology]{waveband}}
