@@ -36,7 +36,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyWavebands
 repository-code: https://bitbucket.org/aphalo/photobiologywavebands
 url: https://docs.r4photobiology.info/photobiologyWavebands/
-date-released: '2022-12-22'
+date-released: '2023-01-01'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -51,7 +51,7 @@ references:
   - name: R Core Team
   location:
     name: Vienna, Austria
-  year: '2022'
+  year: '2023'
   institution:
     name: R Foundation for Statistical Computing
   version: '>= 3.6.0'
@@ -66,7 +66,7 @@ references:
     given-names: Pedro J.
     email: pedro.aphalo@helsinki.fi
     orcid: https://orcid.org/0000-0003-3385-972X
-  year: '2022'
+  year: '2023'
   version: '>= 0.10.8'
 - type: software
   title: knitr
@@ -79,7 +79,7 @@ references:
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
-  year: '2022'
+  year: '2023'
   version: '>= 1.37'
 - type: software
   title: rmarkdown
@@ -120,5 +120,5 @@ references:
     given-names: Richard
     email: rich@rstudio.com
     orcid: https://orcid.org/0000-0003-3925-190X
-  year: '2022'
+  year: '2023'
   version: '>= 2.11'
