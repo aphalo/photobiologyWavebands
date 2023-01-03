@@ -12,7 +12,8 @@ fixed. The previous behaviour of `PAR()` can now be obtained with the new functi
 proposed extended photosynthetically active radiation, ePAR.
 -   `Plant_bands()` now accepts `"Sellaro"` and `"sensoryBroad"` as argument for `std`.
 -   `Blue()` and `Green` now accept `"broad"` as argument for `std`, corresponding to very broad ranges of wavelengths as frequently used in plant sciences.
--    Update `UVI()` so that it optionally returns integer values as recommended by WWO for communication of UVI to the geenral public. Default behaviour remains unchanged.
+-    Update `UVI()` so that it optionally returns integer values as recommended by WWO for communication of UVI to the general public. Default behaviour remains unchanged.
+-    Add `erythema()` as substitute of `CIE()`, and `UV_health_hazard()` as substitute for `ICNIRP()`. The new functions have a `std` parameter and by default have the same behaviour as the functions they substitute. `CIE()` and `ICNIRP()` are deprecated but maintained to ensure backwards compatibility.
 -    Updates to documentation.
 
 # photobiologyWavebands 0.5.0

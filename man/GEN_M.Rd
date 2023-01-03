@@ -54,9 +54,9 @@ Other BSWF weighted wavebands:
 \code{\link{FLAV}()},
 \code{\link{GEN_G}()},
 \code{\link{GEN_T}()},
-\code{\link{ICNIRP}()},
 \code{\link{PAR}()},
 \code{\link{PG}()},
+\code{\link{UV_health_hazard}()},
 \code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

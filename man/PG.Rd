@@ -76,8 +76,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_G}()},
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
-\code{\link{ICNIRP}()},
 \code{\link{PAR}()},
+\code{\link{UV_health_hazard}()},
 \code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

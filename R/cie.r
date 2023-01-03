@@ -1,4 +1,4 @@
-#' Constructor of CIE weighted waveband
+#' Constructor of erythema-weighted waveband
 #'
 #' Erythema BSWF (1998 update)
 #'
@@ -58,6 +58,7 @@ erythema <- function(std = "CIE98",
       wb.label = "CIE98"
     )
   } else {
+    warning("'std' = '", std, "' not implemented.")
     waveband()
   }
 }
@@ -72,7 +73,7 @@ erythema <- function(std = "CIE98",
 CIE <- function(norm = 298,
                 w.low = 250,
                 w.high = 400) {
-  erythema(std = "CI98",
+  erythema(std = "CIE98",
            norm = norm,
            w.low = w.low,
            w.high = 400)

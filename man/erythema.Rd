@@ -3,7 +3,7 @@
 \name{erythema}
 \alias{erythema}
 \alias{CIE}
-\title{Constructor of CIE weighted waveband}
+\title{Constructor of erythema-weighted waveband}
 \usage{
 erythema(std = "CIE98", norm = 298, w.low = 250, w.high = 400)
 
@@ -64,9 +64,9 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_G}()},
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
-\code{\link{ICNIRP}()},
 \code{\link{PAR}()},
-\code{\link{PG}()}
+\code{\link{PG}()},
+\code{\link{UV_health_hazard}()}
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
@@ -77,8 +77,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_G}()},
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
-\code{\link{ICNIRP}()},
 \code{\link{PAR}()},
-\code{\link{PG}()}
+\code{\link{PG}()},
+\code{\link{UV_health_hazard}()}
 }
 \concept{BSWF weighted wavebands}
