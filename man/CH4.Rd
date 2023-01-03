@@ -21,15 +21,20 @@ and normalization wavelength.
 Methane production from pectin BSWF
 }
 \examples{
-CIE()
-CIE(300)
+CH4()
+CH4(norm = 400)
 
+}
+\references{
+Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.;
+Reay, D. S. & McLeod, A. R. (2010) Global methane emission estimates from
+ultraviolet irradiation of terrestrial plant foliage. New Phytologist,
+Blackwell Publishing Ltd, 187, 417--425 .
 }
 \seealso{
 \code{\link[photobiology]{waveband}}
 
 Other BSWF weighted wavebands: 
-\code{\link{CIE}()},
 \code{\link{DNA_GM}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
@@ -38,6 +43,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
 \code{\link{ICNIRP}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

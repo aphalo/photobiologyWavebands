@@ -34,7 +34,7 @@ optional definitions, are listed in the tables below.
 ```{r}
 Red("ISO")
 Red("Smith10")
-PAR()
+PhR()
 UV()
 IR()
 ```
@@ -52,7 +52,7 @@ IR()
 | UVA2() | CIE  | 
 | **visible** | |
 | VIS() | ISO  |
-| PAR() | McCree |
+| PhR() | -- |
 | Purple()  | ISO |
 | Blue()  | ISO, Sellaro  | 
 | Green()  | ISO, Sellaro  | 
@@ -159,10 +159,12 @@ Currently functions for constructing `waveband` objects describing several BSWFs
 | constructor | parameters  | 
 |---|---|
 | **ultraviolet** | |
+| PAR()   | std, norm, w.low, w.high | 
 | GEN_G() | norm, w.low, w.high | 
 | GEN_T() | norm, w.low, w.high  |
 | GEN_M() | norm, w.low, w.high  |
 | PG() | norm, w.low, w.high  |
+| erythema()   | std, norm, w.low, w.high | 
 | CIE() | norm, w.low, w.high  | 
 | ICNIRP() | norm, w.low, w.high  | 
 | DNA_N() | norm, w.low, w.high |
@@ -231,12 +233,7 @@ The luminous flux per unit area in lux can be calculated as follows using the la
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
 ```
 
-As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results.
-
-```{r}
-e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
-                       interpolate_spct(CIE2008_lef2deg.spct, 555)$s.e.response
-```
+As the luminous efficiency functions vary slightly in the wavelength at which the maximum is located, and the wavelength used for the sensitivity constant is fixed by the definition of the Lumen, a small correction is need for exact results (not shown).
 
 An equivalent quantity can be calculated for scotopic vision, using the corresponding function and constant.
 

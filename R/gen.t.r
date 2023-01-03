@@ -1,4 +1,4 @@
-#' Constructor of GPAS (Timijan) weighted waveband
+#' Constructor of GPAS (Thimijan's formulation) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell [1] as formulated by Timijan et al.
 #' [2]

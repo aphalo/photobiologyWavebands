@@ -14,8 +14,8 @@ FLAV(norm = 300, w.low = 275, w.high = 346)
 \item{w.high}{long-end boundary wavelength (nm)}
 }
 \value{
-a waveband object wavelength defining wavelength range, weighting function
-and normalization wavelength.
+a waveband object wavelength defining wavelength range, weighting
+  function and normalization wavelength.
 }
 \description{
 Mesembryanthin accumulation BSWF, data and formulation from Ibdah et al.
@@ -25,12 +25,17 @@ FLAV()
 FLAV(300)
 
 }
+\references{
+Ibdah, M.; Krins, A.; Seidlitz, H. K.; Heller, W.; Strack, D. &
+Vogt, T. (2002) Spectral dependence of flavonol and betacyanin accumulation
+in Mesembryanthemum crystallinum under enhanced ultraviolet radiation. Plant,
+Cell & Environment, 25, 1145-1154. \doi{10.1046/j.1365-3040.2002.00895.x}
+}
 \seealso{
 \code{\link[photobiology]{waveband}}
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
-\code{\link{CIE}()},
 \code{\link{DNA_GM}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
@@ -38,6 +43,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
 \code{\link{ICNIRP}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

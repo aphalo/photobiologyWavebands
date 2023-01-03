@@ -9,13 +9,19 @@
 #' @return a waveband object wavelength defining wavelength range, weighting function
 #' and normalization wavelength.
 #'
+#' @references
+#' Bloom, A. A.; Lee-Taylor, J.; Madronich, S.; Messenger, D. J.; Palmer, P. I.;
+#' Reay, D. S. & McLeod, A. R. (2010) Global methane emission estimates from
+#' ultraviolet irradiation of terrestrial plant foliage. New Phytologist,
+#' Blackwell Publishing Ltd, 187, 417--425 .
+#'
 #' @export
 #'
 #' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
-#' CIE()
-#' CIE(300)
+#' CH4()
+#' CH4(norm = 400)
 #'
 #' @family BSWF weighted wavebands
 #'

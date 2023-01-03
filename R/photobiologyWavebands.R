@@ -1,24 +1,24 @@
 #' @details
-#' This package provides constructors for objects of class \code{waveband}
-#' from package 'photobiology'. These contructors are based on standard
-#' definitions and frequently used non-standardized definitions. When
+#' Package 'photobiologyWavebands' provides constructors for objects of class
+#' \code{waveband} from package 'photobiology'. These contructors are based on
+#' standard definitions or frequently used non-standardized definitions. When
 #' different definitions are in common use for a given named waveband the
-#' constructors accept an argument to chose among them. Whenever an ISO
-#' standard provides a definition, this is used by default. In the infrared (IR)
-#' there are many different definitions and waveband names in use. We have
-#' tried to include most of the commonly used names and definitions.
+#' constructors accept an argument to chose among them. Whenever an ISO standard
+#' provides a definition, this is used by default. In the infrared (IR) there
+#' are many different definitions and waveband names in use. We have tried to
+#' include most of the commonly used names and definitions.
 #'
 #' Definitions "matching" the different bands of Landsat imagers are included.
 #' These are simple wavelength ranges for wavelengths at half-maximun response
 #' as given in the NASA literature, which in some cases presents small
 #' inconsistencies. These definitions cannot exactly reproduce instrument
-#' responses as they do not describe the real spectral responisveness of the
+#' responses as they do not describe the real spectral responsiveness of the
 #' satellite imagers.
 #'
-#' By necesity we cover only a subset of all definitions in use. These should
+#' By necessity we cover only a subset of all definitions in use. These should
 #' be thought as convenience functions, as waveband objects according to any
-#' arbitrary definition can be constructed with the functions provided by
-#' package \code{\link[photobiology]{photobiology-package}}
+#' arbitrary definition can be constructed with the constructor provided by
+#' package \code{\link[photobiology]{photobiology-package}}.
 #'
 #' @references
 #' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
@@ -53,7 +53,7 @@
 #'
 #' International Commission on Non-Ionizing Radiation Protection (2004) ICNIRP
 #' Guidelines on Limits of Exposure to Ultraviolet Radiation of Wavelengths
-#' Between 180 nm And 400 nm (Incoherent Optical Radiation). Health Physics
+#' Between 180 nm and 400 nm (Incoherent Optical Radiation). Health Physics
 #' 87(2):171-186. \url{https://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
 #'
 #' ISO (2007) Optics and photonics - Spectral bands. ISO Standard 20473:2007.
@@ -77,7 +77,7 @@
 #'
 #' Musil, C. F. (1995) Differential effects of elevated ultraviolet-B radiation
 #' on the photochemical and reproductive performances of dicotyledonous and
-#' monocotyledonous arid-environment ephemerals Plant, Cell and Environment, 18,
+#' monocotyledonous arid-environment ephemerals. Plant, Cell and Environment, 18,
 #' 844-854
 #'
 #' Murakami, K., Aiga I. (1994) Red/Far-red photon flux ratio used as

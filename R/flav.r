@@ -6,8 +6,8 @@
 #' @param w.low short-end boundary wavelength (nm)
 #' @param w.high long-end boundary wavelength (nm)
 #'
-#' @return a waveband object wavelength defining wavelength range, weighting function
-#' and normalization wavelength.
+#' @return a waveband object wavelength defining wavelength range, weighting
+#'   function and normalization wavelength.
 #'
 #' @export
 #'
@@ -18,6 +18,12 @@
 #' FLAV(300)
 #'
 #' @family BSWF weighted wavebands
+#'
+#' @references
+#' Ibdah, M.; Krins, A.; Seidlitz, H. K.; Heller, W.; Strack, D. &
+#' Vogt, T. (2002) Spectral dependence of flavonol and betacyanin accumulation
+#' in Mesembryanthemum crystallinum under enhanced ultraviolet radiation. Plant,
+#' Cell & Environment, 25, 1145-1154. \doi{10.1046/j.1365-3040.2002.00895.x}
 #'
 FLAV <- function(norm = 300,
                  w.low = 275,

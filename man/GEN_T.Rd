@@ -2,7 +2,7 @@
 % Please edit documentation in R/gen.t.r
 \name{GEN_T}
 \alias{GEN_T}
-\title{Constructor of GPAS (Timijan) weighted waveband}
+\title{Constructor of GPAS (Thimijan's formulation) weighted waveband}
 \usage{
 GEN_T(norm = 300, w.low = 275, w.high = 345)
 }
@@ -41,7 +41,6 @@ Final report EPA-IAG-D6-0168. Washington: Environmental Protection Agency.
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
-\code{\link{CIE}()},
 \code{\link{DNA_GM}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
@@ -49,6 +48,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_G}()},
 \code{\link{GEN_M}()},
 \code{\link{ICNIRP}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

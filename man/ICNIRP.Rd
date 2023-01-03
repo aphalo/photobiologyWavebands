@@ -2,7 +2,7 @@
 % Please edit documentation in R/icnirp.r
 \name{ICNIRP}
 \alias{ICNIRP}
-\title{Constructor of ICNIRP 2004 weighted waveband}
+\title{Constructor of ICNIRP UV health hazard weighted waveband}
 \usage{
 ICNIRP(norm = 270, w.low = 210, w.high = 400)
 }
@@ -18,10 +18,28 @@ a waveband object defining wavelength range, weighting function
 and normalization wavelength.
 }
 \description{
-ICNIRP 2004 BSWF waveband constructor. This BSWF is used for the
-determination of exposure limits (EL) for workers, and includes a safety margin
-as it is based on eye and the non-pathologic response of the most sensitive
-human skin types when not tanned.
+Waveband constructor for ICNIRP UV health hazard 2004 BSWF.
+}
+\details{
+This BSWF is used for the determination of exposure limits (EL) for
+  workers, and includes a safety margin as it is based on eye and the
+  non-pathologic response of the most sensitive human skin types when not
+  tanned. Values are interpolated according to equations 2a, 2b and 2c in
+  ICNIRP (2004), which cover the range 210 nm to 400 nm.
+
+\strong{The program code is provided as is, with no guarantee of suitability
+for any purpose, and should under no circumstances be used to assess
+actual health hazards.}
+}
+\note{
+The weights at 180, 190, 200 and 205 nm are presented only in tabular in
+ICNIRP (2004) and all values at wavelengths < 210 nm taken as \code{NA}.
+
+Standard DIN 5031-10:2018-03 defines BSWF \emph{uvh} as a table of
+interpolated values derived from ICNIRP UV health hazard. So, the values
+computed using this R package do not necessarily exactly match those
+according to DIN 5031-10:2018-03. The range of wavelengths used here, 210 to
+400 nm, does not agree, with those in the standard: 180 to 400 nm.
 }
 \examples{
 ICNIRP()
@@ -39,7 +57,6 @@ INTERNATIONAL COMMISSION ON NON-IONIZING RADIATION PROTECTION (2004) ICNIRP
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
-\code{\link{CIE}()},
 \code{\link{DNA_GM}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
@@ -47,6 +64,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_G}()},
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

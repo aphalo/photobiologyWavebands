@@ -30,7 +30,6 @@ DNA_GM(300)
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
-\code{\link{CIE}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
 \code{\link{FLAV}()},
@@ -38,6 +37,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
 \code{\link{ICNIRP}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

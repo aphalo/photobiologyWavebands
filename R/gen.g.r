@@ -1,4 +1,4 @@
-#' Constructor of GPAS (Green) weighted waveband
+#' Constructor of GPAS (Green's formulation) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell as formulated by Green et al.
 #'

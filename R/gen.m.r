@@ -1,4 +1,4 @@
-#' Constructor of GPAS (Micheletti) weighted waveband
+#' Constructor of GPAS (Micheletti's formulation) weighted waveband
 #'
 #' Generalized Plant Action BSWF of Caldwell [1] as formulated by Micheletti et
 #' al. [2]

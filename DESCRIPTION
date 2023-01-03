@@ -1,8 +1,8 @@
 Package: photobiologyWavebands
 Type: Package
 Title: Waveband Definitions for UV, VIS, and IR Radiation
-Version: 0.5.0.9000
-Date: 2023-01-01
+Version: 0.5.1
+Date: 2023-01-03
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-3385-972X")),
@@ -17,11 +17,11 @@ Description: Constructors of waveband objects for commonly used biological
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 3.6.0),
-    photobiology (>= 0.10.8)
+    R (>= 4.0.0),
+    photobiology (>= 0.10.14)
 Suggests:
-    knitr (>= 1.37),
-    rmarkdown (>= 2.11)
+    knitr (>= 1.40),
+    rmarkdown (>= 2.15)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

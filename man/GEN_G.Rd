@@ -2,7 +2,7 @@
 % Please edit documentation in R/gen.g.r
 \name{GEN_G}
 \alias{GEN_G}
-\title{Constructor of GPAS (Green) weighted waveband}
+\title{Constructor of GPAS (Green's formulation) weighted waveband}
 \usage{
 GEN_G(norm = 300, w.low = 275, w.high = 313.3)
 }
@@ -51,7 +51,6 @@ Photobiology, 78, 456-461
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
-\code{\link{CIE}()},
 \code{\link{DNA_GM}()},
 \code{\link{DNA_N}()},
 \code{\link{DNA_P}()},
@@ -59,6 +58,8 @@ Other BSWF weighted wavebands:
 \code{\link{GEN_M}()},
 \code{\link{GEN_T}()},
 \code{\link{ICNIRP}()},
-\code{\link{PG}()}
+\code{\link{PAR}()},
+\code{\link{PG}()},
+\code{\link{erythema}()}
 }
 \concept{BSWF weighted wavebands}

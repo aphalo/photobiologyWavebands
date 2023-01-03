@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2022-08-12" />
+<meta name="date" content="2023-01-03" />
 
 <title>User Guide</title>
 
@@ -31,23 +31,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -65,55 +65,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -122,13 +121,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -333,9 +339,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">‘photobiologyWavebands’ 0.4.5.1</h3>
+<h3 class="subtitle">‘photobiologyWavebands’ 0.5.1</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2022-08-12</h4>
+<h4 class="date">2023-01-03</h4>
 
 
 <div id="TOC">
@@ -400,8 +406,8 @@ different optional definitions, are listed in the tables below.</p>
 ## low (nm) 655 
 ## high (nm) 665 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PAR</span>()</span></code></pre></div>
-<pre><code>## PAR 
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PhR</span>()</span></code></pre></div>
+<pre><code>## PhR 
 ## low (nm) 400 
 ## high (nm) 700 
 ## weighted none</code></pre>
@@ -466,8 +472,8 @@ different optional definitions, are listed in the tables below.</p>
 <td>ISO</td>
 </tr>
 <tr class="even">
-<td>PAR()</td>
-<td>McCree</td>
+<td>PhR()</td>
+<td>–</td>
 </tr>
 <tr class="odd">
 <td>Purple()</td>
@@ -865,20 +871,28 @@ calculations or simply unjustified.</p>
 <td></td>
 </tr>
 <tr class="even">
+<td>PAR()</td>
+<td>std, norm, w.low, w.high</td>
+</tr>
+<tr class="odd">
 <td>GEN_G()</td>
 <td>norm, w.low, w.high</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>GEN_T()</td>
 <td>norm, w.low, w.high</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>GEN_M()</td>
 <td>norm, w.low, w.high</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>PG()</td>
 <td>norm, w.low, w.high</td>
+</tr>
+<tr class="odd">
+<td>erythema()</td>
+<td>std, norm, w.low, w.high</td>
 </tr>
 <tr class="even">
 <td>CIE()</td>
@@ -920,8 +934,12 @@ function .</p>
 unweighted irradiances are used to calculate effective irradiances and
 effective exposures (sometimes called “doses”).</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">CIE</span>())</span></code></pre></div>
-<pre><code>## E_]CIE98.298 
-##   0.08181583 
+<pre><code>## Warning in min(sapply(w.band, min), na.rm = TRUE): no non-missing arguments to
+## min; returning Inf</code></pre>
+<pre><code>## Warning in max(sapply(w.band, max), na.rm = TRUE): no non-missing arguments to
+## max; returning -Inf</code></pre>
+<pre><code>## out of range or NAs in waveband 
+##                              NA 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
@@ -996,9 +1014,9 @@ argument a vector of wavelengths, and return a vector of effectiveness
 (either quantum/photon or energy based) depending on how the original
 source describes them. These functions are listed in the Table above,
 and an example of their use follows.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
 <p>All functions accept a wavelengths vector with variable and arbitrary
 step sizes, with the condition that the wavelengths are sorted in
 strictly increasing order.</p>
@@ -1006,16 +1024,15 @@ strictly increasing order.</p>
 for the calculation of effective spectral irradiances by multiplication
 of a <code>source_spct</code> object by a <code>waveband</code>
 object.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
-<pre><code>## Object: source_spct [122 x 2]
-## Wavelength range 280-400 nm, step 0.9230769-1 nm 
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
+<pre><code>## Object: source_spct [522 x 2]
+## Wavelength range 280-800 nm, step 0.9230769-1 nm 
 ## Label: sunlight, simulated 
 ## Measured on 2010-06-22 09:51:00 UTC 
 ## Measured at 60.20911 N, 24.96474 E; Kumpula, Helsinki, FI 
 ## Time unit 1s
-## Data weighted using &#39;CIE98.298&#39; BSWF
 ## 
-## # A tibble: 122 × 2
+## # A tibble: 522 × 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
 ##  1     280          0
@@ -1028,8 +1045,7 @@ object.</p>
 ##  8     286.         0
 ##  9     287.         0
 ## 10     288.         0
-## # … with 112 more rows
-## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+## # … with 512 more rows</code></pre>
 </div>
 </div>
 <div id="luminous-flux" class="section level2">
@@ -1040,7 +1056,7 @@ when the <em>lumen</em> definition was standardized. As we start with
 spectral irradiance we obtain luminous flux per unit area expressed in
 lux. The spectra luminous efficiency function data are included in
 package ‘photobiology’.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    49579.93 
 ## attr(,&quot;time.unit&quot;)
@@ -1049,7 +1065,7 @@ package ‘photobiology’.</p>
 ## [1] &quot;total energy response&quot;</code></pre>
 <p>The luminous flux per unit area in lux can be calculated as follows
 using the latest luminous efficiency function for the human eye.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    53057.78 
 ## attr(,&quot;time.unit&quot;)
@@ -1059,15 +1075,7 @@ using the latest luminous efficiency function for the human eye.</p>
 <p>As the luminous efficiency functions vary slightly in the wavelength
 at which the maximum is located, and the wavelength used for the
 sensitivity constant is fixed by the definition of the Lumen, a small
-correction is need for exact results.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity <span class="sc">*</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">interpolate_spct</span>(CIE2008_lef2deg.spct, <span class="dv">555</span>)<span class="sc">$</span>s.e.response</span></code></pre></div>
-<pre><code>## R[/e]_Total 
-##    53910.01 
-## attr(,&quot;time.unit&quot;)
-## [1] &quot;second&quot;
-## attr(,&quot;radiation.unit&quot;)
-## [1] &quot;total energy response&quot;</code></pre>
+correction is need for exact results (not shown).</p>
 <p>An equivalent quantity can be calculated for scotopic vision, using
 the corresponding function and constant.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> <span class="fl">1e-6</span> <span class="sc">*</span> CIE1951_scotopic_lef.spct) <span class="sc">*</span> scotopic_sensitivity</span></code></pre></div>

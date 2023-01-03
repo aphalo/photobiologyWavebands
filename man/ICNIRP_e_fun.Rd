@@ -2,7 +2,7 @@
 % Please edit documentation in R/icnirp.e.fun.r
 \name{ICNIRP_e_fun}
 \alias{ICNIRP_e_fun}
-\title{Values for the ICNIRP BSWF as a function of wavelength}
+\title{ICNIRP UV health hazard BSWF as a function of wavelength}
 \usage{
 ICNIRP_e_fun(w.length)
 }
@@ -17,7 +17,7 @@ a numeric array of the same length as \code{w.length} with values for
 \description{
 This function returns a vector of numeric multipliers that can be used as a
 weight to calculate effective doses and irradiances. The returned values are
-on energy based effectiveness relative units. The BSWF is defined for the
+on energy based effectiveness relative units. The BSWF is formulated for the
 range 210 nm to 400 nm.
 }
 \examples{

@@ -10,9 +10,11 @@
 #'   photons within its range, thus weights increase with increasing wavelength
 #'   when expressed as energy. PAR is normally expressed as photon irradiance or
 #'   (photosynthetic photon flux density, PPFD) using implicitly 1 as weight for
-#'   all wavelengths (a BSWF). It is also possible, but very unusual, to use the
-#'   quantity PAR photon irradiance, in which case a BSWF with weights different
-#'   from 1 needs to be used.
+#'   all wavelengths (a BSWF). It is also possible, but very unusual, to express
+#'   the quantity PAR as defined in McCree (1972) as an \emph{energy}
+#'   irradiance, in which case a BSWF with weights different from 1 needs to be
+#'   used. In this case the default normalization wavelength for the PAR BSWF is
+#'   set at 550 nm (my own choice).
 #'
 #'   A proposal (see Zhen et al., 2021), defines extended photosynthetically
 #'   active radiation (400-750 nm) as an alternative to PAR. The need to
@@ -40,7 +42,14 @@
 #'   definition of PAR or the earlier energy-based ones described by McCree
 #'   (1972a).
 #'
-#' @section Limitations:
+#' @section Warnings:
+#' PAR is sometimes described as a range of wavelengths (e.g., Both et al.,
+#' 2015), which can be confusing as there is more to McCree's (1972) definition,
+#' an spectral response function by which all photons within the range of PAR
+#' elicit the same strength of response. As long as PAR is expressed as a
+#' photon irradiance or a photon irradiation, this, of course, makes no
+#' difference.
+#'
 #' ePAR and PAR are meant to be use to quantify light sources with a broad
 #' spectrum, i.e., sources giving out white light or pale-coloured light. PAR
 #' and ePAR are technical measures of light useful for plants in the same way as
@@ -63,6 +72,14 @@
 #' @note \code{PAR()} and \code{PhR()} call the same function definition with
 #'   different default arguments.
 #'
+#'   The default for the normalization wavelength at 550 nm keeps the average
+#'   weights across the waveband equal to unity, except the special case of
+#'   ePAR, where the photons in the extension to the range act by synergy.
+#'
+#'   Standard DIN 5031-10:2018-03 Defines two BSWFs \emph{sy1}
+#'   and \emph{sy2} for photosynthesis, none of which are currently implemented
+#'   in 'photobiologyWavebands'.
+#'
 #' @export
 #'
 #' @seealso \code{\link[photobiology]{waveband}}
@@ -74,7 +91,18 @@
 #'
 #' McCree, K. J. (1972a) Test of current definitions of photosynthetically
 #' active radiation against leaf photosynthesis data. Agricultural Meteorology,
-#' 10, 443-453. code{10.1016/0002-1571(72)90045-3}
+#' 10, 443-453. \doi{10.1016/0002-1571(72)90045-3}
+#'
+#' Both, A. J.; Benjamin, L.; Franklin, J.; Holroyd, G.; Incoll, L. D.; Lefsrud,
+#' M. G. & Pitkin, G. (2015) Guidelines for measuring and reporting
+#' environmental parameters for experiments in greenhouses. Plant Methods,
+#' 11:43. \doi{10.1186/s13007-015-0083-5}.
+#'
+#' DIN (2018) Standard DIN 5031-10:2018-03 Optical radiation physics and
+#' illuminating engineering. Part 10: Photobiologically effective radiation,
+#' quantities, symbols and action spectra. Beuth Verlag, Berlin 2018
+#'
+#' @family BSWF weighted wavebands
 #'
 #' @examples
 #' PAR()
@@ -88,7 +116,7 @@
 #' e_irrad(sun.spct, PAR()) # BE W m-2, normalized at 700 nm
 #'
 PAR <- function(std = "PAR",
-                norm = 700) {
+                norm = 550) {
   if (std %in% c("McCree", "PAR")) {
     if (std != "PAR") {
       wb_name <- paste("PAR", std, sep = ".")
@@ -97,7 +125,7 @@ PAR <- function(std = "PAR",
     }
     new_waveband(400, 700,
                  weight = "BSWF",
-                 wb.name = ifelse(norm == 700,
+                 wb.name = ifelse(norm == 550,
                                   wb_name,
                                   paste(wb_name, as.character(norm), sep = ".")),
                  SWF.q.fun = function(wl) { 1 },
@@ -111,7 +139,7 @@ PAR <- function(std = "PAR",
     }
     new_waveband(400, 750,
                  weight = "BSWF",
-                 wb.name = ifelse(norm == 700,
+                 wb.name = ifelse(norm == 550,
                                   wb_name,
                                   paste(wb_name, as.character(norm), sep = ".")),
                  SWF.q.fun = function(wl) { 1 },
@@ -121,7 +149,7 @@ PAR <- function(std = "PAR",
     wb_name <- paste("PAR", std, sep = ".")
     new_waveband(400, 700,
                  weight = "BSWF",
-                 wb.name = ifelse(norm == 700,
+                 wb.name = ifelse(norm == 550,
                                   wb_name,
                                   paste(wb_name, as.character(norm), sep = ".")),
                  SWF.q.fun = function(wl) { 1 * wl / norm },
@@ -131,7 +159,7 @@ PAR <- function(std = "PAR",
     wb_name <- paste("PAR", std, sep = ".")
     new_waveband(380, 710,
                  weight = "BSWF",
-                 wb.name = ifelse(norm == 700,
+                 wb.name = ifelse(norm == 550,
                                   wb_name,
                                   paste(wb_name, as.character(norm), sep = ".")),
                  SWF.q.fun = function(wl) { 1 * wl / norm },

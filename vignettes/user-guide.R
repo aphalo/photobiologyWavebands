@@ -4,7 +4,7 @@ library(photobiologyWavebands)
 ## -----------------------------------------------------------------------------
 Red("ISO")
 Red("Smith10")
-PAR()
+PhR()
 UV()
 IR()
 
@@ -50,10 +50,6 @@ e_response(sun.spct * CIE1924_lef.spct) * photopic_sensitivity
 
 ## -----------------------------------------------------------------------------
 e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity
-
-## -----------------------------------------------------------------------------
-e_response(sun.spct * CIE2008_lef2deg.spct) * photopic_sensitivity *
-                       interpolate_spct(CIE2008_lef2deg.spct, 555)$s.e.response
 
 ## -----------------------------------------------------------------------------
 e_response(sun.spct * 1e-6 * CIE1951_scotopic_lef.spct) * scotopic_sensitivity

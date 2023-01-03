@@ -1,8 +1,8 @@
-#' Values for the ICNIRP BSWF as a function of wavelength
+#' ICNIRP UV health hazard BSWF as a function of wavelength
 #'
 #' This function returns a vector of numeric multipliers that can be used as a
 #' weight to calculate effective doses and irradiances. The returned values are
-#' on energy based effectiveness relative units. The BSWF is defined for the
+#' on energy based effectiveness relative units. The BSWF is formulated for the
 #' range 210 nm to 400 nm.
 #'
 #' @param w.length numeric array of wavelengths (nm)
