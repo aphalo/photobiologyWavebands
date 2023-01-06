@@ -6,7 +6,7 @@
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
 [![cran
-checks](https://cranchecks.info/badges/worst/photobiologyWavebands)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
+checks](https://badges.cranchecks.info/worst/photobiologyWavebands.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
 [![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
