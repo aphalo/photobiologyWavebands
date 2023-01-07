@@ -123,7 +123,7 @@ Review of Plant Physiology, 33:481-518.
 
 USGS (nd) Landsat 8 Science Data Users Handbook.
 \url{https://www.usgs.gov/media/files/landsat-8-data-users-handbook}.
-Visited on 2020-04-28.
+Visited on 2023-01-07.
 
 Webb, A. R.; Slaper, H.; Koepke, P. & Schmalwieser, A. W. Know your standard:
 clarifying the CIE erythema action spectrum. Photochemistry and photobiology,

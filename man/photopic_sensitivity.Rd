@@ -12,7 +12,7 @@ photopic_sensitivity
 }
 \description{
 Constant value used in the definition of Lumen
-1 Lumen is equal to 683 W at 555 nm
+1 W is equal to 683 Lumen at 555 nm
 }
 \details{
 A single numeric value

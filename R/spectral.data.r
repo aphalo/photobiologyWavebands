@@ -16,7 +16,7 @@
 #' @name SetlowTUV.spct
 #'
 #' @references
-#' \url{http://uv.biospherical.com/Version2/description-Version2-Database3.html} downloaded 2015-02-07
+#' \url{https://web.archive.org/web/20220130091146/http://uv.biospherical.com/Version2/description-Version2-Database3.html} downloaded 2015-02-07
 NULL
 #' CIE2008 luminous efficiency function (2-deg) (photopic human vision)
 #'
@@ -81,7 +81,7 @@ NULL
 #' Photopic sensitivity of the human eye
 #'
 #' Constant value used in the definition of Lumen
-#' 1 Lumen is equal to 683 W at 555 nm
+#' 1 W is equal to 683 Lumen at 555 nm
 #'
 #' A single numeric value
 #'
@@ -93,7 +93,7 @@ photopic_sensitivity <- 683
 #' Scotopic sensitivity of the human eye
 #'
 #' Constant value for human vision under very weak illumination
-#' 1 Lumen is equal to 1699 W at 507 nm
+#' 1 W is equal to 1699 Lumen at 507 nm
 #'
 #' A single numeric value
 #'

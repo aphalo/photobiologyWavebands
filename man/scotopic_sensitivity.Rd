@@ -12,7 +12,7 @@ scotopic_sensitivity
 }
 \description{
 Constant value for human vision under very weak illumination
-1 Lumen is equal to 1699 W at 507 nm
+1 W is equal to 1699 Lumen at 507 nm
 }
 \details{
 A single numeric value

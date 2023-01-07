@@ -50,8 +50,11 @@ UVI(sun.spct, integer_UVI = TRUE)
 
 }
 \references{
-WHO (2002) Global Solar UV Index: A Practical Guide. ISBN 92 4
-159007 6, WHO, Geneva. \url{https://apps.who.int/iris/handle/10665/42459}.
+World Health Organization, World Meteorological Organization,
+  United Nations Environment Programme & International Commission on
+  Non-Ionizing Radiation Protection.  (2002) Global Solar UV Index: A
+  Practical Guide. World Health Organization, Geneva. ISBN 9241590076.
+  \url{https://apps.who.int/iris/handle/10665/42459}
 
 P. Kiedron, S. Stierle and K. Lantz (2007) Instantaneous UV Index and Daily
 UV Dose Calculations. NOAA-EPA Brewer Network.

@@ -33,7 +33,7 @@
 #'   immediately drop to zero at longer wavelengths. We have used in earlier
 #'   versions the same value as used by the 'NSF Polar Programs UV Monitoring
 #'   Network' as described in
-#'   \url{http://uv.biospherical.com/Version2/description-Version2-Database3.html}.
+#'   \url{https://web.archive.org/web/20220130091146/http://uv.biospherical.com/Version2/description-Version2-Database3.html}.
 #'
 #'   We use 390 nm as default value for \code{w.high}, but make if possible for
 #'   the user to set a different wavelength. To reproduce the output of the TUV
