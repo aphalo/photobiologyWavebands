@@ -36,7 +36,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=photobiologyWavebands
 repository-code: https://bitbucket.org/aphalo/photobiologywavebands
 url: https://docs.r4photobiology.info/photobiologyWavebands/
-date-released: '2023-01-03'
+date-released: '2023-01-07'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
