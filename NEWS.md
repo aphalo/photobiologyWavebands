@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyWavebands 0.5.2
+
+-   Rebuild data objects with 'photobiology' (0.11.0)
+
 # photobiologyWavebands 0.5.1
 
 -   `PAR()` was previously defined as a wavelength range, which is correct only for computations of photon irradiance. For computation of energy irradiance the correct approach is to use a weighting function based on the energy per photon. This now

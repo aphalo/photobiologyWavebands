@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2023-01-03" />
+<meta name="date" content="2023-10-21" />
 
 <title>User Guide</title>
 
@@ -339,9 +339,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">User Guide</h1>
-<h3 class="subtitle">‘photobiologyWavebands’ 0.5.1</h3>
+<h3 class="subtitle">‘photobiologyWavebands’ 0.5.1.9000</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2023-01-03</h4>
+<h4 class="date">2023-10-21</h4>
 
 
 <div id="TOC">
@@ -390,33 +390,33 @@ calculations have been obtained.</p>
 <h2>Preliminaries</h2>
 <p>Package ‘photobiologyWavebands’ depends on package ‘photobiology’. We
 can load and attach both of them with the following statement.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(photobiologyWavebands)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(photobiologyWavebands)</span></code></pre></div>
 </div>
 <div id="waveband-constructors-for-ranges" class="section level2">
 <h2>Waveband constructors for ranges</h2>
 <p>Functions for several colour bands, in some cases according to
 different optional definitions, are listed in the tables below.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Red</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">Red</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
 <pre><code>## Red.ISO 
 ## low (nm) 610 
 ## high (nm) 760 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Red</span>(<span class="st">&quot;Smith10&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">Red</span>(<span class="st">&quot;Smith10&quot;</span>)</span></code></pre></div>
 <pre><code>## Red.Smith10 
 ## low (nm) 655 
 ## high (nm) 665 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PhR</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">PhR</span>()</span></code></pre></div>
 <pre><code>## PhR 
 ## low (nm) 400 
 ## high (nm) 700 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">UV</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">UV</span>()</span></code></pre></div>
 <pre><code>## UV.ISO 
 ## low (nm) 100 
 ## high (nm) 400 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IR</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">IR</span>()</span></code></pre></div>
 <pre><code>## IR.ISO 
 ## low (nm) 780 
 ## high (nm) 1e+06 
@@ -544,7 +544,7 @@ RedEdge40</td>
 </table>
 <p>Constructors of lists of waveband definitions frequently used
 together are also defined in the package.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">UV_bands</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">UV_bands</span>(<span class="st">&quot;ISO&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## UVC.ISO 
 ## low (nm) 100 
@@ -562,7 +562,7 @@ together are also defined in the package.</p>
 ## low (nm) 315 
 ## high (nm) 400 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">UV_bands</span>(<span class="st">&quot;CIE&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">UV_bands</span>(<span class="st">&quot;CIE&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## UVC.CIE 
 ## low (nm) 100 
@@ -586,7 +586,7 @@ together are also defined in the package.</p>
 ## low (nm) 340 
 ## high (nm) 400 
 ## weighted none</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Plant_bands</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">Plant_bands</span>()</span></code></pre></div>
 <pre><code>## [[1]]
 ## UVB.ISO 
 ## low (nm) 280 
@@ -710,7 +710,7 @@ together are also defined in the package.</p>
 <p>Additional constructors are provided for Landsat missions, for
 example the list of wavebands used in mission Landsat 1 can be created
 directly.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Landsat_bands</span>(<span class="st">&quot;L1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">Landsat_bands</span>(<span class="st">&quot;L1&quot;</span>)</span></code></pre></div>
 <pre><code>## [[1]]
 ## Green.LandsatRBV 
 ## low (nm) 480 
@@ -788,14 +788,14 @@ directly.</p>
 ‘photobiology’. As the input spectral irradiance is units of Watt
 m<sup>-2</sup> nm<sup>-1</sup> the output is in mol m<sup>-2</sup>
 s<sup>-1</sup> or W m<sup>-2</sup>.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">UV</span>()) <span class="co"># W m-2</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">UV</span>()) <span class="co"># W m-2</span></span></code></pre></div>
 <pre><code>## E_]UV.ISO 
 ##  28.62872 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy irradiance&quot;</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q_irrad</span>(sun.spct, <span class="fu">UV</span>()) <span class="sc">*</span> <span class="fl">1e6</span> <span class="co"># umol s-1 m-2</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">q_irrad</span>(sun.spct, <span class="fu">UV</span>()) <span class="sc">*</span> <span class="fl">1e6</span> <span class="co"># umol s-1 m-2</span></span></code></pre></div>
 <pre><code>## Q_]UV.ISO 
 ##  86.49506 
 ## attr(,&quot;time.unit&quot;)
@@ -805,14 +805,14 @@ s<sup>-1</sup> or W m<sup>-2</sup>.</p>
 <p>Irradiances for different wavebands can be grouped into a list of any
 length. If the list has named members, then these names are used instead
 of the default ones in the output.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">list</span>(<span class="fu">Blue</span>(), <span class="fu">VIS</span>()))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">list</span>(<span class="fu">Blue</span>(), <span class="fu">VIS</span>()))</span></code></pre></div>
 <pre><code>## E_Blue.ISO  E_VIS.ISO 
 ##   37.55207  231.86345 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;total energy irradiance&quot;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">list</span>(<span class="at">B =</span> <span class="fu">Blue</span>(), <span class="fu">VIS</span>()))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">list</span>(<span class="at">B =</span> <span class="fu">Blue</span>(), <span class="fu">VIS</span>()))</span></code></pre></div>
 <pre><code>##       E_B E_VIS.ISO 
 ##  37.55207 231.86345 
 ## attr(,&quot;time.unit&quot;)
@@ -821,7 +821,7 @@ of the default ones in the output.</p>
 ## [1] &quot;total energy irradiance&quot;</code></pre>
 <p>The constructor functions for coherent lists of wavebands described
 above can be used directly.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">VIS_bands</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">VIS_bands</span>())</span></code></pre></div>
 <pre><code>## E_Purple.ISO   E_Blue.ISO  E_Green.ISO E_Yellow.ISO E_Orange.ISO    E_Red.ISO 
 ##     47.75529     37.55207     49.26860     13.67971     12.00432     79.38159 
 ## attr(,&quot;time.unit&quot;)
@@ -834,12 +834,12 @@ above can be used directly.</p>
 <p>Photon- and energy ratios can be calculated from any pair of waveband
 objects. This a convenient and very flexible way of doing this type of
 calculations.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">q_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
 <pre><code>## Blue:VIS[q:q] 
 ##     0.1371157 
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;q:q ratio&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">e_ratio</span>(sun.spct, <span class="fu">Blue</span>(), <span class="fu">VIS</span>())</span></code></pre></div>
 <pre><code>## Blue:VIS[e:e] 
 ##     0.1619577 
 ## attr(,&quot;radiation.unit&quot;)
@@ -933,13 +933,9 @@ function .</p>
 <p>The same functions used in the examples above for calculation of
 unweighted irradiances are used to calculate effective irradiances and
 effective exposures (sometimes called “doses”).</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">CIE</span>())</span></code></pre></div>
-<pre><code>## Warning in min(sapply(w.band, min), na.rm = TRUE): no non-missing arguments to
-## min; returning Inf</code></pre>
-<pre><code>## Warning in max(sapply(w.band, max), na.rm = TRUE): no non-missing arguments to
-## max; returning -Inf</code></pre>
-<pre><code>## out of range or NAs in waveband 
-##                              NA 
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">e_irrad</span>(sun.spct, <span class="fu">CIE</span>())</span></code></pre></div>
+<pre><code>## E_]CIE98.298 
+##   0.08181583 
 ## attr(,&quot;time.unit&quot;)
 ## [1] &quot;second&quot;
 ## attr(,&quot;radiation.unit&quot;)
@@ -1014,9 +1010,9 @@ argument a vector of wavelengths, and return a vector of effectiveness
 (either quantum/photon or energy based) depending on how the original
 source describes them. These functions are listed in the Table above,
 and an example of their use follows.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="co"># at 1 nm intervals</span></span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>wavelengths1 <span class="ot">&lt;-</span> <span class="dv">285</span><span class="sc">:</span><span class="dv">400</span></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>action.spectrum1 <span class="ot">&lt;-</span> <span class="fu">CIE_e_fun</span>(wavelengths1)</span></code></pre></div>
 <p>All functions accept a wavelengths vector with variable and arbitrary
 step sizes, with the condition that the wavelengths are sorted in
 strictly increasing order.</p>
@@ -1024,15 +1020,16 @@ strictly increasing order.</p>
 for the calculation of effective spectral irradiances by multiplication
 of a <code>source_spct</code> object by a <code>waveband</code>
 object.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
-<pre><code>## Object: source_spct [522 x 2]
-## Wavelength range 280-800 nm, step 0.9230769-1 nm 
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>sun.spct <span class="sc">*</span> <span class="fu">CIE</span>()</span></code></pre></div>
+<pre><code>## Object: source_spct [122 x 2]
+## Wavelength range 280-400 nm, step 0.9230769-1 nm 
 ## Label: sunlight, simulated 
 ## Measured on 2010-06-22 09:51:00 UTC 
 ## Measured at 60.20911 N, 24.96474 E; Kumpula, Helsinki, FI 
 ## Time unit 1s
+## Data weighted using &#39;CIE98.298&#39; BSWF
 ## 
-## # A tibble: 522 × 2
+## # A tibble: 122 × 2
 ##    w.length s.e.irrad
 ##       &lt;dbl&gt;     &lt;dbl&gt;
 ##  1     280          0
@@ -1045,7 +1042,7 @@ object.</p>
 ##  8     286.         0
 ##  9     287.         0
 ## 10     288.         0
-## # … with 512 more rows</code></pre>
+## # ℹ 112 more rows</code></pre>
 </div>
 </div>
 <div id="luminous-flux" class="section level2">
@@ -1056,7 +1053,7 @@ when the <em>lumen</em> definition was standardized. As we start with
 spectral irradiance we obtain luminous flux per unit area expressed in
 lux. The spectra luminous efficiency function data are included in
 package ‘photobiology’.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE1924_lef.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    49579.93 
 ## attr(,&quot;time.unit&quot;)
@@ -1065,7 +1062,7 @@ package ‘photobiology’.</p>
 ## [1] &quot;total energy response&quot;</code></pre>
 <p>The luminous flux per unit area in lux can be calculated as follows
 using the latest luminous efficiency function for the human eye.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> CIE2008_lef2deg.spct) <span class="sc">*</span> photopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##    53057.78 
 ## attr(,&quot;time.unit&quot;)
@@ -1078,7 +1075,7 @@ sensitivity constant is fixed by the definition of the Lumen, a small
 correction is need for exact results (not shown).</p>
 <p>An equivalent quantity can be calculated for scotopic vision, using
 the corresponding function and constant.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> <span class="fl">1e-6</span> <span class="sc">*</span> CIE1951_scotopic_lef.spct) <span class="sc">*</span> scotopic_sensitivity</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="fu">e_response</span>(sun.spct <span class="sc">*</span> <span class="fl">1e-6</span> <span class="sc">*</span> CIE1951_scotopic_lef.spct) <span class="sc">*</span> scotopic_sensitivity</span></code></pre></div>
 <pre><code>## R[/e]_Total 
 ##   0.1186256 
 ## attr(,&quot;time.unit&quot;)

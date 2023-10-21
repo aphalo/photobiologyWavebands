@@ -1,12 +1,12 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^raw.data
 ^inst/web
 ^vignettes/figure/
 ^vignettes/.*\.pdf
 .*\.tex
 .*\.synctex\.gz
 .*\.log
+^data-raw
 ^build-binary-from-source.sh$
 _pkgdown.yml
 ^pkgdown
