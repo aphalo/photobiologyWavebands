@@ -97,7 +97,7 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyWavebands")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ``` r
 # install.packages("remotes")
@@ -143,7 +143,6 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyWavebands")
-#> 
 #> To cite package 'photobiologyWavebands' in publications, please use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,

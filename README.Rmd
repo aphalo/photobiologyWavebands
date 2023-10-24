@@ -43,7 +43,7 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyWavebands")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ```{r, eval=FALSE}
 # install.packages("remotes")
