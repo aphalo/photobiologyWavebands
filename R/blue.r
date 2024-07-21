@@ -48,7 +48,7 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link{new_waveband}}  \code{\link{waveband}}
+#' @seealso \code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' Blue()

@@ -7,7 +7,11 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands)
 [![cran
 checks](https://badges.cranchecks.info/worst/photobiologyWavebands.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
+[![photobiologyWavebands status
+badge](https://aphalo.r-universe.dev/badges/photobiologyWavebands)](https://aphalo.r-universe.dev/photobiologyWavebands)
 [![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyWavebands-informational.svg)](https://docs.r4photobiology.info/photobiologyWavebands/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyWavebands-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyWavebands)
 <!-- badges: end -->
 
 Package ‘photobiologyWavebands’ supplies a set of functions and data to
@@ -143,7 +147,7 @@ publications, please cite according to:
 
 ``` r
 citation("photobiologyWavebands")
-#> To cite package 'photobiologyWavebands' in publications, please use:
+#> To cite package ‘photobiologyWavebands’ in publications use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
 #>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
@@ -164,6 +168,6 @@ citation("photobiologyWavebands")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

@@ -65,7 +65,7 @@ ratio of natural radiation in Arabidopsis. Plant physiology, 154(1), 401-409.
 \doi{10.1104/pp.110.160820}.
 }
 \seealso{
-\code{\link{new_waveband}}  \code{\link{waveband}}
+\code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
 
 Other unweighted wavebands: 
 \code{\link{Far_red}()},
@@ -74,10 +74,10 @@ Other unweighted wavebands:
 \code{\link{Orange}()},
 \code{\link{Purple}()},
 \code{\link{Red}()},
+\code{\link{UV}()},
 \code{\link{UVA}()},
 \code{\link{UVB}()},
 \code{\link{UVC}()},
-\code{\link{UV}()},
 \code{\link{VIS}()},
 \code{\link{Yellow}()}
 }

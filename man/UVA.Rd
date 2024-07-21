@@ -94,9 +94,9 @@ Other unweighted wavebands:
 \code{\link{Orange}()},
 \code{\link{Purple}()},
 \code{\link{Red}()},
+\code{\link{UV}()},
 \code{\link{UVB}()},
 \code{\link{UVC}()},
-\code{\link{UV}()},
 \code{\link{VIS}()},
 \code{\link{Yellow}()}
 }

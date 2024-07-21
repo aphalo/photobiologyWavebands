@@ -39,7 +39,7 @@ ISBN 978-952-10-8363-1 (PDF), 978-952-10-8362-4 (paperback). Open access PDF
 download available at \doi{10.31885/9789521083631}.
 }
 \seealso{
-\code{\link{new_waveband}}  \code{\link{waveband}}
+\code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
 
 Other unweighted wavebands: 
 \code{\link{Blue}()},
@@ -49,9 +49,9 @@ Other unweighted wavebands:
 \code{\link{Orange}()},
 \code{\link{Purple}()},
 \code{\link{Red}()},
+\code{\link{UV}()},
 \code{\link{UVA}()},
 \code{\link{UVB}()},
-\code{\link{UV}()},
 \code{\link{VIS}()},
 \code{\link{Yellow}()}
 }

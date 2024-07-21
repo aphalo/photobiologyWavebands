@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyWavebands)](https://cran.r-project.org/package=photobiologyWavebands) 
 [![cran checks](https://badges.cranchecks.info/worst/photobiologyWavebands.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyWavebands.html)
+[![photobiologyWavebands status badge](https://aphalo.r-universe.dev/badges/photobiologyWavebands)](https://aphalo.r-universe.dev/photobiologyWavebands)
 [![R-CMD-check](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aphalo/photobiologyWavebands/actions/workflows/R-CMD-check.yaml)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyWavebands-informational.svg)](https://docs.r4photobiology.info/photobiologyWavebands/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyWavebands-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyWavebands)
 <!-- badges: end -->
 
 Package 'photobiologyWavebands' supplies a set of functions and data to be used together with package 'photobiology' for calculation of derived quantities from spectral data. Package 'photobiology' defines class `waveband` for storing wavelength ranges or spectral weighting functions plus wavelength ranges and a corresponding constructor function `waveband()`. Package 'photobiologyWavebands' provides specialized contructors so that frequently used wavebands can be created by name instead of directly entering numeric boundaries for wavelength and user-defined functions for weighting as needed when using `waveband()`. R functions for frequently used to obtain spectral weighting factors from arbitrary wavelengths in nanometres are also exported.
@@ -78,6 +81,6 @@ citation("photobiologyWavebands")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2024 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
 
 

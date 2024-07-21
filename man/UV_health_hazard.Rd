@@ -60,7 +60,7 @@ INTERNATIONAL COMMISSION ON NON-IONIZING RADIATION PROTECTION (2004) ICNIRP
   \url{https://www.icnirp.org/cms/upload/publications/ICNIRPUV2004.pdf}
 }
 \seealso{
-\code{\link{new_waveband}}  \code{\link{waveband}}
+\code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
