@@ -136,7 +136,7 @@ Red <- function(std = "ISO") {
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = label)
   } else if (std == "Apogee") {
-    new_waveband(654,
+    new_waveband(645,
                  665,
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = label)
