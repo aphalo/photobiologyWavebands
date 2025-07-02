@@ -23,8 +23,8 @@ The different arguments passed to formal parameter \code{std}
   \code{waveband} object; far-red in not defined by \code{"ISO"} standard
   definitions based on human colour vision, and included under red;
   \code{"Smith10"}, \code{"Smith20"}, \code{"Inada"}, \code{"Warrington"},
-  \code{"Sellaro"} and \code{"Broad"} are non-standard but used in plant
-  sciences; \code{"RedEdge40"} and \code{"RedEdge40"} are non-standard but
+  \code{"Sellaro"}, \code{"Broad"} and \code{"Apogee"} are non-standard but used in plant
+  sciences; \code{"RedEdge20"} and \code{"RedEdge40"} are non-standard but
   frequently used in remote sensing.
 
   In plant photobiology the definitions proposed by Prof. Harry Smith are the
@@ -32,7 +32,8 @@ The different arguments passed to formal parameter \code{std}
   relevant to phytochrome photoreceptors. However, other authors have used
   different definitions in their publications. "Smith10" (725-735 nm),
   "Smith20" (720-740 nm), "Inada" (700-800 nm), "Warrington" (700-850 nm),
-  and "Sellaro" (700-750 nm).
+  and "Sellaro" (700-750 nm). "Apogee" is a definition given by a sensor
+  manufacturer that matches "Smith20" for far-red.
 
   Other definitions used in remote sensing. For example the "red edge" is to
   detect the condition of vegetation based on light reflectance by green

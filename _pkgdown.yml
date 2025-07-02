@@ -79,6 +79,7 @@ navbar:
   components:
     intro:
       icon: fas fa-home fa-lg
+      aria-label: Home
       href: index.html
     reference:
       text: Reference

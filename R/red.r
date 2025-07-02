@@ -11,20 +11,21 @@
 #'
 #' @details The different arguments passed to formal parameter \code{std}
 #'   determine the range of wavelengths set as boundaries of the returned
-#'   \code{waveband} object; \code{"ISO"} is an standardized
-#'   definition based on human colour vision; \code{"Smith10"},
-#'   \code{"Smith20"}, \code{"Inada"}, \code{"Warrington"}, \code{"Sellaro"} and
-#'   \code{"Broad"} are non-standard but used in plant sciences; \code{"RS"} is
-#'   non-standard but frequently used in remote sensing; the remaining
-#'   definitions are for the published wavelength sensitivity range of imagers
-#'   (cameras) in the Landsat satellite missions.
+#'   \code{waveband} object; \code{"ISO"} is an standardized definition based on
+#'   human colour vision; \code{"Smith10"}, \code{"Smith20"}, \code{"Inada"},
+#'   \code{"Warrington"}, \code{"Sellaro"}, \code{"Broad"} and \code{"Apogee"}
+#'   are non-standard but used in plant sciences; \code{"RS"} is non-standard
+#'   but frequently used in remote sensing; the remaining definitions are for
+#'   the published wavelength sensitivity range of imagers (cameras) in the
+#'   Landsat satellite missions.
 #'
 #'   In plant photobiology the definitions proposed by Prof. Harry Smith are the
 #'   most widely used, specially to compute a red to far-red photon ratio
 #'   relevant to phytochrome photoreceptors. However, other authors have used
 #'   different definitions in their publications. "Smith10" (655-665 nm),
 #'   "Smith20" (650-670 nm), "Inada" (600-700 nm), "Warrington" (625-675 nm),
-#'   and "Sellaro" (620-680 nm).
+#'   and "Sellaro" (620-680 nm). "Apogee" (645-665 nm) is a definition given by
+#'   a sensor manufacturer that is shifted by 5 nm compared to "Smith20".
 #'
 #' @note The bands are defined as square windows, these can be applied to
 #'   spectral data to obtain the "true" values, but they do not simulate the
@@ -132,6 +133,11 @@ Red <- function(std = "ISO") {
   } else if (std == "LandsatRBV") {
     new_waveband(580,
                  680,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Apogee") {
+    new_waveband(654,
+                 665,
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = label)
   } else {
