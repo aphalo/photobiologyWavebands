@@ -7,6 +7,9 @@
 \format{
 A response.spct object with 401 rows and 2 variables
 }
+\usage{
+CIE1951_scotopic_lef.spct
+}
 \description{
 A dataset containing the wavelengths at a 1 nm interval. Tabulated values for
 quantum luminous efficiency at low light levels according to CIE1951.

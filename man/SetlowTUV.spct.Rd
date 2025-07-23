@@ -7,6 +7,9 @@
 \format{
 A response.spct object with 1082 rows and 2 variables
 }
+\usage{
+SetlowTUV.spct
+}
 \description{
 A dataset containing the wavelengths at a 0.1 nm interval. Tabulated values
 for Setlow's naked DNA damage action spectrum as used in the TUV model.

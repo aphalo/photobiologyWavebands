@@ -10,6 +10,9 @@ editor_options:
 -   Support in `Red()` and `Far_red()` the definitions used by 
 [Apogee](https://www.apogeeinstruments.com/red-far-red-and-par-far-sensors/)
 for its sensors.
+-   Implement "Yield Photon Density" using mean photon action spectra from
+McCree as BSWFs, selected with arguments passed to parameter `std` in functions
+`PAR()` or `PQYR().
 
 # photobiologyWavebands 0.5.2
 

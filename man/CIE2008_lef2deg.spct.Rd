@@ -7,6 +7,9 @@
 \format{
 A response.spct object with 441 rows and 2 variables
 }
+\usage{
+CIE2008_lef2deg.spct
+}
 \description{
 A dataset containing the wavelengths at a 1 nm interval.
 Tabulated values for quantum luminous efficiency according to CIE2008 for 2 degrees.

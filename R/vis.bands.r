@@ -8,7 +8,7 @@
 #'
 #' @seealso \code{\link[photobiology]{waveband}}, \code{\link{Purple}},
 #'   \code{\link{Blue}}, \code{\link{Green}}, \code{\link{Yellow}},
-#'   \code{\link{Orange}}, and \code{\code{Red}}.
+#'   \code{\link{Orange}}, and \code{\link{Red}}.
 #'
 #' @examples
 #' VIS_bands()

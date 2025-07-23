@@ -43,7 +43,7 @@
 #' @export
 #'
 #' @seealso \code{\link[photobiology]{waveband}} and
-#'   \code{\link[photobiology]{UVI_wb}}
+#'   \code{\link{UVI_wb}}
 #'
 #' @examples
 #' UVI(sun.spct)
