@@ -79,7 +79,7 @@ IRB()
 \code{\link{Far_red}} for wavebands close to the boundary between red
   and infrared regions.
 
-\code{\link[photobiology]{new_waveband}} and \code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}
 
 Other unweighted wavebands: 
 \code{\link{Blue}()},

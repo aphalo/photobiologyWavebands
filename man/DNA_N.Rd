@@ -26,7 +26,7 @@ DNA_N(300)
 
 }
 \seealso{
-\code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},

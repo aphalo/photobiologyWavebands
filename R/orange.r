@@ -15,6 +15,8 @@
 #'
 #' @export
 #'
+#' @seealso \code{\link[photobiology]{waveband}}
+#'
 #' @examples
 #' Orange()
 #' Orange("ISO")

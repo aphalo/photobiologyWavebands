@@ -27,7 +27,7 @@
 #'   boundary is substantial, and has been analysed by Micheletti et al. [3].
 #'
 #' @export
-#' @seealso \code{\link[photobiology]{new_waveband}} and \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #' @examples
 #' GEN_M()
 #' GEN_M(300)

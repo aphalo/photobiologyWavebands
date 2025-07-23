@@ -44,7 +44,7 @@ of Action Spectrum Shape and Wavelength Range Photochemistry and
 Photobiology, 78, 456-461
 }
 \seealso{
-\code{\link[photobiology]{new_waveband}} and \code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},

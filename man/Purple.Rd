@@ -34,7 +34,7 @@ q_irrad(sun.spct, Purple(), scale.factor = 1e6) # umol m-2
 
 }
 \seealso{
-\code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}
 
 Other unweighted wavebands: 
 \code{\link{Blue}()},

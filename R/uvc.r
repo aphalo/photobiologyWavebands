@@ -14,7 +14,7 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @references
 #' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson,

@@ -60,3 +60,7 @@ P. Kiedron, S. Stierle and K. Lantz (2007) Instantaneous UV Index and Daily
 UV Dose Calculations. NOAA-EPA Brewer Network.
 \url{https://www.esrl.noaa.gov/gmd/grad/neubrew/docs/UVindex.pdf}
 }
+\seealso{
+\code{\link[photobiology]{waveband}} and
+  \code{\link[photobiology]{UVI_wb}}
+}

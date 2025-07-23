@@ -2,7 +2,7 @@
 % Please edit documentation in R/vis.bands.r
 \name{VIS_bands}
 \alias{VIS_bands}
-\title{Contructor of lists of VIS wavebands}
+\title{Constructor of lists of VIS wavebands}
 \usage{
 VIS_bands(std = "ISO")
 }
@@ -21,6 +21,10 @@ VIS_bands("ISO")
 
 }
 \seealso{
+\code{\link[photobiology]{waveband}}, \code{\link{Purple}},
+  \code{\link{Blue}}, \code{\link{Green}}, \code{\link{Yellow}},
+  \code{\link{Orange}}, and \code{\code{Red}}.
+
 Other lists of unweighted wavebands: 
 \code{\link{IR_bands}()},
 \code{\link{Landsat_bands}()},

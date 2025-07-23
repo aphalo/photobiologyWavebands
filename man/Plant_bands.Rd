@@ -27,7 +27,9 @@ Plant_bands("CIE")
 
 }
 \seealso{
-\code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}, \code{\link{UVB}},
+  \code{\link{UVA}}, \code{\link{Blue}}, \code{link{Green}},
+  \code{\link{Red}}, \code{\link{Far_red}} and \code{\link{PAR}}.
 
 Other lists of unweighted wavebands: 
 \code{\link{IR_bands}()},

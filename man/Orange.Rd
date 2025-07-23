@@ -33,6 +33,8 @@ ISO (2007) Space environment (natural and artificial) - Process for
 determining solar irradiances. ISO Standard 21348. ISO, Geneva.
 }
 \seealso{
+\code{\link[photobiology]{waveband}}
+
 Other unweighted wavebands: 
 \code{\link{Blue}()},
 \code{\link{Far_red}()},

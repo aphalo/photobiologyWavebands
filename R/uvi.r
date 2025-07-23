@@ -42,6 +42,9 @@
 #'
 #' @export
 #'
+#' @seealso \code{\link[photobiology]{waveband}} and
+#'   \code{\link[photobiology]{UVI_wb}}
+#'
 #' @examples
 #' UVI(sun.spct)
 #' UVI(sun.spct, "WMO")

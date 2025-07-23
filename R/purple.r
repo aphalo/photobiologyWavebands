@@ -16,7 +16,7 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link[photobiology]{new_waveband}}  \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' Purple()

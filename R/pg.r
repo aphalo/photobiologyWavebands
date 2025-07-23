@@ -45,8 +45,10 @@
 #'   wavelength boundaries on a case by case basis.
 #'
 #' @export
+#'
 #' @seealso \code{\link{GEN_G}} \code{\link{GEN_T}} \code{\link{GEN_M}} and
 #'  \code{\link[photobiology]{waveband}}
+#'
 #' @examples
 #' PG()
 #' PG(300)

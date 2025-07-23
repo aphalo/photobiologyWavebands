@@ -6,7 +6,8 @@
 #' @return a list of wavebands
 #' @export
 #'
-#' @seealso \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}, \code{\link{UVC}},
+#'   \code{\link{UVB}} and \code{\link{UVA}}.
 #'
 #' @examples
 #' UV_bands()

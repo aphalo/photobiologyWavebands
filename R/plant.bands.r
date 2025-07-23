@@ -9,7 +9,9 @@
 #' @return a list of wavebands
 #' @export
 #'
-#' @seealso \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}, \code{\link{UVB}},
+#'   \code{\link{UVA}}, \code{\link{Blue}}, \code{link{Green}},
+#'   \code{\link{Red}}, \code{\link{Far_red}} and \code{\link{PAR}}.
 #'
 #' @examples
 #' Plant_bands()

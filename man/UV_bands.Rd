@@ -25,7 +25,8 @@ UV_bands("none")
 
 }
 \seealso{
-\code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}}, \code{\link{UVC}},
+  \code{\link{UVB}} and \code{\link{UVA}}.
 
 Other lists of unweighted wavebands: 
 \code{\link{IR_bands}()},

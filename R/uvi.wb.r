@@ -29,7 +29,7 @@
 #' UV Dose Calculations. NOAA-EPA Brewer Network.
 #' \url{https://www.esrl.noaa.gov/gmd/grad/neubrew/docs/UVindex.pdf}
 #'
-#' @seealso \code{\link{UVI}}
+#' @seealso \code{\link{UVI}} and \code{\link[photobiology]{waveband}}
 #'
 #' @keywords internal
 

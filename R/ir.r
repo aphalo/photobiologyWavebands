@@ -29,7 +29,7 @@
 #'
 #' @export
 #'
-#' @seealso \code{\link[photobiology]{new_waveband}} and \code{\link[photobiology]{waveband}}
+#' @seealso \code{\link[photobiology]{waveband}}
 #'
 #' @examples
 #' SWIR1()
