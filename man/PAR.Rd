@@ -20,13 +20,14 @@ PQYR(std = "McCree.field.mean", norm = 550)
 \item{norm}{normalization wavelength (nm)}
 }
 \value{
-For \code{PhR()}, a waveband object defining a wavelength range.
-  For \code{PAR(std = "McCree")}, \code{ePAR()} and \code{PQYR()} a waveband
-  object implementing different approximations
-  of the action spectrum of photosynthesis in crop (land) plants as BSWF. In
-  PAR() the BSWF is as defined by McCree (1972b), equal action per photon.  and thus including a weighting function used in computation of
-  energy-base PAR irradiances. The weights are normalized to 1 at 550 nm. The
-  waveband label is set to "PAR" or "PhR" accordingly.
+For \code{PhR()}, a waveband object defining a wavelength range. For
+  \code{PAR(std = "McCree")}, \code{ePAR()} and \code{PQYR()} a waveband
+  object implementing different approximations of the action spectrum of
+  photosynthesis in crop (land) plants as BSWF. In PAR() the BSWF is as
+  defined by McCree (1972b), equal action per photon.  and thus including a
+  weighting function used in computation of energy-base PAR irradiances. The
+  weights are normalized to 1 at 550 nm. The waveband label is set to "PAR"
+  or "PhR" accordingly.
 }
 \description{
 Waveband definitions for \emph{photosynthetic radiation}
@@ -41,35 +42,39 @@ Photosynthetically active radiation (400-700 nm) as proposed by
   photons within its range, thus weights increase with increasing wavelength
   when expressed as energy. PAR is normally expressed as photon irradiance or
   (photosynthetic photon flux density, PPFD) using implicitly 1 as weight for
-  all wavelengths (a photon-based BSWF). It is also possible, but very
-  unusual, to express the quantity PAR as defined in McCree (1972b) as an
-  \emph{energy} irradiance, in which case a BSWF with weights different from
-  1 needs to be used. In this case the default normalization wavelength for
-  the PAR BSWF is set at 550 nm (my own choice). In some fields PAR, such as
-  meteorology, PAR is simply taken as a range of wavelengths used to
+  all wavelengths. This is a simple photon-based Biological Spectral
+  Weighting Function (BSWF). It is also possible, but very unusual, to
+  express the quantity PAR as defined in McCree (1972b) as an \emph{energy}
+  irradiance, in which case a BSWF with weights different from 1 needs to be
+  used. In this case the default normalization wavelength for the PAR BSWF is
+  set at 550 nm (at the center of the wavelength range). In some fields,
+  such as meteorology, PAR is simply taken as a range of wavelengths used to
   integrate spectral energy irradiance. This is different to McCree's
-  definition as in this package available under the name PhR.
+  definition and in this package available under the name Photosynthetic
+  Radiation (PhR).
 
-  Instead of using the simplified BSWF as in PAR, some authors have used an
-  photon-based action spectrum (or "quantum yield" spectrum) as BSWF and
-  called the quantity \emph{Yield Photon Density} (YPD). A mean action
-  spectrum from several crop species from McCree (1972a) in one of those that
-  can be found in the literature. Here it is available under the name PQYR
-  using two mean action spectra, for field grown and controlled environment
-  chamber grown plants.
+  Instead of using the simplified square-shapped BSWF as in PAR, some authors
+  have used an photon-based action spectrum (or "quantum yield" spectrum) as
+  BSWF and called the quantity \emph{Yield Flux Density} (YFD). A mean action
+  spectrum from several crop species from McCree (1972a) is one of those that
+  has been used in the literature. Here it is available under the name
+  PQYR (Photosynthesis Quantum Yield Radiation) using two mean action
+  spectra, for field-grown- and controlled-environment-chamber-grown crop
+  plants.
 
   A recent proposal (see Zhen et al., 2021), defines extended
   photosynthetically active radiation (400-750 nm) (ePAR) as an alternative
   to PAR. The need to consider far-red photons as drivers of photosynthesis
   has become apparent with the increasing use of LEDs for plant cultivation.
-  WARNING: the proposed definition limits photon irradiance in the range
-  700-750 nm to a maximum of 30% of the total ePAR: ePAR is zero as long as
-  PAR is zero, and never larger than 1.4 times PAR even in the presence of
-  far-red photons in excess, because far-red photons have only a synergistic
-  effect on photosynthesis in PAR. Ensuring this condition is fulfilled
-  remains the responsibility of the user of the wavebands returned by
-  \code{PAR(std = "ePAR")}, \code{PAR(std = "Zhen")}, and \code{ePAR()} as it
-  can be tested only by computing irradiances integrated for multiple
+  Far-red light contributes significantly to photosynthesis only when added
+  to PAR. WARNING: the proposed definition of ePAR limits photon irradiance
+  in the range 700-750 nm to a maximum of 30% of the total ePAR: ePAR is zero
+  as long as PAR is zero, and never larger than 1.4 times PAR even in the
+  presence of far-red photons in excess, because far-red photons have only a
+  synergistic effect on photosynthesis in PAR. Ensuring this condition is
+  fulfilled remains the responsibility of the user of the wavebands returned
+  by \code{PAR(std = "ePAR")}, \code{PAR(std = "Zhen")}, and \code{ePAR()} as
+  it can be tested only by computing irradiances integrated for multiple
   wavelength ranges.
 
   Some earlier definitions, described by McCree (1972a) citing Gabrielsen and
@@ -79,7 +84,7 @@ Photosynthetically active radiation (400-700 nm) as proposed by
   Nichiporovich for a similar energy based quantity but covering a wider
   range of wavelengths (380-710 nm). McCree's definition from 1972b is
   currently the one preferred by most researchers and used almost universally
-  in the plant sciences, while others are only of historical interest.
+  in the plant sciences, while earlier ones are only of historical interest.
   Photosynthetic radiation (400-700 nm) (PhR) is defined as a wavelength
   range and does not implement the spectral weighting inherent to McCree's
   (1972) definition of PAR or the earlier energy-based ones described by
@@ -102,18 +107,20 @@ Photosynthetically active radiation (400-700 nm) as proposed by
   (e.g., Both et al., 2015), which can be confusing as there is more to
   McCree's (1972b) definition, an spectral response function by which all
   photons within the range of PAR elicit the same strength of response. As
-  long as PAR is expressed as a photon irradiance or a photon irradiation,
-  this, of course, makes no difference.
+  long as PAR is expressed as a photon irradiance it is identical to PhR.
+  Similarly, as long as Gabrielsen and Gaastra's definition is expressed
+  as energy irradiance, it is equivalent as using PhR.
 
-  ePAR and PAR are meant to be use to quantify light sources with a broad
+  ePAR and PAR were designed to be use to quantify light sources with a broad
   spectrum, i.e., sources giving out white light or pale-coloured light. PAR
   and ePAR are technical measures of light useful for plants in the same way
   as illuminance is a measure of how bright light feels to an average human.
-  They were never meant to describe the response to be expected from an
+  None of them are meant to describe the response to be expected from an
   individual in particular, be it a plant or human. They are generalizations,
-  that allow us to consistently measure light in different situations. PQYR
-  is similar in concept as long as we use also the same action spectrum in
-  different situations.
+  that allow us to consistently measure light in different situations rather
+  than directly predict the rate of photosynthesis. PQYR is similar in
+  concept to PAR and ePAR as long as the same action spectrum is used
+  cosistently.
 }
 
 \examples{
@@ -149,7 +156,7 @@ illuminating engineering. Part 10: Photobiologically effective radiation,
 quantities, symbols and action spectra. Beuth Verlag, Berlin 2018
 }
 \seealso{
-\code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}} and \code{\link{PQYR_q_fun}}.
 
 Other BSWF weighted wavebands: 
 \code{\link{CH4}()},
