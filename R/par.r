@@ -20,7 +20,9 @@
 #'   such as meteorology, PAR is simply taken as a range of wavelengths used to
 #'   integrate spectral energy irradiance. This is different to McCree's
 #'   definition and in this package available under the name Photosynthetic
-#'   Radiation (PhR).
+#'   Radiation (PhR). In the case of sunlight and using 550 nm for normalization
+#'   the difference between the two is very small, while for artificial light
+#'   sources the differences can be larger.
 #'
 #'   Instead of using the simplified square-shapped BSWF as in PAR, some authors
 #'   have used an photon-based action spectrum (or "quantum yield" spectrum) as
@@ -44,24 +46,29 @@
 #'   fulfilled remains the responsibility of the user of the wavebands returned
 #'   by \code{PAR(std = "ePAR")}, \code{PAR(std = "Zhen")}, and \code{ePAR()} as
 #'   it can be tested only by computing irradiances integrated for multiple
-#'   wavelength ranges.
+#'   wavelength ranges. Function \code{xPAR_irrad()}
+#'   from package 'photobiologyPlants' returns the constrained ePAR under the
+#'   name of xPAR as well as ePAR and its PAR and FR components.
 #'
 #'   Some earlier definitions, described by McCree (1972a) citing Gabrielsen and
-#'   Gaastra, used this same wavelength range but assuming wavelength-invariant
-#'   response to energy within this same range, thus weights decrease with
-#'   increasing wavelength when expressed as photons. McCree (1972a) cites
+#'   Gaastra, used the same wavelength range as PAR but assuming wavelength-invariant
+#'   response to energy within this range, thus in this case weights decrease with
+#'   increasing wavelength when expressed as photons. McCree (1972a) also cites
 #'   Nichiporovich for a similar energy based quantity but covering a wider
-#'   range of wavelengths (380-710 nm). McCree's definition from 1972b is
-#'   currently the one preferred by most researchers and used almost universally
-#'   in the plant sciences, while earlier ones are only of historical interest.
+#'   range of wavelengths (380-710 nm). Both of these definitions, even if
+#'   mostly of historical interest, are also implemented. When used to compute
+#'   photon irradiances the BSWFs are normalised at 550 nm.
+#'
+#'   McCree's definition from 1972b is currently the one preferred by most
+#'   researchers and used almost universally in the plant sciences.
 #'   Photosynthetic radiation (400-700 nm) (PhR) is defined as a wavelength
 #'   range and does not implement the spectral weighting inherent to McCree's
-#'   (1972) definition of PAR or the earlier energy-based ones described by
-#'   McCree (1972a).
+#'   (1972) of PAR or Gabrielsen and Gaastra definition of photosynthetic
+#'   energy irradiance described by McCree (1972a).
 #'
 #' @section Warnings: PAR is sometimes described as a range of wavelengths
 #'   (e.g., Both et al., 2015), which can be confusing as there is more to
-#'   McCree's (1972b) definition, an spectral response function by which all
+#'   McCree's (1972b) definition, a spectral weighting function by which all
 #'   photons within the range of PAR elicit the same strength of response. As
 #'   long as PAR is expressed as a photon irradiance it is identical to PhR.
 #'   Similarly, as long as Gabrielsen and Gaastra's definition is expressed
@@ -76,7 +83,7 @@
 #'   that allow us to consistently measure light in different situations rather
 #'   than directly predict the rate of photosynthesis. PQYR is similar in
 #'   concept to PAR and ePAR as long as the same action spectrum is used
-#'   cosistently.
+#'   consistently.
 #'
 #' @param std a character string "Plant" (or "range"), "McCree" (or "photon",
 #'   "PAR"), "Zhen" (or "ePAR"), "Gabrielsen" (or "Gaastra" or "energy") or
