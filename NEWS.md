@@ -6,7 +6,7 @@ editor_options:
 
 # photobiologyWavebands 0.5.3
 
--   Rebuild data objects with 'photobiology' (0.13.1).
+-   Rebuild data objects with 'photobiology' (0.13.2)
 -   Support in `Red()` and `Far_red()` the definitions used by 
 [Apogee](https://www.apogeeinstruments.com/red-far-red-and-par-far-sensors/)
 for its sensors.
