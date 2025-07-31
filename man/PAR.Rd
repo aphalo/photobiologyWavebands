@@ -65,30 +65,32 @@ Photosynthetically active radiation (400-700 nm) as proposed by
   plants.
 
   A recent proposal (see Zhen et al., 2021), defines extended
-  photosynthetically active radiation (400-750 nm) (ePAR) as an alternative
-  to PAR. The need to consider far-red photons as drivers of photosynthesis
-  has become apparent with the increasing use of LEDs for plant cultivation.
-  Far-red light contributes significantly to photosynthesis only when added
-  to PAR. WARNING: the proposed definition of ePAR limits photon irradiance
-  in the range 700-750 nm to a maximum of 30% of the total ePAR: ePAR is zero
-  as long as PAR is zero, and never larger than 1.4 times PAR even in the
-  presence of far-red photons in excess, because far-red photons have only a
-  synergistic effect on photosynthesis in PAR. Ensuring this condition is
-  fulfilled remains the responsibility of the user of the wavebands returned
-  by \code{PAR(std = "ePAR")}, \code{PAR(std = "Zhen")}, and \code{ePAR()} as
-  it can be tested only by computing irradiances integrated for multiple
-  wavelength ranges. Function \code{xPAR_irrad()}
-  from package 'photobiologyPlants' returns the constrained ePAR under the
-  name of xPAR as well as ePAR and its PAR and FR components.
+  photosynthetically active radiation (400-750 nm) (abbreviated as ePAR) as
+  an alternative to PAR. The need to consider far-red photons as drivers of
+  photosynthesis has become apparent with the increasing use of LEDs for
+  plant cultivation. Far-red light contributes significantly to
+  photosynthesis only when added to PAR. WARNING: the proposed definition of
+  ePAR limits photon irradiance in the range 700-750 nm to a maximum of 30%
+  of the total ePAR: ePAR is zero as long as PAR is zero, and never larger
+  than 1.4 times PAR even in the presence of far-red photons in excess,
+  because far-red photons have only a synergistic effect on photosynthesis
+  driven by VIS light. Ensuring this condition is fulfilled remains the
+  responsibility of the user of the wavebands returned by
+  \code{PAR(std = "ePAR")}, \code{PAR(std = "Zhen")}, and \code{ePAR()} as
+  FR's contribution can be assessed only by computing irradiances integrated
+  for two wavelength ranges and comparing them.
+  Function \code{xPAR_irrad()} from package 'photobiologyPlants' returns the
+  constrained ePAR under the name of xPAR as well as ePAR and its PAR and FR
+  components.
 
-  Some earlier definitions, described by McCree (1972a) citing Gabrielsen and
-  Gaastra, used the same wavelength range as PAR but assuming wavelength-invariant
-  response to energy within this range, thus in this case weights decrease with
-  increasing wavelength when expressed as photons. McCree (1972a) also cites
-  Nichiporovich for a similar energy based quantity but covering a wider
-  range of wavelengths (380-710 nm). Both of these definitions, even if
-  mostly of historical interest, are also implemented. When used to compute
-  photon irradiances the BSWFs are normalised at 550 nm.
+  Some earlier definitions, described by McCree (1972a), include Gabrielsen
+  and Gaastra's, which used the same wavelength range as PAR but assuming
+  wavelength-invariant response to energy. Thus, in this case weights
+  decrease with increasing wavelength when expressed as photons. McCree
+  (1972a) also cites Nichiporovich for a similar energy based quantity but
+  covering a wider range of wavelengths (380-710 nm). Both of these
+  definitions, even if mostly of historical interest, are also implemented.
+  When used to compute photon irradiances the BSWFs are normalised at 550 nm.
 
   McCree's definition from 1972b is currently the one preferred by most
   researchers and used almost universally in the plant sciences.
@@ -105,9 +107,11 @@ Photosynthetically active radiation (400-700 nm) as proposed by
   weights across the waveband equal to unity, except the special case of
   ePAR, where the photons in the extension to the range act by synergy.
 
-  Standard DIN 5031-10:2018-03 Defines two BSWFs \emph{sy1}
-  and \emph{sy2} for photosynthesis, none of which are currently implemented
-  in 'photobiologyWavebands'.
+  Standard DIN 5031-10:2018-03 Defines two BSWFs \emph{sy1} and \emph{sy2}
+  for photosynthesis. BSWF \emph{sy2} is not implemented but is based on the
+  same data as \code{PQYR("McCree.field.mean")} with a specific
+  interpolation. BSWF \emph{sy1} is not currently implemented in
+  'photobiologyWavebands'.
 }
 \section{Warnings}{
  PAR is sometimes described as a range of wavelengths
@@ -160,7 +164,7 @@ environmental parameters for experiments in greenhouses. Plant Methods,
 
 DIN (2018) Standard DIN 5031-10:2018-03 Optical radiation physics and
 illuminating engineering. Part 10: Photobiologically effective radiation,
-quantities, symbols and action spectra. Beuth Verlag, Berlin 2018
+quantities, symbols and action spectra. Beuth Verlag, Berlin 2018.
 }
 \seealso{
 \code{\link[photobiology]{waveband}} and \code{\link{PQYR_q_fun}}.
