@@ -12,7 +12,7 @@ editor_options:
 for its sensors.
 -   Implement "Yield Photon Density" using mean photon action spectra from
 McCree as BSWFs, selected with arguments passed to parameter `std` in functions
-`PAR()` or `PQYR().
+`PAR()` or `PQYR()`.
 
 # photobiologyWavebands 0.5.2
 

@@ -27,7 +27,8 @@ DNA_N_q_fun <- function(w.length) {
       stats::spline(
         photobiologyWavebands::SetlowTUV.spct$w.length,
         photobiologyWavebands::SetlowTUV.spct$s.q.response,
-        xout = w.length[wl.within]
+        xout = w.length[wl.within],
+        method = "natural"
       )$y
   }
   spectral_weights

@@ -28,7 +28,8 @@ PQYR_q_fun <- function(w.length,
       stats::spline(
         tmp.spct$w.length,
         tmp.spct$s.q.response,
-        xout = w.length[wl.within]
+        xout = w.length[wl.within],
+        method = "natural"
       )$y
   }
   spectral_weights
