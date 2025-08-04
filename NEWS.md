@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyWavebands 0.5.4
+
+- Bug fix in `PQYR_q_fun` and thus in `PAR()` or `PQYR()`, affecting only the
+"Yield Photon Density" computation, new in 0.5.3.
+
 # photobiologyWavebands 0.5.3
 
 -   Rebuild data objects with 'photobiology' (0.13.2)
