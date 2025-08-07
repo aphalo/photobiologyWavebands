@@ -21,7 +21,8 @@ Depends:
     photobiology (>= 0.13.0)
 Suggests:
     knitr (>= 1.50),
-    rmarkdown (>= 2.29)
+    rmarkdown (>= 2.29),
+    testthat (>= 3.0.0)
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true
@@ -30,3 +31,4 @@ URL: https://docs.r4photobiology.info/photobiologyWavebands/,
     https://github.com/aphalo/photobiologywavebands
 BugReports: https://github.com/aphalo/photobiologywavebands/issues
 RoxygenNote: 7.3.2
+Config/testthat/edition: 3
