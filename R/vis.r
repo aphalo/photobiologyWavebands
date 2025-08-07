@@ -1,6 +1,6 @@
 #' Constructor of VIS waveband
 #'
-#' Visible (to humnas) radiation (380...760 nm) according to ISO standard
+#' Visible (to humans) radiation (380...760 nm) according to ISO standard
 #' definition, no weighting applied. For \code{std = "RS"} the returned range is
 #' the same as for \code{PAR()}. The panchromatic bands of Landsat missions are
 #' also supported.

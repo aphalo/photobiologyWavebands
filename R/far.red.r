@@ -112,6 +112,8 @@ Far_red <- function(std="ISO") {
     new_waveband(705, 745, wb.name=paste("FarRed", std, sep="."), wb.label=label)
   } else if (std=="RedEdge20") {
     new_waveband(715, 735, wb.name=paste("FarRed", std, sep="."), wb.label=label)
+  } else if (tolower(std) == "broad") {
+    new_waveband(700, 800, wb.name= "FarRed.broad", wb.label=label)
   } else {
     warning("'std' argument value not implemented.")
     waveband()
