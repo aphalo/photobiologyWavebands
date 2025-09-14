@@ -1,0 +1,32 @@
+test_that("orange waveband is correct for default", {
+  expect_equal(Orange(), Orange("ISO"))
+})
+
+test_that("Orange waveband is correct for \"ISO\"", {
+  wb <- Orange(std = "ISO")
+  expect_equal(wl_range(wb), c(591, 610))
+  expect_equal(wl_range(wb), range(Orange()))
+  expect_equal(wl_range(wb), range(Orange("ISO")))
+  expect_equal(labels(wb)$label, "Orange")
+  expect_equal(labels(wb)$name, "Orange.ISO")
+  expect_equal(wb$weight, "none")
+  expect_null(wb$SWF.e.fub)
+  expect_null(wb$SWF.q.fub)
+  expect_null(wb$norm)
+  expect_type(wb$hinges, "double")
+  expect_equal(length(wb$hinges), 4L)
+})
+
+test_that("Orange waveband is correct for bad std", {
+  expect_warning(wb <- Orange(std = "bad-std"))
+  expect_equal(wl_range(wb), c(NA_real_, NA_real_))
+  expect_equal(labels(wb)$label, "Not available")
+  expect_equal(labels(wb)$name, "Not available")
+  expect_equal(wb$weight, "none")
+  expect_null(wb$SWF.e.fub)
+  expect_null(wb$SWF.q.fub)
+  expect_null(wb$norm)
+  expect_type(wb$hinges, "double")
+  expect_true(all(is.na(wb$hinges)))
+  expect_equal(length(wb$hinges), 4L)
+})

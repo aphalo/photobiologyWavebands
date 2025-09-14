@@ -80,7 +80,7 @@
 Red <- function(std = "ISO") {
   label = "Red"
   if (std == "Smith") {
-    warning(
+    message(
       "The definition of 'Smith' defaults to 'Smith10'."
     )
     std <- "Smith10"
@@ -100,7 +100,7 @@ Red <- function(std = "ISO") {
                  665,
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = "R")
-  } else if (std %in% c("Inada", "Broad")) {
+  } else if (std == "Inada") {
     new_waveband(600,
                  700,
                  wb.name = paste("Red", std, sep = "."),
@@ -140,6 +140,11 @@ Red <- function(std = "ISO") {
                  665,
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = label)
+  } else if (tolower(std) == "broad") {
+    new_waveband(600,
+                 700,
+                 wb.name = "Red.broad",
+                 wb.label = "Red")
   } else {
     warning("'std' = '", std, "' not implemented.")
     waveband()
