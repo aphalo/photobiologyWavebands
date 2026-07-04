@@ -55,30 +55,17 @@ quantities, symbols and action spectra. Beuth Verlag, Berlin 2018.
 \seealso{
 \code{\link[photobiology]{waveband}}
 
-Other BSWF weighted wavebands: 
-\code{\link{CH4}()},
-\code{\link{DNA_GM}()},
-\code{\link{DNA_N}()},
-\code{\link{DNA_P}()},
-\code{\link{FLAV}()},
-\code{\link{GEN_G}()},
-\code{\link{GEN_M}()},
-\code{\link{GEN_T}()},
-\code{\link{PAR}()},
-\code{\link{PG}()},
-\code{\link{UV_health_hazard}()}
-
-Other BSWF weighted wavebands: 
-\code{\link{CH4}()},
-\code{\link{DNA_GM}()},
-\code{\link{DNA_N}()},
-\code{\link{DNA_P}()},
-\code{\link{FLAV}()},
-\code{\link{GEN_G}()},
-\code{\link{GEN_M}()},
-\code{\link{GEN_T}()},
-\code{\link{PAR}()},
-\code{\link{PG}()},
-\code{\link{UV_health_hazard}()}
+Other BSWF weighted wavebands:
+\code{\link[=CH4]{CH4()}},
+\code{\link[=DNA_GM]{DNA_GM()}},
+\code{\link[=DNA_N]{DNA_N()}},
+\code{\link[=DNA_P]{DNA_P()}},
+\code{\link[=FLAV]{FLAV()}},
+\code{\link[=GEN_G]{GEN_G()}},
+\code{\link[=GEN_M]{GEN_M()}},
+\code{\link[=GEN_T]{GEN_T()}},
+\code{\link[=PAR]{PAR()}},
+\code{\link[=PG]{PG()}},
+\code{\link[=UV_health_hazard]{UV_health_hazard()}}
 }
 \concept{BSWF weighted wavebands}

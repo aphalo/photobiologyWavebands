@@ -36,18 +36,18 @@ q_irrad(sun.spct, Purple(), scale.factor = 1e6) # umol m-2
 \seealso{
 \code{\link[photobiology]{waveband}}
 
-Other unweighted wavebands: 
-\code{\link{Blue}()},
-\code{\link{Far_red}()},
-\code{\link{Green}()},
-\code{\link{IR}()},
-\code{\link{Orange}()},
-\code{\link{Red}()},
-\code{\link{UV}()},
-\code{\link{UVA}()},
-\code{\link{UVB}()},
-\code{\link{UVC}()},
-\code{\link{VIS}()},
-\code{\link{Yellow}()}
+Other unweighted wavebands:
+\code{\link[=Blue]{Blue()}},
+\code{\link[=Far_red]{Far_red()}},
+\code{\link[=Green]{Green()}},
+\code{\link[=IR]{IR()}},
+\code{\link[=Orange]{Orange()}},
+\code{\link[=Red]{Red()}},
+\code{\link[=UV]{UV()}},
+\code{\link[=UVA]{UVA()}},
+\code{\link[=UVB]{UVB()}},
+\code{\link[=UVC]{UVC()}},
+\code{\link[=VIS]{VIS()}},
+\code{\link[=Yellow]{Yellow()}}
 }
 \concept{unweighted wavebands}

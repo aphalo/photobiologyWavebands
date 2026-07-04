@@ -31,10 +31,10 @@ Plant_bands("CIE")
   \code{\link{UVA}}, \code{\link{Blue}}, \code{link{Green}},
   \code{\link{Red}}, \code{\link{Far_red}} and \code{\link{PAR}}.
 
-Other lists of unweighted wavebands: 
-\code{\link{IR_bands}()},
-\code{\link{Landsat_bands}()},
-\code{\link{UV_bands}()},
-\code{\link{VIS_bands}()}
+Other lists of unweighted wavebands:
+\code{\link[=IR_bands]{IR_bands()}},
+\code{\link[=Landsat_bands]{Landsat_bands()}},
+\code{\link[=UV_bands]{UV_bands()}},
+\code{\link[=VIS_bands]{VIS_bands()}}
 }
 \concept{lists of unweighted wavebands}

@@ -24,10 +24,10 @@ IR_bands("CIE")
 \seealso{
 \code{\link[photobiology]{waveband}}
 
-Other lists of unweighted wavebands: 
-\code{\link{Landsat_bands}()},
-\code{\link{Plant_bands}()},
-\code{\link{UV_bands}()},
-\code{\link{VIS_bands}()}
+Other lists of unweighted wavebands:
+\code{\link[=Landsat_bands]{Landsat_bands()}},
+\code{\link[=Plant_bands]{Plant_bands()}},
+\code{\link[=UV_bands]{UV_bands()}},
+\code{\link[=VIS_bands]{VIS_bands()}}
 }
 \concept{lists of unweighted wavebands}

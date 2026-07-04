@@ -39,17 +39,17 @@ Final report EPA-IAG-D6-0168. Washington: Environmental Protection Agency.
 \code{\link{GEN.G}} \code{\link{GEN.M}} \code{\link{PG}}
   and \code{\link[photobiology]{waveband}}
 
-Other BSWF weighted wavebands: 
-\code{\link{CH4}()},
-\code{\link{DNA_GM}()},
-\code{\link{DNA_N}()},
-\code{\link{DNA_P}()},
-\code{\link{FLAV}()},
-\code{\link{GEN_G}()},
-\code{\link{GEN_M}()},
-\code{\link{PAR}()},
-\code{\link{PG}()},
-\code{\link{UV_health_hazard}()},
-\code{\link{erythema}()}
+Other BSWF weighted wavebands:
+\code{\link[=CH4]{CH4()}},
+\code{\link[=DNA_GM]{DNA_GM()}},
+\code{\link[=DNA_N]{DNA_N()}},
+\code{\link[=DNA_P]{DNA_P()}},
+\code{\link[=FLAV]{FLAV()}},
+\code{\link[=GEN_G]{GEN_G()}},
+\code{\link[=GEN_M]{GEN_M()}},
+\code{\link[=PAR]{PAR()}},
+\code{\link[=PG]{PG()}},
+\code{\link[=UV_health_hazard]{UV_health_hazard()}},
+\code{\link[=erythema]{erythema()}}
 }
 \concept{BSWF weighted wavebands}

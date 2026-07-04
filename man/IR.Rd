@@ -81,18 +81,18 @@ IRB()
 
 \code{\link[photobiology]{waveband}}
 
-Other unweighted wavebands: 
-\code{\link{Blue}()},
-\code{\link{Far_red}()},
-\code{\link{Green}()},
-\code{\link{Orange}()},
-\code{\link{Purple}()},
-\code{\link{Red}()},
-\code{\link{UV}()},
-\code{\link{UVA}()},
-\code{\link{UVB}()},
-\code{\link{UVC}()},
-\code{\link{VIS}()},
-\code{\link{Yellow}()}
+Other unweighted wavebands:
+\code{\link[=Blue]{Blue()}},
+\code{\link[=Far_red]{Far_red()}},
+\code{\link[=Green]{Green()}},
+\code{\link[=Orange]{Orange()}},
+\code{\link[=Purple]{Purple()}},
+\code{\link[=Red]{Red()}},
+\code{\link[=UV]{UV()}},
+\code{\link[=UVA]{UVA()}},
+\code{\link[=UVB]{UVB()}},
+\code{\link[=UVC]{UVC()}},
+\code{\link[=VIS]{VIS()}},
+\code{\link[=Yellow]{Yellow()}}
 }
 \concept{unweighted wavebands}

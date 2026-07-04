@@ -24,17 +24,17 @@ CIE_e_fun(293:400)
 
 }
 \seealso{
-Other BSWF functions: 
-\code{\link{CH4_e_fun}()},
-\code{\link{CH4_q_fun}()},
-\code{\link{CIE_q_fun}()},
-\code{\link{DNA_GM_q_fun}()},
-\code{\link{DNA_P_q_fun}()},
-\code{\link{FLAV_q_fun}()},
-\code{\link{GEN_G_q_fun}()},
-\code{\link{GEN_M_q_fun}()},
-\code{\link{GEN_T_q_fun}()},
-\code{\link{ICNIRP_e_fun}()},
-\code{\link{PG_q_fun}()}
+Other BSWF functions:
+\code{\link[=CH4_e_fun]{CH4_e_fun()}},
+\code{\link[=CH4_q_fun]{CH4_q_fun()}},
+\code{\link[=CIE_q_fun]{CIE_q_fun()}},
+\code{\link[=DNA_GM_q_fun]{DNA_GM_q_fun()}},
+\code{\link[=DNA_P_q_fun]{DNA_P_q_fun()}},
+\code{\link[=FLAV_q_fun]{FLAV_q_fun()}},
+\code{\link[=GEN_G_q_fun]{GEN_G_q_fun()}},
+\code{\link[=GEN_M_q_fun]{GEN_M_q_fun()}},
+\code{\link[=GEN_T_q_fun]{GEN_T_q_fun()}},
+\code{\link[=ICNIRP_e_fun]{ICNIRP_e_fun()}},
+\code{\link[=PG_q_fun]{PG_q_fun()}}
 }
 \concept{BSWF functions}

@@ -28,10 +28,10 @@ UV_bands("none")
 \code{\link[photobiology]{waveband}}, \code{\link{UVC}},
   \code{\link{UVB}} and \code{\link{UVA}}.
 
-Other lists of unweighted wavebands: 
-\code{\link{IR_bands}()},
-\code{\link{Landsat_bands}()},
-\code{\link{Plant_bands}()},
-\code{\link{VIS_bands}()}
+Other lists of unweighted wavebands:
+\code{\link[=IR_bands]{IR_bands()}},
+\code{\link[=Landsat_bands]{Landsat_bands()}},
+\code{\link[=Plant_bands]{Plant_bands()}},
+\code{\link[=VIS_bands]{VIS_bands()}}
 }
 \concept{lists of unweighted wavebands}
