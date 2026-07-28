@@ -61,6 +61,7 @@ reference:
     - IR_bands
     - Plant_bands
     - Landsat_bands
+    - Sentinel2_bands
   - title: Spectral response data
     contents:
     - CIE1924_lef.spct

@@ -96,10 +96,12 @@ Colour-response and colour-matching functions for human vision and bee
 vision are included in package ‘photobiology’. Absorbance spectra for
 plant photoreceptors and some common plant pigments, as well as action
 spectra for photosynthesis are included in package ‘photobiologyPlants’.
-Package ‘colorSpec’ provides tools for working with colours, including
-colour spaces for devices like cameras. Package ‘photobiologyInOut’
-facilitates translation of spectral data stored in classes defined in
-package ‘photobiology’ and other packages such as ‘colorSpec’.
+Response spectra for several broad band sensors are included in package
+‘photobiologySensors’. Package ‘colorSpec’ provides tools for working
+with colours, including colour spaces for devices like cameras. Package
+‘photobiologyInOut’ facilitates translation of spectral data stored in
+classes defined in package ‘photobiology’ and other packages such as
+‘colorSpec’.
 
 ## Installation
 
@@ -135,9 +137,6 @@ dependencies.
 HTML documentation is available at
 (<https://docs.r4photobiology.info/photobiologyWavebands/>), including
 an *User Guide*.
-
-News on updates to the different packages of the ‘r4photobiology’ suite
-are regularly posted at (<https://www.r4photobiology.info/>).
 
 Two articles introduce the basic ideas behind the design of the suite
 and describe its use: Aphalo P. J. (2015)
@@ -190,6 +189,6 @@ citation("photobiologyWavebands")
 
 ## License
 
-© 2012-2025 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2026 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.
