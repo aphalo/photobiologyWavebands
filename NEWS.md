@@ -4,10 +4,13 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyWavebands 0.5.5
+
+- Add definitions describing the bands of the multi spectral instrument (MSI) 
+of the Sentinel-2 mission of the European Space Agency (ESA).
+
 # photobiologyWavebands 0.5.4
 
-- Add definitions describing the bands of the MSI instrument of the Sentinel-2
-mission of the European Space Agency (ESA).
 - Bug fix in `PQYR_q_fun` and thus in `PAR()` or `PQYR()`, affecting only the
 "Yield Photon Density" computation, new in 0.5.3.
 
