@@ -1,9 +1,11 @@
 test_that("VIS waveband is correct for default", {
+  expect_s3_class(VIS(), "waveband")
   expect_equal(VIS(), VIS("ISO"))
 })
 
 test_that("VIS waveband is correct for \"ISO\"", {
   wb <- VIS(std = "ISO")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(380, 760))
   expect_equal(wl_range(wb), range(VIS()))
   expect_equal(wl_range(wb), range(VIS("ISO")))
@@ -19,6 +21,7 @@ test_that("VIS waveband is correct for \"ISO\"", {
 
 test_that("VIS waveband is correct for \"RS\"", {
   wb <- VIS(std = "RS")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(400, 700))
   expect_equal(labels(wb)$label, "VIS")
   expect_equal(labels(wb)$name, "VIS.RS")
@@ -32,6 +35,7 @@ test_that("VIS waveband is correct for \"RS\"", {
 
 test_that("VIS waveband is correct for \"LandsatOLI\"", {
   wb <- VIS(std = "LandsatOLI")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 680))
   expect_equal(labels(wb)$label, "Pan")
   expect_equal(labels(wb)$name, "Pan.LandsatOLI")
@@ -45,6 +49,7 @@ test_that("VIS waveband is correct for \"LandsatOLI\"", {
 
 test_that("VIS waveband is correct for \"Landsat7\"", {
   wb <- VIS(std = "Landsat7")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 900))
   expect_equal(labels(wb)$label, "Pan")
   expect_equal(labels(wb)$name, "Pan.Landsat7")
@@ -58,6 +63,7 @@ test_that("VIS waveband is correct for \"Landsat7\"", {
 
 test_that("VIS waveband is correct for \"LandsatRBV\"", {
   wb <- VIS(std = "LandsatRBV")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(505, 750))
   expect_equal(labels(wb)$label, "Pan")
   expect_equal(labels(wb)$name, "Pan.RBV.Landsat3")
@@ -71,6 +77,7 @@ test_that("VIS waveband is correct for \"LandsatRBV\"", {
 
 test_that("VIS waveband is correct for bad std", {
   expect_warning(wb <- VIS(std = "bad-std"))
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(NA_real_, NA_real_))
   expect_equal(labels(wb)$label, "Not available")
   expect_equal(labels(wb)$name, "Not available")

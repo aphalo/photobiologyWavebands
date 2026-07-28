@@ -9,7 +9,7 @@ Red(std = "ISO")
 \arguments{
 \item{std}{a character string, one of "ISO", "Smith10", "Smith20", "Inada",
 "Warrington", "Sellaro", "RS", "LandsatOLI", "LandsatTM", "LandsatETM",
-"LandsatMSS", and "LandsatRBV".}
+"LandsatMSS", "LandsatRBV" or "Sentinel2.B4".}
 }
 \value{
 a waveband object defining a wavelength range.

@@ -29,14 +29,24 @@ ETM_bands(std = "LandsatETM")
 a list of wavebands
 }
 \description{
-Defined according as ranges of wavelengths according to NASA and USGS
-manuals. The definitions are as \emph{rectangular} windows, while
-the true response functions deviate to some extent from these ideal
-definitions.
+Lists of \code{waveband} objects describing bands defined as ranges of
+wavelengths according to NASA and USGS manuals for different Landsat
+missions.
 }
 \details{
-See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
-detailed sensitivity spectra for the different bands of the imaginers.
+Over the many years of the different Landsat missions, instruments
+  changed and consequently also some of the wavelength ranges captured in the
+  images. The definitions are as \emph{rectangular} windows, while the true
+  response functions deviate to some extent from these ideal definitions.
+
+  The individual \code{waveband} objects included in the returned \code{list}
+  objects are constructed with functions \code{\link{Purple}()},
+  \code{\link{Blue}()}, \code{\link{Green}()}, \code{\link{Red}()},
+  \code{\link{Far_red}()}, \code{\link{NIR}()}, \code{\link{SWIR1}()}, and
+  \code{\link{SWIR2}()}.
+
+  See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
+  detailed sensitivity spectra for the different bands of the imaginers.
 }
 \examples{
 Landsat_bands("L1")
@@ -46,7 +56,8 @@ TIRS_bands()
 
 }
 \seealso{
-\code{\link[photobiology]{waveband}}
+\code{\link[photobiology]{waveband}()} for a description of the
+  class and its constructors.
 
 Other lists of unweighted wavebands:
 \code{\link[=IR_bands]{IR_bands()}},

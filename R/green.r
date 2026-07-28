@@ -4,7 +4,7 @@
 #' commonly used in plant or remote sensing applications.
 #'
 #' @param std a character string "ISO", "Sellaro", "Broad", "RS", "LandsatOLI",
-#'   "LandsatRBV", "LandsatTM", "LandsatETM", or "LandsatMSS".
+#'   "LandsatRBV", "LandsatTM", "LandsatETM", "LandsatMSS" or "Sentinel2.B3".
 #'
 #' @return A waveband object defining a wavelength range.
 #'
@@ -90,6 +90,11 @@ Green <- function(std = "ISO") {
     new_waveband(480,
                  580,
                  wb.name = paste("Green", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B3") {
+    new_waveband(560 - 35 / 2,
+                 560 + 35 / 2,
+                 wb.name = paste(label, std, sep = "."),
                  wb.label = label)
   } else {
     warning("'std' = '", std, "' not implemented.")

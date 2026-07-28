@@ -1,9 +1,11 @@
 test_that("Yellow waveband is correct for default", {
+  expect_s3_class(Yellow(), "waveband")
   expect_equal(Yellow(), Yellow("ISO"))
 })
 
 test_that("Yellow waveband is correct for \"ISO\"", {
   wb <- Yellow(std = "ISO")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(570, 591))
   expect_equal(wl_range(wb), range(Yellow()))
   expect_equal(wl_range(wb), range(Yellow("ISO")))
@@ -19,6 +21,7 @@ test_that("Yellow waveband is correct for \"ISO\"", {
 
 test_that("Yellow waveband is correct for bad std", {
   expect_warning(wb <- Yellow(std = "bad-std"))
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(NA_real_, NA_real_))
   expect_equal(labels(wb)$label, "Not available")
   expect_equal(labels(wb)$name, "Not available")

@@ -3,9 +3,9 @@
 #' Wavelength-range definitions for \emph{blue} light according to ISO or as
 #' commonly used in plant or remote sensing applications.
 #'
-#' @param std a character string "ISO", "Sellaro", "Broad",
-#'  "RS" (remote sensing), or Landsat imagers, "LandsatTM",
-#'   "LandsatETM", or "LandsatOLI".
+#' @param std a character string "ISO", "Sellaro", "Broad", "RS" (remote
+#'   sensing), "LandsatTM", "LandsatETM", "LandsatOLI", "Sentinel2.B1", or
+#'   "Sentinel2.B2".
 #'
 #' @return A waveband object defining a wavelength range.
 #'
@@ -36,6 +36,12 @@
 #' Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the blue/green
 #' ratio of natural radiation in Arabidopsis. Plant physiology, 154(1), 401-409.
 #' \doi{10.1104/pp.110.160820}.
+#'
+#' See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
+#' detailed sensitivity spectra for the different bands of the imagers.
+#'
+#' See the Sentinel-2 User Handbook \url{https://sentinels.copernicus.eu/documents/247904/685211/Sentinel-2_User_Handbook} for
+#' detailed information on the different bands of the MSI imager.
 #'
 #' @note The bands are defined as square windows, these can be applied to
 #'   spectral data to obtain the "true" values, but they do not simulate the
@@ -86,6 +92,16 @@ Blue <- function(std = "ISO") {
   } else if (std == "LandsatETM" || std == "LandsatTM") {
     new_waveband(450,
                  520,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B1") {
+    new_waveband(443 - 20/2,
+                 443 + 20/2,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B2") {
+    new_waveband(490 - 65 / 2,
+                 490 + 65 / 2,
                  wb.name = paste(label, std, sep = "."),
                  wb.label = label)
   } else {

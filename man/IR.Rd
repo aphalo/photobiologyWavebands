@@ -42,7 +42,9 @@ TIR2(std = "RS")
 \arguments{
 \item{std}{character string, "ISO", "CIE", "RS" or Landsat imagers
 "LandsatRBV", "LandsatMSS", "LandsatTIRS", "LandsatOLI", "LandsatTM",
-"LandsatETM", depending on the constructor.}
+"LandsatETM", "Sentinel2.B8", "Sentinel2.B8b", "Sentinel2.B9",
+"Sentinel2.B10", "Sentinel2.B11" or , "Sentinel2.B12" depending on the
+constructor.}
 }
 \value{
 A waveband object defining a wavelength range.

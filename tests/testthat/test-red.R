@@ -1,9 +1,11 @@
 test_that("Red waveband is correct for default", {
+  expect_s3_class(Red(), "waveband")
   expect_equal(Red(), Red("ISO"))
 })
 
 test_that("Red waveband is correct for \"ISO\"", {
   wb <- Red(std = "ISO")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(610, 760))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.ISO")
@@ -16,12 +18,14 @@ test_that("Red waveband is correct for \"ISO\"", {
 })
 
 test_that("Red waveband is correct for \"Smith\"", {
-  expect_message(Red("Smith"))
+  expect_message(wb <- Red("Smith"))
+  expect_s3_class(wb, "waveband")
   expect_equal(Red("Smith"), Red("Smith10"))
 })
 
 test_that("wl range is correct for \"Smith10\"", {
   wb <- Red(std = "Smith10")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(655, 665))
   expect_equal(labels(wb)$label, "R")
   expect_equal(labels(wb)$name, "Red.Smith10")
@@ -35,6 +39,7 @@ test_that("wl range is correct for \"Smith10\"", {
 
 test_that("wl range is correct for \"Smith20\"", {
   wb <- Red(std = "Smith20")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(650, 670))
   expect_equal(labels(wb)$label, "R")
   expect_equal(labels(wb)$name, "Red.Smith20")
@@ -48,6 +53,7 @@ test_that("wl range is correct for \"Smith20\"", {
 
 test_that("Red waveband is correct for \"Apogee\"", {
   wb <- Red("Apogee")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(645, 665))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.Apogee")
@@ -61,6 +67,7 @@ test_that("Red waveband is correct for \"Apogee\"", {
 
 test_that("wl range is correct for \"Inada\"", {
   wb <- Red(std = "Inada")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(600, 700))
   expect_equal(labels(wb)$label, "R")
   expect_equal(labels(wb)$name, "Red.Inada")
@@ -74,6 +81,7 @@ test_that("wl range is correct for \"Inada\"", {
 
 test_that("wl range is correct for \"broad\"", {
   wb <- Red(std = "broad")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(600, 700))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.broad")
@@ -91,6 +99,7 @@ test_that("wl range is correct for \"broad\"", {
 
 test_that("wl range is correct for \"Warrington\"", {
   wb <- Red(std = "Warrington")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(625, 675))
   expect_equal(labels(wb)$label, "R")
   expect_equal(labels(wb)$name, "Red.Warrington")
@@ -104,6 +113,7 @@ test_that("wl range is correct for \"Warrington\"", {
 
 test_that("wl range is correct for \"Sellaro\"", {
   wb <- Red(std = "Sellaro")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(620, 680))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.Sellaro")
@@ -117,6 +127,7 @@ test_that("wl range is correct for \"Sellaro\"", {
 
 test_that("wl range is correct for \"RS\"", {
   wb <- Red(std = "RS")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(630, 680))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.RS")
@@ -130,6 +141,7 @@ test_that("wl range is correct for \"RS\"", {
 
 test_that("wl range is correct for \"LandsatOLI\"", {
   wb <- Red(std = "LandsatOLI")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(630, 680))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.LandsatOLI")
@@ -143,6 +155,7 @@ test_that("wl range is correct for \"LandsatOLI\"", {
 
 test_that("wl range is correct for \"LandsatMSS\"", {
   wb <- Red(std = "LandsatMSS")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(600, 700))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.LandsatMSS")
@@ -156,6 +169,7 @@ test_that("wl range is correct for \"LandsatMSS\"", {
 
 test_that("wl range is correct for \"LandsatTM\"", {
   wb <- Red(std = "LandsatTM")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(630, 690))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.LandsatTM")
@@ -169,6 +183,7 @@ test_that("wl range is correct for \"LandsatTM\"", {
 
 test_that("wl range is correct for \"LandsatETM\"", {
   wb <- Red(std = "LandsatETM")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(630, 690))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.LandsatETM")
@@ -182,6 +197,7 @@ test_that("wl range is correct for \"LandsatETM\"", {
 
 test_that("wl range is correct for \"LandsatRBV\"", {
   wb <- Red(std = "LandsatRBV")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(580, 680))
   expect_equal(labels(wb)$label, "Red")
   expect_equal(labels(wb)$name, "Red.LandsatRBV")
@@ -195,6 +211,7 @@ test_that("wl range is correct for \"LandsatRBV\"", {
 
 test_that("Red waveband is correct for bad std", {
   expect_warning(wb <- Red(std = "bad-std"))
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(NA_real_, NA_real_))
   expect_equal(labels(wb)$label, "Not available")
   expect_equal(labels(wb)$name, "Not available")

@@ -5,12 +5,15 @@
 #'
 #' @details The different arguments passed to formal parameter \code{std}
 #'   determine the range of wavelengths set as boundaries of the returned
-#'   \code{waveband} object; far-red in not defined by \code{"ISO"} standard
-#'   definitions based on human colour vision, and included under red;
-#'   \code{"Smith10"}, \code{"Smith20"}, \code{"Inada"}, \code{"Warrington"},
-#'   \code{"Sellaro"}, \code{"Broad"} and \code{"Apogee"} are non-standard but used in plant
-#'   sciences; \code{"RedEdge20"} and \code{"RedEdge40"} are non-standard but
-#'   frequently used in remote sensing.
+#'   \code{waveband} object; far-red wavelengths are not defined by \code{"ISO"}
+#'   standard definitions based on human colour vision, and instead included
+#'   within the definition of red; \code{"Smith10"}, \code{"Smith20"},
+#'   \code{"Inada"}, \code{"Warrington"}, \code{"Sellaro"}, \code{"Broad"} and
+#'   \code{"Apogee"} are non-standard but used in plant sciences;
+#'   \code{"RedEdge20"} and \code{"RedEdge40"} are non-standard but frequently
+#'   used in remote sensing. \code{LandsatMSS} for Landsat (NASA) and
+#'   \code{"Sentinel2.B5"}, \code{"Sentinel2.B6"} and \code{"Sentinel2.B7"} for
+#'   Sentinel-2 (ESA) describe remote sensing imager bands.
 #'
 #'   In plant photobiology the definitions proposed by Prof. Harry Smith are the
 #'   most widely used, specially to compute a red to far-red photon ratio
@@ -38,7 +41,10 @@
 #'   and infrared regions.
 #'
 #' @param std a character string, defaults to "ISO", as for other colour
-#'   definitions, which in this case returns \code{NA}.
+#'   definitions, which in this case returns \code{NA}. One of "broad",
+#'   "Smith10" (or "Smith"), "Smith20", "Inada", "Warrington", "Sellaro", "Apogee",
+#'   "LandsatMSS", "RS", "RedEdge40", "RedEdge20", "Sentinel2.B5" or
+#'   "Sentinel2.B6".
 #'
 #' @return A waveband object defining a wavelength range.
 #'
@@ -104,6 +110,8 @@ Far_red <- function(std="ISO") {
     new_waveband(725, 735, wb.name=paste("FarRed", std, sep="."), wb.label=label)
   } else if (std=="Inada" || std=="LandsatMSS" || std=="RS") {
     new_waveband(700, 800, wb.name=paste("FarRed", std, sep="."), wb.label=label)
+  } else if (std == "broad" || std == "Broad") {
+    new_waveband(700, 800, wb.name="FarRed.broad", wb.label=label)
   } else if (std=="Warrington") {
     new_waveband(700, 850, wb.name=paste("FarRed", std, sep="."), wb.label=label)
   } else if (std=="Sellaro") {
@@ -112,8 +120,21 @@ Far_red <- function(std="ISO") {
     new_waveband(705, 745, wb.name=paste("FarRed", std, sep="."), wb.label=label)
   } else if (std=="RedEdge20") {
     new_waveband(715, 735, wb.name=paste("FarRed", std, sep="."), wb.label=label)
-  } else if (tolower(std) == "broad") {
-    new_waveband(700, 800, wb.name= "FarRed.broad", wb.label=label)
+  } else if (std == "Sentinel2.B5") {
+    new_waveband(705 - 15 / 2,
+                 705 + 15 / 2,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B6") {
+    new_waveband(740 - 15 / 2,
+                 740 + 15 / 2,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B7") {
+    new_waveband(783 - 20 / 2,
+                 783 + 20 / 2,
+                 wb.name = paste(label, std, sep = "."),
+                 wb.label = label)
   } else {
     warning("'std' argument value not implemented.")
     waveband()

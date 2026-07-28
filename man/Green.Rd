@@ -8,7 +8,7 @@ Green(std = "ISO")
 }
 \arguments{
 \item{std}{a character string "ISO", "Sellaro", "Broad", "RS", "LandsatOLI",
-"LandsatRBV", "LandsatTM", "LandsatETM", or "LandsatMSS".}
+"LandsatRBV", "LandsatTM", "LandsatETM", "LandsatMSS" or "Sentinel2.B3".}
 }
 \value{
 A waveband object defining a wavelength range.

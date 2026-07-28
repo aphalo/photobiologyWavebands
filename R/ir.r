@@ -20,7 +20,9 @@
 #'
 #' @param std character string, "ISO", "CIE", "RS" or Landsat imagers
 #'   "LandsatRBV", "LandsatMSS", "LandsatTIRS", "LandsatOLI", "LandsatTM",
-#'   "LandsatETM", depending on the constructor.
+#'   "LandsatETM", "Sentinel2.B8", "Sentinel2.B8b", "Sentinel2.B9",
+#'   "Sentinel2.B10", "Sentinel2.B11" or , "Sentinel2.B12" depending on the
+#'   constructor.
 #'
 #' @seealso \code{\link{Far_red}} for wavebands close to the boundary between red
 #'   and infrared regions.
@@ -116,6 +118,36 @@ NIR <- function(std = "ISO") {
       wb.name = paste("NIR", std, sep = "."),
       wb.label = "NIR"
     )
+  } else if (std == "Sentinel2.B8") {
+    new_waveband(842 - 115 / 2,
+                 842 + 115 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
+  } else if (std == "Sentinel2.B8b") {
+    new_waveband(865 - 20 / 2,
+                 865 + 20 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
+  } else if (std == "Sentinel2.B9") {
+    new_waveband(945 - 20 / 2,
+                 945 + 20 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
+  } else if (std == "Sentinel2.B10") {
+    new_waveband(1375 - 30 / 2,
+                 1375 + 30 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
+  } else if (std == "Sentinel2.B11") {
+    new_waveband(1610 - 90 / 2,
+                 1610 + 90 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
+  } else if (std == "Sentinel2.B12") {
+    new_waveband(2190 - 180 / 2,
+                 2190 + 180 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
   } else {
     warning("'std' = '", std, "' not implemented.")
     waveband()

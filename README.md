@@ -23,8 +23,10 @@ plus wavelength ranges and a corresponding constructor function
 contructors so that frequently used wavebands can be created by name
 instead of directly entering numeric boundaries for wavelength and
 user-defined functions for weighting as needed when using `waveband()`.
-R functions for frequently used to obtain spectral weighting factors
-from arbitrary wavelengths in nanometres are also exported.
+R functions for computing frequently used spectral weighting factors for
+arbitrary wavelengths in nanometres are also exported. These functions
+are the basis for the computation of (biologically) effective spectral
+irradiances and irradiances.
 
 Non-weighted derived quantities represent summaries of a given range of
 wavelengths, i.e., weight is 1 irrespective of wavelength or use of
@@ -39,22 +41,27 @@ light colours seen by humans, and some other bands of interest for
 plants.
 
 Several wavebands corresponding to remote sensing instruments are also
-provided, including all those for the LANDSAT missions, as non-weighted
-definitions. The Landsat imagers do have a specific responsiveness at
-each wavelength, and would in principle have to be defined using
+provided, including all those for the LANDSAT and Sentinel-2 missions,
+as non-weighted definitions. The Sentinel-2 multi spectral imager (MSI)
+bands are available as a central wavelength plus band width. For the
+Landsat imagers specific responsiveness vs. wavelength data are
+available, and could in principle have to be defined using
 response-dependent weighting functions. The calibrations and definitions
-provided by NASA are based on average response per band. For example, in
-the OLI instrument several of the bands are relatively narrow, while the
-wider ones seem to have a response that is flatter on a per photon basis
-than on an energy basis. If Landsat response bands are to be simulated
-using spectral data from other instruments these approximations need
-special consideration.
+provided by NASA are based on average response per band. If Landsat or
+Sentinel-2 response bands are to be simulated very accurately using
+spectral data from other, possibly terrestrial, instruments these
+approximations need consideration. In other cases, the approximation
+using a simple wavelength range, as provided in this package, can be
+good enough, because this is a rather good approximation to the actual
+responsivity curve.
 
 The definition of photosyntheticaly active radiation (PAR) is
 non-weighted on a photon basis but spectrally weighted on an energy
 based. In some cases the same range of wavelengths as in the definition
 of PAR is used to compute a non-weighted energy irradiance, which should
-probably not be called PAR because of the different weighting!
+in principle not be called PAR because of the different weighting! In
+this R package, the name PhR (photosynthetic radiation) is used instead
+of PAR for energy irradiance in the range 400 to 700 nm.
 
 Both PAR and illuminance are based on biological spectral weighting
 functions, approximating the spectral response of photosynthesis and the
@@ -62,25 +69,26 @@ human-perceived light brightness, respectively. Several other derived
 *biologically effective* quantities are used to quantify the effect of
 radiation on different organisms or processes within organisms. These
 effects can range from damage to perception of informational light
-signals including vision. Weighting function definitions represent
-measurable or expected biological or photocheminal responses, and
-consequently they differ if used to compute effective spectral energy-
-and photon irradiances. Thus, two versions of weighting functions are
-stored in `waveband` objects.
+signals and cues including vision. Weighting function definitions
+represent measurable or expected biological or photocheminal responses,
+and consequently they differ if used to compute effective spectral
+energy- and photon irradiances. Thus, two versions of weighting
+functions are stored in `waveband` objects.
 
 Exports from ‘photobiologyWavebands’ also include several weighting
-functions used in the calculation of effective irradiances and
-exposures. These are the same functions used by the constructors of
-`waveband` objects. These Weighting functions are mostly biological
-spectral weighting functions (BSWFs) used to estimate effective UV
-doses. Except for the definition the erythema (human skin reddening) and
-vitamin-D3 BSWFs for which definitions standardized by CIE exist, the
-default formulation is one commonly used and preferred by the author of
-the package. It should be kept in mind that mathematical formulations
-and extrapolation rules in use are not unique and that it is important
-to carefully chose the most appropriate ones and report which one was
-used. We hope this package will make this easier. The estimated summary
-values depend strongly on the choice of BSWF, its formulation and the
+functions used for the calculation of the weights used in the
+computation of effective irradiances and exposures. These are the same
+functions used by constructors of `waveband` objects. These Weighting
+functions are mostly biological spectral weighting functions (BSWFs)
+used to estimate effective UV doses. Except for the definition the
+erythema (human skin reddening) and vitamin-D3 BSWFs for which
+definitions standardized by CIE exist, the default formulation is one
+commonly used and/or preferred by the author of the package. It should
+be kept in mind that mathematical formulations and extrapolation rules
+in use are not unique making it important to carefully chose the most
+appropriate ones and to report in full detail which one was used. We
+hope this package will make this easier. The estimated summary values
+depend strongly on the choice of BSWF, its formulation and the
 extrapolation rules used. These choices remain in the hands of users,
 expected to have the necessary knowledge.
 
@@ -101,12 +109,26 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyWavebands")
 ```
 
+Installation of the current unstable version from R-Universe CRAN-like
+repository:
+
+``` r
+install.packages('photobiologyWavebands', 
+                 repos = c('https://aphalo.r-universe.dev', 
+                           'https://cloud.r-project.org'))
+```
+
+The two approaches above, automatically install dependencies.
+
 Installation of the current unstable version from GitHub:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("aphalo/photobiologyWavebands")
 ```
+
+Installation from GitHub sources does not automatically install
+dependencies.
 
 ## Documentation
 

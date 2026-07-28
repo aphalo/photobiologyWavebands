@@ -1,9 +1,11 @@
 test_that("green waveband is correct for default", {
+  expect_s3_class(Green(), "waveband")
   expect_equal(Green(), Green("ISO"))
 })
 
 test_that("Green waveband is correct for \"ISO\"", {
   wb <- Green(std = "ISO")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 570))
   expect_equal(wl_range(wb), range(Green()))
   expect_equal(wl_range(wb), range(Green("ISO")))
@@ -19,6 +21,7 @@ test_that("Green waveband is correct for \"ISO\"", {
 
 test_that("wl range is correct for \"Sellaro\"", {
   wb <- Green(std = "Sellaro")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 570))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.Sellaro")
@@ -32,6 +35,7 @@ test_that("wl range is correct for \"Sellaro\"", {
 
 test_that("wl range is correct for \"broad\"", {
   wb <- Green(std = "broad")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.broad")
@@ -45,6 +49,7 @@ test_that("wl range is correct for \"broad\"", {
 
 test_that("wl range is correct for \"RS\"", {
   wb <- Green(std = "RS")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(525, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.RS")
@@ -58,6 +63,7 @@ test_that("wl range is correct for \"RS\"", {
 
 test_that("wl range is correct for \"LandsatTM\"", {
   wb <- Green(std = "LandsatTM")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(520, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.LandsatTM")
@@ -71,6 +77,7 @@ test_that("wl range is correct for \"LandsatTM\"", {
 
 test_that("wl range is correct for \"LandsatETM\"", {
   wb <- Green(std = "LandsatETM")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(520, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.LandsatETM")
@@ -84,6 +91,7 @@ test_that("wl range is correct for \"LandsatETM\"", {
 
 test_that("wl range is correct for \"LandsatOLI\"", {
   wb <- Green(std = "LandsatOLI")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(525, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.LandsatOLI")
@@ -97,6 +105,7 @@ test_that("wl range is correct for \"LandsatOLI\"", {
 
 test_that("wl range is correct for \"LandsatRBV\"", {
   wb <- Green(std = "LandsatRBV")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(480, 580))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.LandsatRBV")
@@ -110,6 +119,7 @@ test_that("wl range is correct for \"LandsatRBV\"", {
 
 test_that("wl range is correct for \"LandsatMSS\"", {
   wb <- Green(std = "LandsatMSS")
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(500, 600))
   expect_equal(labels(wb)$label, "Green")
   expect_equal(labels(wb)$name, "Green.LandsatMSS")
@@ -123,6 +133,7 @@ test_that("wl range is correct for \"LandsatMSS\"", {
 
 test_that("Green waveband is correct for bad std", {
   expect_warning(wb <- Green(std = "bad-std"))
+  expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(NA_real_, NA_real_))
   expect_equal(labels(wb)$label, "Not available")
   expect_equal(labels(wb)$name, "Not available")

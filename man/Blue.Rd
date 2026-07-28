@@ -7,9 +7,9 @@
 Blue(std = "ISO")
 }
 \arguments{
-\item{std}{a character string "ISO", "Sellaro", "Broad",
-"RS" (remote sensing), or Landsat imagers, "LandsatTM",
- "LandsatETM", or "LandsatOLI".}
+\item{std}{a character string "ISO", "Sellaro", "Broad", "RS" (remote
+sensing), "LandsatTM", "LandsatETM", "LandsatOLI", "Sentinel2.B1", or
+"Sentinel2.B2".}
 }
 \value{
 A waveband object defining a wavelength range.
@@ -63,6 +63,12 @@ Sellaro, R., Crepy, M., Trupkin, S. A., Karayekov, E., Buchovsky, A. S.,
 Rossi, C., & Casal, J. J. (2010). Cryptochrome as a sensor of the blue/green
 ratio of natural radiation in Arabidopsis. Plant physiology, 154(1), 401-409.
 \doi{10.1104/pp.110.160820}.
+
+See \url{https://landsat.usgs.gov/spectral-characteristics-viewer} for
+detailed sensitivity spectra for the different bands of the imagers.
+
+See the Sentinel-2 User Handbook \url{https://sentinels.copernicus.eu/documents/247904/685211/Sentinel-2_User_Handbook} for
+detailed information on the different bands of the MSI imager.
 }
 \seealso{
 \code{\link[photobiology]{waveband}}

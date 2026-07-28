@@ -96,6 +96,7 @@ test_that("wl range is correct for \"LandsatOLI\"", {
 })
 
 test_that("Blue waveband is correct for bad std", {
+  expect_s3_class(Blue(), "waveband")
   expect_warning(wb <- Blue(std = "bad-std"))
   expect_equal(wl_range(wb), c(NA_real_, NA_real_))
   expect_equal(labels(wb)$label, "Not available")

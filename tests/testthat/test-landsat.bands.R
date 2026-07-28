@@ -1,3 +1,14 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("Landsat_bands() returns expected members", {
+  expect_type(Landsat_bands(), "list")
+  expect_s3_class(Landsat_bands()[[1]], "waveband")
+  expect_equal(length(Landsat_bands()), 9)
+  expect_equal(length(Landsat_bands("L1")), 6)
+  expect_equal(length(Landsat_bands("L2")), 6)
+  expect_equal(length(Landsat_bands("L3")), 4)
+  expect_equal(length(Landsat_bands("L4")), 9)
+  expect_equal(length(Landsat_bands("L5")), 9)
+  expect_equal(length(Landsat_bands("L6")), 6)
+  expect_equal(length(Landsat_bands("L7")), 6)
+  expect_equal(length(Landsat_bands("L8")), 9)
+  expect_equal(length(Landsat_bands("L9")), 9)
 })

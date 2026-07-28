@@ -5,7 +5,7 @@
 #'
 #' @param std a character string, one of "ISO", "Smith10", "Smith20", "Inada",
 #'   "Warrington", "Sellaro", "RS", "LandsatOLI", "LandsatTM", "LandsatETM",
-#'   "LandsatMSS", and "LandsatRBV".
+#'   "LandsatMSS", "LandsatRBV" or "Sentinel2.B4".
 #'
 #' @return a waveband object defining a wavelength range.
 #'
@@ -134,6 +134,11 @@ Red <- function(std = "ISO") {
     new_waveband(580,
                  680,
                  wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "Sentinel2.B4") {
+    new_waveband(665 - 30 / 2,
+                 665 + 30 / 2,
+                 wb.name = paste(label, std, sep = "."),
                  wb.label = label)
   } else if (std == "Apogee") {
     new_waveband(645,
