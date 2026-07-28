@@ -8,6 +8,13 @@ editor_options:
 
 - Add definitions describing the bands of the multi spectral instrument (MSI) 
 of the Sentinel-2 mission of the European Space Agency (ESA).
+- Add definitions describing the bands used for calibration of the Apogee
+NDVI sensor.
+- **Breaking:** The argument used for `std` for the wavelength ranges of the
+Apogee red and far-red sensor is now `"ApogeeRFR"` instead of `"Apogee"`. 
+`"Apogee"` is deprecated, but the label of the `waveband` is from this
+version `"Red.ApogeeRFR"` instead of `"Red.Apogee"` and `"FarRed.ApogeeRFR"`
+instead of `"FarRed.Apogee"`.
 
 # photobiologyWavebands 0.5.4
 

@@ -79,6 +79,11 @@
 #'
 Red <- function(std = "ISO") {
   label = "Red"
+
+  # synonyms
+  if (std == "Sentinel2MSI" || std == "Sentinel2MSIb") std <- "Sentinel2.B4"
+  if (std == "Apogee") std <- "ApogeeRFR"
+
   if (std == "Smith") {
     message(
       "The definition of 'Smith' defaults to 'Smith10'."
@@ -140,9 +145,14 @@ Red <- function(std = "ISO") {
                  665 + 30 / 2,
                  wb.name = paste(label, std, sep = "."),
                  wb.label = label)
-  } else if (std == "Apogee") {
+  } else if (std == "ApogeeRFR") {
     new_waveband(645,
                  665,
+                 wb.name = paste("Red", std, sep = "."),
+                 wb.label = label)
+  } else if (std == "ApogeeNDVI") {
+    new_waveband(650 - 65/2,
+                 650 + 65/2,
                  wb.name = paste("Red", std, sep = "."),
                  wb.label = label)
   } else if (tolower(std) == "broad") {

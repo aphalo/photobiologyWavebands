@@ -52,18 +52,20 @@ test_that("wl range is correct for \"Smith20\"", {
   expect_equal(length(wb$hinges), 4L)
 })
 
-test_that("Far_red waveband is correct for \"Apogee\"", {
-  wb <- Far_red("Apogee")
+test_that("Far_red waveband is correct for \"ApogeeRFR\"", {
+  wb <- Far_red("ApogeeRFR")
   expect_s3_class(wb, "waveband")
   expect_equal(wl_range(wb), c(720, 740))
   expect_equal(labels(wb)$label, "FR")
-  expect_equal(labels(wb)$name, "FarRed.Apogee")
+  expect_equal(labels(wb)$name, "FarRed.ApogeeRFR")
   expect_equal(wb$weight, "none")
   expect_null(wb$SWF.e.fub)
   expect_null(wb$SWF.q.fub)
   expect_null(wb$norm)
   expect_type(wb$hinges, "double")
   expect_equal(length(wb$hinges), 4L)
+
+  expect_equal(wb, Far_red("Apogee"))
 })
 
 test_that("wl range is correct for \"Inada\"", {

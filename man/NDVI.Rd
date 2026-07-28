@@ -2,14 +2,18 @@
 % Please edit documentation in R/ndvi.r
 \name{NDVI}
 \alias{NDVI}
-\title{Normalized Vegetation Index}
+\title{Normalized Difference Vegetation Index}
 \usage{
 NDVI(spct, imager = "LandsatOLI", wb.trim = FALSE)
 }
 \arguments{
 \item{spct}{reflectance_spct or reflectance_mspct object.}
 
-\item{imager}{character Name of the imager or standard to be used.}
+\item{imager}{character Name of the imager or standard to be used. One of
+\code{"LandsatOLI"}, \code{"Sentinel2MSI"}, \code{"Sentinel2MSIb"},
+or \code{ApogeeNDVI}. If a vector of length two, the first member is passed
+as argument to \code{Red()} and the second member is passed as argument to
+\code{NIR()}.}
 
 \item{wb.trim}{logical Flag telling if wavebands crossing spectral data
 boundaries are trimmed or ignored.}
@@ -30,11 +34,13 @@ NDVI is used in remote sensing to the diagnose the condition of
   NDVI = (NIR - Red) / (NIR + Red)
 
   The waveband ranges used to compute reflectance vary. Even the imagers
-  in the different Landsat satellites 1 to 8 have had somehow different
+  in the different Landsat satellites 1 to 8 have had to an extent different
   wavelength sensitivities. The \code{NDVI()} function uses the waveband
   constructors \code{\link{Red}} and \code{\link{NIR}} defined in this
   package. Reflectance is averaged over the wavebands using function
-  \code{\link[photobiology]{reflectance}}.
+  \code{\link[photobiology]{reflectance}}. Apogee sells a broadband
+  NDVI sensor, the definition given here is not an spectral response
+  but instead a wavelength range.
 }
 \note{
 The value passed as argument to \code{imager} must be a valid argument

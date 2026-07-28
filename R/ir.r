@@ -18,9 +18,9 @@
 #' different for "CIE" than "ISO" standards, and the labels of the waveband
 #' objects reflect this with "IRA", "IRB", etc., used when appropriate.
 #'
-#' @param std character string, "ISO", "CIE", "RS" or Landsat imagers
-#'   "LandsatRBV", "LandsatMSS", "LandsatTIRS", "LandsatOLI", "LandsatTM",
-#'   "LandsatETM", "Sentinel2.B8", "Sentinel2.B8b", "Sentinel2.B9",
+#' @param std character string, "ISO", "CIE", "RS", "ApogeeNDVI" or Landsat
+#'   imagers "LandsatRBV", "LandsatMSS", "LandsatTIRS", "LandsatOLI",
+#'   "LandsatTM", "LandsatETM", "Sentinel2.B8", "Sentinel2.B8b", "Sentinel2.B9",
 #'   "Sentinel2.B10", "Sentinel2.B11" or , "Sentinel2.B12" depending on the
 #'   constructor.
 #'
@@ -69,6 +69,11 @@ IR <- function(std = "ISO") {
 #'
 #' @export
 NIR <- function(std = "ISO") {
+
+  # synonyms
+  if (std == "Sentinel2MSI") std <- "Sentinel2.B8"
+  if (std == "Sentinel2MSIb") std <- "Sentinel2.B8b"
+
   if (std == "ISO") {
     new_waveband(
       w.low = 780,
@@ -90,6 +95,11 @@ NIR <- function(std = "ISO") {
       wb.name = paste("NIR", std, sep = "."),
       wb.label = "NIR"
     )
+  } else if (std == "ApogeeNDVI") {
+    new_waveband(810 - 65 / 2,
+                 810 + 65 / 2,
+                 wb.name = paste("NIR", std, sep = "."),
+                 wb.label = "NIR")
   } else if (std == "LandsatOLI") {
     new_waveband(
       w.low = 845,

@@ -97,6 +97,7 @@
 #'
 Far_red <- function(std="ISO") {
   label="FR"
+  if (std == "Apogee") std <- "ApogeeRFR"
   if (std=="Smith") {
     message("The definition of 'Smith' defaults to 'Smith10', to restore old behaviour use 'Smith20'.")
     std <- "Smith10"
@@ -104,7 +105,7 @@ Far_red <- function(std="ISO") {
   if (std=="ISO") {
     message("'ISO gives no standard definition of far-red.")
     waveband()
-  } else if (std %in% c("Smith20", "Apogee")) {
+  } else if (std %in% c("Smith20", "ApogeeRFR")) {
     new_waveband(720, 740, wb.name=paste("FarRed", std, sep="."), wb.label=label)
   } else if (std=="Smith10") {
     new_waveband(725, 735, wb.name=paste("FarRed", std, sep="."), wb.label=label)
